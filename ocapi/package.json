@@ -1,0 +1,13 @@
+{
+  "name": "sfcc_ocapi_utilities",
+  "version": "1.0.0",
+  "description": "Command line Salesforce Commerce Cloud utilities",
+  "main": "index.js",
+  "author": "Ranveer Raghuwanshi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "csv-write-stream": "^2.0.0"
+  }
+}

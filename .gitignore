@@ -109,3 +109,5 @@ dist
 *.zip
 .vscode
 *.txt
+config.json
+output

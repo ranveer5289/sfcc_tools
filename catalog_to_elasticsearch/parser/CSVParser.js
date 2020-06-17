@@ -4,7 +4,7 @@ const fs = require('fs');
 let count = 0;
 let items = [];
 let totalProcessed = 0;
-const batchSize = 1000;
+const batchSize = 10000;
 
 function parseCSV(esClient, config) {
     const stream = fs.createReadStream(config.filePath);
