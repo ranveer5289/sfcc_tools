@@ -1,0 +1,25 @@
+{
+  "name": "catalog_to_elasticsearch",
+  "version": "1.0.0",
+  "description": "Insert SFCC Master Catalog to ElasticSearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ranveer raghuwanshi",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.7.1",
+    "es6": "npm:@elastic/elasticsearch@^6.8.7",
+    "fast-csv": "^4.3.0",
+    "xml-stream": "^0.4.5"
+  },
+  "devDependencies": {
+    "@types/elasticsearch": "^5.0.36",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0"
+  }
+}
