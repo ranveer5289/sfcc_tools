@@ -8,6 +8,9 @@
   "dependencies": {
     "axios": "^0.19.2",
     "chalk": "^4.0.0",
-    "csv-write-stream": "^2.0.0"
+    "csv-write-stream": "^2.0.0",
+    "es6-promise-pool": "^2.5.0",
+    "p-limit": "^3.0.1",
+    "tiny-async-pool": "^1.1.0"
   }
 }
