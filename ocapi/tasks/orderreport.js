@@ -21,8 +21,8 @@ async function writeOrderReport() {
     }
     
     console.log(chalk.green('Going to retrieve orders from SFCC'));
-    let inputs = await getInput(token);
-    let allOrders = await execute(inputs);
+    let promises = await getPromises(token);
+    let allOrders = await execute(promises);
     console.log(allOrders);
     if(allOrders && allOrders.length > 0) {
         console.log(chalk.green('Total orders found ' + allOrders.length));
@@ -35,15 +35,46 @@ async function writeOrderReport() {
         writer.pipe(fs.createWriteStream(output));
 
         allOrders.forEach(function(order) {
-            writer.write({'order-no': order.data.order_no});
+            const mergedObject = {};
+            const customAttributes = getOrderAttributes(order.data);
+            const billingAddress = getAddress(order.data.billing_address, 'billing');
+            const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
+            const customerInfo = {
+                'order-no': order.data.order_no,
+                'customer-name': order.data.customer_info.customer_name,
+                'customer-email': order.data.customer_info.email,
+                'customer-no':  order.data.customer_info.customer_no,
+            };
+
+            Object.assign(mergedObject, customerInfo, customAttributes, billingAddress, shippingAddress);
+
+            writer.write(mergedObject);
         });
         writer.end();
     }
 }
 
-async function getInput(token) {
-    let resp = await ordersearch.search(token);
-    const orderSearchResponse = resp.data;
+function getOrderAttributes(obj) {
+    const customAttributtes = {};
+    for (key in obj) {
+        if (typeof obj[key] !== 'object') {
+            customAttributtes[key] = obj[key];
+        }
+    }
+    return customAttributtes;
+}
+
+function getAddress(address, addressType) {
+    const addressObj = {};
+    for (key in address) {
+        addressObj[addressType + '_' + key] = address[key];
+    }
+    return addressObj;
+}
+
+async function getPromises(token) {
+    let apiResponse = await ordersearch.search(token);
+    const orderSearchResponse = apiResponse && apiResponse.data;
     if (!orderSearchResponse || !orderSearchResponse.hits) {
         return allOrders;
     }
@@ -52,23 +83,25 @@ async function getInput(token) {
     allOrders = allOrders.concat(orderSearchResponse.hits);
 
     const totalHits = orderSearchResponse.total;
-    const input = [];
+    const asyncFunctions = [];
     console.log(chalk.green('Total orders ' + totalHits));
     const counter = Math.ceil(totalHits / 50);
     for (let i = 1; i < counter; i++) {
         const start = i * 50;
-        // console.log(chalk.green('Fetching order from index ' + start));
-        input.push(limit(function() {
+        asyncFunctions.push(limit(function() {
             return ordersearch.search(token, start);
         }));
     }
 
-    return input;
+    return asyncFunctions;
 }
 
-async function execute(inputs) {
-    console.log(inputs.length);
-    const results = await Promise.all(inputs);
+async function execute(promises) {
+    console.log(promises.length);
+    const results = await Promise.all(promises);
+    if (!results) {
+        return allOrders;
+    }
     results.forEach(function(result) {
         allOrders = allOrders.concat(result.data.hits);
     });

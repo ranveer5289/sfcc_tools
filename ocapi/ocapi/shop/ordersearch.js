@@ -26,31 +26,45 @@ async function search(oauthToken, start, query) {
         "query": {
             "filtered_query": {
                 "query": {
-                    "match_all_query": {}
+                    "bool_query": {
+                        "must": [
+                            {
+                                "term_query": {
+                                    "fields": [
+                                        "status"
+                                    ],
+                                    "operator": "one_of",
+                                    "values": [
+                                        "new",
+                                        "open"
+                                    ]
+                                }
+                            },
+                            {
+                                "term_query": {
+                                    "fields": [
+                                        "payment_status"
+                                    ],
+                                    "operator": "is",
+                                    "values": [
+                                        "paid"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
                 },
                 "filter": {
                     "range_filter": {
                         "field": "creation_date",
-                        "from": "2020-04-17T09:00:00.000Z",
-                        "to": "2020-06-18T09:00:00.000Z"
+                        "from": "2020-06-18T09:00:00.000Z",
+                        "to": "2020-06-18T09:10:00.000Z"
                     }
                 }
             }
         },
         "select": "(**)"
     }`;
-    // let orders;
-    // try {
-    //     const response = await instance.post(orderSearchUrl, postData);
-    //     if (!response.data.hits) {
-    //         console.log('No orders founds for supplied search');
-    //     } else {
-    //         orders = response.data;
-    //     }
-    // } catch (error) {
-    //     console.log(error.message);
-    // }
-    // return orders;
     return instance.post(orderSearchUrl, postData);
 }
 
