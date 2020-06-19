@@ -5,14 +5,15 @@ const chalk = require('chalk');
 const pLimit = require('p-limit');
 
 const TASKID = 'orderreport';
-const limit = pLimit(5);
+const limit = pLimit(10);
+
 let allOrders = [];
 
 const configPath = path.resolve(process.cwd(), 'config.json');
 const config = require(configPath);
 
 const oauth = require(path.resolve(process.cwd(), 'ocapi', 'auth', 'oauth.js'));
-const ordersearch = require(path.resolve(process.cwd(), 'ocapi', 'shop', 'ordersearch.js'));
+const orderSearch = require(path.resolve(process.cwd(), 'ocapi', 'shop', 'ordersearch.js'));
 
 async function writeOrderReport() {
     const token = await oauth.getClientCredentialGrant();
@@ -23,7 +24,6 @@ async function writeOrderReport() {
     console.log(chalk.green('Going to retrieve orders from SFCC'));
     let promises = await getPromises(token);
     let allOrders = await execute(promises);
-    console.log(allOrders);
     if(allOrders && allOrders.length > 0) {
         console.log(chalk.green('Total orders found ' + allOrders.length));
 
@@ -39,14 +39,16 @@ async function writeOrderReport() {
             const customAttributes = getOrderAttributes(order.data);
             const billingAddress = getAddress(order.data.billing_address, 'billing');
             const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
-            const customerInfo = {
-                'order-no': order.data.order_no,
-                'customer-name': order.data.customer_info.customer_name,
-                'customer-email': order.data.customer_info.email,
-                'customer-no':  order.data.customer_info.customer_no,
+            const paymentData = getPayment(order.data.payment_instruments);
+            const additionalInfo = {
+                'order_no': order.data.order_no,
+                'customer_name': order.data.customer_info.customer_name,
+                'customer_email': order.data.customer_info.email,
+                'customer_no':  order.data.customer_info.customer_no,
+                'shipping_method_id': order.data.shipments[0].shipping_method.id
             };
 
-            Object.assign(mergedObject, customerInfo, customAttributes, billingAddress, shippingAddress);
+            Object.assign(mergedObject, additionalInfo, customAttributes, billingAddress, shippingAddress, paymentData);
 
             writer.write(mergedObject);
         });
@@ -54,26 +56,8 @@ async function writeOrderReport() {
     }
 }
 
-function getOrderAttributes(obj) {
-    const customAttributtes = {};
-    for (key in obj) {
-        if (typeof obj[key] !== 'object') {
-            customAttributtes[key] = obj[key];
-        }
-    }
-    return customAttributtes;
-}
-
-function getAddress(address, addressType) {
-    const addressObj = {};
-    for (key in address) {
-        addressObj[addressType + '_' + key] = address[key];
-    }
-    return addressObj;
-}
-
 async function getPromises(token) {
-    let apiResponse = await ordersearch.search(token);
+    let apiResponse = await orderSearch.search(token);
     const orderSearchResponse = apiResponse && apiResponse.data;
     if (!orderSearchResponse || !orderSearchResponse.hits) {
         return allOrders;
@@ -89,7 +73,7 @@ async function getPromises(token) {
     for (let i = 1; i < counter; i++) {
         const start = i * 50;
         asyncFunctions.push(limit(function() {
-            return ordersearch.search(token, start);
+            return orderSearch.search(token, start);
         }));
     }
 
@@ -97,7 +81,6 @@ async function getPromises(token) {
 }
 
 async function execute(promises) {
-    console.log(promises.length);
     const results = await Promise.all(promises);
     if (!results) {
         return allOrders;
@@ -107,4 +90,36 @@ async function execute(promises) {
     });
     return allOrders;
 }
+
+function getOrderAttributes(obj) {
+    const ignoreAttributes = ['product_items', 'payment_instruments', 'shipments', 'shipping_items'];
+    const customAttributes = {};
+    for (key in obj) {
+        if (ignoreAttributes.indexOf(key) === -1 && (typeof obj[key] !== 'object' || Array.isArray(obj[key]))) {
+            customAttributes[key] = Array.isArray(obj[key]) ? obj[key].join(',') : obj[key];
+        }
+    }
+    return customAttributes;
+}
+
+function getAddress(address, addressType) {
+    const addressObj = {};
+    for (key in address) {
+        addressObj[addressType + '_' + key] = address[key];
+    }
+    return addressObj;
+}
+
+function getPayment(paymentInstruments) {
+    const paymentObj = {};
+
+    paymentInstruments.forEach(function(pi, i) {
+        Object.keys(pi).forEach(function(key) {
+            const objectKey = 'payment' + '_'+ key + '_' + i+1;
+            paymentObj[objectKey] = pi[key];
+        });
+    });
+    return paymentObj;
+}
+
 module.exports = writeOrderReport();

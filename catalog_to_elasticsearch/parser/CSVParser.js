@@ -30,9 +30,9 @@ function parseCSV(esClient, config) {
 
                 await esClient.bulk(items);
                 if (parser.isPaused()) {
+                    parser.resume();
                     count = 0;
                     items = [];
-                    parser.resume();
                 }
             }
         })

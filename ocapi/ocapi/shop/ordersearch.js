@@ -57,7 +57,7 @@ async function search(oauthToken, start, query) {
                 "filter": {
                     "range_filter": {
                         "field": "creation_date",
-                        "from": "2020-06-18T09:00:00.000Z",
+                        "from": "2020-06-15T09:00:00.000Z",
                         "to": "2020-06-18T09:10:00.000Z"
                     }
                 }

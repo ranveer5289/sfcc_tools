@@ -10,8 +10,8 @@ async function main() {
         await client.createIndex();
     }
 
-    // // CSVParser.parseCSV(client, { filePath: './parser/test.csv' });
-    await XMLParser.parseXML(client, { filePath: './parser/test.xml' });
+    await CSVParser.parseCSV(client, { filePath: './parser/vd-master-catalog.csv' });
+    // await XMLParser.parseXML(client, { filePath: './parser/test.xml' });
 }
 
 main();
