@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 const axios = require('axios');
 const path = require('path');
 const chalk = require('chalk');
@@ -11,11 +12,11 @@ async function getClientCredentialGrant() {
     const instance = axios.create({
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'authorization': `Basic ${basicAuth}`
+            authorization: `Basic ${basicAuth}`
         }
     });
 
-    const postData = "grant_type=client_credentials";
+    const postData = 'grant_type=client_credentials';
 
     let token;
     try {
@@ -24,7 +25,7 @@ async function getClientCredentialGrant() {
             token = response.data.access_token;
             console.log(chalk.green('Successfully fetched oauth token from server'));
         } else {
-            console.log('Error fetching token ' + response.status + ' ' + response.error);
+            console.log(`Error fetching token ${response.status} ${response.error}`);
         }
     } catch (error) {
         console.log(error.message);
@@ -32,6 +33,5 @@ async function getClientCredentialGrant() {
 
     return token;
 }
-
 
 module.exports.getClientCredentialGrant = getClientCredentialGrant;

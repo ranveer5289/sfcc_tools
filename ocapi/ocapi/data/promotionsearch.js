@@ -1,12 +1,12 @@
+/* eslint-disable import/no-dynamic-require */
 const axios = require('axios');
 const path = require('path');
-const chalk = require('chalk');
 
 const configPath = path.resolve(process.cwd(), 'config.json');
 const config = require(configPath);
 
 async function search(oauthToken, start, query) {
-    const promotionSearchUrl = `${config.ocapi_data_api_url}` + "sites/" + `${config.sfcc_site_id}/` + 'promotion_search';
+    const promotionSearchUrl = `${config.ocapi_data_api_url}sites/${config.sfcc_site_id}/promotion_search`;
     const instance = axios.create({
         headers: {
             'content-type': 'application/json',

@@ -1,8 +1,9 @@
-const { Client } = require('@elastic/elasticsearch');
+// const { Client } = require('@elastic/elasticsearch');
+const { Client: Client6 } = require('es6');
 
 class ElasticSearch {
     constructor(config) {
-        this.client = new Client({ node: config.host, log: 'error' });
+        this.client = new Client6({ node: config.host, log: 'error' });
         this.INDEX_NAME = config.INDEX_NAME || 'sfcc-master-catalog';
     }
 

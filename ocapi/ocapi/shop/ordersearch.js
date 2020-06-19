@@ -1,14 +1,14 @@
 const axios = require('axios');
 const path = require('path');
-const chalk = require('chalk');
 const util = require('util');
 
 const configPath = path.resolve(process.cwd(), 'config.json');
+// eslint-disable-next-line import/no-dynamic-require
 const config = require(configPath);
 
 async function search(oauthToken, start, query) {
     const shopApiUrl = util.format(config.ocapi_shop_api_url, config.sfcc_site_id);
-    const orderSearchUrl = shopApiUrl + 'order_search';
+    const orderSearchUrl = `${shopApiUrl}order_search`;
     console.log(orderSearchUrl);
     const instance = axios.create({
         headers: {

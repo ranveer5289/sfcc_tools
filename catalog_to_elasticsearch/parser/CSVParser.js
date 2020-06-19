@@ -4,7 +4,7 @@ const fs = require('fs');
 let count = 0;
 let items = [];
 let totalProcessed = 0;
-const batchSize = 10000;
+const batchSize = 1000;
 
 function parseCSV(esClient, config) {
     const stream = fs.createReadStream(config.filePath);
@@ -21,11 +21,11 @@ function parseCSV(esClient, config) {
             };
             items.push({ index: action });
             items.push(row);
-
             if (count % batchSize === 0) {
                 totalProcessed += count;
                 parser.pause();
                 console.log(`Items processed in ElasticSearch ${totalProcessed}`);
+                console.log(items.length);
                 console.log('-----------------------');
 
                 await esClient.bulk(items);

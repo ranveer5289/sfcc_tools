@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 const path = require('path');
 
 require(path.resolve(process.cwd(), 'tasks', 'orderreport.js'));

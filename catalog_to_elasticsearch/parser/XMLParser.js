@@ -4,7 +4,7 @@ const fs = require('fs');
 let count = 0;
 let items = [];
 let totalProcessed = 0;
-const batchSize = 10000;
+const batchSize = 1000;
 
 async function parseXML(esClient, config) {
     const stream = fs.createReadStream(config.filePath);

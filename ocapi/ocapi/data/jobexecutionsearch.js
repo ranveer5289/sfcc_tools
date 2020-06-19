@@ -1,12 +1,12 @@
+/* eslint-disable import/no-dynamic-require */
 const axios = require('axios');
 const path = require('path');
-const chalk = require('chalk');
 
 const configPath = path.resolve(process.cwd(), 'config.json');
 const config = require(configPath);
 
 async function search(oauthToken, start, query) {
-    const jobSearchUrl = `${config.ocapi_data_api_url}` + 'job_execution_search';
+    const jobSearchUrl = `${config.ocapi_data_api_url}job_execution_search`;
     const instance = axios.create({
         headers: {
             'content-type': 'application/json',
@@ -20,8 +20,11 @@ async function search(oauthToken, start, query) {
     const date = new Date();
     date.setDate(date.getDate() - 1);
 
+    // eslint-disable-next-line max-len
     const startTime = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 20, 0, 0).toISOString();
+    // eslint-disable-next-line max-len
     const endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 19, 59, 0).toISOString();
+    // eslint-disable-next-line max-len
     // const endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 01, 59, 0).toISOString();
 
     // console.log(`Time Range ${startTime} -- ${endTime}`);
