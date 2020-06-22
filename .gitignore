@@ -111,3 +111,4 @@ dist
 *.txt
 config.json
 output
+xml.js

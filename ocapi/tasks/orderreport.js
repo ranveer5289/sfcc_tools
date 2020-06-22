@@ -43,6 +43,7 @@ async function getPromises(token) {
 async function execute(promises) {
     const results = await Promise.all(promises);
     if (!results) {
+        console.log('No orders found');
         return allOrders;
     }
     results.forEach(function (result) {
@@ -84,48 +85,52 @@ function getPayment(paymentInstruments) {
 }
 
 async function writeOrderReport() {
-    const token = await oauth.getClientCredentialGrant();
-    if (!token) {
-        process.exit(1);
-    }
-
-    console.log(chalk.green('Going to retrieve orders from SFCC'));
-    const promises = await getPromises(token);
-    const orders = await execute(promises);
-    if (orders && orders.length > 0) {
-        console.log(chalk.green(`Total orders found ${orders.length}`));
-
-        const writer = new CSVStream();
-        const output = path.resolve(process.cwd(), 'output', `${TASKID}_${config.sfcc_site_id}.csv`);
-        if (fs.existsSync(output)) {
-            fs.unlinkSync(output);
+    try {
+        const token = await oauth.getClientCredentialGrant();
+        if (!token) {
+            process.exit(1);
         }
-        writer.pipe(fs.createWriteStream(output));
 
-        orders.forEach(function (order) {
-            const mergedObject = {};
-            const customAttributes = getOrderAttributes(order.data);
-            const billingAddress = getAddress(order.data.billing_address, 'billing');
-            const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
-            const paymentData = getPayment(order.data.payment_instruments);
-            const additionalInfo = {
-                order_no: order.data.order_no,
-                customer_name: order.data.customer_info.customer_name,
-                customer_email: order.data.customer_info.email,
-                customer_no: order.data.customer_info.customer_no,
-                shipping_method_id: order.data.shipments[0].shipping_method.id
-            };
+        console.log(chalk.green('Going to retrieve orders from SFCC'));
+        const promises = await getPromises(token);
+        const orders = await execute(promises);
+        if (orders && orders.length > 0) {
+            console.log(chalk.green(`Total orders found ${orders.length}`));
 
-            Object.assign(mergedObject,
-                additionalInfo,
-                customAttributes,
-                billingAddress,
-                shippingAddress,
-                paymentData);
+            const writer = new CSVStream();
+            const output = path.resolve(process.cwd(), 'output', `${TASKID}_${config.sfcc_site_id}.csv`);
+            if (fs.existsSync(output)) {
+                fs.unlinkSync(output);
+            }
+            writer.pipe(fs.createWriteStream(output));
 
-            writer.write(mergedObject);
-        });
-        writer.end();
+            orders.forEach(function (order) {
+                const mergedObject = {};
+                const customAttributes = getOrderAttributes(order.data);
+                const billingAddress = getAddress(order.data.billing_address, 'billing');
+                const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
+                const paymentData = getPayment(order.data.payment_instruments);
+                const additionalInfo = {
+                    order_no: order.data.order_no,
+                    customer_name: order.data.customer_info.customer_name,
+                    customer_email: order.data.customer_info.email,
+                    customer_no: order.data.customer_info.customer_no,
+                    shipping_method_id: order.data.shipments[0].shipping_method.id
+                };
+
+                Object.assign(mergedObject,
+                    additionalInfo,
+                    customAttributes,
+                    billingAddress,
+                    shippingAddress,
+                    paymentData);
+
+                writer.write(mergedObject);
+            });
+            writer.end();
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 

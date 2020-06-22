@@ -18,16 +18,13 @@ async function search(oauthToken, start, query) {
 
     const index = start || 0;
     const date = new Date();
-    date.setDate(date.getDate() - 1);
+    date.setDate(date.getDate() - 2);
 
     // eslint-disable-next-line max-len
     const startTime = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 20, 0, 0).toISOString();
     // eslint-disable-next-line max-len
     const endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 19, 59, 0).toISOString();
-    // eslint-disable-next-line max-len
-    // const endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1, 01, 59, 0).toISOString();
 
-    // console.log(`Time Range ${startTime} -- ${endTime}`);
     const postData = query || `{
         "start": ${index},
         "count": 200,

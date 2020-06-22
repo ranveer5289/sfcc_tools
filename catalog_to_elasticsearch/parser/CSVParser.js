@@ -16,7 +16,7 @@ function parseCSV(esClient, config) {
             count += 1;
             const action = {
                 _index: esClient.INDEX_NAME,
-                _type: '_doc',
+                _type: esClient.TYPE,
                 _id: row.ID
             };
             items.push({ index: action });

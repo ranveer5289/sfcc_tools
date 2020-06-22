@@ -5,6 +5,7 @@ class ElasticSearch {
     constructor(config) {
         this.client = new Client6({ node: config.host, log: 'error' });
         this.INDEX_NAME = config.INDEX_NAME || 'sfcc-master-catalog';
+        this.TYPE = config.TYPE || '_doc';
     }
 
     async indexExists() {
