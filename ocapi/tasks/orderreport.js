@@ -84,6 +84,48 @@ function getPayment(paymentInstruments) {
     return paymentObj;
 }
 
+function getOrderPromotions(order) {
+    if (order.order_price_adjustments) {
+        const orderPromotions = order.order_price_adjustments.map(function (orderPA) {
+            return orderPA.promotion_id;
+        }).join(',');
+        const orderCoupons = order.order_price_adjustments.map(function (orderPA) {
+            return orderPA.coupon_code || '';
+        }).join(',');
+
+        return {
+            order_promotions: orderPromotions,
+            order_coupons: orderCoupons
+        };
+    }
+    return {
+        order_promotions: '',
+        order_coupons: ''
+    };
+}
+
+function getProductPromotions(productItems) {
+    const productPromotions = [];
+    const productCoupons = [];
+    if (productItems) {
+        productItems.forEach(function (item) {
+            if (item.price_adjustments) {
+                item.price_adjustments.forEach(function (pa) {
+                    if (productPromotions.indexOf(pa.promotion_id) === -1) {
+                        productPromotions.push(pa.promotion_id);
+                    }
+                    if (productCoupons.indexOf(pa.coupon_code) === -1) {
+                        productCoupons.push(pa.coupon_code || '');
+                    }
+                });
+            }
+        });
+    }
+    return {
+        product_promotions: productPromotions.join(','),
+        product_coupons: productCoupons.join(',')
+    };
+}
 async function writeOrderReport() {
     try {
         const token = await oauth.getClientCredentialGrant();
@@ -110,6 +152,8 @@ async function writeOrderReport() {
                 const billingAddress = getAddress(order.data.billing_address, 'billing');
                 const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
                 const paymentData = getPayment(order.data.payment_instruments);
+                const orderPromotions = getOrderPromotions(order.data);
+                const productPromotions = getProductPromotions(order.data.product_items);
                 const additionalInfo = {
                     order_no: order.data.order_no,
                     customer_name: order.data.customer_info.customer_name,
@@ -123,6 +167,8 @@ async function writeOrderReport() {
                     customAttributes,
                     billingAddress,
                     shippingAddress,
+                    orderPromotions,
+                    productPromotions,
                     paymentData);
 
                 writer.write(mergedObject);
