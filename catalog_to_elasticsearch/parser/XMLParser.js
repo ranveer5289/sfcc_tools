@@ -95,7 +95,7 @@ async function parseXML(esClient, config) {
             key = attributeId;
         }
 
-        productObj[key] = attributeId === 'additionalInformation' ? '' : values;
+        productObj[key] = values;
     });
 
     xml.on('endElement: variants', function (item) {
@@ -105,6 +105,7 @@ async function parseXML(esClient, config) {
                 return child.$['product-id'];
             }).join(',');
             productObj[item.$name] = variants;
+            productObj.productType = 'master';
         }
     });
 
