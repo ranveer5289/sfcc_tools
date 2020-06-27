@@ -23,9 +23,6 @@ async function parseXML(esClient, config) {
         productObj[key] = item.$name;
     });
 
-    xml.on('endElement: available-flag', function (item) {
-        productObj[item.$name] = item.$text;
-    });
     xml.on('endElement: tax-class-id', function (item) {
         productObj[item.$name] = item.$text;
     });
@@ -78,6 +75,7 @@ async function parseXML(esClient, config) {
 
         const children = item.$children;
         if (children && children.length > 0) {
+            // handle multi-value attributes
             values = children.map(function (child) {
                 if (child.$text) {
                     return child.$text;
@@ -135,7 +133,6 @@ async function parseXML(esClient, config) {
         if (count % batchSize === 0) {
             totalProcessed += count;
             xml.pause();
-            // console.log(items);
             await esClient.bulk(items);
             console.log(`Items processed in ElasticSearch ${totalProcessed}`);
             count = 0;

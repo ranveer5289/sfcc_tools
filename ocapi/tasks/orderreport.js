@@ -165,10 +165,10 @@ async function writeOrderReport() {
                 Object.assign(mergedObject,
                     additionalInfo,
                     customAttributes,
-                    billingAddress,
-                    shippingAddress,
                     orderPromotions,
                     productPromotions,
+                    billingAddress,
+                    shippingAddress,
                     paymentData);
 
                 writer.write(mergedObject);
