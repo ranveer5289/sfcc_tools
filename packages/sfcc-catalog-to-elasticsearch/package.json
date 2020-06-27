@@ -1,0 +1,16 @@
+{
+  "name": "@sfcc_tools/sfcc-catalog-to-elasticsearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/elasticsearch": "^1.0.0"
+  }
+}

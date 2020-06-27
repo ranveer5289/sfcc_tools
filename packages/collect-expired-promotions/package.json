@@ -1,0 +1,19 @@
+{
+  "name": "@sfcc_tools/collect-expired-promotions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/ocapi": "^1.0.0",
+    "chalk": "^4.1.0",
+    "csv-write-stream": "^2.0.0",
+    "p-limit": "^3.0.1"
+  }
+}

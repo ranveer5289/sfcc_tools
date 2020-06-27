@@ -1,0 +1,17 @@
+{
+  "name": "@sfcc_tools/ocapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2", 
+    "chalk": "^4.1.0"
+  }
+}

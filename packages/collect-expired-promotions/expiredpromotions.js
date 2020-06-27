@@ -4,14 +4,14 @@ const path = require('path');
 const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
+const ocapi = require('@sfcc_tools/ocapi');
 
 const TASKID = 'expiredpromotions';
 
-const configPath = path.resolve(process.cwd(), 'config.json');
-const config = require(configPath);
+const config = require('../ocapi/config.json');
 
-const oauth = require(path.resolve(process.cwd(), 'ocapi', 'auth', 'oauth.js'));
-const promotionSearch = require(path.resolve(process.cwd(), 'ocapi', 'data', 'promotionsearch.js'));
+const oauth = ocapi.oauth;
+const promotionSearch = ocapi.promotionsearch;
 
 async function getAllPromotions(token) {
     let promotionResponse = await promotionSearch.search(token);

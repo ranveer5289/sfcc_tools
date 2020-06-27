@@ -3,7 +3,7 @@ const axios = require('axios');
 const path = require('path');
 const chalk = require('chalk');
 
-const configPath = path.resolve(process.cwd(), 'config.json');
+const configPath = path.resolve(__dirname, '..', 'config.json');
 const config = require(configPath);
 
 async function getClientCredentialGrant() {

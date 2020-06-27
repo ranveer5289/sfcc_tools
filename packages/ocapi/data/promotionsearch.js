@@ -2,7 +2,7 @@
 const axios = require('axios');
 const path = require('path');
 
-const configPath = path.resolve(process.cwd(), 'config.json');
+const configPath = path.resolve(__dirname, '..', 'config.json');
 const config = require(configPath);
 
 async function search(oauthToken, start, query) {
