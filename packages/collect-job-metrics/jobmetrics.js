@@ -4,10 +4,12 @@ const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
 
+const ocapi = require('@sfcc_tools/ocapi');
+
 const TASKID = 'jobmetrics';
 
-const oauth = require(path.resolve(process.cwd(), 'ocapi', 'auth', 'oauth.js'));
-const jobSearch = require(path.resolve(process.cwd(), 'ocapi', 'data', 'jobexecutionsearch.js'));
+const oauth = ocapi.oauth;
+const jobSearch = ocapi.jobexecutionsearch;
 
 async function getAllJobExecutions(token) {
     const jobResponse = await jobSearch.search(token);

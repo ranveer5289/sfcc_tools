@@ -5,16 +5,17 @@ const fs = require('fs');
 const chalk = require('chalk');
 const pLimit = require('p-limit');
 
+const ocapi = require('@sfcc_tools/ocapi');
+
 const TASKID = 'orderreport';
 const limit = pLimit(10);
 
 let allOrders = [];
 
-const configPath = path.resolve(process.cwd(), 'config.json');
-const config = require(configPath);
+const config = require('../ocapi/config.json');
 
-const oauth = require(path.resolve(process.cwd(), 'ocapi', 'auth', 'oauth.js'));
-const orderSearch = require(path.resolve(process.cwd(), 'ocapi', 'shop', 'ordersearch.js'));
+const oauth = ocapi.oauth;
+const orderSearch = ocapi.ordersearch;
 
 async function getPromises(token) {
     const apiResponse = await orderSearch.search(token);

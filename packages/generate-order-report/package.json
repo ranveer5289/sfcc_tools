@@ -1,22 +1,22 @@
 {
-  "name": "@sfcc_tools/elasticsearch",
+  "name": "@sfcc_tools/generate-order-report",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private": true,
   "scripts": {
+    "start": "node orderreport.js",
     "lint": "eslint ."
-  },
-  "dependencies": {
-    "@elastic/elasticsearch": "^7.7.1",
-    "es6": "npm:@elastic/elasticsearch@^6.8.7",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "fast-csv": "^4.3.0",
-    "xml-stream": "^0.4.5"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/ocapi": "^1.0.0",
+    "chalk": "^4.1.0",
+    "csv-write-stream": "^2.0.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "p-limit": "^3.0.1"
+  },
   "devDependencies": {
     "eslint": "7.2.0",
     "eslint-config-airbnb": "18.1.0",

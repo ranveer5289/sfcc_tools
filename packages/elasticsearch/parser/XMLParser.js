@@ -20,7 +20,7 @@ async function parseXML(esClient, config) {
         } else {
             key = item.$name;
         }
-        productObj[key] = item.$name;
+        productObj[key] = item.$text;
     });
 
     xml.on('endElement: tax-class-id', function (item) {
