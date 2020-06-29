@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.7.1",
+    "config": "^3.3.1",
     "es6": "npm:@elastic/elasticsearch@^6.8.7",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "fast-csv": "^4.3.0",

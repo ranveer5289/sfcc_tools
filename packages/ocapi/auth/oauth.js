@@ -3,12 +3,14 @@ const axios = require('axios');
 const path = require('path');
 const chalk = require('chalk');
 
-const configPath = path.resolve(__dirname, '..', 'config.json');
-const config = require(configPath);
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
+const config = require('config');
+
+const ocapiConfig = config.get('packages.ocapi');
 
 async function getClientCredentialGrant() {
-    const accountManagerUrl = config.account_manager_url;
-    const basicAuth = Buffer.from(`${config.ocapi_client_id}:${config.ocapi_client_secret}`).toString('base64');
+    const accountManagerUrl = ocapiConfig.account_manager_url;
+    const basicAuth = Buffer.from(`${ocapiConfig.ocapi_client_id}:${ocapiConfig.ocapi_client_secret}`).toString('base64');
     const instance = axios.create({
         headers: {
             'content-type': 'application/x-www-form-urlencoded',

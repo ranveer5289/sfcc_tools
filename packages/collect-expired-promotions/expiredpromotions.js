@@ -8,7 +8,10 @@ const ocapi = require('@sfcc_tools/ocapi');
 
 const TASKID = 'expiredpromotions';
 
-const config = require('../ocapi/config.json');
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
+const config = require('config');
+
+const ocapiConfig = config.get('packages.ocapi');
 
 const oauth = ocapi.oauth;
 const promotionSearch = ocapi.promotionsearch;
@@ -49,7 +52,7 @@ async function writeExpiredPromotionsInCSV() {
         const offsetDate = new Date(date.getTime() - (offset * 24 * 60 * 60 * 1000));
 
         const writer = new CSVStream();
-        const output = path.resolve(process.cwd(), 'output', `${TASKID}_${config.sfcc_site_id}.csv`);
+        const output = path.resolve(process.cwd(), 'output', `${TASKID}_${ocapiConfig.sfcc_site_id}.csv`);
         if (fs.existsSync(output)) {
             fs.unlinkSync(output);
         }

@@ -2,18 +2,19 @@ const axios = require('axios');
 const path = require('path');
 const util = require('util');
 
-const configPath = path.resolve(__dirname, '..', 'config.json');
-// eslint-disable-next-line import/no-dynamic-require
-const config = require(configPath);
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
+const config = require('config');
+
+const ocapiConfig = config.get('packages.ocapi');
 
 async function search(oauthToken, start, query) {
-    const shopApiUrl = util.format(config.ocapi_shop_api_url, config.sfcc_site_id);
+    const shopApiUrl = util.format(ocapiConfig.ocapi_shop_api_url, ocapiConfig.sfcc_site_id);
     const orderSearchUrl = `${shopApiUrl}order_search`;
     console.log(orderSearchUrl);
     const instance = axios.create({
         headers: {
             'content-type': 'application/json',
-            'x-dw-client-id': `${config.ocapi_client_id}`,
+            'x-dw-client-id': `${ocapiConfig.ocapi_client_id}`,
             authorization: `Bearer ${oauthToken}`
         },
         timeout: 200000 // really slow

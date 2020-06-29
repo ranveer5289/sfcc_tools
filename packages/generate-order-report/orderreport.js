@@ -12,7 +12,10 @@ const limit = pLimit(10);
 
 let allOrders = [];
 
-const config = require('../ocapi/config.json');
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
+const config = require('config');
+
+const ocapiConfig = config.get('packages.ocapi');
 
 const oauth = ocapi.oauth;
 const orderSearch = ocapi.ordersearch;
@@ -141,7 +144,7 @@ async function writeOrderReport() {
             console.log(chalk.green(`Total orders found ${orders.length}`));
 
             const writer = new CSVStream();
-            const output = path.resolve(process.cwd(), 'output', `${TASKID}_${config.sfcc_site_id}.csv`);
+            const output = path.resolve(process.cwd(), 'output', `${TASKID}_${ocapiConfig.sfcc_site_id}.csv`);
             if (fs.existsSync(output)) {
                 fs.unlinkSync(output);
             }
