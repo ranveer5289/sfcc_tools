@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fetch": "node fetchECDNLog.js",
+    "download": "node downloadECDNLog.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sfcc_tools/ocapi": "^1.0.0"
+    "@sfcc_tools/ocapi": "^1.0.0",
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1"
   }
 }

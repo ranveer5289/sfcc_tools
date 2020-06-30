@@ -24,4 +24,26 @@ async function initLogFetchRequest(oauthToken, startTime) {
     return instance.post(ecdnInitUrl, postData);
 }
 
+async function downloadECDNLog(oauthToken, logFetchRequestId) {
+    const ecdnInitUrl = `${ocapiConfig.ocapi_data_api_url}log_requests/ecdn/${logFetchRequestId}`;
+    const instance = axios.create({
+        headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${oauthToken}`
+        }
+    });
+
+    return instance.get(ecdnInitUrl);
+}
+
+async function downloadFileToDisk(url) {
+    return axios({
+        method: 'get',
+        url: url,
+        responseType: 'stream'
+    });
+}
+
 module.exports.initLogFetchRequest = initLogFetchRequest;
+module.exports.downloadECDNLog = downloadECDNLog;
+module.exports.downloadFileToDisk = downloadFileToDisk;

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-dynamic-require */
 const path = require('path');
 const fs = require('fs');
+const chalk = require('chalk');
 
 const ocapi = require('@sfcc_tools/ocapi');
 
@@ -16,7 +17,7 @@ function getTimeSlots() {
         '22:00', '23:00'
     ];
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() - 2);
+    targetDate.setDate(targetDate.getDate() - 1);
 
     const formattedDate = `${targetDate.getFullYear()}-${targetDate.getMonth() + 1}-${targetDate.getDate()}`;
 
@@ -33,6 +34,7 @@ function getTimeSlots() {
 async function fetch() {
     const token = await oauth.getClientCredentialGrant();
     if (!token) {
+        console.log(chalk.red('Error getting oauth token from SFCC'));
         process.exit(1);
     }
 
@@ -59,9 +61,15 @@ async function fetch() {
                 fs.writeFileSync(file, JSON.stringify(logFetchRequestIds));
                 console.log(`Successfully written request ids in file ${file}`);
             }
+        } else {
+            console.log(chalk.red('No output'));
         }
     } catch (error) {
-        console.log(error.message);
+        if (error.response.data) {
+            console.log(error.response.data);
+        } else {
+            console.log(error.message);
+        }
     }
 
 }
