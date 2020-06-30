@@ -48,21 +48,23 @@ async function download() {
             });
 
             if (notFinishedRequests.length > 0) {
-                console.log(chalk.red('One or more log fetch requests on the server are still not finished.Retry this task in a few minutes'));
+                console.log(chalk.red('One or more log fetch requests on the server are still not finished.'));
+                console.log(chalk.red('We will continue with downloading other log files. You can re-run the task/script to download all files again.'));
                 console.log(notFinishedRequests);
-                process.exit(1);
             }
+
             const outDirectory =  path.join(__dirname, 'logs');
             if (!fs.existsSync(outDirectory)) {
                 fs.mkdirSync(outDirectory);
             } else {
                 fsExtra.emptyDirSync(outDirectory);
             }
-
-            results.forEach(function(result) {
+        
+            console.log('Downloading log files now from the server');
+            results.filter(function (result) {
+                return result.data.status === 'finished';
+            }).forEach(function(result) {
                 const downloadPath = path.join(outDirectory, `${result.data.id}.log.gz`);
-                console.log(`Going to Download log file ${result.data.link}`);
-                console.log('-------------------------------------------------------------');
 
                 ecdn.downloadFileToDisk(result.data.link).then(function(response) {
                     response.data.pipe(fs.createWriteStream(downloadPath));
@@ -72,7 +74,11 @@ async function download() {
             });
         }
     } catch (error) {
-        console.log(error);
+        if (error.response && error.response.data) {
+            console.log(error.response.data);
+        } else {
+            console.log(error.message);
+        }
     }
 
 }

@@ -60,12 +60,14 @@ async function fetch() {
                 }
                 fs.writeFileSync(file, JSON.stringify(logFetchRequestIds));
                 console.log(`Successfully written request ids in file ${file}`);
+            } else {
+                console.log('Something went wrong!!!');
             }
         } else {
-            console.log(chalk.red('No output'));
+            console.log(chalk.red('No response from SFCC server'));
         }
     } catch (error) {
-        if (error.response.data) {
+        if (error.response && error.response.data) {
             console.log(error.response.data);
         } else {
             console.log(error.message);
