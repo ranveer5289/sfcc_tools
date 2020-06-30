@@ -2,13 +2,16 @@
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-
 const ocapi = require('@sfcc_tools/ocapi');
 
-const TASKID = 'fetchECDNLog';
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
+const config = require('config');
 
+const ecdnConfig = config.get('ecdn-waf-logs');
 const oauth = ocapi.oauth;
 const ecdn = ocapi.ecdn;
+
+// const TASKID = 'fetchECDNLog';
 
 function getTimeSlots() {
     const slotPrefixes = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00',
@@ -17,7 +20,8 @@ function getTimeSlots() {
         '22:00', '23:00'
     ];
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() - 1);
+    const offset = ecdnConfig.date_offset || 1;
+    targetDate.setDate(targetDate.getDate() - offset);
 
     const formattedDate = `${targetDate.getFullYear()}-${targetDate.getMonth() + 1}-${targetDate.getDate()}`;
 
@@ -73,7 +77,6 @@ async function fetch() {
             console.log(error.message);
         }
     }
-
 }
 
 module.exports = fetch();

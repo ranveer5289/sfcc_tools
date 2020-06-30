@@ -13,6 +13,9 @@
             "doc_type" : "products",
             "index_name" : "sfcc-master-catalog"
         },
+        "ecdn-waf-logs" : {
+            "date_offset" : 1 // offset from today's date so '1' means download yesterday's ecdn log
+        },
         "<some-other-package-id>" : {
             
         }

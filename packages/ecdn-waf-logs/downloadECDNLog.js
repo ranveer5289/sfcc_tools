@@ -2,15 +2,13 @@
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const fsExtra = require('fs-extra')
-
+const fsExtra = require('fs-extra');
 const ocapi = require('@sfcc_tools/ocapi');
-
-const TASKID = 'downloadECDNLog';
 
 const oauth = ocapi.oauth;
 const ecdn = ocapi.ecdn;
 
+// const TASKID = 'downloadECDNLog';
 
 function getLogFetchRequestIds(filePath) {
     const data = fs.readFileSync(filePath);
@@ -18,7 +16,7 @@ function getLogFetchRequestIds(filePath) {
         return JSON.parse(data.toString());
     }
     return null;
-};
+}
 
 async function download() {
     const token = await oauth.getClientCredentialGrant();
@@ -53,22 +51,22 @@ async function download() {
                 console.log(notFinishedRequests);
             }
 
-            const outDirectory =  path.join(__dirname, 'logs');
+            const outDirectory = path.join(__dirname, 'logs');
             if (!fs.existsSync(outDirectory)) {
                 fs.mkdirSync(outDirectory);
             } else {
                 fsExtra.emptyDirSync(outDirectory);
             }
-        
+
             console.log('Downloading log files now from the server');
             results.filter(function (result) {
                 return result.data.status === 'finished';
-            }).forEach(function(result) {
+            }).forEach(function (result) {
                 const downloadPath = path.join(outDirectory, `${result.data.id}.log.gz`);
 
-                ecdn.downloadFileToDisk(result.data.link).then(function(response) {
+                ecdn.downloadFileToDisk(result.data.link).then(function (response) {
                     response.data.pipe(fs.createWriteStream(downloadPath));
-                }).catch(function(error) {
+                }).catch(function (error) {
                     console.log(error);
                 });
             });
@@ -80,7 +78,6 @@ async function download() {
             console.log(error.message);
         }
     }
-
 }
 
 module.exports = download();
