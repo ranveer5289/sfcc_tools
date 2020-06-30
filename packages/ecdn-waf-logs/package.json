@@ -1,0 +1,15 @@
+{
+  "name": "@sfcc_tools/ecdn-waf-logs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/ocapi": "^1.0.0"
+  }
+}

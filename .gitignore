@@ -113,3 +113,4 @@ config.json
 output
 xml.js
 default.json
+ecdn-request-ids.json

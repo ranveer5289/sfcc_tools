@@ -25,11 +25,13 @@ async function getAllJobExecutions(token) {
     const asyncFunctions = [];
     console.log(chalk.green(`Total job executions ${totalHits}`));
     const counter = Math.ceil(totalHits / 200);
+
     for (let i = 1; i < counter; i += 1) {
         const start = i * 200;
         console.log(chalk.green(`Fetching job executions from index ${start}`));
         asyncFunctions.push(jobSearch.search(token, start));
     }
+
     try {
         const results = await Promise.all(asyncFunctions);
         if (results && results.length > 0) {

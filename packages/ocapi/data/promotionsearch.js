@@ -2,15 +2,17 @@
 const axios = require('axios');
 const path = require('path');
 
-const configPath = path.resolve(__dirname, '..', 'config.json');
-const config = require(configPath);
+process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', '..', 'config');
+const config = require('config');
+
+const ocapiConfig = config.get('packages.ocapi');
 
 async function search(oauthToken, start, query) {
-    const promotionSearchUrl = `${config.ocapi_data_api_url}sites/${config.sfcc_site_id}/promotion_search`;
+    const promotionSearchUrl = `${ocapiConfig.ocapi_data_api_url}sites/${ocapiConfig.sfcc_site_id}/promotion_search`;
     const instance = axios.create({
         headers: {
             'content-type': 'application/json',
-            'x-dw-client-id': `${config.ocapi_client_id}`,
+            'x-dw-client-id': `${ocapiConfig.ocapi_client_id}`,
             authorization: `Bearer ${oauthToken}`
         }
     });

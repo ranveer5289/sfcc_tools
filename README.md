@@ -4,7 +4,7 @@ Command line utility scripts and tools for Salesforce Commerce Cloud(SFCC)
 ```js
 npm init --scope=sfcc_tools --yes
 
-lerna add @sfcc_tools/ocapi --scope=@sfcc_tools/generate-order-report
+lerna add @sfcc_tools/ocapi --scope=@sfcc_tools/ecdn-waf-logs
 
 lerna run lint
 ```
