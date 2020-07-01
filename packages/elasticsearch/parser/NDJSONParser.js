@@ -1,10 +1,12 @@
 const LineByLineReader = require('line-by-line');
 
+// @TODO: should be in ecdn package
 function parseJSON(esClient, config, resolve, reject) {
     let count = 0;
     let items = [];
     let totalProcessed = 0;
     const batchSize = 1000;
+    const helper = config.helper;
     const lineReader = new LineByLineReader(config.filePath);
 
     lineReader.on('line', async function (line) {
@@ -12,6 +14,10 @@ function parseJSON(esClient, config, resolve, reject) {
         let obj;
         try {
             obj = JSON.parse(line.trim());
+            obj.ClientRequestURIWithoutVersion = helper.getNonCachedUrl(obj.ClientRequestURI);
+            obj.IsPageWithQS = helper.isQueryString(obj.ClientRequestURI);
+            obj.PageType = helper.getPageType(obj.ClientRequestURI);
+
             const action = {
                 _index: esClient.INDEX_NAME,
                 _type: esClient.TYPE,

@@ -10,6 +10,8 @@ const ecdnConfig = config.get('packages.ecdn-waf-logs');
 
 const ES = elasticsearch.ES;
 
+const ecdnHelper = require('./helper/util');
+
 const client = new ES({
     host: ecdnConfig.elasticsearch_host,
     TYPE: ecdnConfig.doc_type,
@@ -63,7 +65,7 @@ async function addToES() {
         const fullPath = path.join(inputPath, logFiles[i]);
         console.log(`Going to add ${fullPath} to ES`);
         // eslint-disable-next-line no-await-in-loop
-        await elasticsearch.ndjsonparser(client, { filePath: fullPath });
+        await elasticsearch.ndjsonparser(client, { filePath: fullPath, helper: ecdnHelper });
     }
 }
 
