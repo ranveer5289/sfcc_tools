@@ -7,7 +7,7 @@ const ocapi = require('@sfcc_tools/ocapi');
 process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
 const config = require('config');
 
-const ecdnConfig = config.get('ecdn-waf-logs');
+const ecdnConfig = config.get('packages.ecdn-waf-logs');
 const oauth = ocapi.oauth;
 const ecdn = ocapi.ecdn;
 
