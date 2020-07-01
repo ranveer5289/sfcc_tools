@@ -9,12 +9,16 @@
             "sfcc_site_id": "site_id"
         },
         "sfcc-catalog-to-elasticsearch" : {
-            "elasticsearchHost" : "http://localhost:9200",
+            "elasticsearch_host" : "http://localhost:9200",
             "doc_type" : "products",
             "index_name" : "sfcc-master-catalog"
         },
         "ecdn-waf-logs" : {
-            "date_offset" : 1 // offset from today's date so '1' means download yesterday's ecdn log
+            "ecdn_zone_name" : "site.com",
+            "date_offset" : 1, // offset from today's date, so '1' means download yesterday's ecdn log
+            "elasticsearch_host" : "http://localhost:9200",
+            "doc_type" : "logs",
+            "index_name": "ecdn-logs"
         },
         "<some-other-package-id>" : {
             

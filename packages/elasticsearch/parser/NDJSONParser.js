@@ -12,26 +12,26 @@ function parseJSON(esClient, config, resolve, reject) {
         let obj;
         try {
             obj = JSON.parse(line.trim());
+            const action = {
+                _index: esClient.INDEX_NAME,
+                _type: esClient.TYPE,
+                _id: obj.RayID
+            };
+            items.push({ index: action });
+            items.push(obj);
+
+            if (count % batchSize === 0) {
+                totalProcessed += count;
+                lineReader.pause();
+                console.log(`Items processed in ElasticSearch ${totalProcessed}`);
+
+                await esClient.bulk(items);
+                count = 0;
+                items = [];
+                lineReader.resume();
+            }
         } catch (error) {
             console.log(error);
-        }
-        const action = {
-            _index: esClient.INDEX_NAME,
-            _type: esClient.TYPE,
-            _id: obj.RayID
-        };
-        items.push({ index: action });
-        items.push(obj);
-
-        if (count % batchSize === 0) {
-            totalProcessed += count;
-            lineReader.pause();
-            console.log(`Items processed in ElasticSearch ${totalProcessed}`);
-
-            await esClient.bulk(items);
-            count = 0;
-            items = [];
-            lineReader.resume();
         }
     });
 
@@ -51,9 +51,9 @@ function parseJSON(esClient, config, resolve, reject) {
     });
 }
 
-function parseJSONPromise(esClient, config) {
+function parseJSONPromisify(esClient, config) {
     return new Promise(function (resolve, reject) {
         parseJSON(esClient, config, resolve, reject);
     });
 }
-module.exports = parseJSONPromise;
+module.exports = parseJSONPromisify;

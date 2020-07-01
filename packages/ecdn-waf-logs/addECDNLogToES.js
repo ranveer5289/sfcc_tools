@@ -6,15 +6,14 @@ const elasticsearch = require('@sfcc_tools/elasticsearch');
 process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
 const config = require('config');
 
-const esConfig = config.get('packages.sfcc-catalog-to-elasticsearch');
+const ecdnConfig = config.get('packages.ecdn-waf-logs');
 
 const ES = elasticsearch.ES;
 
-// @TODO
 const client = new ES({
-    host: esConfig.elasticsearchHost,
-    TYPE: 'logs',
-    INDEX_NAME: 'ecdn-logs'
+    host: ecdnConfig.elasticsearch_host,
+    TYPE: ecdnConfig.doc_type,
+    INDEX_NAME: ecdnConfig.index_name
 });
 
 function getFilesFromDirectory(inputPath, extName) {

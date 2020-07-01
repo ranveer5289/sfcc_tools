@@ -7,7 +7,7 @@ const config = require('config');
 
 const ocapiConfig = config.get('packages.ocapi');
 
-async function initLogFetchRequest(oauthToken, startTime) {
+async function initLogFetchRequest(oauthToken, startTime, zoneName) {
     const ecdnInitUrl = `${ocapiConfig.ocapi_data_api_url}log_requests/ecdn`;
     const instance = axios.create({
         headers: {
@@ -18,7 +18,7 @@ async function initLogFetchRequest(oauthToken, startTime) {
 
     // end_time defaults to 1 hour from start_time
     const postData = {
-        zone_name: ocapiConfig.ecdn_zone_name,
+        zone_name: zoneName,
         start_time: startTime
     };
     return instance.post(ecdnInitUrl, postData);

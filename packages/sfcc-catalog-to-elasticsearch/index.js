@@ -11,7 +11,7 @@ const XMLParser = elasticsearch.xmlparser;
 // const CSVParser = elasticsearch.csvparser;
 
 const client = new ES({
-    host: esConfig.elasticsearchHost,
+    host: esConfig.elasticsearch_host,
     TYPE: esConfig.doc_type,
     INDEX_NAME: esConfig.index_name
 });

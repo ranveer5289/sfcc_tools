@@ -46,7 +46,7 @@ async function fetch() {
     const timeSlots = slotObject.timeSlots;
 
     const asyncFunctions = timeSlots.map(function (timeSlot) {
-        return ecdn.initLogFetchRequest(token, timeSlot);
+        return ecdn.initLogFetchRequest(token, timeSlot, ecdnConfig.ecdn_zone_name);
     });
 
     try {
