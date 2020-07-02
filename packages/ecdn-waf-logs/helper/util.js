@@ -43,13 +43,27 @@ function getPageType(siteUrl) {
         '.xml': 'xml',
         '.txt': 'text'
     };
-
     let pageType = 'other';
     const ext = getExtension(siteUrl);
     if (siteUrl.indexOf('/images/') !== -1) {
         pageType = 'image';
-    } else if (siteUrl.indexOf('__Analytics-Start') !== -1) {
+    } else if (siteUrl.indexOf('__Analytics-') !== -1) {
         pageType = 'sfcc-analytics';
+    } else if (siteUrl.indexOf('CQRecomm-') !== -1) {
+        pageType = 'sfcc-einstein';
+    } else if (siteUrl.indexOf('dwvar_') !== -1 || siteUrl.indexOf('Product-') !== -1) {
+        pageType = 'pdp';
+    } else if (siteUrl.indexOf('Login-') !== -1) {
+        pageType = 'login';
+    } else if (siteUrl.indexOf('Account-') !== -1) {
+        pageType = 'account';
+    } else if (siteUrl.indexOf('Cart-') !== -1 || siteUrl.indexOf('Checkout-') !== -1
+             || siteUrl.indexOf('COShipping-') !== -1 || siteUrl.indexOf('COBilling-') !== -1) {
+        pageType = 'checkout';
+    } else if (siteUrl.indexOf('Search-') !== -1) {
+        pageType = 'search';
+    } else if (siteUrl.indexOf('prefn1=') !== -1 || siteUrl.indexOf('pmin=') !== -1 || siteUrl.indexOf('srule=') !== -1) {
+        pageType = 'search-refinement-sorting';
     } else if (ext in specialMapping) {
         pageType = specialMapping[ext];
     }

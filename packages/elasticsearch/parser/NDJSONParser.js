@@ -17,6 +17,7 @@ function parseJSON(esClient, config, resolve, reject) {
             obj.ClientRequestURIWithoutVersion = helper.getNonCachedUrl(obj.ClientRequestURI);
             obj.IsPageWithQS = helper.isQueryString(obj.ClientRequestURI);
             obj.PageType = helper.getPageType(obj.ClientRequestURI);
+            obj.LogFileName = config.filePath;
 
             const action = {
                 _index: esClient.INDEX_NAME,
