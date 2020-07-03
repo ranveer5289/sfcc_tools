@@ -68,11 +68,11 @@ function writeAsW3C(inputPath, outputPath) {
 
         readStream.on('end', function () {
             readStream.close();
-            resolve();
+            return resolve();
         });
 
         readStream.on('error', function (error) {
-            reject(error);
+            return reject(error);
         });
     });
 }
