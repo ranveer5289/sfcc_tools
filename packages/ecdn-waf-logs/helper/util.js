@@ -1,5 +1,7 @@
 const urlLib = require('url');
 const path = require('path');
+const fs = require('fs');
+const zlib = require('zlib');
 
 function getNonCachedUrl(url) {
     let notCachedUrl = url;
@@ -70,6 +72,44 @@ function getPageType(siteUrl) {
     return pageType;
 }
 
+function getFilesFromDirectory(inputPath, extName) {
+    const files = fs.readdirSync(inputPath);
+    if (!files) {
+        console.log(`No files found in ${inputPath}`);
+        return null;
+    }
+
+    const filteredFiles = files.filter(function (file) {
+        return path.extname(file) === extName;
+    });
+    return filteredFiles;
+}
+
+function extractAllLogFiles(inputPath) {
+    const logFiles = getFilesFromDirectory(inputPath, '.gz');
+    if (!logFiles) {
+        return null;
+    }
+
+    return Promise.all(logFiles.map(function (logFile) {
+        return new Promise(function (resolve, reject) {
+            const sourcePath = path.join(inputPath, logFile);
+            const destinationPath = sourcePath.replace('.gz', '');
+            const fileContents = fs.createReadStream(sourcePath);
+            const writeStream = fs.createWriteStream(destinationPath);
+            const unzip = zlib.createGunzip();
+            fileContents.pipe(unzip).pipe(writeStream).on('finish', function (err) {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve();
+            });
+        });
+    }));
+}
+
 module.exports.getNonCachedUrl = getNonCachedUrl;
 module.exports.isQueryString = isQueryString;
 module.exports.getPageType = getPageType;
+module.exports.getFilesFromDirectory = getFilesFromDirectory;
+module.exports.extractAllLogFiles = extractAllLogFiles;

@@ -7,6 +7,7 @@
     "fetch": "node fetchECDNLog.js",
     "download": "node downloadECDNLog.js",
     "add": "node addECDNLogToES.js",
+    "transform" : "node transformToW3C.js",
     "lint": "eslint ."
   },
   "keywords": [],
@@ -18,9 +19,7 @@
     "chalk": "^4.1.0",
     "config": "^3.3.1",
     "fs-extra": "^9.0.1",
-    "gunzip-file": "^0.1.1",
-    "ndjson": "^1.5.0",
-    "unzip-stream": "^0.3.0"
+    "split2": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "7.2.0",

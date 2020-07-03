@@ -47,7 +47,7 @@ async function download() {
 
             if (notFinishedRequests.length > 0) {
                 console.log(chalk.red('One or more log fetch requests on the server are still not finished.'));
-                console.log(chalk.red('We will continue with downloading other log files. You can re-run the task/script to download all files again.'));
+                console.log(chalk.red('We will continue with downloading other finished log files. You can re-run the task/script to download all files again.'));
                 console.log(notFinishedRequests);
             }
 
