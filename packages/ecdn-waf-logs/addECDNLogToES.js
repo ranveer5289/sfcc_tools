@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const elasticsearch = require('@sfcc_tools/elasticsearch');
 
 process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
@@ -18,6 +19,15 @@ const client = new ES({
 
 async function addToES() {
     const inputPath = path.join(__dirname, 'logs');
+
+    const existingLogFiles = helper.getFilesFromDirectory(inputPath, '.log'); // sync operation
+    if (existingLogFiles && existingLogFiles.length > 0) { // files already found, let's cleanup
+        existingLogFiles.forEach(function (logFile) {
+            const fullPath = path.join(inputPath, logFile);
+            fs.unlinkSync(fullPath);
+        });
+    }
+
     await helper.extractAllLogFiles(inputPath);
 
     try {

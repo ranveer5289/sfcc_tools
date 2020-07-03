@@ -16,7 +16,7 @@ function writeAsW3C(inputPath, outputPath) {
         if (fs.existsSync(w3cOutputPath)) {
             fs.unlinkSync(w3cOutputPath);
         }
-        const writeStream = fs.createWriteStream(w3cOutputPath, { autoClose: true });
+        const writeStream = fs.createWriteStream(w3cOutputPath);
 
         writeStream.write('#Software: Screaming Frog Log Generator\n');
         writeStream.write('#Version: 1.0\n');
@@ -67,7 +67,6 @@ function writeAsW3C(inputPath, outputPath) {
             });
 
         readStream.on('end', function () {
-            writeStream.close();
             readStream.close();
             resolve();
         });
@@ -81,6 +80,14 @@ function writeAsW3C(inputPath, outputPath) {
 async function transform() {
     try {
         const inputPath = path.join(__dirname, 'logs');
+        const existingLogFiles = helper.getFilesFromDirectory(inputPath, '.log'); // sync operation
+        if (existingLogFiles && existingLogFiles.length > 0) { // files already found, let's cleanup
+            existingLogFiles.forEach(function (logFile) {
+                const fullPath = path.join(inputPath, logFile);
+                fs.unlinkSync(fullPath);
+            });
+        }
+
         await helper.extractAllLogFiles(inputPath); // unzip is an async operation
 
         const logFiles = helper.getFilesFromDirectory(inputPath, '.log'); // sync operation
@@ -93,12 +100,11 @@ async function transform() {
             fsExtra.emptyDirSync(outDirectory);
         }
 
-        const asyncFunctions = [];
-        for (let i = 0; i < logFiles.length; i += 1) {
-            const fullPath = path.join(inputPath, logFiles[i]);
+        const asyncFunctions = logFiles.map(function (logFile) {
+            const fullPath = path.join(inputPath, logFile);
             console.log(fullPath);
-            asyncFunctions.push(writeAsW3C(fullPath, outDirectory));
-        }
+            return writeAsW3C(fullPath, outDirectory);
+        });
         Promise.all(asyncFunctions).then(function () {
             console.log(chalk.green('Files successfully transformed to W3C format'));
         });
