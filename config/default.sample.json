@@ -1,0 +1,27 @@
+{
+    "packages" : {
+        "ocapi" : {
+            "account_manager_url":"https://account.demandware.com/dwsso/oauth2/access_token",
+            "ocapi_client_id" : "",
+            "ocapi_client_secret": "",
+            "ocapi_data_api_url": "https://abc.demandware.net/s/-/dw/data/v20_4/",
+            "ocapi_shop_api_url": "https://abc.demandware.net/s/%s/dw/shop/v20_4/",
+            "sfcc_site_id": "site_id"
+        },
+        "sfcc-catalog-to-elasticsearch" : {
+            "elasticsearch_host" : "http://localhost:9200",
+            "doc_type" : "products",
+            "index_name" : "sfcc-master-catalog"
+        },
+        "ecdn-waf-logs" : {
+            "ecdn_zone_name" : "site.com",
+            "date_offset" : 1, // offset from today's date, so '1' means download yesterday's ecdn log
+            "elasticsearch_host" : "http://localhost:9200",
+            "doc_type" : "logs",
+            "index_name": "ecdn-logs"
+        },
+        "<some-other-package-id>" : {
+            
+        }
+    }
+}

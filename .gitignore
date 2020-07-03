@@ -112,3 +112,7 @@ dist
 config.json
 output
 xml.js
+default.json
+ecdn-request-ids.json
+w3c/**
+logs/**
