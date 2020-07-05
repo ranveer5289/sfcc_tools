@@ -36,4 +36,32 @@ async function getClientCredentialGrant() {
     return token;
 }
 
+async function getBusinessManagerGrant() {
+    const businessManagerTokenUrl = `${ocapiConfig.business_manager.token_url}?client_id=${ocapiConfig.ocapi_client_id}`;
+    const basicAuth = Buffer.from(`${ocapiConfig.business_manager.user_name}:${ocapiConfig.business_manager.password}:${ocapiConfig.ocapi_client_secret}`).toString('base64');
+    const instance = axios.create({
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            authorization: `Basic ${basicAuth}`
+        }
+    });
+
+    const postData = 'grant_type=urn:demandware:params:oauth:grant-type:client-id:dwsid:dwsecuretoken';
+
+    let token;
+    try {
+        const response = await instance.post(businessManagerTokenUrl, postData);
+        if (response && response.data.access_token) {
+            token = response.data.access_token;
+            console.log(chalk.green('Successfully fetched oauth token (bm grant) from server'));
+        } else {
+            console.log(`Error fetching token ${response.status} ${response.error}`);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+    return token;
+}
 module.exports.getClientCredentialGrant = getClientCredentialGrant;
+module.exports.getBusinessManagerGrant = getBusinessManagerGrant;

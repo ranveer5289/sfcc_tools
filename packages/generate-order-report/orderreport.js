@@ -4,24 +4,70 @@ const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
 const pLimit = require('p-limit');
-
 const ocapi = require('@sfcc_tools/ocapi');
-
-const TASKID = 'orderreport';
-const limit = pLimit(10);
-
-let allOrders = [];
 
 process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
 const config = require('config');
 
 const ocapiConfig = config.get('packages.ocapi');
+const orderReportConfig = config.get('packages.generate-order-report');
 
 const oauth = ocapi.oauth;
 const orderSearch = ocapi.ordersearch;
 
+const TASKID = 'orderreport';
+const limit = pLimit(10); // define promise pool
+let start = 0;
+let allOrders = [];
+
+const query = `{
+    "start": ${start},
+    "count": 50,
+    "query": {
+        "filtered_query": {
+            "query": {
+                "bool_query": {
+                    "must": [
+                        {
+                            "term_query": {
+                                "fields": [
+                                    "status"
+                                ],
+                                "operator": "one_of",
+                                "values": [
+                                    "new",
+                                    "open"
+                                ]
+                            }
+                        },
+                        {
+                            "term_query": {
+                                "fields": [
+                                    "payment_status"
+                                ],
+                                "operator": "is",
+                                "values": [
+                                    "paid"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "filter": {
+                "range_filter": {
+                    "field": "creation_date",
+                    "from": "${orderReportConfig.from}",
+                    "to": "${orderReportConfig.to}"
+                }
+            }
+        }
+    },
+    "select": "(**)"
+}`;
+
 async function getPromises(token) {
-    const apiResponse = await orderSearch.search(token);
+    const apiResponse = await orderSearch.search(token, query);
     const orderSearchResponse = apiResponse && apiResponse.data;
     if (!orderSearchResponse || !orderSearchResponse.hits) {
         return allOrders;
@@ -35,16 +81,16 @@ async function getPromises(token) {
     console.log(chalk.green(`Total orders ${totalHits}`));
     const counter = Math.ceil(totalHits / 50);
     for (let i = 1; i < counter; i += 1) {
-        const start = i * 50;
+        start = i * 50;
         asyncFunctions.push(limit(function () {
-            return orderSearch.search(token, start);
+            return orderSearch.search(token, query);
         }));
     }
 
     return asyncFunctions;
 }
 
-async function execute(promises) {
+async function executePromises(promises) {
     const results = await Promise.all(promises);
     if (!results) {
         console.log('No orders found');
@@ -130,16 +176,38 @@ function getProductPromotions(productItems) {
         product_coupons: productCoupons.join(',')
     };
 }
+
+async function getNotes(orderData, bmGrantoken) {
+    const notesUrl = orderData.notes && orderData.notes.link;
+    if (!notesUrl) {
+        return [];
+    }
+    const resp = await ocapi.orders.getNotes(notesUrl, bmGrantoken);
+    if (resp && resp.data && resp.data.notes) {
+        return resp.data.notes;
+    }
+    return [];
+}
 async function writeOrderReport() {
     try {
+        let bmGrantoken;
         const token = await oauth.getClientCredentialGrant();
         if (!token) {
+            console.log(chalk.red('OAuth Client Credentials Grant token is missing'));
             process.exit(1);
         }
 
+        if (orderReportConfig.collectNotes) {
+            bmGrantoken = await oauth.getBusinessManagerGrant();
+            if (!bmGrantoken) {
+                console.log(chalk.red('BM Client Credentials Grant token is missing'));
+                process.exit(1);
+            }
+        }
         console.log(chalk.green('Going to retrieve orders from SFCC'));
         const promises = await getPromises(token);
-        const orders = await execute(promises);
+        const orders = await executePromises(promises);
+
         if (orders && orders.length > 0) {
             console.log(chalk.green(`Total orders found ${orders.length}`));
 
@@ -150,7 +218,7 @@ async function writeOrderReport() {
             }
             writer.pipe(fs.createWriteStream(output));
 
-            orders.forEach(function (order) {
+            orders.forEach(async function (order) {
                 const mergedObject = {};
                 const customAttributes = getOrderAttributes(order.data);
                 const billingAddress = getAddress(order.data.billing_address, 'billing');
@@ -158,6 +226,10 @@ async function writeOrderReport() {
                 const paymentData = getPayment(order.data.payment_instruments);
                 const orderPromotions = getOrderPromotions(order.data);
                 const productPromotions = getProductPromotions(order.data.product_items);
+                let notes = [];
+                if (orderReportConfig.collectNotes) {
+                    notes = await getNotes(order.data, bmGrantoken);
+                }
                 const additionalInfo = {
                     order_no: order.data.order_no,
                     customer_name: order.data.customer_info.customer_name,
@@ -175,9 +247,10 @@ async function writeOrderReport() {
                     shippingAddress,
                     paymentData);
 
+                mergedObject.notesCount = notes.length;
                 writer.write(mergedObject);
             });
-            writer.end();
+            // writer.end();
         }
     } catch (error) {
         console.log(error);
