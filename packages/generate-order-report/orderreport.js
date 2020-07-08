@@ -57,7 +57,7 @@ async function execute(promises) {
 }
 
 function getOrderAttributes(obj) {
-    const ignoreAttributes = ['product_items', 'payment_instruments', 'shipments', 'shipping_items'];
+    const ignoreAttributes = ['product_items', 'payment_instruments', 'shipments', 'shipping_items', 'coupon_items', 'order_price_adjustments'];
     const customAttributes = {};
     Object.keys(obj).forEach(function (key) {
         if (ignoreAttributes.indexOf(key) === -1 && (typeof obj[key] !== 'object' || Array.isArray(obj[key]))) {
@@ -108,6 +108,21 @@ function getOrderPromotions(order) {
     };
 }
 
+// function getProductLineItemAttributes(productItems) {
+//     const pli = {};
+//     const ignoreAttributes = [];
+
+//     productItems.forEach(function (li, i) {
+//         Object.keys(li).forEach(function (key) {
+//             const objectKey = `pli_${key}_${i + 1}`;
+//             if (ignoreAttributes.indexOf(key) === -1 && (typeof li[key] !== 'object' || Array.isArray(li[key]))) {
+//                 pli[objectKey] = Array.isArray(li[key]) ? li[key].join(',') : li[key];
+//             }
+//         });
+//     });
+//     return pli;
+// }
+
 function getProductPromotions(productItems) {
     const productPromotions = [];
     const productCoupons = [];
@@ -128,6 +143,16 @@ function getProductPromotions(productItems) {
     return {
         product_promotions: productPromotions.join(','),
         product_coupons: productCoupons.join(',')
+    };
+}
+
+function getProductCount(productItems) {
+    const items = productItems.filter(function (item) {
+        // eslint-disable-next-line no-underscore-dangle
+        return item._type === 'product_item';
+    });
+    return {
+        productsOrdered: items.length
     };
 }
 async function writeOrderReport() {
@@ -152,12 +177,14 @@ async function writeOrderReport() {
 
             orders.forEach(function (order) {
                 const mergedObject = {};
-                const customAttributes = getOrderAttributes(order.data);
+                const orderAttributes = getOrderAttributes(order.data);
+                // const productLineItemAttributes = getProductLineItemAttributes(order.data.product_items);
                 const billingAddress = getAddress(order.data.billing_address, 'billing');
                 const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');
                 const paymentData = getPayment(order.data.payment_instruments);
                 const orderPromotions = getOrderPromotions(order.data);
                 const productPromotions = getProductPromotions(order.data.product_items);
+                const productCount = getProductCount(order.data.product_items);
                 const additionalInfo = {
                     order_no: order.data.order_no,
                     customer_name: order.data.customer_info.customer_name,
@@ -168,9 +195,11 @@ async function writeOrderReport() {
 
                 Object.assign(mergedObject,
                     additionalInfo,
-                    customAttributes,
-                    orderPromotions,
+                    productCount,
+                    // productLineItemAttributes,
                     productPromotions,
+                    orderAttributes,
+                    orderPromotions,
                     billingAddress,
                     shippingAddress,
                     paymentData);
