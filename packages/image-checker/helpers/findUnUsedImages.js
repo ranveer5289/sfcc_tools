@@ -1,6 +1,7 @@
 const fs = require('fs');
 const XmlStream = require('xml-stream');
 const csv = require('fast-csv');
+const path = require('path');
 
 const csvStream = csv.format({ headers: true });
 
@@ -20,17 +21,20 @@ async function findImages(config) {
 
         xml.on('endElement: href', async function (item) {
             const imagePath = item.$text;
-            let supplierId;
-            totalImagesInServerXML += 1;
-            if (!(imagePath in config.catalogImages)) {
-                xml.pause();
-                totalUnUsedImages += 1;
-                const urlParts = imagePath.split('/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/images/productImages/');
-                if (urlParts && urlParts.length > 0) {
-                    supplierId = urlParts[1].split('/') ? urlParts[1].split('/')[0] : '';
+            const fileExtension = path.extname(imagePath);
+            if (fileExtension) { // if no extension we assume it is directory
+                const supplierId = '';
+                totalImagesInServerXML += 1;
+                if (!(imagePath in config.catalogImages)) {
+                    xml.pause();
+                    totalUnUsedImages += 1;
+                    // const urlParts = imagePath.split('/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/images/');
+                    // if (urlParts && urlParts.length > 0) {
+                    //     supplierId = urlParts[1].split('/') ? urlParts[1].split('/')[0] : '';
+                    // }
+                    await csvStream.write({ 'image-path': imagePath, supplierId: supplierId });
+                    xml.resume();
                 }
-                await csvStream.write({ 'image-path': imagePath, supplierId: supplierId });
-                xml.resume();
             }
         });
 

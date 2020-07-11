@@ -1,11 +1,9 @@
 const fs = require('fs');
 const XmlStream = require('xml-stream');
 
-// 13m 300k images
 const catalogImages = {};
 const batchSize = 10000;
 let totalUniqueImagesCollected = 0;
-let totalImagesInCatalog = 0;
 let count = 0;
 const prefix = '/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/';
 async function getImages(config) {
@@ -15,7 +13,6 @@ async function getImages(config) {
 
         xml.on('endElement: image', function (item) {
             const imagePath = `${prefix}${item.$.path}`;
-            totalImagesInCatalog += 1;
             if (!catalogImages[imagePath]) {
                 catalogImages[imagePath] = true;
                 count += 1;
@@ -29,7 +26,6 @@ async function getImages(config) {
         });
 
         xml.on('end', function () {
-            console.log(`Total images in catalog ${totalImagesInCatalog}`);
             console.log(`Total unique images present in catalog XML ${Object.keys(catalogImages).length}`);
             resolve(catalogImages);
         });
