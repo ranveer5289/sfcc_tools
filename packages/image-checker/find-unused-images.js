@@ -10,9 +10,9 @@ async function collect() {
 
         if (catalogImages) {
             await findUnUsedImages.findImages({
-                serverImageFileXMLPath: './sfcc-vd-v5.xml',
+                serverImageFileXMLPath: './sfcc-vd-v7-images-productImages.xml',
                 // serverImageFileXMLPath: './sfcc-vd-min.xml',
-                outputPath: './images-not-in-used.csv',
+                outputPath: './output/images-not-in-used.csv',
                 // imagesInCatalog: catalogImages || {}
                 catalogImages: catalogImages
             });

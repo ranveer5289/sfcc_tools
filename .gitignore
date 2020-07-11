@@ -116,3 +116,4 @@ default.json
 ecdn-request-ids.json
 w3c/**
 logs/**
+test.js

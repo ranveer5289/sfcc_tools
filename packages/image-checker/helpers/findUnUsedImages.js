@@ -19,20 +19,28 @@ async function findImages(config) {
 
         const xml = new XmlStream(stream);
 
-        xml.on('endElement: href', async function (item) {
-            const imagePath = item.$text;
+        xml.on('endElement: response', async function (item) {
+            const href = item.href;
+            /**
+             * SFCC PROPFIND has a bug where images with "accented characters"
+             * come as invalid xml encoded (?) in output/response.
+             *
+             * Since, these href's are  with invalid name we should ignore them
+             * & not consider them as un-used images.
+             * These images come with "null" value in response.
+             */
+            const lastModifiedDate = item.propstat && item.propstat.prop
+                                        && item.propstat.prop.getlastmodified ? item.propstat.prop.getlastmodified : '';
+
+            const imagePath = decodeURIComponent(href);
             const fileExtension = path.extname(imagePath);
+
             if (fileExtension) { // if no extension we assume it is directory
-                const supplierId = '';
                 totalImagesInServerXML += 1;
-                if (!(imagePath in config.catalogImages)) {
+                if (!(imagePath in config.catalogImages) && lastModifiedDate !== 'null') {
                     xml.pause();
                     totalUnUsedImages += 1;
-                    // const urlParts = imagePath.split('/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/images/');
-                    // if (urlParts && urlParts.length > 0) {
-                    //     supplierId = urlParts[1].split('/') ? urlParts[1].split('/')[0] : '';
-                    // }
-                    await csvStream.write({ 'image-path': imagePath, supplierId: supplierId });
+                    await csvStream.write({ 'image-path': imagePath });
                     xml.resume();
                 }
             }

@@ -12,7 +12,7 @@ async function getImages(config) {
         const xml = new XmlStream(stream);
 
         xml.on('endElement: image', function (item) {
-            const imagePath = `${prefix}${item.$.path}`;
+            const imagePath = decodeURIComponent(`${prefix}${item.$.path}`);
             if (!catalogImages[imagePath]) {
                 catalogImages[imagePath] = true;
                 count += 1;
