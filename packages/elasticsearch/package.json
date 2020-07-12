@@ -15,7 +15,8 @@
     "fast-csv": "^4.3.0",
     "fs-extra": "^9.0.1",
     "line-by-line": "^0.1.6",
-    "xml-stream": "^0.4.5"
+    "xml-stream": "^0.4.5",
+    "yargs": "^15.4.1"
   },
   "keywords": [],
   "author": "",
