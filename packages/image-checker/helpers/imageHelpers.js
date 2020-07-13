@@ -8,7 +8,7 @@ const csvStream = csv.format({ headers: true });
 let totalImagesInServerXML = 0;
 let totalUnUsedImages = 0;
 
-async function findImages(config) {
+async function findImagesNotInUse(config) {
     return new Promise(function (resolve, reject) {
         const stream = fs.createReadStream(config.serverImageFileXMLPath);
         if (fs.existsSync(config.outputPath)) {
@@ -20,7 +20,6 @@ async function findImages(config) {
         const xml = new XmlStream(stream);
 
         xml.on('endElement: response', async function (item) {
-            const href = item.href;
             /**
              * SFCC PROPFIND has a bug where images with "accented characters"
              * come as invalid xml encoded (?) in output/response.
@@ -32,7 +31,12 @@ async function findImages(config) {
             const lastModifiedDate = item.propstat && item.propstat.prop
                                         && item.propstat.prop.getlastmodified ? item.propstat.prop.getlastmodified : '';
 
-            const imagePath = decodeURIComponent(href);
+            let imagePath = item.href;
+            try {
+                imagePath = decodeURIComponent(item.href);
+            } catch (error) {
+                console.log(`${error} - ${imagePath}`);
+            }
             const fileExtension = path.extname(imagePath);
 
             if (fileExtension) { // if no extension we assume it is directory
@@ -60,4 +64,4 @@ async function findImages(config) {
     });
 }
 
-module.exports.findImages = findImages;
+module.exports.findImagesNotInUse = findImagesNotInUse;

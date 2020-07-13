@@ -1,10 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-const fsExtra = require('fs-extra');
 const yargs = require('yargs');
 
-const catalogImageHelper = require('./helpers/collectImagesFromCatalog');
-const findUnUsedImages = require('./helpers/findUnUsedImages');
+const catalogHelper = require('./helpers/catalogHelpers');
+const imageHelper = require('./helpers/imageHelpers');
 
 const argv = yargs
     .usage('Usage: $0 [options]')
@@ -27,14 +26,14 @@ const argv = yargs
     .wrap(null)
     .argv;
 
-async function collect() {
+async function findImages() {
     try {
-        const catalogImages = await catalogImageHelper.getImages({
+        const catalogImages = await catalogHelper.getImages({
             catalogXMLPath: argv.c
         });
 
         if (catalogImages) {
-            console.log('Catalog images collected successfully');
+            console.log('Catalog images successfully collected');
             const outputDir = path.join(__dirname, 'output');
 
             if (!fs.existsSync(outputDir)) {
@@ -42,7 +41,7 @@ async function collect() {
             }
 
             const outputCSVFileName = path.join(outputDir, argv.fname);
-            await findUnUsedImages.findImages({
+            await imageHelper.findImagesNotInUse({
                 serverImageFileXMLPath: argv.s,
                 outputPath: outputCSVFileName,
                 catalogImages: catalogImages
@@ -53,4 +52,4 @@ async function collect() {
     }
 }
 
-collect();
+findImages();
