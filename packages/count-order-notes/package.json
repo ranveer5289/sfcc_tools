@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "config": "^3.3.1",
     "xml-stream": "^0.4.5",
     "yargs": "^15.4.1"
   },

@@ -9,6 +9,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.1.0",
+    "config": "^3.3.1",
     "csv-split-stream": "^1.0.2",
     "fast-csv": "^4.3.1",
     "fs-extra": "^9.0.1",

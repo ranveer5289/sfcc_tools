@@ -2,7 +2,7 @@ const fs = require('fs');
 const XmlStream = require('xml-stream');
 
 const catalogImages = {};
-const batchSize = 100000;
+const batchSize = 10000;
 let totalUniqueImagesCollected = 0;
 let count = 0;
 const prefix = '/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/';
