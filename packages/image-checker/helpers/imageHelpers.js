@@ -42,10 +42,8 @@ async function findImagesNotInUse(config) {
             if (fileExtension) { // if no extension we assume it is directory
                 totalImagesInServerXML += 1;
                 if (!(imagePath in config.catalogImages) && lastModifiedDate !== 'null') {
-                    xml.pause();
                     totalUnUsedImages += 1;
-                    await csvStream.write({ 'image-path': imagePath });
-                    xml.resume();
+                    csvStream.write({ 'image-path': imagePath });
                 }
             }
         });
