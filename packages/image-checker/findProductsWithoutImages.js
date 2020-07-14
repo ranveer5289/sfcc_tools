@@ -1,13 +1,14 @@
 const path = require('path');
 const fs = require('fs');
 const yargs = require('yargs');
+const chalk = require('chalk');
 
-const util = require('./helpers/util');
-const productHelper = require('./helpers/productHelpers');
+const getImagesFromServerXML = require('./helpers/getImagesFromServerXML');
+const getProductsWithoutImages = require('./helpers/getProductsWithoutImages');
 
 const argv = yargs
     .usage('Usage: $0 [options]')
-    .example('$0 --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname images_not_in_use.csv', 'Find images which are referenced in master catalog but not longer in use.')
+    .example('$0 --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname images_not_in_use.csv', 'Find products with missing images & the images attached to that product')
     .alias('c', 'catalogxml')
     .nargs('c', 1)
     .normalize('c')
@@ -26,14 +27,22 @@ const argv = yargs
     .wrap(null)
     .argv;
 
-async function findProduct() {
+/**
+ * Find products without images.
+ * This function is responsible for following
+ * 1) Get all image path's defined in server XML (webdav propfind)
+ * 2) Parse master catalog <image> tags. If images of a product are
+ * not present in server xml file it means images are missing for that particular product.
+ * 3) Write products to CSV file.
+ */
+async function findProducts() {
     try {
-        const serverWebDavImages = await util.getImagesFromServerXML({
+        const serverWebDavImages = await getImagesFromServerXML.get({
             serverXMLPath: argv.s
         });
 
         if (serverWebDavImages) {
-            console.log('Catalog images successfully collected');
+            console.log('webdav/serverxml images successfully collected');
             const outputDir = path.join(__dirname, 'output');
 
             if (!fs.existsSync(outputDir)) {
@@ -41,15 +50,16 @@ async function findProduct() {
             }
 
             const outputCSVFileName = path.join(outputDir, argv.fname);
-            await productHelper.findProductsWithoutImages({
+            await getProductsWithoutImages.find({
                 catalogXMLPath: argv.c,
                 serverWebDavImages: serverWebDavImages,
                 outputPath: outputCSVFileName
             });
+            console.log(chalk.green(`Product without images are written to ${outputCSVFileName}`));
         }
     } catch (error) {
         console.log(error);
     }
 }
 
-findProduct();
+findProducts();

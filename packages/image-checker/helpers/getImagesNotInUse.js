@@ -62,4 +62,4 @@ async function findImagesNotInUse(config) {
     });
 }
 
-module.exports.findImagesNotInUse = findImagesNotInUse;
+module.exports.find = findImagesNotInUse;

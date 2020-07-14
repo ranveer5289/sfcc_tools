@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const yargs = require('yargs');
 
-const catalogHelper = require('./helpers/catalogHelpers');
-const imageHelper = require('./helpers/imageHelpers');
+const getImagesFromMasterCatalog = require('./helpers/getImagesFromMasterCatalog');
+const getImagesNotInUse = require('./helpers/getImagesNotInUse');
 
 const argv = yargs
     .usage('Usage: $0 [options]')
@@ -28,7 +28,7 @@ const argv = yargs
 
 async function findImages() {
     try {
-        const catalogImages = await catalogHelper.getImages({
+        const catalogImages = await getImagesFromMasterCatalog.getImages({
             catalogXMLPath: argv.c
         });
 
@@ -41,7 +41,7 @@ async function findImages() {
             }
 
             const outputCSVFileName = path.join(outputDir, argv.fname);
-            await imageHelper.findImagesNotInUse({
+            await getImagesNotInUse.find({
                 serverImageFileXMLPath: argv.s,
                 outputPath: outputCSVFileName,
                 catalogImages: catalogImages

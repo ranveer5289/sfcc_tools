@@ -8,6 +8,13 @@ const csvStream = csv.format({ headers: true });
 let count = 0;
 let totalImagesMissing = 0;
 
+/**
+ * Find all products which have one or more images missing.
+ * Write these products to a CSV file
+ *
+ * @param {Object} config
+ * @returns{Promise}
+ */
 async function findProductsWithoutImages(config) {
     return new Promise(function (resolve, reject) {
         const stream = fs.createReadStream(config.catalogXMLPath);
@@ -25,6 +32,7 @@ async function findProductsWithoutImages(config) {
             const pid = item.$['product-id'];
             let productImages = [];
             if (images) {
+                // This has a bit of complicated structure
                 const childImages = images.$children;
                 childImages.forEach(function (image) {
                     const subChild = image.$children;
@@ -46,6 +54,7 @@ async function findProductsWithoutImages(config) {
                         return index === self.indexOf(elem);
                     });
 
+                    // If image not present in server xml this means it is missing
                     const missingImages = uniqueImages.filter(function (ui) {
                         return !config.serverWebDavImages[ui];
                     });
@@ -73,4 +82,4 @@ async function findProductsWithoutImages(config) {
     });
 }
 
-module.exports.findProductsWithoutImages = findProductsWithoutImages;
+module.exports.find = findProductsWithoutImages;

@@ -15,6 +15,7 @@
     "chalk": "^4.1.0",
     "config": "^3.3.1",
     "fs-extra": "^9.0.1",
+    "jsdoc": "^3.6.4",
     "yargs": "^15.4.1"
   },
   "devDependencies": {
