@@ -1,9 +1,6 @@
 const fs = require('fs');
 const XmlStream = require('xml-stream');
-const path = require('path');
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', '..', 'config');
-const config = require('config');
+const config = require('@sfcc_tools/config');
 
 const imageCheckerConfig = config.get('packages.image-checker');
 

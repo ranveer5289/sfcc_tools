@@ -3,12 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const chalk = require('chalk');
+const coreConfig = require('@sfcc_tools/config');
 
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
-
-const generalConfig = config.get('general');
-const imageCheckerConfig = config.get('packages.image-checker');
+const generalConfig = coreConfig.get('general');
+const imageCheckerConfig = coreConfig.get('packages.image-checker');
 
 const environment = generalConfig.hostname.split('-')[0];
 
