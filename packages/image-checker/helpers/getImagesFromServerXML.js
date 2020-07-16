@@ -1,13 +1,15 @@
 const fs = require('fs');
 const XmlStream = require('xml-stream');
+const config = require('@sfcc_tools/config');
+
+const imageCheckerConfig = config.get('packages.image-checker');
 
 const serverWebDavImages = {};
 const batchSize = 10000;
 let totalUniqueImagesCollected = 0;
 let count = 0;
 
-// @TODO: use config
-const prefix = '/on/demandware.servlet/webdav/Sites/Catalogs/vd-master-catalog/default/';
+const prefix = `/on/demandware.servlet/webdav/Sites/Catalogs/${imageCheckerConfig.master_catalog_id}/default/`;
 
 /**
  * Collect all images(href) defined in server XML

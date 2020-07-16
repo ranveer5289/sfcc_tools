@@ -8,7 +8,7 @@ const getProductsWithoutImages = require('./helpers/getProductsWithoutImages');
 
 const argv = yargs
     .usage('Usage: $0 [options]')
-    .example('$0 --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname images_not_in_use.csv', 'Find products with missing images & the images attached to that product')
+    .example('$0 --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname product_without_images.csv', 'Find products with missing images & the images attached to that product')
     .alias('c', 'catalogxml')
     .nargs('c', 1)
     .normalize('c')

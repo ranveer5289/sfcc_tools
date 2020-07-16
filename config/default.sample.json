@@ -1,4 +1,9 @@
 {
+    "general" : {
+        "hostname": "abc.demandware.net",
+        "username" : "username",
+        "password" : "password"
+    },
     "packages" : {
         "ocapi" : {
             "account_manager_url":"https://account.demandware.com/dwsso/oauth2/access_token",
@@ -19,6 +24,9 @@
             "elasticsearch_host" : "http://localhost:9200",
             "doc_type" : "logs",
             "index_name": "ecdn-logs"
+        },
+        "image-checker" : {
+            "master_catalog_id" : "id_of_master_catalog" // ID of SFCC master catalog
         },
         "<some-other-package-id>" : {
             

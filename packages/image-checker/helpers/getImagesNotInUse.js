@@ -51,6 +51,7 @@ async function findImagesNotInUse(config) {
         xml.on('end', function () {
             console.log(`Total images in server XML ${totalImagesInServerXML}`);
             console.log(`Total unused images in platform ${totalUnUsedImages}`);
+            console.log(`un-used images are written at location ${config.outputPath}`);
             csvStream.end();
             resolve();
         });

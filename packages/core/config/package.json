@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sfcc_tools/eslint-config-core": "^1.0.0",
     "config": "^3.3.1"
   }
 }

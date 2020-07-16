@@ -66,5 +66,5 @@ Options:
   -h, --help           Show help  [boolean]
 
 Examples:
-  findProductsWithoutImages.js --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname images_not_in_use.csv  Find products with missing images & the images attached to that product
+  findProductsWithoutImages.js --catalogxml /path/to/catalog.xml --serverxml /path/to/serverfile.xml --fname product_without_images.csv  Find products with missing images & the images attached to that product
 ```
