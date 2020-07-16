@@ -3,10 +3,20 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const chalk = require('chalk');
+const yargs = require('yargs');
 const coreConfig = require('@sfcc_tools/config');
 
 const generalConfig = coreConfig.get('general');
 const imageCheckerConfig = coreConfig.get('packages.image-checker');
+
+// eslint-disable-next-line no-unused-vars
+const argv = yargs
+    .usage('Usage: node $0')
+    .example('node $0', 'Download the server xml using propfind request')
+    .help('h')
+    .alias('h', 'help')
+    .wrap(null)
+    .argv;
 
 const environment = generalConfig.hostname.split('-')[0];
 

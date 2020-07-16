@@ -4,7 +4,7 @@ Command line utility scripts and tools for Salesforce Commerce Cloud(SFCC)
 ```js
 npm init --scope=sfcc_tools --yes
 
-lerna add @sfcc_tools/config --scope=@sfcc_tools/image-checker
+lerna add @sfcc_tools/eslint-config-core --scope=@sfcc_tools/image-checker
 lerna add axios --scope=@sfcc_tools/image-checker
 
 lerna add line-by-line --scope=@sfcc_tools/elasticsearch

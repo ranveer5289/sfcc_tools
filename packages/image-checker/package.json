@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@sfcc_tools/config": "^1.0.0",
+    "@sfcc_tools/eslint-config-core": "^1.0.0",
     "axios": "^0.19.2",
     "chalk": "^4.1.0",
     "config": "^3.3.1",
