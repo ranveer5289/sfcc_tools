@@ -18,6 +18,10 @@
             "doc_type" : "products",
             "index_name" : "sfcc-master-catalog"
         },
+        "generate-order-report": {
+            "from": "2020-06-28T23:50:00.000Z",
+            "to": "2020-07-01T23:50:00.000Z"
+        },
         "ecdn-waf-logs" : {
             "ecdn_zone_name" : "site.com",
             "date_offset" : 1, // offset from today's date, so '1' means download yesterday's ecdn log

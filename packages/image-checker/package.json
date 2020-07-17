@@ -13,6 +13,7 @@
     "chalk": "^4.1.0",
     "config": "^3.3.1",
     "csv-split-stream": "^1.0.2",
+    "date-fns": "^2.14.0",
     "fast-csv": "^4.3.1",
     "fs-extra": "^9.0.1",
     "jsdoc": "^3.6.4",
