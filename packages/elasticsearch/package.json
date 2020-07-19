@@ -9,13 +9,17 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.7.1",
+    "@sfcc_tools/config": "^1.0.0",
+    "@sfcc_tools/eslint-config-core": "^1.0.0",
     "chalk": "^4.1.0",
     "config": "^3.3.1",
     "es6": "npm:@elastic/elasticsearch@^6.8.7",
     "fast-csv": "^4.3.0",
     "fs-extra": "^9.0.1",
+    "jsdoc": "^3.6.4",
     "line-by-line": "^0.1.6",
-    "xml-stream": "^0.4.5"
+    "xml-stream": "^0.4.5",
+    "yargs": "^15.4.1"
   },
   "keywords": [],
   "author": "",

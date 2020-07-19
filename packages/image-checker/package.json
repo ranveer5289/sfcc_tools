@@ -1,26 +1,23 @@
 {
-  "name": "@sfcc_tools/generate-order-report",
+  "name": "@sfcc_tools/image-checker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node orderreport.js",
     "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@sfcc_tools/config": "^1.0.0",
     "@sfcc_tools/eslint-config-core": "^1.0.0",
-    "@sfcc_tools/ocapi": "^1.0.0",
+    "axios": "^0.19.2",
     "chalk": "^4.1.0",
     "config": "^3.3.1",
-    "csv-write-stream": "^2.0.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "csv-split-stream": "^1.0.2",
+    "date-fns": "^2.14.0",
+    "fast-csv": "^4.3.1",
     "fs-extra": "^9.0.1",
     "jsdoc": "^3.6.4",
-    "p-limit": "^3.0.1",
+    "xml-stream": "^0.4.5",
     "yargs": "^15.4.1"
   },
   "devDependencies": {
@@ -29,5 +26,8 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.0"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

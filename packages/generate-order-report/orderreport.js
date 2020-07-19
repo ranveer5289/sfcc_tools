@@ -115,6 +115,7 @@ function getOrderPromotions(order) {
 //     productItems.forEach(function (li, i) {
 //         Object.keys(li).forEach(function (key) {
 //             const objectKey = `pli_${key}_${i + 1}`;
+// eslint-disable-next-line max-len
 //             if (ignoreAttributes.indexOf(key) === -1 && (typeof li[key] !== 'object' || Array.isArray(li[key]))) {
 //                 pli[objectKey] = Array.isArray(li[key]) ? li[key].join(',') : li[key];
 //             }
@@ -178,6 +179,7 @@ async function writeOrderReport() {
             orders.forEach(function (order) {
                 const mergedObject = {};
                 const orderAttributes = getOrderAttributes(order.data);
+                // eslint-disable-next-line max-len
                 // const productLineItemAttributes = getProductLineItemAttributes(order.data.product_items);
                 const billingAddress = getAddress(order.data.billing_address, 'billing');
                 const shippingAddress = getAddress(order.data.shipments[0].shipping_address, 'shipping');

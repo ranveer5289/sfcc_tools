@@ -46,9 +46,9 @@ async function addToES() {
     for (let i = 0; i < logFiles.length; i += 1) {
         const fullPath = path.join(inputPath, logFiles[i]);
         console.log(`Going to add ${fullPath} to ES`);
-        // eslint-disable-next-line no-await-in-loop
         // Made this operation synchronous to avoid too many request to local ES server
         // @TODO: add a transform callback to make the code generic
+        // eslint-disable-next-line no-await-in-loop
         await elasticsearch.ndjsonparser(client, { filePath: fullPath, helper: helper });
     }
 }

@@ -5,12 +5,9 @@ const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
 const ocapi = require('@sfcc_tools/ocapi');
+const config = require('@sfcc_tools/config');
 
 const TASKID = 'expiredpromotions';
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
-
 const ocapiConfig = config.get('packages.ocapi');
 
 const oauth = ocapi.oauth;
