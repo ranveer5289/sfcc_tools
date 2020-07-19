@@ -20,7 +20,7 @@ const argv = yargs
 
 const environment = generalConfig.hostname.split('-')[0];
 
-const CATALOG_URL = 'https://%s/on/demandware.servlet/webdav/Sites/Catalogs/%s/default/images/product/';
+const CATALOG_URL = imageCheckerConfig.webdav_catalog_images_path;
 const catalogUrl = util.format(
     CATALOG_URL, generalConfig.hostname, imageCheckerConfig.master_catalog_id
 );
@@ -42,7 +42,7 @@ async function listWebDavFiles() {
             responseEncoding: 'utf8'
         });
         if (response && response.data) {
-            const outputFilePath = path.join(__dirname, `${imageCheckerConfig.master_catalog_id}_${environment}_webdav.xml`);
+            const outputFilePath = path.join(__dirname, `${imageCheckerConfig.master_catalog_id}_${environment}_webdav_temp_1.xml`);
             console.log(chalk.green(`Successfully, received response from server. Now, streaming it to a file ${outputFilePath}`));
             const responseStream = response.data;
             responseStream.pipe(fs.createWriteStream(outputFilePath));

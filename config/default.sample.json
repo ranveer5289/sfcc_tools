@@ -30,7 +30,9 @@
             "index_name": "ecdn-logs"
         },
         "image-checker" : {
-            "master_catalog_id" : "id_of_master_catalog" // ID of SFCC master catalog
+            "master_catalog_id" : "id_of_master_catalog", // ID of SFCC master catalog
+            "webdav_catalog_images_path" : "https://%s/on/demandware.servlet/webdav/Sites/Catalogs/%s/default/images/productImages", // path where product images are stores (root path)
+            "days_in_past" : 4 // used to get last modified images on server
         },
         "<some-other-package-id>" : {
             
