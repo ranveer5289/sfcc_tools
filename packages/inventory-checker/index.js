@@ -6,9 +6,6 @@ const plotlib = require('nodeplotlib');
 
 const inventoryHelper = require('./helpers/getProductFromInventoryXML');
 
-// const pid = 'ino.diamant.0dk011.001.7024163424247';
-// const xmlPath = './no_no_00968ed5-4e35-44b1-9e0e-69da9dc1201f.xml';
-
 const argv = yargs
     .usage('Usage: $0 [options]')
     .example('$0 --pid 12345 --inputDir /path/to/xmlfiles', '')
