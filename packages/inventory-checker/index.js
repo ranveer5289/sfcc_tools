@@ -45,7 +45,8 @@ async function run() {
         const sortedByTimeStamp = results.sort(function (a, b) {
             if (a.timestampAsDate < b.timestampAsDate) {
                 return -1;
-            } if (a.timestampAsDate > b.timestampAsDate) {
+            }
+            if (a.timestampAsDate > b.timestampAsDate) {
                 return 1;
             }
             return 0;

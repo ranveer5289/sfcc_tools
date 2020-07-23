@@ -24,7 +24,7 @@ function getProductData(config) {
                         allocation: allocation
                     };
                 } else {
-                    console.log(chalk.red(`Multiple inventory allocation found for pid ${pid} in file ${inventoryXMLPath}`));
+                    console.log(chalk.red(`Multiple inventory allocations found for pid ${pid} in file ${inventoryXMLPath}`));
                     console.log(chalk.red(`Previous value for pid ${pid} in same file is ${inventoryMapping.allocation}`));
                     console.log('---------------------------------------------------------------------------------');
                 }
