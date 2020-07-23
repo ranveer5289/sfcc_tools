@@ -1,0 +1,27 @@
+{
+  "name": "@sfcc_tools/inventory-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/eslint-config-core": "^1.0.0",
+    "chalk": "^4.1.0",
+    "date-fns": "^2.15.0",
+    "nodeplotlib": "^0.6.5",
+    "xml-stream": "^0.4.5",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.0"
+  }
+}
