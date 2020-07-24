@@ -3,57 +3,21 @@ const path = require('path');
 const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
-
 const ocapi = require('@sfcc_tools/ocapi');
 
 const TASKID = 'jobmetrics';
 
 const oauth = ocapi.oauth;
-const jobSearch = ocapi.jobexecutionsearch;
-
-async function getAllJobExecutions(token) {
-    const jobResponse = await jobSearch.search(token);
-    let allJobs = [];
-    if (!jobResponse || !jobResponse.hits) {
-        return allJobs;
-    }
-
-    console.log(chalk.green('Fetching all job executions..........'));
-    allJobs = allJobs.concat(jobResponse.hits);
-
-    const totalHits = jobResponse.total;
-    const asyncFunctions = [];
-    console.log(chalk.green(`Total job executions ${totalHits}`));
-    const counter = Math.ceil(totalHits / 200);
-
-    for (let i = 1; i < counter; i += 1) {
-        const start = i * 200;
-        console.log(chalk.green(`Fetching job executions from index ${start}`));
-        asyncFunctions.push(jobSearch.search(token, start));
-    }
-
-    try {
-        const results = await Promise.all(asyncFunctions);
-        if (results && results.length > 0) {
-            results.forEach(function (result) {
-                allJobs = allJobs.concat(result.hits);
-            });
-        }
-    } catch (error) {
-        console.log(chalk.red(error));
-        return [];
-    }
-
-    return allJobs;
-}
+const jobExecutionSearch = require('./helpers/jobExecutionSearch');
 
 async function getJobMetrics() {
     const token = await oauth.getClientCredentialGrant();
     if (!token) {
+        console.log(chalk.red('OAuth Token not received from server'));
         process.exit(1);
     }
 
-    const allJobs = await getAllJobExecutions(token);
+    const allJobs = await jobExecutionSearch.getJobExecutions(token);
     if (!allJobs || allJobs.length <= 0) {
         console.log(chalk.red('No jobs founds!!'));
         process.exit(1);
