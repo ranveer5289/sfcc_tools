@@ -6,7 +6,7 @@ const fsExtra = require('fs-extra');
 const ocapi = require('@sfcc_tools/ocapi');
 
 const oauth = ocapi.oauth;
-const ecdn = ocapi.ecdn;
+const ecdn = require('./helper/ecdn');
 
 // const TASKID = 'downloadECDNLog';
 
@@ -40,9 +40,9 @@ async function download() {
         const results = await Promise.all(asyncFunctions);
         if (results && results.length > 0) {
             const notFinishedRequests = results.filter(function (result) {
-                return result.data.status !== 'finished';
+                return result.status !== 'finished';
             }).map(function (result) {
-                return result.data.id;
+                return result.id;
             });
 
             if (notFinishedRequests.length > 0) {
@@ -58,13 +58,12 @@ async function download() {
                 fsExtra.emptyDirSync(outDirectory);
             }
 
-            console.log('Downloading log files now from the server');
+            console.log(`Downloading log files now from the server to directory ${outDirectory}`);
             results.filter(function (result) {
-                return result.data.status === 'finished';
+                return result.status === 'finished';
             }).forEach(function (result) {
-                const downloadPath = path.join(outDirectory, `${result.data.id}.log.gz`);
-
-                ecdn.downloadFileToDisk(result.data.link).then(function (response) {
+                const downloadPath = path.join(outDirectory, `${result.id}.log.gz`);
+                ecdn.downloadFileToDisk(result.link).then(function (response) {
                     response.data.pipe(fs.createWriteStream(downloadPath));
                 }).catch(function (error) {
                     console.log(error);
@@ -72,11 +71,7 @@ async function download() {
             });
         }
     } catch (error) {
-        if (error.response && error.response.data) {
-            console.log(error.response.data);
-        } else {
-            console.log(error.message);
-        }
+        console.log(error);
     }
 }
 

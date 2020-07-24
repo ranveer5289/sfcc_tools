@@ -3,13 +3,11 @@ const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
 const ocapi = require('@sfcc_tools/ocapi');
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
+const config = require('@sfcc_tools/config');
 
 const ecdnConfig = config.get('packages.ecdn-waf-logs');
 const oauth = ocapi.oauth;
-const ecdn = ocapi.ecdn;
+const ecdn = require('./helper/ecdn');
 
 // const TASKID = 'fetchECDNLog';
 
@@ -54,7 +52,7 @@ async function fetch() {
         const results = await Promise.all(asyncFunctions);
         if (results && results.length > 0) {
             const logFetchRequestIds = results.map(function (result) {
-                return result.data.id;
+                return result.id;
             });
             if (logFetchRequestIds) {
                 console.log(`Total fetch log request initiated ${logFetchRequestIds.length}`);
@@ -71,11 +69,7 @@ async function fetch() {
             console.log(chalk.red('No response from SFCC server'));
         }
     } catch (error) {
-        if (error.response && error.response.data) {
-            console.log(error.response.data);
-        } else {
-            console.log(error.message);
-        }
+        console.log(error);
     }
 }
 
