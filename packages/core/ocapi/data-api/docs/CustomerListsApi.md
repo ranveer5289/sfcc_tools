@@ -1,6 +1,6 @@
 # DataApi.CustomerListsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,8 +17,10 @@ Method | HTTP request | Description
 [**postCustomerListsByIDCustomersByIDAddresses**](CustomerListsApi.md#postCustomerListsByIDCustomersByIDAddresses) | **POST** /customer_lists/{list_id}/customers/{customer_no}/addresses | 
 [**putCustomerListsByIDCustomersByID**](CustomerListsApi.md#putCustomerListsByIDCustomersByID) | **PUT** /customer_lists/{list_id}/customers/{customer_no} | 
 
-<a name="deleteCustomerListsByIDCustomersByID"></a>
-# **deleteCustomerListsByIDCustomersByID**
+
+
+## deleteCustomerListsByIDCustomersByID
+
 > deleteCustomerListsByIDCustomersByID(listId, customerNo)
 
 
@@ -26,27 +28,28 @@ Method | HTTP request | Description
 Deletes the customer including all related information like the customer addresses.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-
-apiInstance.deleteCustomerListsByIDCustomersByID(listId, customerNo).then(() => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+apiInstance.deleteCustomerListsByIDCustomersByID(listId, customerNo).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,11 +66,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteCustomerListsByIDCustomersByIDAddressesByID"></a>
-# **deleteCustomerListsByIDCustomersByIDAddressesByID**
+
+## deleteCustomerListsByIDCustomersByIDAddressesByID
+
 > deleteCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId)
 
 
@@ -75,28 +79,29 @@ null (empty response body)
 Action which deletes a customer address.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-let addressId = "addressId_example"; // String | The address id
-
-apiInstance.deleteCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId).then(() => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var addressId = "addressId_example"; // String | The address id
+apiInstance.deleteCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -114,11 +119,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getCustomerListsByID"></a>
-# **getCustomerListsByID**
+
+## getCustomerListsByID
+
 > CustomerList getCustomerListsByID(listId)
 
 
@@ -126,26 +132,27 @@ null (empty response body)
 Action to read an existing customerlist.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | the id of the customerlist
-
-apiInstance.getCustomerListsByID(listId).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | the id of the customerlist
+apiInstance.getCustomerListsByID(listId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -161,11 +168,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomerListsByIDCustomersByID"></a>
-# **getCustomerListsByIDCustomersByID**
+
+## getCustomerListsByIDCustomersByID
+
 > Customer getCustomerListsByIDCustomersByID(listId, customerNo)
 
 
@@ -173,27 +181,28 @@ Name | Type | Description  | Notes
 Action to get customer information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-
-apiInstance.getCustomerListsByIDCustomersByID(listId, customerNo).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+apiInstance.getCustomerListsByIDCustomersByID(listId, customerNo).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -210,11 +219,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomerListsByIDCustomersByIDAddresses"></a>
-# **getCustomerListsByIDCustomersByIDAddresses**
+
+## getCustomerListsByIDCustomersByIDAddresses
+
 > CustomerAddressResult getCustomerListsByIDCustomersByIDAddresses(listId, customerNo, opts)
 
 
@@ -222,30 +232,32 @@ Name | Type | Description  | Notes
 Action that returns a pageable list of all customer addresses. The  default page size is 10 customer addresses.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-let opts = { 
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var opts = {
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getCustomerListsByIDCustomersByIDAddresses(listId, customerNo, opts).then((data) => {
+apiInstance.getCustomerListsByIDCustomersByIDAddresses(listId, customerNo, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -264,11 +276,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomerListsByIDCustomersByIDAddressesByID"></a>
-# **getCustomerListsByIDCustomersByIDAddressesByID**
+
+## getCustomerListsByIDCustomersByIDAddressesByID
+
 > CustomerAddress getCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId)
 
 
@@ -276,28 +289,29 @@ Name | Type | Description  | Notes
 Action which returns an address of a customer.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-let addressId = "addressId_example"; // String | The address id
-
-apiInstance.getCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var addressId = "addressId_example"; // String | The address id
+apiInstance.getCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -315,34 +329,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchCustomerListsByIDCustomersByID"></a>
-# **patchCustomerListsByIDCustomersByID**
-> Customer patchCustomerListsByIDCustomersByID(bodylistIdcustomerNo)
+
+## patchCustomerListsByIDCustomersByID
+
+> Customer patchCustomerListsByIDCustomersByID(listId, customerNo, body)
 
 
 
 Updates the customer with the specified information. The customer number is allowed to be updated but will result in a  CustomerNumberAlreadyInUseException if there is already another customer with the same customer number existing.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.Customer(); // Customer | 
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-
-apiInstance.patchCustomerListsByIDCustomersByID(bodylistIdcustomerNo).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var body = new DataApi.Customer(); // Customer | 
+apiInstance.patchCustomerListsByIDCustomersByID(listId, customerNo, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -350,11 +364,13 @@ apiInstance.patchCustomerListsByIDCustomersByID(bodylistIdcustomerNo).then((data
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Customer**](Customer.md)|  | 
  **listId** | **String**| The customer list id | 
  **customerNo** | **String**| The customer number | 
+ **body** | [**Customer**](Customer.md)|  | 
 
 ### Return type
 
@@ -366,35 +382,35 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchCustomerListsByIDCustomersByIDAddressesByID"></a>
-# **patchCustomerListsByIDCustomersByIDAddressesByID**
-> CustomerAddress patchCustomerListsByIDCustomersByIDAddressesByID(bodylistIdcustomerNoaddressId)
+
+## patchCustomerListsByIDCustomersByIDAddressesByID
+
+> CustomerAddress patchCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId, body)
 
 
 
 Action which updates an address of a customer with the given address information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.CustomerAddress(); // CustomerAddress | 
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-let addressId = "addressId_example"; // String | The address id
-
-apiInstance.patchCustomerListsByIDCustomersByIDAddressesByID(bodylistIdcustomerNoaddressId).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var addressId = "addressId_example"; // String | The address id
+var body = new DataApi.CustomerAddress(); // CustomerAddress | 
+apiInstance.patchCustomerListsByIDCustomersByIDAddressesByID(listId, customerNo, addressId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -402,12 +418,14 @@ apiInstance.patchCustomerListsByIDCustomersByIDAddressesByID(bodylistIdcustomerN
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
  **listId** | **String**| The customer list id | 
  **customerNo** | **String**| The customer number | 
  **addressId** | **String**| The address id | 
+ **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
 
 ### Return type
 
@@ -419,33 +437,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomerListsByIDCustomerSearch"></a>
-# **postCustomerListsByIDCustomerSearch**
-> CustomerSearchResult postCustomerListsByIDCustomerSearch(bodycustomerListId)
+
+## postCustomerListsByIDCustomerSearch
+
+> CustomerSearchResult postCustomerListsByIDCustomerSearch(customerListId, body)
 
 
 
 Action to search for customers in a customer list.   The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    customer_no - String  first_name - String  second_name - String  last_name - String  suffix - String  salutation - String  title - String  fax - String  phone_home - String  phone_business - String  phone_mobile - String  email - String  gender - Integer  company_name - String  credentials.login - String  credentials.enabled - boolean  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let customerListId = "customerListId_example"; // String | The customer list id to search in
-
-apiInstance.postCustomerListsByIDCustomerSearch(bodycustomerListId).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var customerListId = "customerListId_example"; // String | The customer list id to search in
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postCustomerListsByIDCustomerSearch(customerListId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -453,10 +471,12 @@ apiInstance.postCustomerListsByIDCustomerSearch(bodycustomerListId).then((data) 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **customerListId** | **String**| The customer list id to search in | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -468,33 +488,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomerListsByIDCustomers"></a>
-# **postCustomerListsByIDCustomers**
-> Customer postCustomerListsByIDCustomers(bodylistId)
+
+## postCustomerListsByIDCustomers
+
+> Customer postCustomerListsByIDCustomers(listId, body)
 
 
 
 Action to create a new customer. The customer is created using the specified credentials and customer  information.This action verifies the following:    Login acceptance criteria and uniqueness  Mandatory customer properties    If the action fails to create the customer, it returns a 400 fault with an appropriate message.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.Customer(); // Customer | 
-let listId = "listId_example"; // String | The customer list id
-
-apiInstance.postCustomerListsByIDCustomers(bodylistId).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var body = new DataApi.Customer(); // Customer | 
+apiInstance.postCustomerListsByIDCustomers(listId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -502,10 +522,12 @@ apiInstance.postCustomerListsByIDCustomers(bodylistId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Customer**](Customer.md)|  | 
  **listId** | **String**| The customer list id | 
+ **body** | [**Customer**](Customer.md)|  | 
 
 ### Return type
 
@@ -517,34 +539,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomerListsByIDCustomersByIDAddresses"></a>
-# **postCustomerListsByIDCustomersByIDAddresses**
-> CustomerAddress postCustomerListsByIDCustomersByIDAddresses(bodylistIdcustomerNo)
+
+## postCustomerListsByIDCustomersByIDAddresses
+
+> CustomerAddress postCustomerListsByIDCustomersByIDAddresses(listId, customerNo, body)
 
 
 
 The action creates a new customer address with the given address  information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.CustomerAddress(); // CustomerAddress | 
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-
-apiInstance.postCustomerListsByIDCustomersByIDAddresses(bodylistIdcustomerNo).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var body = new DataApi.CustomerAddress(); // CustomerAddress | 
+apiInstance.postCustomerListsByIDCustomersByIDAddresses(listId, customerNo, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -552,11 +574,13 @@ apiInstance.postCustomerListsByIDCustomersByIDAddresses(bodylistIdcustomerNo).th
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
  **listId** | **String**| The customer list id | 
  **customerNo** | **String**| The customer number | 
+ **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
 
 ### Return type
 
@@ -568,34 +592,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putCustomerListsByIDCustomersByID"></a>
-# **putCustomerListsByIDCustomersByID**
-> Customer putCustomerListsByIDCustomersByID(bodylistIdcustomerNo)
+
+## putCustomerListsByIDCustomersByID
+
+> Customer putCustomerListsByIDCustomersByID(listId, customerNo, body)
 
 
 
 Action to create a new customer. The customer is created using the specified customer number, credentials and  customer information.This action verifies the following:    Login acceptance criteria and uniqueness  Mandatory customer properties    If the action fails to create the customer, it returns a 400 fault with an appropriate message.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomerListsApi();
-let body = new DataApi.Customer(); // Customer | 
-let listId = "listId_example"; // String | The customer list id
-let customerNo = "customerNo_example"; // String | The customer number
-
-apiInstance.putCustomerListsByIDCustomersByID(bodylistIdcustomerNo).then((data) => {
+var apiInstance = new DataApi.CustomerListsApi();
+var listId = "listId_example"; // String | The customer list id
+var customerNo = "customerNo_example"; // String | The customer number
+var body = new DataApi.Customer(); // Customer | 
+apiInstance.putCustomerListsByIDCustomersByID(listId, customerNo, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -603,11 +627,13 @@ apiInstance.putCustomerListsByIDCustomersByID(bodylistIdcustomerNo).then((data) 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Customer**](Customer.md)|  | 
  **listId** | **String**| The customer list id | 
  **customerNo** | **String**| The customer number | 
+ **body** | [**Customer**](Customer.md)|  | 
 
 ### Return type
 
@@ -619,6 +645,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

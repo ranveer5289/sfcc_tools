@@ -1,6 +1,7 @@
 # DataApi.SortingRule
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creationDate** | **Date** | The creation date, read only | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **productSortingRuleSteps** | [**[SortingRuleStep]**](SortingRuleStep.md) | the steps involved in sorting by this rule. | [optional] 
 **ruleContext** | **String** | The context of the rule, either site or global | [optional] 
 **site** | **String** |  | [optional] 
+
+

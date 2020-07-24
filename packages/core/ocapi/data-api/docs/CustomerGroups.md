@@ -1,6 +1,7 @@
 # DataApi.CustomerGroups
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Number** | The number of returned documents. | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **select** | **String** | The fields that you want to select. | [optional] 
 **start** | **Number** | The zero-based index of the first search hit to include in the result. | [optional] 
 **total** | **Number** | The total number of documents. | [optional] 
+
+

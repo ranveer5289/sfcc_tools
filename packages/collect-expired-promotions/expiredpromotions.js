@@ -3,19 +3,37 @@
 const path = require('path');
 const CSVStream = require('csv-write-stream');
 const fs = require('fs');
-const chalk = require('chalk');
 const ocapi = require('@sfcc_tools/ocapi');
+const chalk = require('chalk');
 const config = require('@sfcc_tools/config');
+const ocapiDataApi = require('@sfcc_tools/data_api');
 
 const TASKID = 'expiredpromotions';
 const ocapiConfig = config.get('packages.ocapi');
 
 const oauth = ocapi.oauth;
-const promotionSearch = ocapi.promotionsearch;
 
 async function getAllPromotions(token) {
-    let promotionResponse = await promotionSearch.search(token);
+    const defaultDataApiClient = ocapiDataApi.ApiClient.instance;
+    const oauth2Application = defaultDataApiClient.authentications.oauth2_application;
+    oauth2Application.accessToken = token;
+    let start = 0;
     let allPromotions = [];
+
+    defaultDataApiClient.basePath = ocapiConfig.ocapi_data_api_url;
+    const apiInstance = new ocapiDataApi.SitesApi();
+    let query = `{
+        "start": ${start},
+        "count": 200,
+        "query": {
+            "match_all_query": {}
+        },
+        "select": "(**)"
+    }`;
+    const siteId = ocapiConfig.sfcc_site_id;
+
+    let promotionResponse = await apiInstance.postSitesByIDPromotionSearch(siteId, query);
+
     if (promotionResponse && promotionResponse.hits) {
         console.log(chalk.green('Fetching all promotions..........'));
         allPromotions = allPromotions.concat(promotionResponse.hits);
@@ -24,8 +42,16 @@ async function getAllPromotions(token) {
 
         const counter = Math.ceil(totalHits / 200);
         for (let i = 1; i < counter; i += 1) {
-            const start = i * 200;
-            promotionResponse = await promotionSearch.search(token, start);
+            start = i * 200;
+            query = `{
+                "start": ${start},
+                "count": 200,
+                "query": {
+                    "match_all_query": {}
+                },
+                "select": "(**)"
+            }`;
+            promotionResponse = await apiInstance.postSitesByIDPromotionSearch(siteId, query);
             if (promotionResponse && promotionResponse.hits) {
                 allPromotions = allPromotions.concat(promotionResponse.hits);
             }

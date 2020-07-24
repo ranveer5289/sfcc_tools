@@ -1,6 +1,7 @@
 # DataApi.ObjectTypeDefinition
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributeDefinitionCount** | **Number** | Returns the number of attribute definitions contained by the type.  This is a computed attribute and cannot be changed. | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **objectType** | **String** | The object type identifier | [optional] 
 **queryable** | **Boolean** | True if the system object type is queryable, false otherwise.  Default is true. | [optional] 
 **readOnly** | **Boolean** | True if the system object is read-only, false otherwise.  This is a computed attribute and cannot be changed. | [optional] 
+
+

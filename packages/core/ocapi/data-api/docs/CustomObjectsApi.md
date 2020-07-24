@@ -1,6 +1,6 @@
 # DataApi.CustomObjectsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,10 @@ Method | HTTP request | Description
 [**patchCustomObjectsByIDByID**](CustomObjectsApi.md#patchCustomObjectsByIDByID) | **PATCH** /custom_objects/{object_type}/{key} | 
 [**putCustomObjectsByIDByID**](CustomObjectsApi.md#putCustomObjectsByIDByID) | **PUT** /custom_objects/{object_type}/{key} | 
 
-<a name="deleteCustomObjectsByIDByID"></a>
-# **deleteCustomObjectsByIDByID**
+
+
+## deleteCustomObjectsByIDByID
+
 > deleteCustomObjectsByIDByID(objectType, key)
 
 
@@ -18,27 +20,28 @@ Method | HTTP request | Description
 Deletes a global Custom Object. If the Custom Object does not exist, this will do nothing. Note that the customization scripts are only called, if the Custom Object does exist.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomObjectsApi();
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.deleteCustomObjectsByIDByID(objectType, key).then(() => {
+var apiInstance = new DataApi.CustomObjectsApi();
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+apiInstance.deleteCustomObjectsByIDByID(objectType, key).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,11 +58,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getCustomObjectsByIDByID"></a>
-# **getCustomObjectsByIDByID**
+
+## getCustomObjectsByIDByID
+
 > CustomObject getCustomObjectsByIDByID(objectType, key)
 
 
@@ -67,27 +71,28 @@ null (empty response body)
 Reads a global Custom Object with a given object type ID and a value for the key attribute of the object which represents its unique identifier.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomObjectsApi();
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.getCustomObjectsByIDByID(objectType, key).then((data) => {
+var apiInstance = new DataApi.CustomObjectsApi();
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+apiInstance.getCustomObjectsByIDByID(objectType, key).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -104,34 +109,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchCustomObjectsByIDByID"></a>
-# **patchCustomObjectsByIDByID**
-> CustomObject patchCustomObjectsByIDByID(bodyobjectTypekey)
+
+## patchCustomObjectsByIDByID
+
+> CustomObject patchCustomObjectsByIDByID(objectType, key, body)
 
 
 
 Updates a global Custom Object with information from request body. Note that only mentioned attributes will be updated and the key attribute is ignored. All other attributes will be left unattended.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomObjectsApi();
-let body = new DataApi.CustomObject(); // CustomObject | 
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.patchCustomObjectsByIDByID(bodyobjectTypekey).then((data) => {
+var apiInstance = new DataApi.CustomObjectsApi();
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+var body = new DataApi.CustomObject(); // CustomObject | 
+apiInstance.patchCustomObjectsByIDByID(objectType, key, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -139,11 +144,13 @@ apiInstance.patchCustomObjectsByIDByID(bodyobjectTypekey).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomObject**](CustomObject.md)|  | 
  **objectType** | **String**| the ID of the object type | 
  **key** | **String**| the key attribute value of the Custom Object | 
+ **body** | [**CustomObject**](CustomObject.md)|  | 
 
 ### Return type
 
@@ -155,39 +162,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putCustomObjectsByIDByID"></a>
-# **putCustomObjectsByIDByID**
-> CustomObject putCustomObjectsByIDByID(objectTypekey)
+
+## putCustomObjectsByIDByID
+
+> CustomObject putCustomObjectsByIDByID(objectType, key, opts)
 
 
 
 Creates a global Custom Object from request body. Note that an existing global Custom Object with the same key will be overwritten by this action.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.CustomObjectsApi();
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.putCustomObjectsByIDByID(objectTypekey).then((data) => {
+var apiInstance = new DataApi.CustomObjectsApi();
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+var opts = {
+  'body': new DataApi.CustomObject() // CustomObject | 
+};
+apiInstance.putCustomObjectsByIDByID(objectType, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -205,6 +217,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

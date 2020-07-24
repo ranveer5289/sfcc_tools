@@ -1,6 +1,7 @@
 # DataApi.SlotConfigurationCampaignAssignment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaign** | [**Campaign**](Campaign.md) |  | [optional] 
@@ -15,13 +16,20 @@ Name | Type | Description | Notes
 **slotConfiguration** | [**SlotConfiguration**](SlotConfiguration.md) |  | [optional] 
 **slotConfigurationId** | **String** | The ID of the slot configuration. | 
 **slotConfigurationUuid** | **String** | The UUID of the slot configuration. | [optional] 
-**slotContextId** | **String** | The ID of the slot&#x27;s context, for example, the category ID for a slot with category context. | [optional] 
+**slotContextId** | **String** | The ID of the slot&#39;s context, for example, the category ID for a slot with category context. | [optional] 
 **slotId** | **String** | The ID of the slot. | 
 
-<a name="ContextEnum"></a>
+
+
 ## Enum: ContextEnum
 
+
 * `global` (value: `"global"`)
+
 * `category` (value: `"category"`)
+
 * `folder` (value: `"folder"`)
+
+
+
 

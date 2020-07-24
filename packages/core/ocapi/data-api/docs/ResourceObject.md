@@ -1,6 +1,7 @@
 # DataApi.ResourceObject
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cacheTime** | **Number** | Resource Cache time | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **resourceId** | **String** | Resource ID | 
 **versionRange** | [**VersionRangeObject**](VersionRangeObject.md) |  | [optional] 
 **writeAttributes** | **String** | Write attributes of the resource | [optional] 
+
+

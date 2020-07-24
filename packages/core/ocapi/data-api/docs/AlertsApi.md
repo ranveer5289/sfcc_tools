@@ -1,6 +1,6 @@
 # DataApi.AlertsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,10 @@ Method | HTTP request | Description
 [**patchAlertsDescriptorsByIDByIDByIDRevalidate**](AlertsApi.md#patchAlertsDescriptorsByIDByIDByIDRevalidate) | **PATCH** /alerts/descriptors/{application_id}/{application_context_path}/{message_id}/revalidate | 
 [**patchAlertsUsersettings**](AlertsApi.md#patchAlertsUsersettings) | **PATCH** /alerts/usersettings | 
 
-<a name="deleteAlertsItemsByIDByIDByIDByID"></a>
-# **deleteAlertsItemsByIDByIDByIDByID**
+
+
+## deleteAlertsItemsByIDByIDByIDByID
+
 > deleteAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId)
 
 
@@ -24,23 +26,22 @@ Method | HTTP request | Description
 Deletes a single alert If the alert depends on a context object, the last path elemnt denotes the context object id.    If the alert is independent from a context, use - as the last path element
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let applicationContextPath = "applicationContextPath_example"; // String | The application context path.
-let messageId = "messageId_example"; // String | The message ID.
-let contextObjectId = "contextObjectId_example"; // String | The context object ID. Use '-' for alerts that don't have a context object.
-
-apiInstance.deleteAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId).then(() => {
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var applicationContextPath = "applicationContextPath_example"; // String | The application context path.
+var messageId = "messageId_example"; // String | The message ID.
+var contextObjectId = "contextObjectId_example"; // String | The context object ID. Use '-' for alerts that don't have a context object.
+apiInstance.deleteAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -48,12 +49,14 @@ apiInstance.deleteAlertsItemsByIDByIDByIDByID(applicationId, applicationContextP
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **String**| The application ID. | 
  **applicationContextPath** | **String**| The application context path. | 
  **messageId** | **String**| The message ID. | 
- **contextObjectId** | **String**| The context object ID. Use &#x27;-&#x27; for alerts that don&#x27;t have a context object. | 
+ **contextObjectId** | **String**| The context object ID. Use &#39;-&#39; for alerts that don&#39;t have a context object. | 
 
 ### Return type
 
@@ -65,11 +68,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getAlertsDescriptors"></a>
-# **getAlertsDescriptors**
+
+## getAlertsDescriptors
+
 > AlertDescriptors getAlertsDescriptors()
 
 
@@ -77,24 +81,25 @@ null (empty response body)
 Gets a collection of all alert descriptors
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-apiInstance.getAlertsDescriptors().then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+apiInstance.getAlertsDescriptors().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -107,11 +112,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsDescriptorsByID"></a>
-# **getAlertsDescriptorsByID**
+
+## getAlertsDescriptorsByID
+
 > AlertDescriptors getAlertsDescriptorsByID(applicationId, opts)
 
 
@@ -119,28 +125,30 @@ This endpoint does not need any parameter.
 Gets a collection of all alert descriptors for the given application context.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let opts = { 
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var opts = {
   'applicationContextPath': "applicationContextPath_example" // String | 
 };
-apiInstance.getAlertsDescriptorsByID(applicationId, opts).then((data) => {
+apiInstance.getAlertsDescriptorsByID(applicationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -157,11 +165,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsDescriptorsByIDByIDByID"></a>
-# **getAlertsDescriptorsByIDByIDByID**
+
+## getAlertsDescriptorsByIDByIDByID
+
 > AlertDescriptor getAlertsDescriptorsByIDByIDByID(applicationId, applicationContextPath, messageId)
 
 
@@ -169,28 +178,29 @@ Name | Type | Description  | Notes
 Gets a single alert descriptor
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let applicationContextPath = "applicationContextPath_example"; // String | The application context path.
-let messageId = "messageId_example"; // String | The message ID.
-
-apiInstance.getAlertsDescriptorsByIDByIDByID(applicationId, applicationContextPath, messageId).then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var applicationContextPath = "applicationContextPath_example"; // String | The application context path.
+var messageId = "messageId_example"; // String | The message ID.
+apiInstance.getAlertsDescriptorsByIDByIDByID(applicationId, applicationContextPath, messageId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -208,11 +218,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsItems"></a>
-# **getAlertsItems**
+
+## getAlertsItems
+
 > AlertItems getAlertsItems()
 
 
@@ -220,24 +231,25 @@ Name | Type | Description  | Notes
 Gets a collection of all alerts
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-apiInstance.getAlertsItems().then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+apiInstance.getAlertsItems().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -250,11 +262,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsItemsByID"></a>
-# **getAlertsItemsByID**
+
+## getAlertsItemsByID
+
 > AlertItems getAlertsItemsByID(applicationId, opts)
 
 
@@ -262,29 +275,31 @@ This endpoint does not need any parameter.
 Gets a collection of alerts for the given application context
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let opts = { 
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var opts = {
   'applicationContextPath': "applicationContextPath_example", // String | 
   'contextObjectId': "contextObjectId_example" // String | 
 };
-apiInstance.getAlertsItemsByID(applicationId, opts).then((data) => {
+apiInstance.getAlertsItemsByID(applicationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -302,11 +317,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsItemsByIDByIDByIDByID"></a>
-# **getAlertsItemsByIDByIDByIDByID**
+
+## getAlertsItemsByIDByIDByIDByID
+
 > AlertItem getAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId)
 
 
@@ -314,23 +330,22 @@ Name | Type | Description  | Notes
 Gets a single alert If the alert depends on a context object, the last path elemnt denotes the context object id.    If the alert is independent from a context, use - as the last path element
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let applicationContextPath = "applicationContextPath_example"; // String | The application context path.
-let messageId = "messageId_example"; // String | The message ID.
-let contextObjectId = "contextObjectId_example"; // String | The context object ID. Use '-' for alerts that don't have a context object.
-
-apiInstance.getAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId).then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var applicationContextPath = "applicationContextPath_example"; // String | The application context path.
+var messageId = "messageId_example"; // String | The message ID.
+var contextObjectId = "contextObjectId_example"; // String | The context object ID. Use '-' for alerts that don't have a context object.
+apiInstance.getAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath, messageId, contextObjectId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -338,12 +353,14 @@ apiInstance.getAlertsItemsByIDByIDByIDByID(applicationId, applicationContextPath
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **applicationId** | **String**| The application ID. | 
  **applicationContextPath** | **String**| The application context path. | 
  **messageId** | **String**| The message ID. | 
- **contextObjectId** | **String**| The context object ID. Use &#x27;-&#x27; for alerts that don&#x27;t have a context object. | 
+ **contextObjectId** | **String**| The context object ID. Use &#39;-&#39; for alerts that don&#39;t have a context object. | 
 
 ### Return type
 
@@ -355,11 +372,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getAlertsUsersettings"></a>
-# **getAlertsUsersettings**
+
+## getAlertsUsersettings
+
 > AlertSettings getAlertsUsersettings()
 
 
@@ -367,24 +385,25 @@ Name | Type | Description  | Notes
 Gets the alert settings for the user.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-apiInstance.getAlertsUsersettings().then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+apiInstance.getAlertsUsersettings().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -397,40 +416,45 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchAlertsDescriptorsByIDByIDByIDRevalidate"></a>
-# **patchAlertsDescriptorsByIDByIDByIDRevalidate**
-> patchAlertsDescriptorsByIDByIDByIDRevalidate(applicationIdapplicationContextPathmessageId)
+
+## patchAlertsDescriptorsByIDByIDByIDRevalidate
+
+> patchAlertsDescriptorsByIDByIDByIDRevalidate(applicationId, applicationContextPath, messageId, opts)
 
 
 
 Triggers rule validation for all described descriptors. When a validation rule for a descriptor is triggered active alerts might be deleted if the conditions are not met anymore.    Additionally, new alerts might be created if conditions of a descriptor are now met. If the alert descriptor is context-specific, a context object ID needs to be provided in the request body.    The request body can be ued to further restrict the set of descriptors that are validated.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-let applicationId = "applicationId_example"; // String | The application ID.
-let applicationContextPath = "applicationContextPath_example"; // String | The application context path.
-let messageId = "messageId_example"; // String | The message ID.
-
-apiInstance.patchAlertsDescriptorsByIDByIDByIDRevalidate(applicationIdapplicationContextPathmessageId).then(() => {
+var apiInstance = new DataApi.AlertsApi();
+var applicationId = "applicationId_example"; // String | The application ID.
+var applicationContextPath = "applicationContextPath_example"; // String | The application context path.
+var messageId = "messageId_example"; // String | The message ID.
+var opts = {
+  'body': new DataApi.AlertDescriptorsRevalidationRequest() // AlertDescriptorsRevalidationRequest | 
+};
+apiInstance.patchAlertsDescriptorsByIDByIDByIDRevalidate(applicationId, applicationContextPath, messageId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -449,37 +473,42 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="patchAlertsUsersettings"></a>
-# **patchAlertsUsersettings**
-> AlertSettings patchAlertsUsersettings()
+
+## patchAlertsUsersettings
+
+> AlertSettings patchAlertsUsersettings(opts)
 
 
 
 Changes the alert settings for the user.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.AlertsApi();
-
-apiInstance.patchAlertsUsersettings().then((data) => {
+var apiInstance = new DataApi.AlertsApi();
+var opts = {
+  'body': new DataApi.AlertSettings() // AlertSettings | 
+};
+apiInstance.patchAlertsUsersettings(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -495,6 +524,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

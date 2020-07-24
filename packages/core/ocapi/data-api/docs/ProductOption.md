@@ -1,6 +1,7 @@
 # DataApi.ProductOption
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customName** | **{String: String}** | The localized custom name of the product option. | [optional] 
@@ -15,9 +16,15 @@ Name | Type | Description | Notes
 **sortingMode** | **String** | The sorting mode for the product option values. | [optional] 
 **values** | [**[ProductOptionValue]**](ProductOptionValue.md) | The sorted array of values of the product option. | [optional] 
 
-<a name="SortingModeEnum"></a>
+
+
 ## Enum: SortingModeEnum
 
+
 * `byexplicitorder` (value: `"byexplicitorder"`)
+
 * `byoptionprice` (value: `"byoptionprice"`)
+
+
+
 

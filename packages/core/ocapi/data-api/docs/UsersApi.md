@@ -1,6 +1,6 @@
 # DataApi.UsersApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,8 +12,10 @@ Method | HTTP request | Description
 [**patchUsersThisPassword**](UsersApi.md#patchUsersThisPassword) | **PATCH** /users/this/password | 
 [**putUsersByID**](UsersApi.md#putUsersByID) | **PUT** /users/{login} | 
 
-<a name="deleteUsersByID"></a>
-# **deleteUsersByID**
+
+
+## deleteUsersByID
+
 > deleteUsersByID(login)
 
 
@@ -21,26 +23,27 @@ Method | HTTP request | Description
 Action to delete a single user.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let login = "login_example"; // String | login of the user
-
-apiInstance.deleteUsersByID(login).then(() => {
+var apiInstance = new DataApi.UsersApi();
+var login = "login_example"; // String | login of the user
+apiInstance.deleteUsersByID(login).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -56,11 +59,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getUsers"></a>
-# **getUsers**
+
+## getUsers
+
 > Users getUsers(opts)
 
 
@@ -68,29 +72,31 @@ null (empty response body)
 Action to get all users with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let opts = { 
+var apiInstance = new DataApi.UsersApi();
+var opts = {
   'start': 56, // Number | Optional start index for retrieving the items from a given index (default 0).
   'count': 56, // Number | Optional count for retrieving only a subset of the items (default is 25).
   'select': "select_example" // String | The property selector.
 };
-apiInstance.getUsers(opts).then((data) => {
+apiInstance.getUsers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,11 +114,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getUsersByID"></a>
-# **getUsersByID**
+
+## getUsersByID
+
 > User getUsersByID(login)
 
 
@@ -120,26 +127,27 @@ Name | Type | Description  | Notes
 Action to get a user.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let login = "login_example"; // String | login of the user
-
-apiInstance.getUsersByID(login).then((data) => {
+var apiInstance = new DataApi.UsersApi();
+var login = "login_example"; // String | login of the user
+apiInstance.getUsersByID(login).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -155,11 +163,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getUsersThis"></a>
-# **getUsersThis**
+
+## getUsersThis
+
 > User getUsersThis()
 
 
@@ -167,24 +176,25 @@ Name | Type | Description  | Notes
 Action to get the user password expiration information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-apiInstance.getUsersThis().then((data) => {
+var apiInstance = new DataApi.UsersApi();
+apiInstance.getUsersThis().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -197,33 +207,33 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchUsersByID"></a>
-# **patchUsersByID**
-> User patchUsersByID(bodylogin)
+
+## patchUsersByID
+
+> User patchUsersByID(login, body)
 
 
 
 Action to update a user.   Note: The locked flag and the user password cannot be updated with this resource.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let body = new DataApi.User(); // User | 
-let login = "login_example"; // String | login of the user
-
-apiInstance.patchUsersByID(bodylogin).then((data) => {
+var apiInstance = new DataApi.UsersApi();
+var login = "login_example"; // String | login of the user
+var body = new DataApi.User(); // User | 
+apiInstance.patchUsersByID(login, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -231,10 +241,12 @@ apiInstance.patchUsersByID(bodylogin).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)|  | 
  **login** | **String**| login of the user | 
+ **body** | [**User**](User.md)|  | 
 
 ### Return type
 
@@ -246,11 +258,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchUsersThisPassword"></a>
-# **patchUsersThisPassword**
+
+## patchUsersThisPassword
+
 > User patchUsersThisPassword(body)
 
 
@@ -258,26 +271,27 @@ Name | Type | Description  | Notes
 Action to change a user password.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let body = new DataApi.PasswordChangeRequest(); // PasswordChangeRequest | 
-
-apiInstance.patchUsersThisPassword(body).then((data) => {
+var apiInstance = new DataApi.UsersApi();
+var body = new DataApi.PasswordChangeRequest(); // PasswordChangeRequest | 
+apiInstance.patchUsersThisPassword(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -293,33 +307,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putUsersByID"></a>
-# **putUsersByID**
-> User putUsersByID(bodylogin)
+
+## putUsersByID
+
+> User putUsersByID(login, body)
 
 
 
 Action to create or overwrite a user.   If a user with the given login already exists, the existing user will be overwritten.  If no such login exists, a new user is created.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.UsersApi();
-let body = new DataApi.User(); // User | 
-let login = "login_example"; // String | login of the user
-
-apiInstance.putUsersByID(bodylogin).then((data) => {
+var apiInstance = new DataApi.UsersApi();
+var login = "login_example"; // String | login of the user
+var body = new DataApi.User(); // User | 
+apiInstance.putUsersByID(login, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -327,10 +341,12 @@ apiInstance.putUsersByID(bodylogin).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)|  | 
  **login** | **String**| login of the user | 
+ **body** | [**User**](User.md)|  | 
 
 ### Return type
 
@@ -342,6 +358,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

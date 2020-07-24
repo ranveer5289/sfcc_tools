@@ -1,6 +1,7 @@
 # DataApi.ShippingAddressUpdateRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** |  | [optional] 
@@ -22,3 +23,5 @@ Name | Type | Description | Notes
 **suffix** | **String** |  | [optional] 
 **suite** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
+
+

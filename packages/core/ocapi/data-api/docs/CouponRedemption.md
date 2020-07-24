@@ -1,6 +1,7 @@
 # DataApi.CouponRedemption
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** | The coupon code that was redeemed | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **customerEmail** | **String** | The customer email that was used to redeem it | [optional] 
 **orderNo** | **String** | The order number where the redemption occurred | [optional] 
 **viewOrderUrl** | **String** | A URL able to access the order | [optional] 
+
+

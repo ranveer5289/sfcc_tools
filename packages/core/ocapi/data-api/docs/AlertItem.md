@@ -1,6 +1,7 @@
 # DataApi.AlertItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applicationContextPath** | **String** | The application context path. | [optional] 
@@ -13,12 +14,21 @@ Name | Type | Description | Notes
 **remediationAction** | **String** | The remediation action. | [optional] 
 **userPriority** | **String** | The user priority. | [optional] 
 
-<a name="UserPriorityEnum"></a>
+
+
 ## Enum: UserPriorityEnum
 
+
 * `not_allowed` (value: `"not_allowed"`)
+
 * `hidden` (value: `"hidden"`)
+
 * `informational` (value: `"informational"`)
+
 * `warning` (value: `"warning"`)
+
 * `action_required` (value: `"action_required"`)
+
+
+
 

@@ -1,6 +1,6 @@
 # DataApi.LibrariesApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,8 +20,10 @@ Method | HTTP request | Description
 [**putLibrariesByIDFolderAssignmentsByIDByID**](LibrariesApi.md#putLibrariesByIDFolderAssignmentsByIDByID) | **PUT** /libraries/{library_id}/folder_assignments/{content_id}/{folder_id} | 
 [**putLibrariesByIDFoldersByID**](LibrariesApi.md#putLibrariesByIDFoldersByID) | **PUT** /libraries/{library_id}/folders/{folder_id} | 
 
-<a name="deleteLibrariesByIDContentByID"></a>
-# **deleteLibrariesByIDContentByID**
+
+
+## deleteLibrariesByIDContentByID
+
 > deleteLibrariesByIDContentByID(libraryId, contentId)
 
 
@@ -29,27 +31,28 @@ Method | HTTP request | Description
 Deletes the content asset with the specified ID from the specified library. If the content asset is not found, the server returns a 404 (NotFoundException) fault. If the content asset is locked by another user, the server returns a 409 (ResourceLockedException) fault. If the connection is not secure, the server returns a 403 (SecureCommunicationRequiredException) fault.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to remove.
-
-apiInstance.deleteLibrariesByIDContentByID(libraryId, contentId).then(() => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to remove.
+apiInstance.deleteLibrariesByIDContentByID(libraryId, contentId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,11 +69,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteLibrariesByIDFolderAssignmentsByIDByID"></a>
-# **deleteLibrariesByIDFolderAssignmentsByIDByID**
+
+## deleteLibrariesByIDFolderAssignmentsByIDByID
+
 > deleteLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId)
 
 
@@ -78,28 +82,29 @@ null (empty response body)
 Action to unassign a content asset from the specified library folder.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.deleteLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId).then(() => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
+var folderId = "folderId_example"; // String | ID of a target folder.
+apiInstance.deleteLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -117,11 +122,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteLibrariesByIDFoldersByID"></a>
-# **deleteLibrariesByIDFoldersByID**
+
+## deleteLibrariesByIDFoldersByID
+
 > deleteLibrariesByIDFoldersByID(libraryId, folderId)
 
 
@@ -129,27 +135,28 @@ null (empty response body)
 Delete folder
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.deleteLibrariesByIDFoldersByID(libraryId, folderId).then(() => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+apiInstance.deleteLibrariesByIDFoldersByID(libraryId, folderId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -166,11 +173,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getLibrariesByIDContentByID"></a>
-# **getLibrariesByIDContentByID**
+
+## getLibrariesByIDContentByID
+
 > ContentAsset getLibrariesByIDContentByID(libraryId, contentId)
 
 
@@ -178,27 +186,28 @@ null (empty response body)
 Returns a content asset using the specified ID. If the content asset cannot be found, the server returns a 404 (ContentNotFoundException) fault. If the connection is not secure, the server returns a 403 (SecureCommunicationRequiredException).
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
-
-apiInstance.getLibrariesByIDContentByID(libraryId, contentId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
+apiInstance.getLibrariesByIDContentByID(libraryId, contentId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -215,11 +224,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getLibrariesByIDContentByIDFolders"></a>
-# **getLibrariesByIDContentByIDFolders**
+
+## getLibrariesByIDContentByIDFolders
+
 > ContentFolderResult getLibrariesByIDContentByIDFolders(libraryId, contentId, opts)
 
 
@@ -227,30 +237,32 @@ Name | Type | Description  | Notes
 Action to get all assigned folders of a content asset.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | The content id of the assignment.
-let opts = { 
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | The content id of the assignment.
+var opts = {
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getLibrariesByIDContentByIDFolders(libraryId, contentId, opts).then((data) => {
+apiInstance.getLibrariesByIDContentByIDFolders(libraryId, contentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -269,11 +281,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getLibrariesByIDFolderAssignmentsByIDByID"></a>
-# **getLibrariesByIDFolderAssignmentsByIDByID**
+
+## getLibrariesByIDFolderAssignmentsByIDByID
+
 > ContentFolderAssignment getLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId)
 
 
@@ -281,28 +294,29 @@ Name | Type | Description  | Notes
 Action to get a single content to folder assignment
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.getLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
+var folderId = "folderId_example"; // String | ID of a target folder.
+apiInstance.getLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -320,11 +334,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getLibrariesByIDFoldersByID"></a>
-# **getLibrariesByIDFoldersByID**
+
+## getLibrariesByIDFoldersByID
+
 > ContentFolder getLibrariesByIDFoldersByID(libraryId, folderId)
 
 
@@ -332,27 +347,28 @@ Name | Type | Description  | Notes
 Action to get folder information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.getLibrariesByIDFoldersByID(libraryId, folderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+apiInstance.getLibrariesByIDFoldersByID(libraryId, folderId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -369,11 +385,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getLibrariesByIDFoldersByIDContent"></a>
-# **getLibrariesByIDFoldersByIDContent**
+
+## getLibrariesByIDFoldersByIDContent
+
 > ContentAssetResult getLibrariesByIDFoldersByIDContent(libraryId, folderId, opts)
 
 
@@ -381,30 +398,32 @@ Name | Type | Description  | Notes
 Action to get all assigned content assets of a folder.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-let opts = { 
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+var opts = {
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getLibrariesByIDFoldersByIDContent(libraryId, folderId, opts).then((data) => {
+apiInstance.getLibrariesByIDFoldersByIDContent(libraryId, folderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -423,11 +442,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getLibrariesByIDFoldersByIDSubFolders"></a>
-# **getLibrariesByIDFoldersByIDSubFolders**
+
+## getLibrariesByIDFoldersByIDSubFolders
+
 > ContentSubFolderResult getLibrariesByIDFoldersByIDSubFolders(libraryId, folderId, opts)
 
 
@@ -435,30 +455,32 @@ Name | Type | Description  | Notes
 Action to get sub folders information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-let opts = { 
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+var opts = {
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getLibrariesByIDFoldersByIDSubFolders(libraryId, folderId, opts).then((data) => {
+apiInstance.getLibrariesByIDFoldersByIDSubFolders(libraryId, folderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -477,34 +499,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="patchLibrariesByIDContentByID"></a>
-# **patchLibrariesByIDContentByID**
-> ContentAsset patchLibrariesByIDContentByID(bodylibraryIdcontentId)
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
 
+## patchLibrariesByIDContentByID
 
-Updates a content asset. In the request, the If-Match header is required. The value of the header is an &#x27;ETag&#x27; representing the last known base-point information for the content asset. If the header is missing, the server returns a 409 (IfMatchRequiredException) fault. If the header value does not match the server&#x27;s &#x27;ETag&#x27;, the server returns a 412 (InvalidIfMatchException) fault. The delta information for the library folder containing the content asset is updated atomically: the information is written completely or not at all. If the content asset is locked, the server returns a 409 (ResourceLockedException) fault.
+> ContentAsset patchLibrariesByIDContentByID(libraryId, contentId, body)
+
+
+
+Updates a content asset. In the request, the If-Match header is required. The value of the header is an &#39;ETag&#39; representing the last known base-point information for the content asset. If the header is missing, the server returns a 409 (IfMatchRequiredException) fault. If the header value does not match the server&#39;s &#39;ETag&#39;, the server returns a 412 (InvalidIfMatchException) fault. The delta information for the library folder containing the content asset is updated atomically: the information is written completely or not at all. If the content asset is locked, the server returns a 409 (ResourceLockedException) fault.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let body = new DataApi.ContentAsset(); // ContentAsset | 
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
-
-apiInstance.patchLibrariesByIDContentByID(bodylibraryIdcontentId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
+var body = new DataApi.ContentAsset(); // ContentAsset | 
+apiInstance.patchLibrariesByIDContentByID(libraryId, contentId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -512,11 +534,13 @@ apiInstance.patchLibrariesByIDContentByID(bodylibraryIdcontentId).then((data) =>
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentAsset**](ContentAsset.md)|  | 
  **libraryId** | **String**| ID of the shared library or the site-id in case of a private library. | 
  **contentId** | **String**| the ID of the content asset to retrieve. | 
+ **body** | [**ContentAsset**](ContentAsset.md)|  | 
 
 ### Return type
 
@@ -528,35 +552,35 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchLibrariesByIDFolderAssignmentsByIDByID"></a>
-# **patchLibrariesByIDFolderAssignmentsByIDByID**
-> ContentFolderAssignment patchLibrariesByIDFolderAssignmentsByIDByID(bodylibraryIdcontentIdfolderId)
+
+## patchLibrariesByIDFolderAssignmentsByIDByID
+
+> ContentFolderAssignment patchLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId, body)
 
 
 
 Action to update a single content to folder assignment. Currently only the position and default attribute can be changed.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let body = new DataApi.ContentFolderAssignment(); // ContentFolderAssignment | 
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the content id of the assignment
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.patchLibrariesByIDFolderAssignmentsByIDByID(bodylibraryIdcontentIdfolderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the content id of the assignment
+var folderId = "folderId_example"; // String | ID of a target folder.
+var body = new DataApi.ContentFolderAssignment(); // ContentFolderAssignment | 
+apiInstance.patchLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -564,12 +588,14 @@ apiInstance.patchLibrariesByIDFolderAssignmentsByIDByID(bodylibraryIdcontentIdfo
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFolderAssignment**](ContentFolderAssignment.md)|  | 
  **libraryId** | **String**| ID of the shared library or the site-id in case of a private library. | 
  **contentId** | **String**| the content id of the assignment | 
  **folderId** | **String**| ID of a target folder. | 
+ **body** | [**ContentFolderAssignment**](ContentFolderAssignment.md)|  | 
 
 ### Return type
 
@@ -581,34 +607,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="patchLibrariesByIDFoldersByID"></a>
-# **patchLibrariesByIDFoldersByID**
-> ContentFolder patchLibrariesByIDFoldersByID(bodylibraryIdfolderId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## patchLibrariesByIDFoldersByID
 
-Updates an existing folder. In the request, the If-Match header is required. The value of the header is an &#x27;ETag&#x27; representing the last known base-point information for the library folder. If the header is missing, the server returns a 409 (IfMatchRequiredException) fault. If the header value does not match the server&#x27;s &#x27;ETag&#x27;, the server returns a 412 (InvalidIfMatchException) fault. The delta information for the library folder is updated atomically: the information is written completely or not at all.
+> ContentFolder patchLibrariesByIDFoldersByID(libraryId, folderId, body)
+
+
+
+Updates an existing folder. In the request, the If-Match header is required. The value of the header is an &#39;ETag&#39; representing the last known base-point information for the library folder. If the header is missing, the server returns a 409 (IfMatchRequiredException) fault. If the header value does not match the server&#39;s &#39;ETag&#39;, the server returns a 412 (InvalidIfMatchException) fault. The delta information for the library folder is updated atomically: the information is written completely or not at all.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let body = new DataApi.ContentFolder(); // ContentFolder | 
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.patchLibrariesByIDFoldersByID(bodylibraryIdfolderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+var body = new DataApi.ContentFolder(); // ContentFolder | 
+apiInstance.patchLibrariesByIDFoldersByID(libraryId, folderId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -616,11 +642,13 @@ apiInstance.patchLibrariesByIDFoldersByID(bodylibraryIdfolderId).then((data) => 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFolder**](ContentFolder.md)|  | 
  **libraryId** | **String**| ID of the shared library or the site-id in case of a private library. | 
  **folderId** | **String**| ID of a target folder. | 
+ **body** | [**ContentFolder**](ContentFolder.md)|  | 
 
 ### Return type
 
@@ -632,34 +660,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putLibrariesByIDContentByID"></a>
-# **putLibrariesByIDContentByID**
-> ContentAsset putLibrariesByIDContentByID(bodylibraryIdcontentId)
+
+## putLibrariesByIDContentByID
+
+> ContentAsset putLibrariesByIDContentByID(libraryId, contentId, body)
 
 
 
 Creates a new content asset in the specified library, or overwrites an existing content asset. If a content asset with the specified ID already exists, the server completely overwrites the content asset. Please note: Existing folder assignments are not touched. If the existing content asset is locked, the server returns a 409 (ResourceLockedException) fault. If the connection is not secure, the server returns a 403 (SecureCommunicationRequiredException) fault.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let body = new DataApi.ContentAsset(); // ContentAsset | 
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
-
-apiInstance.putLibrariesByIDContentByID(bodylibraryIdcontentId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var contentId = "contentId_example"; // String | the ID of the content asset to retrieve.
+var body = new DataApi.ContentAsset(); // ContentAsset | 
+apiInstance.putLibrariesByIDContentByID(libraryId, contentId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -667,11 +695,13 @@ apiInstance.putLibrariesByIDContentByID(bodylibraryIdcontentId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentAsset**](ContentAsset.md)|  | 
  **libraryId** | **String**| ID of the shared library or the site-id in case of a private library. | 
  **contentId** | **String**| the ID of the content asset to retrieve. | 
+ **body** | [**ContentAsset**](ContentAsset.md)|  | 
 
 ### Return type
 
@@ -683,40 +713,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putLibrariesByIDFolderAssignmentsByIDByID"></a>
-# **putLibrariesByIDFolderAssignmentsByIDByID**
-> ContentFolderAssignment putLibrariesByIDFolderAssignmentsByIDByID(libraryIdcontentIdfolderId)
+
+## putLibrariesByIDFolderAssignmentsByIDByID
+
+> ContentFolderAssignment putLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId, opts)
 
 
 
 Action to assign a content asset to a specified folder.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let libraryId = "libraryId_example"; // String | the ID of the shared library or the site-id in case of a private library
-let contentId = "contentId_example"; // String | the content id
-let folderId = "folderId_example"; // String | the folder id
-
-apiInstance.putLibrariesByIDFolderAssignmentsByIDByID(libraryIdcontentIdfolderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | the ID of the shared library or the site-id in case of a private library
+var contentId = "contentId_example"; // String | the content id
+var folderId = "folderId_example"; // String | the folder id
+var opts = {
+  'body': new DataApi.ContentFolderAssignment() // ContentFolderAssignment | 
+};
+apiInstance.putLibrariesByIDFolderAssignmentsByIDByID(libraryId, contentId, folderId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -735,34 +770,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putLibrariesByIDFoldersByID"></a>
-# **putLibrariesByIDFoldersByID**
-> ContentFolder putLibrariesByIDFoldersByID(bodylibraryIdfolderId)
+
+## putLibrariesByIDFoldersByID
+
+> ContentFolder putLibrariesByIDFoldersByID(libraryId, folderId, body)
 
 
 
 Action to create a new library folder, or to replace an existing folder. This action completely overwrites existing folders. Please note: Sub folders and assignments to content assets are not touched. This action ignores the folder ID in the input document.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.LibrariesApi();
-let body = new DataApi.ContentFolder(); // ContentFolder | 
-let libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
-let folderId = "folderId_example"; // String | ID of a target folder.
-
-apiInstance.putLibrariesByIDFoldersByID(bodylibraryIdfolderId).then((data) => {
+var apiInstance = new DataApi.LibrariesApi();
+var libraryId = "libraryId_example"; // String | ID of the shared library or the site-id in case of a private library.
+var folderId = "folderId_example"; // String | ID of a target folder.
+var body = new DataApi.ContentFolder(); // ContentFolder | 
+apiInstance.putLibrariesByIDFoldersByID(libraryId, folderId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -770,11 +805,13 @@ apiInstance.putLibrariesByIDFoldersByID(bodylibraryIdfolderId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFolder**](ContentFolder.md)|  | 
  **libraryId** | **String**| ID of the shared library or the site-id in case of a private library. | 
  **folderId** | **String**| ID of a target folder. | 
+ **body** | [**ContentFolder**](ContentFolder.md)|  | 
 
 ### Return type
 
@@ -786,6 +823,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

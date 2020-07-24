@@ -1,6 +1,7 @@
 # DataApi.ContentFolderAssignment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contentId** | **String** | The content id. | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **folderId** | **String** | The folder id. | [optional] 
 **folderLink** | **String** | The folder link. | [optional] 
 **position** | **Number** | The position of the content asset in the folder. | [optional] 
+
+

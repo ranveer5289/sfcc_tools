@@ -1,6 +1,7 @@
 # DataApi.User
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disabled** | **Boolean** | Flag whether the user is disabled. | [optional] 
@@ -18,3 +19,5 @@ Name | Type | Description | Notes
 **preferredDataLocale** | **String** | The effective preferred data locale of the user. A locale is only considered if the user has at least read  permission on the locale. | [optional] 
 **preferredUiLocale** | **String** | The preferred UI locale of the user. | [optional] 
 **roles** | **[String]** | List of role ids the user is assigned to. | [optional] 
+
+

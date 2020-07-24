@@ -1,6 +1,7 @@
 # DataApi.PromotionAssignmentInformation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abtestId** | **String** | If there is only one assignment, and that assignment is an A/B test segment, the id of the A/B test the segment  belongs to. Otherwise, empty. | [optional] 
@@ -17,11 +18,19 @@ Name | Type | Description | Notes
 **upcomingAbtestAssignments** | [**[PromotionAbtestGroupAssignment]**](PromotionAbtestGroupAssignment.md) | A list of upcoming A/B tests this is assigned to. | [optional] 
 **upcomingCampaignAssignments** | [**[PromotionCampaignAssignment]**](PromotionCampaignAssignment.md) | A list of upcoming campaigns this is assigned to. | [optional] 
 
-<a name="ScheduleTypeEnum"></a>
+
+
 ## Enum: ScheduleTypeEnum
 
+
 * `none` (value: `"none"`)
+
 * `campaign` (value: `"campaign"`)
+
 * `abtest` (value: `"abtest"`)
+
 * `multiple` (value: `"multiple"`)
+
+
+
 

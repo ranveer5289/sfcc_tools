@@ -1,6 +1,7 @@
 # DataApi.CodeVersion
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activationTime** | **Date** | The code version activation time. | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **rollback** | **Boolean** | Use this method to determine, if this code version is the current rollback version. | [optional] 
 **totalSize** | **Number** | Returns the total size of the file system content of this code version in bytes. | [optional] 
 **webDavUrl** | **String** | Returns the HTTPS based WebDAV URL that can be used to access the code version resources. | [optional] 
+
+

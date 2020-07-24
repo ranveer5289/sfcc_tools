@@ -1,6 +1,7 @@
 # DataApi.CategoryProductAssignment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **catalogId** | **String** | The id of the catalog. | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **product** | [**Product**](Product.md) |  | [optional] 
 **productId** | **String** | The id of the Product. | [optional] 
 **productName** | **{String: String}** | The name of the product. | [optional] 
+
+

@@ -1,6 +1,7 @@
 # DataApi.Variant
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ats** | **Number** | Inventory \&quot;Available to Sell\&quot; of the product. | [optional] 
@@ -17,3 +18,5 @@ Name | Type | Description | Notes
 **searchable** | **{String: Boolean}** |  | [optional] 
 **variationAttributes** | [**[VariationAttribute]**](VariationAttribute.md) | variation attributes | [optional] 
 **variationValues** | **{String: String}** | The actual variation attribute id - value pairs. | [optional] 
+
+

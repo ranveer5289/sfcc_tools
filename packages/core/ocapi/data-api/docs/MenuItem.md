@@ -1,6 +1,7 @@
 # DataApi.MenuItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **displayName** | **{String: String}** | The display name of the menu item. | [optional] 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **moduleType** | **String** | The module type of the menu item (BM or CC). | [optional] 
 **name** | **String** | The name of the menu item. | [optional] 
 **type** | **String** | The permission type. | [optional] 
+
+

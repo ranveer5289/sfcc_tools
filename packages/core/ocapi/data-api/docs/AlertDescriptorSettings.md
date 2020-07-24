@@ -1,6 +1,7 @@
 # DataApi.AlertDescriptorSettings
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applicationContextPath** | **String** | The application context path. | 
@@ -11,11 +12,19 @@ Name | Type | Description | Notes
 **showInHeader** | **Boolean** | Flag that indicates whether the alert is shown in the Business Manager header. | 
 **showOnHomepage** | **Boolean** | Flag that indicates whether the alert is shown on the Business Manager homepage. | 
 
-<a name="PriorityEnum"></a>
+
+
 ## Enum: PriorityEnum
 
+
 * `hidden` (value: `"hidden"`)
+
 * `informational` (value: `"informational"`)
+
 * `warning` (value: `"warning"`)
+
 * `action_required` (value: `"action_required"`)
+
+
+
 

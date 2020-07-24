@@ -1,6 +1,7 @@
 # DataApi.SlotConfigurationAbtestGroupAssignment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abtestDescription** | **String** |  | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **schedule** | [**Schedule**](Schedule.md) |  | [optional] 
 **segmentDescription** | **String** |  | [optional] 
 **segmentId** | **String** |  | [optional] 
+
+

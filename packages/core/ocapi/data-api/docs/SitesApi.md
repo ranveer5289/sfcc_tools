@@ -1,6 +1,6 @@
 # DataApi.SitesApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -120,8 +120,10 @@ Method | HTTP request | Description
 [**putSitesByIDSourceCodeGroupsByID**](SitesApi.md#putSitesByIDSourceCodeGroupsByID) | **PUT** /sites/{site_id}/source_code_groups/{id} | 
 [**putSitesByIDStoresByID**](SitesApi.md#putSitesByIDStoresByID) | **PUT** /sites/{site_id}/stores/{id} | 
 
-<a name="deleteSitesByIDAbTestsByID"></a>
-# **deleteSitesByIDAbTestsByID**
+
+
+## deleteSitesByIDAbTestsByID
+
 > deleteSitesByIDAbTestsByID(siteId, id)
 
 
@@ -129,27 +131,28 @@ Method | HTTP request | Description
 Deletes the A/B Test by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-
-apiInstance.deleteSitesByIDAbTestsByID(siteId, id).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+apiInstance.deleteSitesByIDAbTestsByID(siteId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -166,11 +169,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDAbTestsByIDSegmentsByID"></a>
-# **deleteSitesByIDAbTestsByIDSegmentsByID**
+
+## deleteSitesByIDAbTestsByIDSegmentsByID
+
 > deleteSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId)
 
 
@@ -178,28 +182,29 @@ null (empty response body)
 Deletes the A/B Test Segment by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-let segmentId = "segmentId_example"; // String | The id of the segment in the test.
-
-apiInstance.deleteSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var segmentId = "segmentId_example"; // String | The id of the segment in the test.
+apiInstance.deleteSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -217,11 +222,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID"></a>
-# **deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID**
+
+## deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID
+
 > deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId)
 
 
@@ -229,29 +235,30 @@ null (empty response body)
 Action to unbind one promotions from a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let abTestId = "abTestId_example"; // String | The abTest ID that promotions are to be unbound from
-let segmentId = "segmentId_example"; // String | the segment to bind to
-let promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the abTest.
-
-apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var abTestId = "abTestId_example"; // String | The abTest ID that promotions are to be unbound from
+var segmentId = "segmentId_example"; // String | the segment to bind to
+var promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the abTest.
+apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -270,11 +277,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID"></a>
-# **deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID**
+
+## deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID
+
 > deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts)
 
 
@@ -282,32 +290,34 @@ null (empty response body)
 Action to unbind a slot configuration from a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let abTestId = "abTestId_example"; // String | The id of the abTest
-let segmentId = "segmentId_example"; // String | 
-let siteId = "siteId_example"; // String | The id of the site
-let slotId = "slotId_example"; // String | The of the slot
-let slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var abTestId = "abTestId_example"; // String | The id of the abTest
+var segmentId = "segmentId_example"; // String | 
+var siteId = "siteId_example"; // String | The id of the site
+var slotId = "slotId_example"; // String | The of the slot
+var slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts).then(() => {
+apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -328,11 +338,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID"></a>
-# **deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID**
+
+## deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID
+
 > deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts)
 
 
@@ -340,32 +351,34 @@ null (empty response body)
 Action to unbind a single sorting rule from a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the abTest, sorting rule and category.
-let abTestId = "abTestId_example"; // String | The ID of the abTest to which the sorting rule is to be assigned.
-let segmentId = "segmentId_example"; // String | 
-let sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the abTest.
-let categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the abTest, sorting rule and category.
+var abTestId = "abTestId_example"; // String | The ID of the abTest to which the sorting rule is to be assigned.
+var segmentId = "segmentId_example"; // String | 
+var sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the abTest.
+var categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
+var opts = {
   'ruleContext': "ruleContext_example" // String | 
 };
-apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts).then(() => {
+apiInstance.deleteSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -386,11 +399,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByID"></a>
-# **deleteSitesByIDCampaignsByID**
+
+## deleteSitesByIDCampaignsByID
+
 > deleteSitesByIDCampaignsByID(siteId, campaignId)
 
 
@@ -398,27 +412,28 @@ null (empty response body)
 Deletes the campaign by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let campaignId = "campaignId_example"; // String | A campaign id to remove
-
-apiInstance.deleteSitesByIDCampaignsByID(siteId, campaignId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var campaignId = "campaignId_example"; // String | A campaign id to remove
+apiInstance.deleteSitesByIDCampaignsByID(siteId, campaignId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -435,11 +450,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDCouponsByID"></a>
-# **deleteSitesByIDCampaignsByIDCouponsByID**
+
+## deleteSitesByIDCampaignsByIDCouponsByID
+
 > deleteSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId, opts)
 
 
@@ -447,30 +463,32 @@ null (empty response body)
 Action to unbind a coupon from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be unbound from
-let couponId = "couponId_example"; // String | The coupon ID to unbind from a campaign
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be unbound from
+var couponId = "couponId_example"; // String | The coupon ID to unbind from a campaign
+var opts = {
   'removeInPCA': "removeInPCA_example" // String | 
 };
-apiInstance.deleteSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId, opts).then(() => {
+apiInstance.deleteSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -489,11 +507,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDCustomerGroupsByID"></a>
-# **deleteSitesByIDCampaignsByIDCustomerGroupsByID**
+
+## deleteSitesByIDCampaignsByIDCustomerGroupsByID
+
 > deleteSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId)
 
 
@@ -501,28 +520,29 @@ null (empty response body)
 Action to unbind a customer group from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be unbound from
-let customerGroupId = "customerGroupId_example"; // String | The customer group ID to unbind from a campaign
-
-apiInstance.deleteSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be unbound from
+var customerGroupId = "customerGroupId_example"; // String | The customer group ID to unbind from a campaign
+apiInstance.deleteSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -540,11 +560,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDPromotionsByID"></a>
-# **deleteSitesByIDCampaignsByIDPromotionsByID**
+
+## deleteSitesByIDCampaignsByIDPromotionsByID
+
 > deleteSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId)
 
 
@@ -552,28 +573,29 @@ null (empty response body)
 Action to unbind a single promotion from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the campaign and promotion.
-let campaignId = "campaignId_example"; // String | The ID of the campaign to which the promotion is to be assigned.
-let promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the campaign.
-
-apiInstance.deleteSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the campaign and promotion.
+var campaignId = "campaignId_example"; // String | The ID of the campaign to which the promotion is to be assigned.
+var promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the campaign.
+apiInstance.deleteSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -591,11 +613,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID"></a>
-# **deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID**
+
+## deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID
+
 > deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, opts)
 
 
@@ -603,31 +626,33 @@ null (empty response body)
 Action to unbind a slot configuration from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let campaignId = "campaignId_example"; // String | The id of the campaign
-let siteId = "siteId_example"; // String | The id of the site
-let slotId = "slotId_example"; // String | The of the slot
-let slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var campaignId = "campaignId_example"; // String | The id of the campaign
+var siteId = "siteId_example"; // String | The id of the site
+var slotId = "slotId_example"; // String | The of the slot
+var slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, opts).then(() => {
+apiInstance.deleteSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -647,11 +672,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDSortingRulesByIDByID"></a>
-# **deleteSitesByIDCampaignsByIDSortingRulesByIDByID**
+
+## deleteSitesByIDCampaignsByIDSortingRulesByIDByID
+
 > deleteSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts)
 
 
@@ -659,31 +685,33 @@ null (empty response body)
 Action to unbind a single sorting rule from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the campaign, sorting rule and category.
-let campaignId = "campaignId_example"; // String | The ID of the campaign to which the sorting rule is to be assigned.
-let sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the campaign.
-let categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the campaign, sorting rule and category.
+var campaignId = "campaignId_example"; // String | The ID of the campaign to which the sorting rule is to be assigned.
+var sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the campaign.
+var categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
+var opts = {
   'ruleContext': "ruleContext_example" // String | 
 };
-apiInstance.deleteSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts).then(() => {
+apiInstance.deleteSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -703,11 +731,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCampaignsByIDSourceCodeGroupsByID"></a>
-# **deleteSitesByIDCampaignsByIDSourceCodeGroupsByID**
+
+## deleteSitesByIDCampaignsByIDSourceCodeGroupsByID
+
 > deleteSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId)
 
 
@@ -715,28 +744,29 @@ null (empty response body)
 Action to unbind a source code group from a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that source code groups are to be unbound from
-let sourceCodeGroupId = "sourceCodeGroupId_example"; // String | The source code group ID to unbind from a campaign
-
-apiInstance.deleteSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that source code groups are to be unbound from
+var sourceCodeGroupId = "sourceCodeGroupId_example"; // String | The source code group ID to unbind from a campaign
+apiInstance.deleteSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -754,11 +784,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCartridgesByID"></a>
-# **deleteSitesByIDCartridgesByID**
+
+## deleteSitesByIDCartridgesByID
+
 > CartridgePathApiResponse deleteSitesByIDCartridgesByID(siteId, cartridgeName)
 
 
@@ -766,27 +797,28 @@ null (empty response body)
 Remove a cartridge from cartridge path.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site.
-let cartridgeName = "cartridgeName_example"; // String | request body
-
-apiInstance.deleteSitesByIDCartridgesByID(siteId, cartridgeName).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var cartridgeName = "cartridgeName_example"; // String | request body
+apiInstance.deleteSitesByIDCartridgesByID(siteId, cartridgeName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -803,11 +835,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="deleteSitesByIDCouponsByID"></a>
-# **deleteSitesByIDCouponsByID**
+
+## deleteSitesByIDCouponsByID
+
 > deleteSitesByIDCouponsByID(siteId, couponId)
 
 
@@ -815,27 +848,28 @@ Name | Type | Description  | Notes
 Delete a coupon by id.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | Id of the coupon to delete from the site.
-
-apiInstance.deleteSitesByIDCouponsByID(siteId, couponId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | Id of the coupon to delete from the site.
+apiInstance.deleteSitesByIDCouponsByID(siteId, couponId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -852,11 +886,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCustomObjectsByIDByID"></a>
-# **deleteSitesByIDCustomObjectsByIDByID**
+
+## deleteSitesByIDCustomObjectsByIDByID
+
 > deleteSitesByIDCustomObjectsByIDByID(siteId, objectType, key)
 
 
@@ -864,28 +899,29 @@ null (empty response body)
 Deletes a site specific Custom Object. If the Custom Object does not exist, this will do nothing. Note that the customization scripts are only called, if the Custom Object does exist.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | the ID of the site
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.deleteSitesByIDCustomObjectsByIDByID(siteId, objectType, key).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | the ID of the site
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+apiInstance.deleteSitesByIDCustomObjectsByIDByID(siteId, objectType, key).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -903,11 +939,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDCustomerGroupsByID"></a>
-# **deleteSitesByIDCustomerGroupsByID**
+
+## deleteSitesByIDCustomerGroupsByID
+
 > CustomerGroup deleteSitesByIDCustomerGroupsByID(siteId, id, opts)
 
 
@@ -915,29 +952,31 @@ null (empty response body)
 Triggers customer group deletion by ID. Be aware that the deletion happens via asynchronous batch process  which is the reason the deletion itself is not necessarily finished after the call to this resource returned. The   customer group that is in deletion will be provided in the response.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | One customer group id to remove
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | One customer group id to remove
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.deleteSitesByIDCustomerGroupsByID(siteId, id, opts).then((data) => {
+apiInstance.deleteSitesByIDCustomerGroupsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -955,11 +994,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="deleteSitesByIDCustomerGroupsByIDMembersByID"></a>
-# **deleteSitesByIDCustomerGroupsByIDMembersByID**
+
+## deleteSitesByIDCustomerGroupsByIDMembersByID
+
 > deleteSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts)
 
 
@@ -967,30 +1007,32 @@ Name | Type | Description  | Notes
 Action to remove a customer from a (static) customer group.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the customer group.
-let customerNo = "customerNo_example"; // String | The customer number of the customer to remove from the group.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the customer group.
+var customerNo = "customerNo_example"; // String | The customer number of the customer to remove from the group.
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.deleteSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then(() => {
+apiInstance.deleteSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1009,11 +1051,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDGiftCertificatesByID"></a>
-# **deleteSitesByIDGiftCertificatesByID**
+
+## deleteSitesByIDGiftCertificatesByID
+
 > deleteSitesByIDGiftCertificatesByID(siteId, merchantId)
 
 
@@ -1021,27 +1064,28 @@ null (empty response body)
 Deletes the gift certificate by merchant ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let merchantId = "merchantId_example"; // String | One gift certificate merchant id to remove
-
-apiInstance.deleteSitesByIDGiftCertificatesByID(siteId, merchantId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var merchantId = "merchantId_example"; // String | One gift certificate merchant id to remove
+apiInstance.deleteSitesByIDGiftCertificatesByID(siteId, merchantId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1058,11 +1102,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDPromotionsByID"></a>
-# **deleteSitesByIDPromotionsByID**
+
+## deleteSitesByIDPromotionsByID
+
 > deleteSitesByIDPromotionsByID(siteId, id)
 
 
@@ -1070,27 +1115,28 @@ null (empty response body)
 Deletes the promotion by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | Promotion id to remove
-
-apiInstance.deleteSitesByIDPromotionsByID(siteId, id).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | Promotion id to remove
+apiInstance.deleteSitesByIDPromotionsByID(siteId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1107,11 +1153,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDSlotsByIDSlotConfigurationsByID"></a>
-# **deleteSitesByIDSlotsByIDSlotConfigurationsByID**
+
+## deleteSitesByIDSlotsByIDSlotConfigurationsByID
+
 > deleteSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts)
 
 
@@ -1119,30 +1166,32 @@ null (empty response body)
 Removes a configuration for slot in a given context from a site.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
-let slotId = "slotId_example"; // String | The id of the slot.
-let configurationId = "configurationId_example"; // String | The id of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
+var slotId = "slotId_example"; // String | The id of the slot.
+var configurationId = "configurationId_example"; // String | The id of the slot configuration.
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.deleteSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts).then(() => {
+apiInstance.deleteSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1161,11 +1210,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDSourceCodeGroupsByID"></a>
-# **deleteSitesByIDSourceCodeGroupsByID**
+
+## deleteSitesByIDSourceCodeGroupsByID
+
 > deleteSitesByIDSourceCodeGroupsByID(siteId, id)
 
 
@@ -1173,27 +1223,28 @@ null (empty response body)
 Deletes the source code group by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | One source code group id to remove
-
-apiInstance.deleteSitesByIDSourceCodeGroupsByID(siteId, id).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | One source code group id to remove
+apiInstance.deleteSitesByIDSourceCodeGroupsByID(siteId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1210,11 +1261,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSitesByIDStoresByID"></a>
-# **deleteSitesByIDStoresByID**
+
+## deleteSitesByIDStoresByID
+
 > deleteSitesByIDStoresByID(siteId, id)
 
 
@@ -1222,27 +1274,28 @@ null (empty response body)
 Deletes the store by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | One store id to remove
-
-apiInstance.deleteSitesByIDStoresByID(siteId, id).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | One store id to remove
+apiInstance.deleteSitesByIDStoresByID(siteId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1259,11 +1312,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getSites"></a>
-# **getSites**
+
+## getSites
+
 > Sites getSites(opts)
 
 
@@ -1271,29 +1325,31 @@ null (empty response body)
 Action to get all existing sites.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var opts = {
   'start': 56, // Number | Optional start index for retrieving the items from a given index (default 0).
   'count': 56, // Number | Optional count for retrieving only a subset of the items (default is 25).
   'select': "select_example" // String | The property selector.
 };
-apiInstance.getSites(opts).then((data) => {
+apiInstance.getSites(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1311,11 +1367,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByID"></a>
-# **getSitesByID**
+
+## getSitesByID
+
 > Site getSitesByID(siteId)
 
 
@@ -1323,26 +1380,27 @@ Name | Type | Description  | Notes
 Action to read an existing site.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | the id of the site
-
-apiInstance.getSitesByID(siteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | the id of the site
+apiInstance.getSitesByID(siteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1358,11 +1416,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDAbTests"></a>
-# **getSitesByIDAbTests**
+
+## getSitesByIDAbTests
+
 > AbTests getSitesByIDAbTests(siteId, opts)
 
 
@@ -1370,30 +1429,32 @@ Name | Type | Description  | Notes
 Action to get all the A/B tests with searching.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDAbTests(siteId, opts).then((data) => {
+apiInstance.getSitesByIDAbTests(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1412,11 +1473,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDAbTestsByID"></a>
-# **getSitesByIDAbTestsByID**
+
+## getSitesByIDAbTestsByID
+
 > AbTest getSitesByIDAbTestsByID(siteId, id, opts)
 
 
@@ -1424,29 +1486,31 @@ Name | Type | Description  | Notes
 Action to get an A/B Test information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDAbTestsByID(siteId, id, opts).then((data) => {
+apiInstance.getSitesByIDAbTestsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1464,11 +1528,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDAbTestsByIDSegmentsByID"></a>
-# **getSitesByIDAbTestsByIDSegmentsByID**
+
+## getSitesByIDAbTestsByIDSegmentsByID
+
 > AbTestSegment getSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts)
 
 
@@ -1476,30 +1541,32 @@ Name | Type | Description  | Notes
 Gets an A/B Test segment using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-let segmentId = "segmentId_example"; // String | The id of the segment in the test.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var segmentId = "segmentId_example"; // String | The id of the segment in the test.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts).then((data) => {
+apiInstance.getSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1518,11 +1585,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDAiRecommenderNames"></a>
-# **getSitesByIDAiRecommenderNames**
+
+## getSitesByIDAiRecommenderNames
+
 > RecommendersResult getSitesByIDAiRecommenderNames(siteId)
 
 
@@ -1530,26 +1598,27 @@ Name | Type | Description  | Notes
 Get a list of available AI recommenders. Recommenders are configured in the Einstein configurator and are required with AI recommendation API requests.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | Site ID to get a list of recommenders for.
-
-apiInstance.getSitesByIDAiRecommenderNames(siteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | Site ID to get a list of recommenders for.
+apiInstance.getSitesByIDAiRecommenderNames(siteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1565,11 +1634,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCampaignsByID"></a>
-# **getSitesByIDCampaignsByID**
+
+## getSitesByIDCampaignsByID
+
 > Campaign getSitesByIDCampaignsByID(siteId, campaignId)
 
 
@@ -1577,27 +1647,28 @@ Name | Type | Description  | Notes
 Action to get campaign information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site the requested campaign belongs to.
-let campaignId = "campaignId_example"; // String | The id of the requested campaign.
-
-apiInstance.getSitesByIDCampaignsByID(siteId, campaignId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site the requested campaign belongs to.
+var campaignId = "campaignId_example"; // String | The id of the requested campaign.
+apiInstance.getSitesByIDCampaignsByID(siteId, campaignId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1614,11 +1685,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCoupons"></a>
-# **getSitesByIDCoupons**
+
+## getSitesByIDCoupons
+
 > Coupons getSitesByIDCoupons(siteId, opts)
 
 
@@ -1626,31 +1698,33 @@ Name | Type | Description  | Notes
 Action to get all the coupons with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDCoupons(siteId, opts).then((data) => {
+apiInstance.getSitesByIDCoupons(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1670,11 +1744,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCouponsByID"></a>
-# **getSitesByIDCouponsByID**
+
+## getSitesByIDCouponsByID
+
 > Coupon getSitesByIDCouponsByID(siteId, couponId, opts)
 
 
@@ -1682,30 +1757,32 @@ Name | Type | Description  | Notes
 Action to get coupon information.   The following fields are returned in the Coupon document when specifying the stats expand:        exported_code_count      redemption_count      total_codes_count       If the role to which the user belongs does not have View_Coupon_Codes permission, then the coupon codes returned will be masked.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the requested coupon.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the requested coupon.
+var opts = {
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDCouponsByID(siteId, couponId, opts).then((data) => {
+apiInstance.getSitesByIDCouponsByID(siteId, couponId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1724,11 +1801,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCouponsByIDCampaigns"></a>
-# **getSitesByIDCouponsByIDCampaigns**
+
+## getSitesByIDCouponsByIDCampaigns
+
 > Campaigns getSitesByIDCouponsByIDCampaigns(siteId, couponId, opts)
 
 
@@ -1736,31 +1814,33 @@ Name | Type | Description  | Notes
 Get the campaigns that have a coupon assigned to them either directly or through promotions
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon that is assigned to campaigns directly or through promotions.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon that is assigned to campaigns directly or through promotions.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCouponsByIDCampaigns(siteId, couponId, opts).then((data) => {
+apiInstance.getSitesByIDCouponsByIDCampaigns(siteId, couponId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1780,11 +1860,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCouponsByIDCampaignsByIDPromotions"></a>
-# **getSitesByIDCouponsByIDCampaignsByIDPromotions**
+
+## getSitesByIDCouponsByIDCampaignsByIDPromotions
+
 > Promotions getSitesByIDCouponsByIDCampaignsByIDPromotions(siteId, couponId, campaignId, opts)
 
 
@@ -1792,32 +1873,34 @@ Name | Type | Description  | Notes
 Get the promotions for a campaign that have a coupon assigned to them either directly or through campaigns.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon that is assigned to promotions directly or through campaigns.
-let campaignId = "campaignId_example"; // String | The id of the campaign that we want to restrict the set of promotions for.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon that is assigned to promotions directly or through campaigns.
+var campaignId = "campaignId_example"; // String | The id of the campaign that we want to restrict the set of promotions for.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCouponsByIDCampaignsByIDPromotions(siteId, couponId, campaignId, opts).then((data) => {
+apiInstance.getSitesByIDCouponsByIDCampaignsByIDPromotions(siteId, couponId, campaignId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1838,11 +1921,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCouponsByIDCodes"></a>
-# **getSitesByIDCouponsByIDCodes**
+
+## getSitesByIDCouponsByIDCodes
+
 > CouponCodes getSitesByIDCouponsByIDCodes(siteId, couponId, opts)
 
 
@@ -1850,31 +1934,33 @@ Name | Type | Description  | Notes
 Get the coupon codes for the given coupon.   If the role to which the user belongs does not have View_Coupon_Codes permission, then the coupon codes returned will be masked.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon from which to delete codes (must be a multiple code coupon).
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon from which to delete codes (must be a multiple code coupon).
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCouponsByIDCodes(siteId, couponId, opts).then((data) => {
+apiInstance.getSitesByIDCouponsByIDCodes(siteId, couponId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1894,11 +1980,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCouponsByIDPromotions"></a>
-# **getSitesByIDCouponsByIDPromotions**
+
+## getSitesByIDCouponsByIDPromotions
+
 > Promotions getSitesByIDCouponsByIDPromotions(siteId, couponId, opts)
 
 
@@ -1906,31 +1993,33 @@ Name | Type | Description  | Notes
 Get the promotions that have a coupon assigned to them either directly or through campaigns.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon that is assigned to promotions directly or through campaigns.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon that is assigned to promotions directly or through campaigns.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCouponsByIDPromotions(siteId, couponId, opts).then((data) => {
+apiInstance.getSitesByIDCouponsByIDPromotions(siteId, couponId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1950,11 +2039,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCustomObjectsByIDByID"></a>
-# **getSitesByIDCustomObjectsByIDByID**
+
+## getSitesByIDCustomObjectsByIDByID
+
 > CustomObject getSitesByIDCustomObjectsByIDByID(siteId, objectType, key)
 
 
@@ -1962,28 +2052,29 @@ Name | Type | Description  | Notes
 Reads a site specific Custom Object with a given object type ID and a value for the key attribute of the object which represents its unique identifier.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | the ID of the site
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.getSitesByIDCustomObjectsByIDByID(siteId, objectType, key).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | the ID of the site
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+apiInstance.getSitesByIDCustomObjectsByIDByID(siteId, objectType, key).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2001,11 +2092,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCustomerGroups"></a>
-# **getSitesByIDCustomerGroups**
+
+## getSitesByIDCustomerGroups
+
 > CustomerGroups getSitesByIDCustomerGroups(siteId, opts)
 
 
@@ -2013,30 +2105,32 @@ Name | Type | Description  | Notes
 Action to get all the customer groups with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCustomerGroups(siteId, opts).then((data) => {
+apiInstance.getSitesByIDCustomerGroups(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2055,11 +2149,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCustomerGroupsByID"></a>
-# **getSitesByIDCustomerGroupsByID**
+
+## getSitesByIDCustomerGroupsByID
+
 > CustomerGroup getSitesByIDCustomerGroupsByID(siteId, id, opts)
 
 
@@ -2067,29 +2162,31 @@ Name | Type | Description  | Notes
 Action to get customer group information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested customer group.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested customer group.
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCustomerGroupsByID(siteId, id, opts).then((data) => {
+apiInstance.getSitesByIDCustomerGroupsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2107,11 +2204,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCustomerGroupsByIDMembers"></a>
-# **getSitesByIDCustomerGroupsByIDMembers**
+
+## getSitesByIDCustomerGroupsByIDMembers
+
 > CustomerGroupMembers getSitesByIDCustomerGroupsByIDMembers(siteId, id, opts)
 
 
@@ -2119,31 +2217,33 @@ Name | Type | Description  | Notes
 Action to get all the customer group members with no filtering. For dynamic customer groups and the system groups \&quot;Everyone\&quot; and \&quot;Unregistered\&quot; no result is returned (Status Code: 204 - No Content).
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let id = "id_example"; // String | 
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var id = "id_example"; // String | 
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCustomerGroupsByIDMembers(siteId, id, opts).then((data) => {
+apiInstance.getSitesByIDCustomerGroupsByIDMembers(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2163,11 +2263,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDCustomerGroupsByIDMembersByID"></a>
-# **getSitesByIDCustomerGroupsByIDMembersByID**
+
+## getSitesByIDCustomerGroupsByIDMembersByID
+
 > CustomerGroupMember getSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts)
 
 
@@ -2175,30 +2276,32 @@ Name | Type | Description  | Notes
 Action to get customer group member information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested members customer group.
-let customerNo = "customerNo_example"; // String | The customer number of the requested customer group member.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested members customer group.
+var customerNo = "customerNo_example"; // String | The customer number of the requested customer group member.
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then((data) => {
+apiInstance.getSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2217,11 +2320,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDGiftCertificates"></a>
-# **getSitesByIDGiftCertificates**
+
+## getSitesByIDGiftCertificates
+
 > GiftCertificates getSitesByIDGiftCertificates(siteId, opts)
 
 
@@ -2229,30 +2333,32 @@ Name | Type | Description  | Notes
 Action to get all the gift certificates with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDGiftCertificates(siteId, opts).then((data) => {
+apiInstance.getSitesByIDGiftCertificates(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2271,11 +2377,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDGiftCertificatesByID"></a>
-# **getSitesByIDGiftCertificatesByID**
+
+## getSitesByIDGiftCertificatesByID
+
 > GiftCertificate getSitesByIDGiftCertificatesByID(siteId, merchantId)
 
 
@@ -2283,27 +2390,28 @@ Name | Type | Description  | Notes
 Action to get gift certificate information using merchant ID.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let merchantId = "merchantId_example"; // String | The merchant id of the requested gift certificate.
-
-apiInstance.getSitesByIDGiftCertificatesByID(siteId, merchantId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var merchantId = "merchantId_example"; // String | The merchant id of the requested gift certificate.
+apiInstance.getSitesByIDGiftCertificatesByID(siteId, merchantId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2320,11 +2428,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDLocaleInfoLocales"></a>
-# **getSitesByIDLocaleInfoLocales**
+
+## getSitesByIDLocaleInfoLocales
+
 > LocaleResult getSitesByIDLocaleInfoLocales(siteId, opts)
 
 
@@ -2332,32 +2441,34 @@ Name | Type | Description  | Notes
 Action to get the set of locales with the system given a site.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | Only locales specified for the site are returned
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | Only locales specified for the site are returned
+var opts = {
   'includeAll': true, // Boolean | 
   'id': "id_example", // String | 
   'select': "select_example", // String | 
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getSitesByIDLocaleInfoLocales(siteId, opts).then((data) => {
+apiInstance.getSitesByIDLocaleInfoLocales(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2378,11 +2489,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDPromotionsByID"></a>
-# **getSitesByIDPromotionsByID**
+
+## getSitesByIDPromotionsByID
+
 > Promotion getSitesByIDPromotionsByID(siteId, id)
 
 
@@ -2390,27 +2502,28 @@ Name | Type | Description  | Notes
 Action to get promotion information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the requested promotion.
-
-apiInstance.getSitesByIDPromotionsByID(siteId, id).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the requested promotion.
+apiInstance.getSitesByIDPromotionsByID(siteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2427,42 +2540,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSitePreferencesPreferenceGroupsByIDByID"></a>
-# **getSitesByIDSitePreferencesPreferenceGroupsByIDByID**
+
+## getSitesByIDSitePreferencesPreferenceGroupsByIDByID
+
 > SitePreferences getSitesByIDSitePreferencesPreferenceGroupsByIDByID(siteId, instanceType, groupId, opts)
 
 
 
-For the specified site and instance, read the custom preferences in the preference group.  Specify &#x27;current&#x27; to retrieve the preferences for the instance on which this call is being made. The system will recognize its type.
+For the specified site and instance, read the custom preferences in the preference group.  Specify &#39;current&#39; to retrieve the preferences for the instance on which this call is being made. The system will recognize its type.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let instanceType = "instanceType_example"; // String | One of {staging,development,sandbox,production,current}.
-let groupId = "groupId_example"; // String | The ID of the preference group.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var instanceType = "instanceType_example"; // String | One of {staging,development,sandbox,production,current}.
+var groupId = "groupId_example"; // String | The ID of the preference group.
+var opts = {
   'maskPasswords': true // Boolean | 
 };
-apiInstance.getSitesByIDSitePreferencesPreferenceGroupsByIDByID(siteId, instanceType, groupId, opts).then((data) => {
+apiInstance.getSitesByIDSitePreferencesPreferenceGroupsByIDByID(siteId, instanceType, groupId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2481,11 +2597,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSlotConfigurations"></a>
-# **getSitesByIDSlotConfigurations**
+
+## getSitesByIDSlotConfigurations
+
 > SlotConfigurations getSitesByIDSlotConfigurations(siteId, opts)
 
 
@@ -2493,30 +2610,32 @@ Name | Type | Description  | Notes
 Action to get all the slot configurations with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDSlotConfigurations(siteId, opts).then((data) => {
+apiInstance.getSitesByIDSlotConfigurations(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2535,11 +2654,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSlots"></a>
-# **getSitesByIDSlots**
+
+## getSitesByIDSlots
+
 > Slots getSitesByIDSlots(siteId, opts)
 
 
@@ -2547,30 +2667,32 @@ Name | Type | Description  | Notes
 Action to get all the slots with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDSlots(siteId, opts).then((data) => {
+apiInstance.getSitesByIDSlots(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2589,11 +2711,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSlotsByIDByID"></a>
-# **getSitesByIDSlotsByIDByID**
+
+## getSitesByIDSlotsByIDByID
+
 > Slot getSitesByIDSlotsByIDByID(siteId, slotId, contextType, opts)
 
 
@@ -2601,30 +2724,32 @@ Name | Type | Description  | Notes
 Action to get slot information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let slotId = "slotId_example"; // String | The id of the requested slot.
-let contextType = "contextType_example"; // String | The context type (folder, global, category).
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var slotId = "slotId_example"; // String | The id of the requested slot.
+var contextType = "contextType_example"; // String | The context type (folder, global, category).
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDSlotsByIDByID(siteId, slotId, contextType, opts).then((data) => {
+apiInstance.getSitesByIDSlotsByIDByID(siteId, slotId, contextType, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2643,11 +2768,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSlotsByIDSlotConfigurationsByID"></a>
-# **getSitesByIDSlotsByIDSlotConfigurationsByID**
+
+## getSitesByIDSlotsByIDSlotConfigurationsByID
+
 > SlotConfiguration getSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts)
 
 
@@ -2655,30 +2781,32 @@ Name | Type | Description  | Notes
 Action to read an existing slot configuration.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
-let slotId = "slotId_example"; // String | The id of the slot.
-let configurationId = "configurationId_example"; // String | The id of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
+var slotId = "slotId_example"; // String | The id of the slot.
+var configurationId = "configurationId_example"; // String | The id of the slot configuration.
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.getSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts).then((data) => {
+apiInstance.getSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2697,11 +2825,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSourceCodeGroups"></a>
-# **getSitesByIDSourceCodeGroups**
+
+## getSitesByIDSourceCodeGroups
+
 > SourceCodeGroups getSitesByIDSourceCodeGroups(siteId, opts)
 
 
@@ -2709,31 +2838,33 @@ Name | Type | Description  | Notes
 Action to get all the source code groups with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDSourceCodeGroups(siteId, opts).then((data) => {
+apiInstance.getSitesByIDSourceCodeGroups(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2753,11 +2884,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDSourceCodeGroupsByID"></a>
-# **getSitesByIDSourceCodeGroupsByID**
+
+## getSitesByIDSourceCodeGroupsByID
+
 > SourceCodeGroup getSitesByIDSourceCodeGroupsByID(siteId, id, opts)
 
 
@@ -2765,29 +2897,31 @@ Name | Type | Description  | Notes
 Action to retrieve source code group information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested source code group.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested source code group.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSitesByIDSourceCodeGroupsByID(siteId, id, opts).then((data) => {
+apiInstance.getSitesByIDSourceCodeGroupsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2805,11 +2939,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDStores"></a>
-# **getSitesByIDStores**
+
+## getSitesByIDStores
+
 > Stores getSitesByIDStores(siteId, opts)
 
 
@@ -2817,30 +2952,32 @@ Name | Type | Description  | Notes
 Action to get all the stores with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDStores(siteId, opts).then((data) => {
+apiInstance.getSitesByIDStores(siteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2859,11 +2996,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSitesByIDStoresByID"></a>
-# **getSitesByIDStoresByID**
+
+## getSitesByIDStoresByID
+
 > Store getSitesByIDStoresByID(siteId, id, opts)
 
 
@@ -2871,29 +3009,31 @@ Name | Type | Description  | Notes
 Action to get store information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the requested store.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the requested store.
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.getSitesByIDStoresByID(siteId, id, opts).then((data) => {
+apiInstance.getSitesByIDStoresByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2911,39 +3051,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDAbTestsByID"></a>
-# **patchSitesByIDAbTestsByID**
-> AbTest patchSitesByIDAbTestsByID(siteIdid)
+
+## patchSitesByIDAbTestsByID
+
+> AbTest patchSitesByIDAbTestsByID(siteId, id, opts)
 
 
 
 Updates the A/B Test with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-
-apiInstance.patchSitesByIDAbTestsByID(siteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var opts = {
+  'body': new DataApi.AbTest() // AbTest | 
+};
+apiInstance.patchSitesByIDAbTestsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2961,40 +3106,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDAbTestsByIDSegmentsByID"></a>
-# **patchSitesByIDAbTestsByIDSegmentsByID**
-> AbTestSegment patchSitesByIDAbTestsByIDSegmentsByID(siteIdidsegmentId)
+
+## patchSitesByIDAbTestsByIDSegmentsByID
+
+> AbTestSegment patchSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts)
 
 
 
 Updates the A/B Test segment with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-let segmentId = "segmentId_example"; // String | The id of the segment in the test.
-
-apiInstance.patchSitesByIDAbTestsByIDSegmentsByID(siteIdidsegmentId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var segmentId = "segmentId_example"; // String | The id of the segment in the test.
+var opts = {
+  'body': new DataApi.AbTestSegment() // AbTestSegment | 
+};
+apiInstance.patchSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -3013,34 +3163,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDCampaignsByID"></a>
-# **patchSitesByIDCampaignsByID**
-> Campaign patchSitesByIDCampaignsByID(bodysiteIdcampaignId)
+
+## patchSitesByIDCampaignsByID
+
+> Campaign patchSitesByIDCampaignsByID(siteId, campaignId, body)
 
 
 
 Updates the campaign with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Campaign(); // Campaign | 
-let siteId = "siteId_example"; // String | The site context.
-let campaignId = "campaignId_example"; // String | The id of the requested campaign.
-
-apiInstance.patchSitesByIDCampaignsByID(bodysiteIdcampaignId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var campaignId = "campaignId_example"; // String | The id of the requested campaign.
+var body = new DataApi.Campaign(); // Campaign | 
+apiInstance.patchSitesByIDCampaignsByID(siteId, campaignId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3048,11 +3198,13 @@ apiInstance.patchSitesByIDCampaignsByID(bodysiteIdcampaignId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Campaign**](Campaign.md)|  | 
  **siteId** | **String**| The site context. | 
  **campaignId** | **String**| The id of the requested campaign. | 
+ **body** | [**Campaign**](Campaign.md)|  | 
 
 ### Return type
 
@@ -3064,38 +3216,39 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID"></a>
-# **patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID**
-> patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID(bodycampaignIdsiteIdslotIdslotConfigId, opts)
+
+## patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID
+
+> patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, body, opts)
 
 
 
 Action to update the assignment of slot configuration to a campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SlotConfigurationCampaignAssignment(); // SlotConfigurationCampaignAssignment | 
-let campaignId = "campaignId_example"; // String | The ID of the campaign.
-let siteId = "siteId_example"; // String | The ID of the site.
-let slotId = "slotId_example"; // String | The ID of the slot.
-let slotConfigId = "slotConfigId_example"; // String | The ID of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var campaignId = "campaignId_example"; // String | The ID of the campaign.
+var siteId = "siteId_example"; // String | The ID of the site.
+var slotId = "slotId_example"; // String | The ID of the slot.
+var slotConfigId = "slotConfigId_example"; // String | The ID of the slot configuration.
+var body = new DataApi.SlotConfigurationCampaignAssignment(); // SlotConfigurationCampaignAssignment | 
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID(bodycampaignIdsiteIdslotIdslotConfigId, opts).then(() => {
+apiInstance.patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, body, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3103,13 +3256,15 @@ apiInstance.patchSitesByIDCampaignsByIDSlotConfigurationsByIDByID(bodycampaignId
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SlotConfigurationCampaignAssignment**](SlotConfigurationCampaignAssignment.md)|  | 
  **campaignId** | **String**| The ID of the campaign. | 
  **siteId** | **String**| The ID of the site. | 
  **slotId** | **String**| The ID of the slot. | 
  **slotConfigId** | **String**| The ID of the slot configuration. | 
+ **body** | [**SlotConfigurationCampaignAssignment**](SlotConfigurationCampaignAssignment.md)|  | 
  **context** | **String**|  | [optional] 
 
 ### Return type
@@ -3122,34 +3277,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="patchSitesByIDCouponsByID"></a>
-# **patchSitesByIDCouponsByID**
-> Coupon patchSitesByIDCouponsByID(bodysiteIdcouponId)
+
+## patchSitesByIDCouponsByID
+
+> Coupon patchSitesByIDCouponsByID(siteId, couponId, body)
 
 
 
 Updates the coupon with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Coupon(); // Coupon | 
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the requested coupon.
-
-apiInstance.patchSitesByIDCouponsByID(bodysiteIdcouponId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the requested coupon.
+var body = new DataApi.Coupon(); // Coupon | 
+apiInstance.patchSitesByIDCouponsByID(siteId, couponId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3157,11 +3312,13 @@ apiInstance.patchSitesByIDCouponsByID(bodysiteIdcouponId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Coupon**](Coupon.md)|  | 
  **siteId** | **String**| The site context. | 
  **couponId** | **String**| The id of the requested coupon. | 
+ **body** | [**Coupon**](Coupon.md)|  | 
 
 ### Return type
 
@@ -3173,35 +3330,35 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDCustomObjectsByIDByID"></a>
-# **patchSitesByIDCustomObjectsByIDByID**
-> CustomObject patchSitesByIDCustomObjectsByIDByID(bodysiteIdobjectTypekey)
+
+## patchSitesByIDCustomObjectsByIDByID
+
+> CustomObject patchSitesByIDCustomObjectsByIDByID(siteId, objectType, key, body)
 
 
 
 Updates a site specific Custom Object with information from request body. Note that only mentioned attributes will be updated and the key attribute is ignored. All other attributes will be left unattended.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.CustomObject(); // CustomObject | 
-let siteId = "siteId_example"; // String | the ID of the site
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.patchSitesByIDCustomObjectsByIDByID(bodysiteIdobjectTypekey).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | the ID of the site
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+var body = new DataApi.CustomObject(); // CustomObject | 
+apiInstance.patchSitesByIDCustomObjectsByIDByID(siteId, objectType, key, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3209,12 +3366,14 @@ apiInstance.patchSitesByIDCustomObjectsByIDByID(bodysiteIdobjectTypekey).then((d
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomObject**](CustomObject.md)|  | 
  **siteId** | **String**| the ID of the site | 
  **objectType** | **String**| the ID of the object type | 
  **key** | **String**| the key attribute value of the Custom Object | 
+ **body** | [**CustomObject**](CustomObject.md)|  | 
 
 ### Return type
 
@@ -3226,34 +3385,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDCustomerGroupsByID"></a>
-# **patchSitesByIDCustomerGroupsByID**
-> CustomerGroup patchSitesByIDCustomerGroupsByID(bodysiteIdid)
+
+## patchSitesByIDCustomerGroupsByID
+
+> CustomerGroup patchSitesByIDCustomerGroupsByID(siteId, id, body)
 
 
 
 Updates the customer group with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.CustomerGroup(); // CustomerGroup | 
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested customer group.
-
-apiInstance.patchSitesByIDCustomerGroupsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested customer group.
+var body = new DataApi.CustomerGroup(); // CustomerGroup | 
+apiInstance.patchSitesByIDCustomerGroupsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3261,11 +3420,13 @@ apiInstance.patchSitesByIDCustomerGroupsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerGroup**](CustomerGroup.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **id** | **String**| The id of the requested customer group. | 
+ **body** | [**CustomerGroup**](CustomerGroup.md)|  | 
 
 ### Return type
 
@@ -3277,34 +3438,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDGiftCertificatesByID"></a>
-# **patchSitesByIDGiftCertificatesByID**
-> GiftCertificate patchSitesByIDGiftCertificatesByID(bodysiteIdmerchantId)
+
+## patchSitesByIDGiftCertificatesByID
+
+> GiftCertificate patchSitesByIDGiftCertificatesByID(siteId, merchantId, body)
 
 
 
 Updates the gift certificate with the specified information using merchant ID.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.GiftCertificate(); // GiftCertificate | 
-let siteId = "siteId_example"; // String | The id of the site.
-let merchantId = "merchantId_example"; // String | The merchant id of the requested gift certificate.
-
-apiInstance.patchSitesByIDGiftCertificatesByID(bodysiteIdmerchantId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var merchantId = "merchantId_example"; // String | The merchant id of the requested gift certificate.
+var body = new DataApi.GiftCertificate(); // GiftCertificate | 
+apiInstance.patchSitesByIDGiftCertificatesByID(siteId, merchantId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3312,11 +3473,13 @@ apiInstance.patchSitesByIDGiftCertificatesByID(bodysiteIdmerchantId).then((data)
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GiftCertificate**](GiftCertificate.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **merchantId** | **String**| The merchant id of the requested gift certificate. | 
+ **body** | [**GiftCertificate**](GiftCertificate.md)|  | 
 
 ### Return type
 
@@ -3328,34 +3491,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDOrdersByID"></a>
-# **patchSitesByIDOrdersByID**
-> patchSitesByIDOrdersByID(bodysiteIdorderNo)
+
+## patchSitesByIDOrdersByID
+
+> patchSitesByIDOrdersByID(siteId, orderNo, body)
 
 
 
 Updates the order.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderUpdateRequest(); // OrderUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.patchSitesByIDOrdersByID(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site
+var orderNo = "orderNo_example"; // String | The order number
+var body = null; // Object | 
+apiInstance.patchSitesByIDOrdersByID(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3363,11 +3526,13 @@ apiInstance.patchSitesByIDOrdersByID(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderUpdateRequest**](OrderUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site | 
  **orderNo** | **String**| The order number | 
+ **body** | **Object**|  | 
 
 ### Return type
 
@@ -3379,35 +3544,35 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="patchSitesByIDOrdersByIDPaymentInstrumentsByID"></a>
-# **patchSitesByIDOrdersByIDPaymentInstrumentsByID**
-> patchSitesByIDOrdersByIDPaymentInstrumentsByID(bodysiteIdorderNopaymentInstrumentId)
+
+## patchSitesByIDOrdersByIDPaymentInstrumentsByID
+
+> patchSitesByIDOrdersByIDPaymentInstrumentsByID(siteId, orderNo, paymentInstrumentId, body)
 
 
 
 Updates the payment instrument of an order.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.PaymentInstrumentUpdateRequest(); // PaymentInstrumentUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site
-let orderNo = "orderNo_example"; // String | The order number
-let paymentInstrumentId = "paymentInstrumentId_example"; // String | ID of the payment instrument
-
-apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByID(bodysiteIdorderNopaymentInstrumentId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site
+var orderNo = "orderNo_example"; // String | The order number
+var paymentInstrumentId = "paymentInstrumentId_example"; // String | ID of the payment instrument
+var body = null; // Object | 
+apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByID(siteId, orderNo, paymentInstrumentId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3415,12 +3580,14 @@ apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByID(bodysiteIdorderNopaym
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PaymentInstrumentUpdateRequest**](PaymentInstrumentUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site | 
  **orderNo** | **String**| The order number | 
  **paymentInstrumentId** | **String**| ID of the payment instrument | 
+ **body** | **Object**|  | 
 
 ### Return type
 
@@ -3432,35 +3599,35 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction"></a>
-# **patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction**
-> patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction(bodysiteIdorderNopaymentInstrumentId)
+
+## patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction
+
+> patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction(siteId, orderNo, paymentInstrumentId, body)
 
 
 
 Updates the transaction of an order payment instrument.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.PaymentTransactionUpdateRequest(); // PaymentTransactionUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site
-let orderNo = "orderNo_example"; // String | The order number
-let paymentInstrumentId = "paymentInstrumentId_example"; // String | ID of the payment instrument
-
-apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction(bodysiteIdorderNopaymentInstrumentId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site
+var orderNo = "orderNo_example"; // String | The order number
+var paymentInstrumentId = "paymentInstrumentId_example"; // String | ID of the payment instrument
+var body = null; // Object | 
+apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction(siteId, orderNo, paymentInstrumentId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3468,12 +3635,14 @@ apiInstance.patchSitesByIDOrdersByIDPaymentInstrumentsByIDTransaction(bodysiteId
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PaymentTransactionUpdateRequest**](PaymentTransactionUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site | 
  **orderNo** | **String**| The order number | 
  **paymentInstrumentId** | **String**| ID of the payment instrument | 
+ **body** | **Object**|  | 
 
 ### Return type
 
@@ -3485,34 +3654,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="patchSitesByIDPromotionsByID"></a>
-# **patchSitesByIDPromotionsByID**
-> Promotion patchSitesByIDPromotionsByID(bodysiteIdid)
+
+## patchSitesByIDPromotionsByID
+
+> Promotion patchSitesByIDPromotionsByID(siteId, id, body)
 
 
 
 Updates the promotion with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Promotion(); // Promotion | 
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the requested promotion.
-
-apiInstance.patchSitesByIDPromotionsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the requested promotion.
+var body = new DataApi.Promotion(); // Promotion | 
+apiInstance.patchSitesByIDPromotionsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3520,11 +3689,13 @@ apiInstance.patchSitesByIDPromotionsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Promotion**](Promotion.md)|  | 
  **siteId** | **String**| The site context. | 
  **id** | **String**| The id of the requested promotion. | 
+ **body** | [**Promotion**](Promotion.md)|  | 
 
 ### Return type
 
@@ -3536,37 +3707,38 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDSitePreferencesPreferenceGroupsByIDByID"></a>
-# **patchSitesByIDSitePreferencesPreferenceGroupsByIDByID**
-> SitePreferences patchSitesByIDSitePreferencesPreferenceGroupsByIDByID(bodysiteIdinstanceTypegroupId, opts)
+
+## patchSitesByIDSitePreferencesPreferenceGroupsByIDByID
+
+> SitePreferences patchSitesByIDSitePreferencesPreferenceGroupsByIDByID(siteId, instanceType, groupId, body, opts)
 
 
 
 For the specified site and instance, update one or more custom preferences in the preference group.  Preferences of type password cannot be set to \&quot;************\&quot; since it is a reserved value.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SitePreferences(); // SitePreferences | 
-let siteId = "siteId_example"; // String | The site context.
-let instanceType = "instanceType_example"; // String | One of {staging,development,sandbox,production}.
-let groupId = "groupId_example"; // String | The ID of the preference group.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var instanceType = "instanceType_example"; // String | One of {staging,development,sandbox,production}.
+var groupId = "groupId_example"; // String | The ID of the preference group.
+var body = new DataApi.SitePreferences(); // SitePreferences | 
+var opts = {
   'maskPasswords': true // Boolean | 
 };
-apiInstance.patchSitesByIDSitePreferencesPreferenceGroupsByIDByID(bodysiteIdinstanceTypegroupId, opts).then((data) => {
+apiInstance.patchSitesByIDSitePreferencesPreferenceGroupsByIDByID(siteId, instanceType, groupId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3574,12 +3746,14 @@ apiInstance.patchSitesByIDSitePreferencesPreferenceGroupsByIDByID(bodysiteIdinst
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SitePreferences**](SitePreferences.md)|  | 
  **siteId** | **String**| The site context. | 
  **instanceType** | **String**| One of {staging,development,sandbox,production}. | 
  **groupId** | **String**| The ID of the preference group. | 
+ **body** | [**SitePreferences**](SitePreferences.md)|  | 
  **maskPasswords** | **Boolean**|  | [optional] 
 
 ### Return type
@@ -3592,37 +3766,38 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDSlotsByIDSlotConfigurationsByID"></a>
-# **patchSitesByIDSlotsByIDSlotConfigurationsByID**
-> SlotConfiguration patchSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfigurationId, opts)
+
+## patchSitesByIDSlotsByIDSlotConfigurationsByID
+
+> SlotConfiguration patchSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, body, opts)
 
 
 
 Updates an existing slot configuration. This action ignores the slot_id and  the context information in the input document. Note that this operation will  not touch any relational properties, which means, that e.g. the rank on a specific  campaign assignment will not be changed, when the rank for the slot configuration  itself is updated.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SlotConfiguration(); // SlotConfiguration | 
-let siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
-let slotId = "slotId_example"; // String | The id of the slot.
-let configurationId = "configurationId_example"; // String | The id of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
+var slotId = "slotId_example"; // String | The id of the slot.
+var configurationId = "configurationId_example"; // String | The id of the slot configuration.
+var body = new DataApi.SlotConfiguration(); // SlotConfiguration | 
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.patchSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfigurationId, opts).then((data) => {
+apiInstance.patchSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3630,12 +3805,14 @@ apiInstance.patchSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfig
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SlotConfiguration**](SlotConfiguration.md)|  | 
  **siteId** | **String**| The id of the site for which you want to create the slot configuration. | 
  **slotId** | **String**| The id of the slot. | 
  **configurationId** | **String**| The id of the slot configuration. | 
+ **body** | [**SlotConfiguration**](SlotConfiguration.md)|  | 
  **context** | **String**|  | [optional] 
 
 ### Return type
@@ -3648,34 +3825,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDSourceCodeGroupsByID"></a>
-# **patchSitesByIDSourceCodeGroupsByID**
-> SourceCodeGroup patchSitesByIDSourceCodeGroupsByID(bodysiteIdid)
+
+## patchSitesByIDSourceCodeGroupsByID
+
+> SourceCodeGroup patchSitesByIDSourceCodeGroupsByID(siteId, id, body)
 
 
 
 Updates the source code group with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SourceCodeGroup(); // SourceCodeGroup | 
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested source code group.
-
-apiInstance.patchSitesByIDSourceCodeGroupsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested source code group.
+var body = new DataApi.SourceCodeGroup(); // SourceCodeGroup | 
+apiInstance.patchSitesByIDSourceCodeGroupsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3683,11 +3860,13 @@ apiInstance.patchSitesByIDSourceCodeGroupsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SourceCodeGroup**](SourceCodeGroup.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **id** | **String**| The id of the requested source code group. | 
+ **body** | [**SourceCodeGroup**](SourceCodeGroup.md)|  | 
 
 ### Return type
 
@@ -3699,34 +3878,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSitesByIDStoresByID"></a>
-# **patchSitesByIDStoresByID**
-> Store patchSitesByIDStoresByID(bodysiteIdid)
+
+## patchSitesByIDStoresByID
+
+> Store patchSitesByIDStoresByID(siteId, id, body)
 
 
 
 Updates the store with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Store(); // Store | 
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the requested store.
-
-apiInstance.patchSitesByIDStoresByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the requested store.
+var body = new DataApi.Store(); // Store | 
+apiInstance.patchSitesByIDStoresByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3734,11 +3913,13 @@ apiInstance.patchSitesByIDStoresByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Store**](Store.md)|  | 
  **siteId** | **String**| The site context. | 
  **id** | **String**| The id of the requested store. | 
+ **body** | [**Store**](Store.md)|  | 
 
 ### Return type
 
@@ -3750,33 +3931,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDAbTestSearch"></a>
-# **postSitesByIDAbTestSearch**
-> AbTestSearchResult postSitesByIDAbTestSearch(bodysiteId)
+
+## postSitesByIDAbTestSearch
+
+> AbTestSearchResult postSitesByIDAbTestSearch(siteId, body)
 
 
 
 Searches for A/B Tests. The query attribute specifies a complex query that can be used to narrow down the search. This is the list of searchable attributes:  id - String description - String enabled - Boolean paused - Boolean key_metric_id - String email_addresses - String tags- String expiration_type - String enum[session, never] start_date - DateTime end_date - DateTime  These fields can only be used in Queries as conjunctions (using AND).  If the field is used in a disjunction (OR) an exception will be thrown. The output of the query can also be sorted. These are the list of sortable attributes:  id - String description - String enabled - Boolean paused - Boolean key_metric_id - String 
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-
-apiInstance.postSitesByIDAbTestSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDAbTestSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3784,10 +3965,12 @@ apiInstance.postSitesByIDAbTestSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| ID of the site that the A/B tests are contained within. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -3799,33 +3982,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDCampaignSearch"></a>
-# **postSitesByIDCampaignSearch**
-> CampaignSearchResult postSitesByIDCampaignSearch(bodysiteId)
+
+## postSitesByIDCampaignSearch
+
+> CampaignSearchResult postSitesByIDCampaignSearch(siteId, body)
 
 
 
 Searches for campaigns.    The Campaign Search document contains a search object that allows filtering on various attributes.     The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:        campaign_id - String      description - String      enabled - Boolean      coupon_id* - String      customer_group* - String      source_code* - String      start_date - Date      end_date - Date      last_modified - Date           These fields can only be used in Queries as conjunctions (using AND).  If the field is used in a disjunction  (OR) an exception will be thrown.   Note that only searchable attributes (excluding the ones marked with above with an asterisk) can be used in sorting  Additionally start_date, end_date and last_modified cannot be used in sorting.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDCampaignSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDCampaignSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3833,10 +4016,12 @@ apiInstance.postSitesByIDCampaignSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -3848,33 +4033,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDCartridges"></a>
-# **postSitesByIDCartridges**
-> CartridgePathApiResponse postSitesByIDCartridges(bodysiteId)
+
+## postSitesByIDCartridges
+
+> CartridgePathApiResponse postSitesByIDCartridges(siteId, body)
 
 
 
 Add a cartridge to current cartridge path.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.CartridgePathAddRequest(); // CartridgePathAddRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-
-apiInstance.postSitesByIDCartridges(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var body = new DataApi.CartridgePathAddRequest(); // CartridgePathAddRequest | 
+apiInstance.postSitesByIDCartridges(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3882,10 +4067,12 @@ apiInstance.postSitesByIDCartridges(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartridgePathAddRequest**](CartridgePathAddRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
+ **body** | [**CartridgePathAddRequest**](CartridgePathAddRequest.md)|  | 
 
 ### Return type
 
@@ -3897,33 +4084,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDCouponRedemptionSearch"></a>
-# **postSitesByIDCouponRedemptionSearch**
-> CouponRedemptionSearchResult postSitesByIDCouponRedemptionSearch(bodysiteId)
+
+## postSitesByIDCouponRedemptionSearch
+
+> CouponRedemptionSearchResult postSitesByIDCouponRedemptionSearch(siteId, body)
 
 
 
 Searches for coupon redemptions.    The Coupon Redemption Search document contains a search object that allows filtering on various attributes.     The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:        code - String      coupon_id - String      customer_email - String      order_no - String     Note that only searchable attributes can be used in sorting.   If the role to which the user belongs does not have View_Coupon_Codes permission, then the coupon codes returned will be masked.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDCouponRedemptionSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDCouponRedemptionSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3931,10 +4118,12 @@ apiInstance.postSitesByIDCouponRedemptionSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -3946,33 +4135,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDCouponSearch"></a>
-# **postSitesByIDCouponSearch**
-> CouponSearchResult postSitesByIDCouponSearch(bodysiteId)
+
+## postSitesByIDCouponSearch
+
+> CouponSearchResult postSitesByIDCouponSearch(siteId, body)
 
 
 
 Searches for coupons.   The Coupon Search document contains a search object that allows filtering on various attributes.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    coupon_id - String  description - String  type - one of {\&quot;single_code\&quot;, \&quot;multiple_codes\&quot;, \&quot;system_codes\&quot;}  enabled - boolean     Note that only searchable attributes can be used in sorting.   The stats expand value is required to return the following fields in the Coupon document:        exported_code_count      redemption_count      total_codes_count  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDCouponSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDCouponSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -3980,10 +4169,12 @@ apiInstance.postSitesByIDCouponSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -3995,36 +4186,37 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDCouponsByIDMultipleCodes"></a>
-# **postSitesByIDCouponsByIDMultipleCodes**
-> postSitesByIDCouponsByIDMultipleCodes(siteIdcouponId, opts)
+
+## postSitesByIDCouponsByIDMultipleCodes
+
+> postSitesByIDCouponsByIDMultipleCodes(siteId, couponId, opts)
 
 
 
 Add or delete (modify) multiple codes to/from the supplied coupon.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon to modify codes (must be multiple code coupon).
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon to modify codes (must be multiple code coupon).
+var opts = {
+  '_delete': true, // Boolean | 
   'body': new DataApi.CouponMultiCodesRequest() // CouponMultiCodesRequest | 
-  '_delete': true // Boolean | 
 };
-apiInstance.postSitesByIDCouponsByIDMultipleCodes(siteIdcouponId, opts).then(() => {
+apiInstance.postSitesByIDCouponsByIDMultipleCodes(siteId, couponId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4032,12 +4224,14 @@ apiInstance.postSitesByIDCouponsByIDMultipleCodes(siteIdcouponId, opts).then(() 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **siteId** | **String**| The site context. | 
  **couponId** | **String**| The id of the coupon to modify codes (must be multiple code coupon). | 
- **body** | [**CouponMultiCodesRequest**](CouponMultiCodesRequest.md)|  | [optional] 
  **_delete** | **Boolean**|  | [optional] 
+ **body** | [**CouponMultiCodesRequest**](CouponMultiCodesRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -4049,33 +4243,33 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="postSitesByIDCustomerGroupSearch"></a>
-# **postSitesByIDCustomerGroupSearch**
-> CustomerGroupSearchResult postSitesByIDCustomerGroupSearch(bodysiteId)
+
+## postSitesByIDCustomerGroupSearch
+
+> CustomerGroupSearchResult postSitesByIDCustomerGroupSearch(siteId, body)
 
 
 
 Searches for customer groups.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    id - String  description - String  type - String Enum value[system, dynamic, static]     The output of the query can also be sorted. These are the list of sortable attributes:    id - String  description - String  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The id of the site.
-
-apiInstance.postSitesByIDCustomerGroupSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDCustomerGroupSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4083,10 +4277,12 @@ apiInstance.postSitesByIDCustomerGroupSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The id of the site. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4098,34 +4294,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="postSitesByIDCustomerGroupsByIDMemberSearch"></a>
-# **postSitesByIDCustomerGroupsByIDMemberSearch**
-> CustomerGroupMemberSearchResult postSitesByIDCustomerGroupsByIDMemberSearch(bodysiteIdid)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## postSitesByIDCustomerGroupsByIDMemberSearch
 
-Searches for customer group members. For dynamic customer groups and the system groups \&quot;Everyone\&quot; and \&quot;Unregistered\&quot; no result is returned (Status Code: 204 - No Content).   The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:         login - String       active - Boolean    Customer Profile:         customer_no - String       first_name - String       last_name - String       email - String       zip - String     Only attributes in the same bucket can be joined using a disjunction (OR).  For instance, when joining login and customer_no above, only a conjunction is allowed (AND), whereas customer_no  and email can be joined using a disjunction because they are in the same bucket.  If an attribute  is used in a disjunction (OR) that violates this rule, an exception will be thrown.   The output of the query can also be sorted. These are the list of sortable attributes:    customer_no - String  login - String     If the Business manager customer search is configured to use the new Search Service, the following differences apply:        all attributes can be used for sorting (except for &#x27;active&#x27;)      searching for &#x27;zip&#x27; will only search in the customers default address      logical operators can be used without limits (but may result in degraded performance, depending on how they are combined)      new assignments might not be found immediately via the search service, and removed assignments      might also not be in effect immediately (there is a slight delay in updating the index)  
+> CustomerGroupMemberSearchResult postSitesByIDCustomerGroupsByIDMemberSearch(siteId, id, body)
+
+
+
+Searches for customer group members. For dynamic customer groups and the system groups \&quot;Everyone\&quot; and \&quot;Unregistered\&quot; no result is returned (Status Code: 204 - No Content).   The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:         login - String       active - Boolean    Customer Profile:         customer_no - String       first_name - String       last_name - String       email - String       zip - String     Only attributes in the same bucket can be joined using a disjunction (OR).  For instance, when joining login and customer_no above, only a conjunction is allowed (AND), whereas customer_no  and email can be joined using a disjunction because they are in the same bucket.  If an attribute  is used in a disjunction (OR) that violates this rule, an exception will be thrown.   The output of the query can also be sorted. These are the list of sortable attributes:    customer_no - String  login - String     If the Business manager customer search is configured to use the new Search Service, the following differences apply:        all attributes can be used for sorting (except for &#39;active&#39;)      searching for &#39;zip&#39; will only search in the customers default address      logical operators can be used without limits (but may result in degraded performance, depending on how they are combined)      new assignments might not be found immediately via the search service, and removed assignments      might also not be in effect immediately (there is a slight delay in updating the index)  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the requested members customer group.
-
-apiInstance.postSitesByIDCustomerGroupsByIDMemberSearch(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the requested members customer group.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDCustomerGroupsByIDMemberSearch(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4133,11 +4329,13 @@ apiInstance.postSitesByIDCustomerGroupsByIDMemberSearch(bodysiteIdid).then((data
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **id** | **String**| The id of the requested members customer group. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4149,33 +4347,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDGiftCertificateSearch"></a>
-# **postSitesByIDGiftCertificateSearch**
-> GiftCertificateSearchResult postSitesByIDGiftCertificateSearch(bodysiteId)
+
+## postSitesByIDGiftCertificateSearch
+
+> GiftCertificateSearchResult postSitesByIDGiftCertificateSearch(siteId, body)
 
 
 
 Searches for gift certificates.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    merchant_id - String  masked_gift_certificate_code* - String  order_no - String  sender_name - String  recipient_name - String  recipient_email - String  status - String  enabled - Boolean  message - String  description - String  creation_date - Date  currency_mnemonic* - String     * masked_gift_certificate_code, also known as just code, can only be used in a term query.  If a  four-character code is supplied, it is assumed that the search is on the unmasked portion of the code, otherwise  the full code must be matched.  Text queries are not allowed.   * currency_mnemonic can only be joined with other attributes using a conjunction (AND).   Note that only searchable attributes can be used in sorting.  The code attribute cannot be used for sorting.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The id of the site.
-
-apiInstance.postSitesByIDGiftCertificateSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDGiftCertificateSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4183,10 +4381,12 @@ apiInstance.postSitesByIDGiftCertificateSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The id of the site. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4198,33 +4398,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDGiftCertificates"></a>
-# **postSitesByIDGiftCertificates**
-> GiftCertificate postSitesByIDGiftCertificates(bodysiteId)
+
+## postSitesByIDGiftCertificates
+
+> GiftCertificate postSitesByIDGiftCertificates(siteId, body)
 
 
 
 Creates a gift certificate using the information provided. If a gift certificate with   the same unique identifier, it will be deleted and a new one will be created.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.GiftCertificate(); // GiftCertificate | 
-let siteId = "siteId_example"; // String | The id of the site.
-
-apiInstance.postSitesByIDGiftCertificates(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var body = new DataApi.GiftCertificate(); // GiftCertificate | 
+apiInstance.postSitesByIDGiftCertificates(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4232,10 +4432,12 @@ apiInstance.postSitesByIDGiftCertificates(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GiftCertificate**](GiftCertificate.md)|  | 
  **siteId** | **String**| The id of the site. | 
+ **body** | [**GiftCertificate**](GiftCertificate.md)|  | 
 
 ### Return type
 
@@ -4247,33 +4449,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDPromotionCampaignAssignmentSearch"></a>
-# **postSitesByIDPromotionCampaignAssignmentSearch**
-> PromotionCampaignAssignmentSearchResult postSitesByIDPromotionCampaignAssignmentSearch(bodysiteId)
+
+## postSitesByIDPromotionCampaignAssignmentSearch
+
+> PromotionCampaignAssignmentSearchResult postSitesByIDPromotionCampaignAssignmentSearch(siteId, body)
 
 
 
 Searches for promotion campaign assignments.    The PromotionCampaignAssignment Search document contains a search object that allows filtering on various attributes.    The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:        rank - Integer      start_date - Date      end_date - Date    Campaign:        campaign_id - String    Promotion:        promotion_id - String      description - String      enabled - Boolean    Special handling:        coupon_id - String     Only fields in the same bucket can be joined using a disjunction (OR). For instance, when joining  campaign_id and rank above, only a conjunction is allowed (AND), whereas promotion_id and description can be  joined to each other using an OR because they are in the same bucket.  Special handling fields must always use  conjunctions. If the field is used in a disjunction (OR) that violates this rule, an exception will be thrown.   Expands that can be applied for the search request        promotion      campaign     Note that only searchable attributes (excluding the ones marked with above with an asterisk) can be used in sorting.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDPromotionCampaignAssignmentSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDPromotionCampaignAssignmentSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4281,10 +4483,12 @@ apiInstance.postSitesByIDPromotionCampaignAssignmentSearch(bodysiteId).then((dat
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4296,33 +4500,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDPromotionSearch"></a>
-# **postSitesByIDPromotionSearch**
-> PromotionSearchResult postSitesByIDPromotionSearch(bodysiteId)
+
+## postSitesByIDPromotionSearch
+
+> PromotionSearchResult postSitesByIDPromotionSearch(siteId, body)
 
 
 
 Searches for promotions.    The SearchRequest document contains a search object that allows filtering on various attributes.    The query attribute specifies a complex query that can be used to narrow down the search. These are the searchable  attributes:    id - String  name - String  currency_code - String  exclusivity - String  enabled - Boolean    Note that only searchable attributes can be used in sorting. Additionally, the following attribute can be used to  sort:    promotion_class - String  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDPromotionSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDPromotionSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4330,10 +4534,12 @@ apiInstance.postSitesByIDPromotionSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4345,33 +4551,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDSlotConfigurationCampaignAssignmentSearch"></a>
-# **postSitesByIDSlotConfigurationCampaignAssignmentSearch**
-> SlotConfigurationCampaignAssignmentSearchResult postSitesByIDSlotConfigurationCampaignAssignmentSearch(bodysiteId)
+
+## postSitesByIDSlotConfigurationCampaignAssignmentSearch
+
+> SlotConfigurationCampaignAssignmentSearchResult postSitesByIDSlotConfigurationCampaignAssignmentSearch(siteId, body)
 
 
 
 Searches for slotconfiguration campaign assignments.    The SlotConfigCampaignAssignment Search document contains a search object that allows filtering on various attributes.   The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:        rank - Integer      start_date - Date      end_date - Date    Campaign:        campaign_id - String      enabled - Boolean    Slot configuration:        slot_configuration_id - String      description - String     Only attributes in the same bucket can be joined using a disjunction (OR).  For instance, when joining rank and description above, only a conjunction is allowed (AND), whereas slot_configuration_id  and description can be joined using a disjunction because they are in the same bucket.  If an attribute  is used in a disjunction (OR) that violates this rule, an exception will be thrown.   Expands that can be applied for the search request        campaign      slotConfiguration      Note that only searchable attributes (excluding the ones marked with above with an asterisk) can be used in sorting.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDSlotConfigurationCampaignAssignmentSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDSlotConfigurationCampaignAssignmentSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4379,10 +4585,12 @@ apiInstance.postSitesByIDSlotConfigurationCampaignAssignmentSearch(bodysiteId).t
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4394,33 +4602,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDSlotConfigurationSearch"></a>
-# **postSitesByIDSlotConfigurationSearch**
-> SlotConfigurationSearchResult postSitesByIDSlotConfigurationSearch(bodysiteId)
+
+## postSitesByIDSlotConfigurationSearch
+
+> SlotConfigurationSearchResult postSitesByIDSlotConfigurationSearch(siteId, body)
 
 
 
 Searches for slot configurations.   The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:       configuration_id - String     default - Boolean     description - String     enabled - Boolean    Slot:       context - String     slot_id - String     Only fields in the same bucket can be joined using a disjunction (OR). For instance, when joining context and  description above, only a conjunction is allowed (AND), whereas context and slot_id can be joined to each other  using a disjunction because they are in the same bucket.  If the field is used in a disjunction (OR) that  violates this rule, an exception will be thrown.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDSlotConfigurationSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDSlotConfigurationSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4428,10 +4636,12 @@ apiInstance.postSitesByIDSlotConfigurationSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4443,33 +4653,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDSlotSearch"></a>
-# **postSitesByIDSlotSearch**
-> SlotSearchResult postSitesByIDSlotSearch(bodysiteId)
+
+## postSitesByIDSlotSearch
+
+> SlotSearchResult postSitesByIDSlotSearch(siteId, body)
 
 
 
 Searches for slots.    The query attribute specifies a complex query that can be used to narrow down the search. The set of fields that  are available to search are:    slot_id - String  description - String  context_type - String      Note that only searchable attributes can be used in sorting. \&quot;context_type\&quot; value is restricted to Global/Folder/Category.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDSlotSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDSlotSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4477,10 +4687,12 @@ apiInstance.postSitesByIDSlotSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4492,35 +4704,36 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDSortingRuleSearch"></a>
-# **postSitesByIDSortingRuleSearch**
-> SortingRuleSearchResult postSitesByIDSortingRuleSearch(bodysiteId, opts)
+
+## postSitesByIDSortingRuleSearch
+
+> SortingRuleSearchResult postSitesByIDSortingRuleSearch(siteId, body, opts)
 
 
 
 Searches for product sorting rules.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    id - String  description - String  creation_date - date of creation     The output of the query can also be sorted. These are the list of sortable attributes:    id - String  description - String  creation_date - date of creation     This resource does not support expand options.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The id of the site.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+var opts = {
   'ruleContext': "ruleContext_example" // String | 
 };
-apiInstance.postSitesByIDSortingRuleSearch(bodysiteId, opts).then((data) => {
+apiInstance.postSitesByIDSortingRuleSearch(siteId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4528,10 +4741,12 @@ apiInstance.postSitesByIDSortingRuleSearch(bodysiteId, opts).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The id of the site. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **ruleContext** | **String**|  | [optional] 
 
 ### Return type
@@ -4544,33 +4759,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDSourceCodeGroupSearch"></a>
-# **postSitesByIDSourceCodeGroupSearch**
-> SourceCodeGroupSearchResult postSitesByIDSourceCodeGroupSearch(bodysiteId)
+
+## postSitesByIDSourceCodeGroupSearch
+
+> SourceCodeGroupSearchResult postSitesByIDSourceCodeGroupSearch(siteId, body)
 
 
 
 Searches for source code groups.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    id - String  description - String  source_code* - String   start_time - DateTime  end_time - DateTime  creation_date - DateTime  enabled - Boolean  active* - Boolean      * - These fields can only be used in Queries as conjunctions (using AND).  If the field is used in a disjunction  (OR) an exception will be thrown.    The output of the query can also be sorted. These are the list of sortable attributes:    id - String  description - String  enabled - Boolean  creation_date - DateTime      Expands that can be applied for the search request    specifications - String  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The id of the site.
-
-apiInstance.postSitesByIDSourceCodeGroupSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDSourceCodeGroupSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4578,10 +4793,12 @@ apiInstance.postSitesByIDSourceCodeGroupSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The id of the site. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4593,33 +4810,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSitesByIDStoreSearch"></a>
-# **postSitesByIDStoreSearch**
-> StoreSearchResult postSitesByIDStoreSearch(bodysiteId)
+
+## postSitesByIDStoreSearch
+
+> StoreSearchResult postSitesByIDStoreSearch(siteId, body)
 
 
 
 Searches for stores.    The query attribute specifies a complex query that can be used to narrow down the search. This is the list  of searchable attributes:    address1 - String  address2 - String  city - String  country_code - String  email - String  fax - String  id - String  inventory_id - String  latitude - double  longitude - double  name - String  phone - String  postal_code - String  state_code - String  store_hours - String  store_events - String  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let siteId = "siteId_example"; // String | The site context.
-
-apiInstance.postSitesByIDStoreSearch(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSitesByIDStoreSearch(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4627,10 +4844,12 @@ apiInstance.postSitesByIDStoreSearch(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **siteId** | **String**| The site context. | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -4642,39 +4861,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDAbTestsByID"></a>
-# **putSitesByIDAbTestsByID**
-> AbTest putSitesByIDAbTestsByID(siteIdid)
+
+## putSitesByIDAbTestsByID
+
+> AbTest putSitesByIDAbTestsByID(siteId, id, opts)
 
 
 
 Creates an A/B Test using the information provided. If an A/B Test with the same unique identifier exists, it will be deleted and a new one will be created unless the header x-dw-validate-existing&#x3D;true is passed in with the request.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-
-apiInstance.putSitesByIDAbTestsByID(siteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var opts = {
+  'body': new DataApi.AbTest() // AbTest | 
+};
+apiInstance.putSitesByIDAbTestsByID(siteId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4692,40 +4916,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDAbTestsByIDSegmentsByID"></a>
-# **putSitesByIDAbTestsByIDSegmentsByID**
-> AbTestSegment putSitesByIDAbTestsByIDSegmentsByID(siteIdidsegmentId)
+
+## putSitesByIDAbTestsByIDSegmentsByID
+
+> AbTestSegment putSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts)
 
 
 
 Creates an A/B Test segment using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
-let id = "id_example"; // String | The id of the requested A/B Test.
-let segmentId = "segmentId_example"; // String | The id of the segment in the test.
-
-apiInstance.putSitesByIDAbTestsByIDSegmentsByID(siteIdidsegmentId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site that the A/B tests are contained within.
+var id = "id_example"; // String | The id of the requested A/B Test.
+var segmentId = "segmentId_example"; // String | The id of the segment in the test.
+var opts = {
+  'body': new DataApi.AbTestSegment() // AbTestSegment | 
+};
+apiInstance.putSitesByIDAbTestsByIDSegmentsByID(siteId, id, segmentId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4744,11 +4973,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID"></a>
-# **putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID**
+
+## putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID
+
 > putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId)
 
 
@@ -4756,29 +4986,30 @@ Name | Type | Description  | Notes
 Action to bind a single promotion to a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the abTest and promotion.
-let abTestId = "abTestId_example"; // String | The ID of the abTest which contains the segment.
-let segmentId = "segmentId_example"; // String | The ID of the segment to to which the promotion is to be assigned.
-let promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the abTest.
-
-apiInstance.putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the abTest and promotion.
+var abTestId = "abTestId_example"; // String | The ID of the abTest which contains the segment.
+var segmentId = "segmentId_example"; // String | The ID of the segment to to which the promotion is to be assigned.
+var promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the abTest.
+apiInstance.putSitesByIDAbTestsByIDSegmentsByIDPromotionsByID(siteId, abTestId, segmentId, promotionId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4797,11 +5028,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID"></a>
-# **putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID**
+
+## putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID
+
 > putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts)
 
 
@@ -4809,32 +5041,34 @@ null (empty response body)
 Action to bind a slot configuration to a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let abTestId = "abTestId_example"; // String | The id of the abTest
-let segmentId = "segmentId_example"; // String | 
-let siteId = "siteId_example"; // String | The id of the site
-let slotId = "slotId_example"; // String | The of the slot
-let slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var abTestId = "abTestId_example"; // String | The id of the abTest
+var segmentId = "segmentId_example"; // String | 
+var siteId = "siteId_example"; // String | The id of the site
+var slotId = "slotId_example"; // String | The of the slot
+var slotConfigId = "slotConfigId_example"; // String | The id of the slot configuration
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts).then(() => {
+apiInstance.putSitesByIDAbTestsByIDSegmentsByIDSlotConfigurationsByIDByID(abTestId, segmentId, siteId, slotId, slotConfigId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4855,11 +5089,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID"></a>
-# **putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID**
+
+## putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID
+
 > putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts)
 
 
@@ -4867,32 +5102,34 @@ null (empty response body)
 Action to bind a single sorting rule to a given abTest.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the abTest, sorting rule and category.
-let abTestId = "abTestId_example"; // String | The ID of the abTest to which the sorting rule is to be assigned.
-let segmentId = "segmentId_example"; // String | 
-let sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the abTest.
-let categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the abTest, sorting rule and category.
+var abTestId = "abTestId_example"; // String | The ID of the abTest to which the sorting rule is to be assigned.
+var segmentId = "segmentId_example"; // String | 
+var sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the abTest.
+var categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
+var opts = {
   'ruleContext': "ruleContext_example" // String | 
 };
-apiInstance.putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts).then(() => {
+apiInstance.putSitesByIDAbTestsByIDSegmentsByIDSortingRulesByIDByID(siteId, abTestId, segmentId, sortingRuleId, categoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -4913,34 +5150,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByID"></a>
-# **putSitesByIDCampaignsByID**
-> Campaign putSitesByIDCampaignsByID(bodysiteIdcampaignId)
+
+## putSitesByIDCampaignsByID
+
+> Campaign putSitesByIDCampaignsByID(siteId, campaignId, body)
 
 
 
 Creates a campaign using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Campaign(); // Campaign | 
-let siteId = "siteId_example"; // String | The site context.
-let campaignId = "campaignId_example"; // String | The id of the campaign to create.
-
-apiInstance.putSitesByIDCampaignsByID(bodysiteIdcampaignId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var campaignId = "campaignId_example"; // String | The id of the campaign to create.
+var body = new DataApi.Campaign(); // Campaign | 
+apiInstance.putSitesByIDCampaignsByID(siteId, campaignId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -4948,11 +5185,13 @@ apiInstance.putSitesByIDCampaignsByID(bodysiteIdcampaignId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Campaign**](Campaign.md)|  | 
  **siteId** | **String**| The site context. | 
  **campaignId** | **String**| The id of the campaign to create. | 
+ **body** | [**Campaign**](Campaign.md)|  | 
 
 ### Return type
 
@@ -4964,11 +5203,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDCampaignsByIDCouponsByID"></a>
-# **putSitesByIDCampaignsByIDCouponsByID**
+
+## putSitesByIDCampaignsByIDCouponsByID
+
 > putSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId)
 
 
@@ -4976,28 +5216,29 @@ Name | Type | Description  | Notes
 Action to bind a single coupon to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be bound to
-let couponId = "couponId_example"; // String | The coupon ID to bind to a campaign
-
-apiInstance.putSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be bound to
+var couponId = "couponId_example"; // String | The coupon ID to bind to a campaign
+apiInstance.putSitesByIDCampaignsByIDCouponsByID(siteId, campaignId, couponId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5015,11 +5256,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByIDCustomerGroupsByID"></a>
-# **putSitesByIDCampaignsByIDCustomerGroupsByID**
+
+## putSitesByIDCampaignsByIDCustomerGroupsByID
+
 > putSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId)
 
 
@@ -5027,28 +5269,29 @@ null (empty response body)
 Action to bind a single customer group to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be bound to
-let customerGroupId = "customerGroupId_example"; // String | The customer group ID to bind to a campaign
-
-apiInstance.putSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that coupons are to be bound to
+var customerGroupId = "customerGroupId_example"; // String | The customer group ID to bind to a campaign
+apiInstance.putSitesByIDCampaignsByIDCustomerGroupsByID(siteId, campaignId, customerGroupId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5066,11 +5309,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByIDPromotionsByID"></a>
-# **putSitesByIDCampaignsByIDPromotionsByID**
+
+## putSitesByIDCampaignsByIDPromotionsByID
+
 > putSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId)
 
 
@@ -5078,28 +5322,29 @@ null (empty response body)
 Action to bind a single promotion to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the campaign and promotion.
-let campaignId = "campaignId_example"; // String | The ID of the campaign to which the promotion is to be assigned.
-let promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the campaign.
-
-apiInstance.putSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the campaign and promotion.
+var campaignId = "campaignId_example"; // String | The ID of the campaign to which the promotion is to be assigned.
+var promotionId = "promotionId_example"; // String | The ID of the promotion that is to be assigned to the campaign.
+apiInstance.putSitesByIDCampaignsByIDPromotionsByID(siteId, campaignId, promotionId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5117,38 +5362,39 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByIDSlotConfigurationsByIDByID"></a>
-# **putSitesByIDCampaignsByIDSlotConfigurationsByIDByID**
-> putSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignIdsiteIdslotIdslotConfigId, opts)
+
+## putSitesByIDCampaignsByIDSlotConfigurationsByIDByID
+
+> putSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, opts)
 
 
 
 Action to bind a slot configuration to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let campaignId = "campaignId_example"; // String | The ID of the campaign.
-let siteId = "siteId_example"; // String | The ID of the site.
-let slotId = "slotId_example"; // String | The ID of the slot.
-let slotConfigId = "slotConfigId_example"; // String | The ID of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var campaignId = "campaignId_example"; // String | The ID of the campaign.
+var siteId = "siteId_example"; // String | The ID of the site.
+var slotId = "slotId_example"; // String | The ID of the slot.
+var slotConfigId = "slotConfigId_example"; // String | The ID of the slot configuration.
+var opts = {
+  'context': "context_example", // String | 
   'body': new DataApi.SlotConfigurationCampaignAssignment() // SlotConfigurationCampaignAssignment | 
-  'context': "context_example" // String | 
 };
-apiInstance.putSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignIdsiteIdslotIdslotConfigId, opts).then(() => {
+apiInstance.putSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignId, siteId, slotId, slotConfigId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5156,14 +5402,16 @@ apiInstance.putSitesByIDCampaignsByIDSlotConfigurationsByIDByID(campaignIdsiteId
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaignId** | **String**| The ID of the campaign. | 
  **siteId** | **String**| The ID of the site. | 
  **slotId** | **String**| The ID of the slot. | 
  **slotConfigId** | **String**| The ID of the slot configuration. | 
- **body** | [**SlotConfigurationCampaignAssignment**](SlotConfigurationCampaignAssignment.md)|  | [optional] 
  **context** | **String**|  | [optional] 
+ **body** | [**SlotConfigurationCampaignAssignment**](SlotConfigurationCampaignAssignment.md)|  | [optional] 
 
 ### Return type
 
@@ -5175,11 +5423,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByIDSortingRulesByIDByID"></a>
-# **putSitesByIDCampaignsByIDSortingRulesByIDByID**
+
+## putSitesByIDCampaignsByIDSortingRulesByIDByID
+
 > putSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts)
 
 
@@ -5187,31 +5436,33 @@ null (empty response body)
 Action to bind a single sorting rule to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The ID of the site that contains the campaign, sorting rule and category.
-let campaignId = "campaignId_example"; // String | The ID of the campaign to which the sorting rule is to be assigned.
-let sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the campaign.
-let categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The ID of the site that contains the campaign, sorting rule and category.
+var campaignId = "campaignId_example"; // String | The ID of the campaign to which the sorting rule is to be assigned.
+var sortingRuleId = "sortingRuleId_example"; // String | The ID of sorting rule that is to be assigned to the campaign.
+var categoryId = "categoryId_example"; // String | The ID of the category that is associated with the sorting rule.
+var opts = {
   'ruleContext': "ruleContext_example" // String | 
 };
-apiInstance.putSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts).then(() => {
+apiInstance.putSitesByIDCampaignsByIDSortingRulesByIDByID(siteId, campaignId, sortingRuleId, categoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5231,11 +5482,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCampaignsByIDSourceCodeGroupsByID"></a>
-# **putSitesByIDCampaignsByIDSourceCodeGroupsByID**
+
+## putSitesByIDCampaignsByIDSourceCodeGroupsByID
+
 > putSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId)
 
 
@@ -5243,28 +5495,29 @@ null (empty response body)
 Action to bind a single source code group to a given campaign.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | 
-let campaignId = "campaignId_example"; // String | The campaign ID that source code group are to be bound to
-let sourceCodeGroupId = "sourceCodeGroupId_example"; // String | The source code group ID to bind to a campaign
-
-apiInstance.putSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | 
+var campaignId = "campaignId_example"; // String | The campaign ID that source code group are to be bound to
+var sourceCodeGroupId = "sourceCodeGroupId_example"; // String | The source code group ID to bind to a campaign
+apiInstance.putSitesByIDCampaignsByIDSourceCodeGroupsByID(siteId, campaignId, sourceCodeGroupId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5282,33 +5535,33 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="putSitesByIDCartridges"></a>
-# **putSitesByIDCartridges**
-> CartridgePathApiResponse putSitesByIDCartridges(bodysiteId)
+
+## putSitesByIDCartridges
+
+> CartridgePathApiResponse putSitesByIDCartridges(siteId, body)
 
 
 
 Overwrite cartridge path.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.CartridgePathCreateRequest(); // CartridgePathCreateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-
-apiInstance.putSitesByIDCartridges(bodysiteId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var body = new DataApi.CartridgePathCreateRequest(); // CartridgePathCreateRequest | 
+apiInstance.putSitesByIDCartridges(siteId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5316,10 +5569,12 @@ apiInstance.putSitesByIDCartridges(bodysiteId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CartridgePathCreateRequest**](CartridgePathCreateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
+ **body** | [**CartridgePathCreateRequest**](CartridgePathCreateRequest.md)|  | 
 
 ### Return type
 
@@ -5331,34 +5586,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDCouponsByID"></a>
-# **putSitesByIDCouponsByID**
-> Coupon putSitesByIDCouponsByID(bodysiteIdcouponId)
+
+## putSitesByIDCouponsByID
+
+> Coupon putSitesByIDCouponsByID(siteId, couponId, body)
 
 
 
 Creates a coupon using the information provided. If a coupon exists with the same unique identifier,  the coupon is replaced completely.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Coupon(); // Coupon | 
-let siteId = "siteId_example"; // String | The site context.
-let couponId = "couponId_example"; // String | The id of the coupon to create.
-
-apiInstance.putSitesByIDCouponsByID(bodysiteIdcouponId).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var couponId = "couponId_example"; // String | The id of the coupon to create.
+var body = new DataApi.Coupon(); // Coupon | 
+apiInstance.putSitesByIDCouponsByID(siteId, couponId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5366,11 +5621,13 @@ apiInstance.putSitesByIDCouponsByID(bodysiteIdcouponId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Coupon**](Coupon.md)|  | 
  **siteId** | **String**| The site context. | 
  **couponId** | **String**| The id of the coupon to create. | 
+ **body** | [**Coupon**](Coupon.md)|  | 
 
 ### Return type
 
@@ -5382,40 +5639,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDCustomObjectsByIDByID"></a>
-# **putSitesByIDCustomObjectsByIDByID**
-> CustomObject putSitesByIDCustomObjectsByIDByID(siteIdobjectTypekey)
+
+## putSitesByIDCustomObjectsByIDByID
+
+> CustomObject putSitesByIDCustomObjectsByIDByID(siteId, objectType, key, opts)
 
 
 
 Creates a site specific Custom Object from request body for the specified site. Note that an existing Custom Object for the site, with the same key, will be overwritten by this action.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | the ID of the site
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the Custom Object
-
-apiInstance.putSitesByIDCustomObjectsByIDByID(siteIdobjectTypekey).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | the ID of the site
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the Custom Object
+var opts = {
+  'body': new DataApi.CustomObject() // CustomObject | 
+};
+apiInstance.putSitesByIDCustomObjectsByIDByID(siteId, objectType, key, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5434,34 +5696,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDCustomerGroupsByID"></a>
-# **putSitesByIDCustomerGroupsByID**
-> CustomerGroup putSitesByIDCustomerGroupsByID(bodysiteIdid)
+
+## putSitesByIDCustomerGroupsByID
+
+> CustomerGroup putSitesByIDCustomerGroupsByID(siteId, id, body)
 
 
 
 Creates a customer group using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.CustomerGroup(); // CustomerGroup | 
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the customer group to create.
-
-apiInstance.putSitesByIDCustomerGroupsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the customer group to create.
+var body = new DataApi.CustomerGroup(); // CustomerGroup | 
+apiInstance.putSitesByIDCustomerGroupsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5469,11 +5731,13 @@ apiInstance.putSitesByIDCustomerGroupsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerGroup**](CustomerGroup.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **id** | **String**| The id of the customer group to create. | 
+ **body** | [**CustomerGroup**](CustomerGroup.md)|  | 
 
 ### Return type
 
@@ -5485,11 +5749,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDCustomerGroupsByIDMembersByID"></a>
-# **putSitesByIDCustomerGroupsByIDMembersByID**
+
+## putSitesByIDCustomerGroupsByIDMembersByID
+
 > CustomerGroupMember putSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts)
 
 
@@ -5497,30 +5762,32 @@ Name | Type | Description  | Notes
 Action to add customer to (static) customer group.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the customer group.
-let customerNo = "customerNo_example"; // String | The customer number of the customer to add to the group.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the customer group.
+var customerNo = "customerNo_example"; // String | The customer number of the customer to add to the group.
+var opts = {
   'select': "select_example" // String | 
 };
-apiInstance.putSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then((data) => {
+apiInstance.putSitesByIDCustomerGroupsByIDMembersByID(siteId, id, customerNo, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -5539,34 +5806,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDOrdersByIDConfirmationStatus"></a>
-# **putSitesByIDOrdersByIDConfirmationStatus**
-> putSitesByIDOrdersByIDConfirmationStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDConfirmationStatus
+
+> putSitesByIDOrdersByIDConfirmationStatus(siteId, orderNo, body)
 
 
 
 Updates the order confirmation status.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderConfirmationStatusUpdateRequest(); // OrderConfirmationStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDConfirmationStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderConfirmationStatusUpdateRequest(); // OrderConfirmationStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDConfirmationStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5574,11 +5841,13 @@ apiInstance.putSitesByIDOrdersByIDConfirmationStatus(bodysiteIdorderNo).then(() 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderConfirmationStatusUpdateRequest**](OrderConfirmationStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderConfirmationStatusUpdateRequest**](OrderConfirmationStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5590,34 +5859,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDExportStatus"></a>
-# **putSitesByIDOrdersByIDExportStatus**
-> putSitesByIDOrdersByIDExportStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDExportStatus
+
+> putSitesByIDOrdersByIDExportStatus(siteId, orderNo, body)
 
 
 
 Updates the order export status. Setting the status to EXPORTED will also trigger the finalization of on-order inventory transactions for this order, meaning that all inventory transactions with type on-order will be moved into final inventory transactions. This is only relevant when on-order inventory is turned on for the inventory list ordered products are in.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderExportStatusUpdateRequest(); // OrderExportStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDExportStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderExportStatusUpdateRequest(); // OrderExportStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDExportStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5625,11 +5894,13 @@ apiInstance.putSitesByIDOrdersByIDExportStatus(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderExportStatusUpdateRequest**](OrderExportStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderExportStatusUpdateRequest**](OrderExportStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5641,34 +5912,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDExternalStatus"></a>
-# **putSitesByIDOrdersByIDExternalStatus**
-> putSitesByIDOrdersByIDExternalStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDExternalStatus
+
+> putSitesByIDOrdersByIDExternalStatus(siteId, orderNo, body)
 
 
 
 Updates the order external status.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderExternalStatusUpdateRequest(); // OrderExternalStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDExternalStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderExternalStatusUpdateRequest(); // OrderExternalStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDExternalStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5676,11 +5947,13 @@ apiInstance.putSitesByIDOrdersByIDExternalStatus(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderExternalStatusUpdateRequest**](OrderExternalStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderExternalStatusUpdateRequest**](OrderExternalStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5692,34 +5965,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDPaymentStatus"></a>
-# **putSitesByIDOrdersByIDPaymentStatus**
-> putSitesByIDOrdersByIDPaymentStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDPaymentStatus
+
+> putSitesByIDOrdersByIDPaymentStatus(siteId, orderNo, body)
 
 
 
 Updates the order payment status.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderPaymentStatusUpdateRequest(); // OrderPaymentStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDPaymentStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderPaymentStatusUpdateRequest(); // OrderPaymentStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDPaymentStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5727,11 +6000,13 @@ apiInstance.putSitesByIDOrdersByIDPaymentStatus(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderPaymentStatusUpdateRequest**](OrderPaymentStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderPaymentStatusUpdateRequest**](OrderPaymentStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5743,35 +6018,35 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDShipmentsByIDShippingAddress"></a>
-# **putSitesByIDOrdersByIDShipmentsByIDShippingAddress**
-> putSitesByIDOrdersByIDShipmentsByIDShippingAddress(bodysiteIdorderNoshipmentId)
+
+## putSitesByIDOrdersByIDShipmentsByIDShippingAddress
+
+> putSitesByIDOrdersByIDShipmentsByIDShippingAddress(siteId, orderNo, shipmentId, body)
 
 
 
 Updates (create or replace) the order shipment address.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.ShippingAddressUpdateRequest(); // ShippingAddressUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site
-let orderNo = "orderNo_example"; // String | The order number
-let shipmentId = "shipmentId_example"; // String | ID of the shipment
-
-apiInstance.putSitesByIDOrdersByIDShipmentsByIDShippingAddress(bodysiteIdorderNoshipmentId).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site
+var orderNo = "orderNo_example"; // String | The order number
+var shipmentId = "shipmentId_example"; // String | ID of the shipment
+var body = new DataApi.ShippingAddressUpdateRequest(); // ShippingAddressUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDShipmentsByIDShippingAddress(siteId, orderNo, shipmentId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5779,12 +6054,14 @@ apiInstance.putSitesByIDOrdersByIDShipmentsByIDShippingAddress(bodysiteIdorderNo
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ShippingAddressUpdateRequest**](ShippingAddressUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site | 
  **orderNo** | **String**| The order number | 
  **shipmentId** | **String**| ID of the shipment | 
+ **body** | [**ShippingAddressUpdateRequest**](ShippingAddressUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5796,34 +6073,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDShippingStatus"></a>
-# **putSitesByIDOrdersByIDShippingStatus**
-> putSitesByIDOrdersByIDShippingStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDShippingStatus
+
+> putSitesByIDOrdersByIDShippingStatus(siteId, orderNo, body)
 
 
 
 Updates the order shipping status.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderShippingStatusUpdateRequest(); // OrderShippingStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site.
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDShippingStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site.
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderShippingStatusUpdateRequest(); // OrderShippingStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDShippingStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5831,11 +6108,13 @@ apiInstance.putSitesByIDOrdersByIDShippingStatus(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderShippingStatusUpdateRequest**](OrderShippingStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site. | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderShippingStatusUpdateRequest**](OrderShippingStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5847,34 +6126,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDOrdersByIDStatus"></a>
-# **putSitesByIDOrdersByIDStatus**
-> putSitesByIDOrdersByIDStatus(bodysiteIdorderNo)
+
+## putSitesByIDOrdersByIDStatus
+
+> putSitesByIDOrdersByIDStatus(siteId, orderNo, body)
 
 
 
 Updates the order status by using the corresponding methods (fail, undoFail, place, cancel and undoCancel) from the dw.order.OrderMgr. Orders which are not in status CREATED or FAILED can not be set back.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.OrderStatusUpdateRequest(); // OrderStatusUpdateRequest | 
-let siteId = "siteId_example"; // String | ID of the site
-let orderNo = "orderNo_example"; // String | The order number
-
-apiInstance.putSitesByIDOrdersByIDStatus(bodysiteIdorderNo).then(() => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | ID of the site
+var orderNo = "orderNo_example"; // String | The order number
+var body = new DataApi.OrderStatusUpdateRequest(); // OrderStatusUpdateRequest | 
+apiInstance.putSitesByIDOrdersByIDStatus(siteId, orderNo, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5882,11 +6161,13 @@ apiInstance.putSitesByIDOrdersByIDStatus(bodysiteIdorderNo).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OrderStatusUpdateRequest**](OrderStatusUpdateRequest.md)|  | 
  **siteId** | **String**| ID of the site | 
  **orderNo** | **String**| The order number | 
+ **body** | [**OrderStatusUpdateRequest**](OrderStatusUpdateRequest.md)|  | 
 
 ### Return type
 
@@ -5898,34 +6179,34 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="putSitesByIDPromotionsByID"></a>
-# **putSitesByIDPromotionsByID**
-> Promotion putSitesByIDPromotionsByID(bodysiteIdid)
+
+## putSitesByIDPromotionsByID
+
+> Promotion putSitesByIDPromotionsByID(siteId, id, body)
 
 
 
 Creates a promotion using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Promotion(); // Promotion | 
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the promotion to create.
-
-apiInstance.putSitesByIDPromotionsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the promotion to create.
+var body = new DataApi.Promotion(); // Promotion | 
+apiInstance.putSitesByIDPromotionsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5933,11 +6214,13 @@ apiInstance.putSitesByIDPromotionsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Promotion**](Promotion.md)|  | 
  **siteId** | **String**| The site context. | 
  **id** | **String**| The id of the promotion to create. | 
+ **body** | [**Promotion**](Promotion.md)|  | 
 
 ### Return type
 
@@ -5949,37 +6232,38 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDSlotsByIDSlotConfigurationsByID"></a>
-# **putSitesByIDSlotsByIDSlotConfigurationsByID**
-> SlotConfiguration putSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfigurationId, opts)
+
+## putSitesByIDSlotsByIDSlotConfigurationsByID
+
+> SlotConfiguration putSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, body, opts)
 
 
 
 Creates a new configuration for an existing slot. If a slot configuration  exists with the specified configuration_id, slot_id, and context, the existing  slot configuration is overwritten.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SlotConfiguration(); // SlotConfiguration | 
-let siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
-let slotId = "slotId_example"; // String | The id of the slot.
-let configurationId = "configurationId_example"; // String | The id of the slot configuration.
-let opts = { 
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site for which you want to create the slot configuration.
+var slotId = "slotId_example"; // String | The id of the slot.
+var configurationId = "configurationId_example"; // String | The id of the slot configuration.
+var body = new DataApi.SlotConfiguration(); // SlotConfiguration | 
+var opts = {
   'context': "context_example" // String | 
 };
-apiInstance.putSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfigurationId, opts).then((data) => {
+apiInstance.putSitesByIDSlotsByIDSlotConfigurationsByID(siteId, slotId, configurationId, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -5987,12 +6271,14 @@ apiInstance.putSitesByIDSlotsByIDSlotConfigurationsByID(bodysiteIdslotIdconfigur
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SlotConfiguration**](SlotConfiguration.md)|  | 
  **siteId** | **String**| The id of the site for which you want to create the slot configuration. | 
  **slotId** | **String**| The id of the slot. | 
  **configurationId** | **String**| The id of the slot configuration. | 
+ **body** | [**SlotConfiguration**](SlotConfiguration.md)|  | 
  **context** | **String**|  | [optional] 
 
 ### Return type
@@ -6005,34 +6291,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDSourceCodeGroupsByID"></a>
-# **putSitesByIDSourceCodeGroupsByID**
-> SourceCodeGroup putSitesByIDSourceCodeGroupsByID(bodysiteIdid)
+
+## putSitesByIDSourceCodeGroupsByID
+
+> SourceCodeGroup putSitesByIDSourceCodeGroupsByID(siteId, id, body)
 
 
 
 Creates a source code group using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.SourceCodeGroup(); // SourceCodeGroup | 
-let siteId = "siteId_example"; // String | The id of the site.
-let id = "id_example"; // String | The id of the source code group to create.
-
-apiInstance.putSitesByIDSourceCodeGroupsByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The id of the site.
+var id = "id_example"; // String | The id of the source code group to create.
+var body = new DataApi.SourceCodeGroup(); // SourceCodeGroup | 
+apiInstance.putSitesByIDSourceCodeGroupsByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -6040,11 +6326,13 @@ apiInstance.putSitesByIDSourceCodeGroupsByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SourceCodeGroup**](SourceCodeGroup.md)|  | 
  **siteId** | **String**| The id of the site. | 
  **id** | **String**| The id of the source code group to create. | 
+ **body** | [**SourceCodeGroup**](SourceCodeGroup.md)|  | 
 
 ### Return type
 
@@ -6056,34 +6344,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSitesByIDStoresByID"></a>
-# **putSitesByIDStoresByID**
-> Store putSitesByIDStoresByID(bodysiteIdid)
+
+## putSitesByIDStoresByID
+
+> Store putSitesByIDStoresByID(siteId, id, body)
 
 
 
 Creates a store using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SitesApi();
-let body = new DataApi.Store(); // Store | 
-let siteId = "siteId_example"; // String | The site context.
-let id = "id_example"; // String | The id of the store to create.
-
-apiInstance.putSitesByIDStoresByID(bodysiteIdid).then((data) => {
+var apiInstance = new DataApi.SitesApi();
+var siteId = "siteId_example"; // String | The site context.
+var id = "id_example"; // String | The id of the store to create.
+var body = new DataApi.Store(); // Store | 
+apiInstance.putSitesByIDStoresByID(siteId, id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -6091,11 +6379,13 @@ apiInstance.putSitesByIDStoresByID(bodysiteIdid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Store**](Store.md)|  | 
  **siteId** | **String**| The site context. | 
  **id** | **String**| The id of the store to create. | 
+ **body** | [**Store**](Store.md)|  | 
 
 ### Return type
 
@@ -6107,6 +6397,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

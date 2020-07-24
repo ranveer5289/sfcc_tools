@@ -1,6 +1,7 @@
 # DataApi.Site
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cartridges** | **String** | The cartridge Path of the site | [optional] 
@@ -12,11 +13,19 @@ Name | Type | Description | Notes
 **link** | **String** | A link directly to the site | [optional] 
 **storefrontStatus** | **String** |  | [optional] 
 
-<a name="StorefrontStatusEnum"></a>
+
+
 ## Enum: StorefrontStatusEnum
 
+
 * `online` (value: `"online"`)
+
 * `maintenance` (value: `"maintenance"`)
+
 * `to_be_deleted` (value: `"to_be_deleted"`)
+
 * `protected` (value: `"protected"`)
+
+
+
 

@@ -1,6 +1,7 @@
 # DataApi.Product
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assignedCategories** | [**[CatalogCategoryId]**](CatalogCategoryId.md) | The catalog categories that the product is assigned to | [optional] 
@@ -65,19 +66,19 @@ Name | Type | Description | Notes
 **cWaist** | **String** | Attribute used for apparel waist sizing. | [optional] 
 **cWidth** | **String** | This attribute is used for shoe widths for mens, womens and kids. | [optional] 
 **classificationCategory** | [**CatalogCategoryId**](CatalogCategoryId.md) |  | [optional] 
-**creationDate** | **Date** | Returns the value of attribute &#x27;creationDate&#x27;. | [optional] 
-**defaultVariantId** | **String** | The ID of the product&#x27;s default variant. | [optional] 
+**creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
+**defaultVariantId** | **String** | The ID of the product&#39;s default variant. | [optional] 
 **ean** | **String** | The European Article Number of the product. | [optional] 
 **id** | **String** | The ID (SKU) of the product. | [optional] 
 **image** | [**MediaFile**](MediaFile.md) |  | [optional] 
 **imageGroups** | [**[ImageGroup]**](ImageGroup.md) | The array of product image groups. | [optional] 
 **inStock** | **Boolean** | The flag that indicates if the product is in stock, or not. This is a calculated value. | [optional] 
-**lastModified** | **Date** | Returns the value of attribute &#x27;lastModified&#x27;. | [optional] 
+**lastModified** | **Date** | Returns the value of attribute &#39;lastModified&#39;. | [optional] [readonly] 
 **link** | **String** | A link to the product. | [optional] 
 **localizedTaxClassId** | **{String: String}** |  | [optional] 
 **longDescription** | [**{String: MarkupText}**](MarkupText.md) | The localized long description of the product. | [optional] 
-**manufacturerName** | **String** | The name of the product&#x27;s manufacturer. | [optional] 
-**manufacturerSku** | **String** | The SKU of the product&#x27;s manufacturer. | [optional] 
+**manufacturerName** | **String** | The name of the product&#39;s manufacturer. | [optional] 
+**manufacturerSku** | **String** | The SKU of the product&#39;s manufacturer. | [optional] 
 **master** | [**Master**](Master.md) |  | [optional] 
 **name** | **{String: String}** | The localized name of the product. | [optional] 
 **online** | **Boolean** | The flag that indicates if the product is online, or not. This is a calculated value. | [optional] 
@@ -88,7 +89,7 @@ Name | Type | Description | Notes
 **pageKeywords** | **{String: String}** | The localized page keywords of the product. | [optional] 
 **pageTitle** | **{String: String}** | The localized page title of the product. | [optional] 
 **price** | **Number** | The price of the product. | [optional] 
-**priceCurrency** | **String** | The currency code for product&#x27;s price. | [optional] 
+**priceCurrency** | **String** | The currency code for product&#39;s price. | [optional] 
 **pricePerUnit** | **Number** | The price per unit of the product | [optional] 
 **primaryCategories** | [**[CatalogCategoryId]**](CatalogCategoryId.md) | The catalog categories that are primary for the product | [optional] 
 **primaryCategoryId** | **String** | The id of the products primary category. | [optional] 
@@ -111,246 +112,438 @@ Name | Type | Description | Notes
 **variationGroups** | [**[VariationGroup]**](VariationGroup.md) | The array of variation groups in the product. This is applicable for product type \&quot;master\&quot; only. | [optional] 
 **variationValues** | **{String: String}** | The variation values selected for the product in variation attribute id and value pairs. This is applicable for product types \&quot;variant\&quot; and  \&quot;variation_group\&quot; only. | [optional] 
 
-<a name="[CBootTypeEnum]"></a>
+
+
 ## Enum: [CBootTypeEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
 
 
-<a name="[CBottomTypeEnum]"></a>
+
+
+
 ## Enum: [CBottomTypeEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
 
 
-<a name="[CDigitalCameraFeaturesEnum]"></a>
+
+
+
 ## Enum: [CDigitalCameraFeaturesEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
+
 * `0090` (value: `"0090"`)
+
 * `0100` (value: `"0100"`)
+
 * `0110` (value: `"0110"`)
+
 * `0120` (value: `"0120"`)
+
 * `0130` (value: `"0130"`)
+
 * `0140` (value: `"0140"`)
+
 * `0150` (value: `"0150"`)
+
 * `0160` (value: `"0160"`)
+
 * `0170` (value: `"0170"`)
+
 * `0180` (value: `"0180"`)
+
 * `0190` (value: `"0190"`)
+
 * `0200` (value: `"0200"`)
+
 * `0210` (value: `"0210"`)
+
 * `0220` (value: `"0220"`)
+
 * `0230` (value: `"0230"`)
+
 * `0240` (value: `"0240"`)
+
 * `0250` (value: `"0250"`)
+
 * `0260` (value: `"0260"`)
+
 * `0270` (value: `"0270"`)
+
 * `0280` (value: `"0280"`)
 
 
-<a name="[CGameGenreEnum]"></a>
+
+
+
 ## Enum: [CGameGenreEnum]
 
+
 * `Action` (value: `"Action"`)
+
 * `Educational` (value: `"Educational"`)
+
 * `Kids` (value: `"Kids"`)
+
 * `Racing` (value: `"Racing"`)
+
 * `Role-Playing` (value: `"Role-Playing"`)
+
 * `Sports` (value: `"Sports"`)
+
 * `Strategy` (value: `"Strategy"`)
 
 
-<a name="[CGpsFeaturesEnum]"></a>
+
+
+
 ## Enum: [CGpsFeaturesEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
+
 * `0090` (value: `"0090"`)
+
 * `0100` (value: `"0100"`)
+
 * `0110` (value: `"0110"`)
+
 * `0120` (value: `"0120"`)
+
 * `0130` (value: `"0130"`)
+
 * `0140` (value: `"0140"`)
+
 * `0150` (value: `"0150"`)
+
 * `0160` (value: `"0160"`)
+
 * `0170` (value: `"0170"`)
+
 * `0180` (value: `"0180"`)
+
 * `0190` (value: `"0190"`)
+
 * `0200` (value: `"0200"`)
+
 * `0210` (value: `"0210"`)
+
 * `0230` (value: `"0230"`)
 
 
-<a name="[CGpsTypeEnum]"></a>
+
+
+
 ## Enum: [CGpsTypeEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
 
 
-<a name="CKidsAgeEnum"></a>
+
+
+
 ## Enum: CKidsAgeEnum
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
 
 
-<a name="[CMaterialTestEnum]"></a>
+
+
+
 ## Enum: [CMaterialTestEnum]
 
+
 * `cotton` (value: `"cotton"`)
+
 * `wool` (value: `"wool"`)
+
 * `polyester` (value: `"polyester"`)
 
 
-<a name="[CMediaFormatEnum]"></a>
+
+
+
 ## Enum: [CMediaFormatEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
+
 * `0090` (value: `"0090"`)
+
 * `0100` (value: `"0100"`)
 
 
-<a name="[CMemoryTypeEnum]"></a>
+
+
+
 ## Enum: [CMemoryTypeEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
+
 * `0090` (value: `"0090"`)
 
 
-<a name="COuterwearTypeEnum"></a>
+
+
+
 ## Enum: COuterwearTypeEnum
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
 
 
-<a name="[CPortableAudioTypeEnum]"></a>
+
+
+
 ## Enum: [CPortableAudioTypeEnum]
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
 
 
-<a name="CRefinementColorEnum"></a>
+
+
+
 ## Enum: CRefinementColorEnum
 
+
 * `black` (value: `"black"`)
+
 * `blue` (value: `"blue"`)
+
 * `green` (value: `"green"`)
+
 * `red` (value: `"red"`)
+
 * `orange` (value: `"orange"`)
+
 * `pink` (value: `"pink"`)
+
 * `purple` (value: `"purple"`)
+
 * `white` (value: `"white"`)
+
 * `yellow` (value: `"yellow"`)
+
 * `grey` (value: `"grey"`)
+
 * `beige` (value: `"beige"`)
+
 * `miscellaneous` (value: `"miscellaneous"`)
+
 * `brown` (value: `"brown"`)
+
 * `navy` (value: `"navy"`)
 
 
-<a name="CSandalTypeEnum"></a>
+
+
+
 ## Enum: CSandalTypeEnum
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
 
 
-<a name="[CSheetsEnum]"></a>
+
+
+
 ## Enum: [CSheetsEnum]
 
+
 * `value1` (value: `"value1"`)
+
 * `value2` (value: `"value2"`)
+
 * `value3` (value: `"value3"`)
 
 
-<a name="CShoeTypeEnum"></a>
+
+
+
 ## Enum: CShoeTypeEnum
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
 * `0050` (value: `"0050"`)
+
 * `0060` (value: `"0060"`)
+
 * `0070` (value: `"0070"`)
+
 * `0080` (value: `"0080"`)
+
 * `0090` (value: `"0090"`)
+
 * `0100` (value: `"0100"`)
+
 * `0110` (value: `"0110"`)
 
 
-<a name="[CSkinConcernEnum]"></a>
+
+
+
 ## Enum: [CSkinConcernEnum]
 
+
 * `dryTight` (value: `"dryTight"`)
+
 * `comprehensive` (value: `"comprehensive"`)
+
 * `liftingLossFirm` (value: `"liftingLossFirm"`)
 
 
-<a name="CTvTypeEnum"></a>
+
+
+
 ## Enum: CTvTypeEnum
 
+
 * `0010` (value: `"0010"`)
+
 * `0020` (value: `"0020"`)
+
 * `0030` (value: `"0030"`)
+
 * `0040` (value: `"0040"`)
+
+
+
 

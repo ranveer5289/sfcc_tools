@@ -1,6 +1,6 @@
 # DataApi.SystemObjectDefinitionsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,8 +21,10 @@ Method | HTTP request | Description
 [**putSystemObjectDefinitionsByIDAttributeGroupsByID**](SystemObjectDefinitionsApi.md#putSystemObjectDefinitionsByIDAttributeGroupsByID) | **PUT** /system_object_definitions/{object_type}/attribute_groups/{id} | 
 [**putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID**](SystemObjectDefinitionsApi.md#putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID) | **PUT** /system_object_definitions/{object_type}/attribute_groups/{group_id}/attribute_definitions/{def_id} | 
 
-<a name="deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID"></a>
-# **deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID**
+
+
+## deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID
+
 > deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id)
 
 
@@ -30,27 +32,28 @@ Method | HTTP request | Description
 Deletes the attribute definition by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | The metadata object that contains these definitions
-let id = "id_example"; // String | Attribute definition id to remove
-
-apiInstance.deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id).then(() => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The metadata object that contains these definitions
+var id = "id_example"; // String | Attribute definition id to remove
+apiInstance.deleteSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -67,11 +70,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSystemObjectDefinitionsByIDAttributeGroupsByID"></a>
-# **deleteSystemObjectDefinitionsByIDAttributeGroupsByID**
+
+## deleteSystemObjectDefinitionsByIDAttributeGroupsByID
+
 > deleteSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id)
 
 
@@ -79,27 +83,28 @@ null (empty response body)
 Deletes the attribute group by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
-let id = "id_example"; // String | One attribute group id to remove
-
-apiInstance.deleteSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id).then(() => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
+var id = "id_example"; // String | One attribute group id to remove
+apiInstance.deleteSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -116,11 +121,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID"></a>
-# **deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID**
+
+## deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID
+
 > deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId)
 
 
@@ -128,28 +134,29 @@ null (empty response body)
 Un-assign an attribute definition from an attribute group.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | The ID of the system object that contains the attribute definition and attribute group.
-let groupId = "groupId_example"; // String | The ID of the attribute group.
-let defId = "defId_example"; // String | The ID of the attribute definition.
-
-apiInstance.deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId).then(() => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The ID of the system object that contains the attribute definition and attribute group.
+var groupId = "groupId_example"; // String | The ID of the attribute group.
+var defId = "defId_example"; // String | The ID of the attribute definition.
+apiInstance.deleteSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -167,11 +174,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getSystemObjectDefinitions"></a>
-# **getSystemObjectDefinitions**
+
+## getSystemObjectDefinitions
+
 > ObjectTypeDefinitions getSystemObjectDefinitions(opts)
 
 
@@ -179,29 +187,31 @@ null (empty response body)
 Action to get all the system objects with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var opts = {
   'start': 56, // Number | Optional start index for retrieving the items from a given index (default 0).
   'count': 56, // Number | Optional count for retrieving only a subset of the items (default is 25).
   'select': "select_example" // String | The property selector.
 };
-apiInstance.getSystemObjectDefinitions(opts).then((data) => {
+apiInstance.getSystemObjectDefinitions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -219,11 +229,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSystemObjectDefinitionsByID"></a>
-# **getSystemObjectDefinitionsByID**
+
+## getSystemObjectDefinitionsByID
+
 > ObjectTypeDefinition getSystemObjectDefinitionsByID(objectType)
 
 
@@ -231,26 +242,27 @@ Name | Type | Description  | Notes
 Action to get system object information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | The id of the object type for the requested system object.
-
-apiInstance.getSystemObjectDefinitionsByID(objectType).then((data) => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The id of the object type for the requested system object.
+apiInstance.getSystemObjectDefinitionsByID(objectType).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -266,11 +278,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSystemObjectDefinitionsByIDAttributeDefinitions"></a>
-# **getSystemObjectDefinitionsByIDAttributeDefinitions**
+
+## getSystemObjectDefinitionsByIDAttributeDefinitions
+
 > ObjectAttributeDefinitions getSystemObjectDefinitionsByIDAttributeDefinitions(objectType, opts)
 
 
@@ -278,30 +291,32 @@ Name | Type | Description  | Notes
 Action to get all the attribute definitions with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | 
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | 
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getSystemObjectDefinitionsByIDAttributeDefinitions(objectType, opts).then((data) => {
+apiInstance.getSystemObjectDefinitionsByIDAttributeDefinitions(objectType, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -320,11 +335,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSystemObjectDefinitionsByIDAttributeDefinitionsByID"></a>
-# **getSystemObjectDefinitionsByIDAttributeDefinitionsByID**
+
+## getSystemObjectDefinitionsByIDAttributeDefinitionsByID
+
 > ObjectAttributeDefinition getSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, opts)
 
 
@@ -332,30 +348,32 @@ Name | Type | Description  | Notes
 Action to get attribute definition information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | The object type id that contains these definitions
-let id = "id_example"; // String | The id of the requested attribute definition.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The object type id that contains these definitions
+var id = "id_example"; // String | The id of the requested attribute definition.
+var opts = {
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, opts).then((data) => {
+apiInstance.getSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -374,11 +392,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSystemObjectDefinitionsByIDAttributeGroups"></a>
-# **getSystemObjectDefinitionsByIDAttributeGroups**
+
+## getSystemObjectDefinitionsByIDAttributeGroups
+
 > ObjectAttributeGroups getSystemObjectDefinitionsByIDAttributeGroups(objectType, opts)
 
 
@@ -386,31 +405,33 @@ Name | Type | Description  | Notes
 Action to get all the attribute groups with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | 
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | 
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSystemObjectDefinitionsByIDAttributeGroups(objectType, opts).then((data) => {
+apiInstance.getSystemObjectDefinitionsByIDAttributeGroups(objectType, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -430,11 +451,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getSystemObjectDefinitionsByIDAttributeGroupsByID"></a>
-# **getSystemObjectDefinitionsByIDAttributeGroupsByID**
+
+## getSystemObjectDefinitionsByIDAttributeGroupsByID
+
 > ObjectAttributeGroup getSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, opts)
 
 
@@ -442,30 +464,32 @@ Name | Type | Description  | Notes
 Action to get attribute group information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | the object type id that contains this attribute group
-let id = "id_example"; // String | The id of the requested attribute group.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | the object type id that contains this attribute group
+var id = "id_example"; // String | The id of the requested attribute group.
+var opts = {
   'select': "select_example", // String | 
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, opts).then((data) => {
+apiInstance.getSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -484,36 +508,37 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSystemObjectDefinitionsByIDAttributeDefinitionsByID"></a>
-# **patchSystemObjectDefinitionsByIDAttributeDefinitionsByID**
-> ObjectAttributeDefinition patchSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectTypeid, opts)
+
+## patchSystemObjectDefinitionsByIDAttributeDefinitionsByID
+
+> ObjectAttributeDefinition patchSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, body, opts)
 
 
 
 Updates the attribute definition with the specified information. The request must include the If-Match header, which holds  the last known base-point information. The value of this header is an \&quot;ETag\&quot; representing the attribute definition state. If  the request does not contain an If-Match header with the current server customer \&quot;ETag\&quot;, a 409 (IfMatchRequiredException)  fault is returned. If the If-Match header does not match the current server attribute definition \&quot;ETag\&quot;, a 412 (InvalidIfMatchException)  fault is returned.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.ObjectAttributeDefinition(); // ObjectAttributeDefinition | 
-let objectType = "objectType_example"; // String | The object type id that contains these definitions
-let id = "id_example"; // String | The id of the requested attribute definition.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The object type id that contains these definitions
+var id = "id_example"; // String | The id of the requested attribute definition.
+var body = new DataApi.ObjectAttributeDefinition(); // ObjectAttributeDefinition | 
+var opts = {
   'ifMatch': "ifMatch_example" // String | 
 };
-apiInstance.patchSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectTypeid, opts).then((data) => {
+apiInstance.patchSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -521,11 +546,13 @@ apiInstance.patchSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectT
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ObjectAttributeDefinition**](ObjectAttributeDefinition.md)|  | 
  **objectType** | **String**| The object type id that contains these definitions | 
  **id** | **String**| The id of the requested attribute definition. | 
+ **body** | [**ObjectAttributeDefinition**](ObjectAttributeDefinition.md)|  | 
  **ifMatch** | **String**|  | [optional] 
 
 ### Return type
@@ -538,36 +565,37 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchSystemObjectDefinitionsByIDAttributeGroupsByID"></a>
-# **patchSystemObjectDefinitionsByIDAttributeGroupsByID**
-> ObjectAttributeGroup patchSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid, opts)
+
+## patchSystemObjectDefinitionsByIDAttributeGroupsByID
+
+> ObjectAttributeGroup patchSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, body, opts)
 
 
 
 Updates the attribute group with the specified information. The request must include the If-Match header, which holds  the last known base-point information. The value of this header is an \&quot;ETag\&quot; representing the attribute group state. If  the request does not contain an If-Match header with the current server customer \&quot;ETag\&quot;, a 409 (IfMatchRequiredException)  fault is returned. If the If-Match header does not match the current server attribute group \&quot;ETag\&quot;, a 412 (InvalidIfMatchException)  fault is returned.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.ObjectAttributeGroup(); // ObjectAttributeGroup | 
-let objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
-let id = "id_example"; // String | The id of the requested attribute group.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
+var id = "id_example"; // String | The id of the requested attribute group.
+var body = new DataApi.ObjectAttributeGroup(); // ObjectAttributeGroup | 
+var opts = {
   'ifMatch': "ifMatch_example" // String | 
 };
-apiInstance.patchSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid, opts).then((data) => {
+apiInstance.patchSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -575,11 +603,13 @@ apiInstance.patchSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ObjectAttributeGroup**](ObjectAttributeGroup.md)|  | 
  **objectType** | **String**| the object type id that contains this attribute gorup | 
  **id** | **String**| The id of the requested attribute group. | 
+ **body** | [**ObjectAttributeGroup**](ObjectAttributeGroup.md)|  | 
  **ifMatch** | **String**|  | [optional] 
 
 ### Return type
@@ -592,33 +622,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSystemObjectDefinitionsByIDAttributeDefinitionSearch"></a>
-# **postSystemObjectDefinitionsByIDAttributeDefinitionSearch**
-> ObjectAttributeDefinitionSearchResult postSystemObjectDefinitionsByIDAttributeDefinitionSearch(bodyobjectType)
+
+## postSystemObjectDefinitionsByIDAttributeDefinitionSearch
+
+> ObjectAttributeDefinitionSearchResult postSystemObjectDefinitionsByIDAttributeDefinitionSearch(objectType, body)
 
 
 
 Searches the attribute definitions of the specified system object type.    The query attribute specifies a complex query that can be used to narrow down the search. Attributes are grouped  into different buckets.  These are the list of searchable attributes with their corresponding buckets:   Main:       id - String     display_name* - Localized String     description* - Localized String     key - boolean     mandatory - boolean     searchable - boolean     system - boolean     visible - boolean    Definition version:       localizable - boolean     site_specific - boolean     value_type - one of {string, int, double, text, html, date, image, boolean, money, quantity, datetime, email, password, set_of_string, set_of_int, set_of_double, enum_of_string, enum_of_int}    Group:       group - String     Only attributes in the same bucket can be joined using a disjunction (OR).  For instance, when joining localizable and description above, only a conjunction is allowed (AND), whereas display_name  and description can be joined using a disjunction because they are in the same bucket.  If an attribute  is used in a disjunction (OR) that violates this rule, an exception will be thrown.   * These attributes are not searchable or sortable for built in system attributes.  They work normally for non  system attributes.   Note that only searchable attributes can be used in sorting.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let objectType = "objectType_example"; // String | The object type id that contains these definitions
-
-apiInstance.postSystemObjectDefinitionsByIDAttributeDefinitionSearch(bodyobjectType).then((data) => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The object type id that contains these definitions
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSystemObjectDefinitionsByIDAttributeDefinitionSearch(objectType, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -626,10 +656,12 @@ apiInstance.postSystemObjectDefinitionsByIDAttributeDefinitionSearch(bodyobjectT
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **objectType** | **String**| The object type id that contains these definitions | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -641,33 +673,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postSystemObjectDefinitionsByIDAttributeGroupSearch"></a>
-# **postSystemObjectDefinitionsByIDAttributeGroupSearch**
-> ObjectAttributeGroupSearchResult postSystemObjectDefinitionsByIDAttributeGroupSearch(bodyobjectType)
+
+## postSystemObjectDefinitionsByIDAttributeGroupSearch
+
+> ObjectAttributeGroupSearchResult postSystemObjectDefinitionsByIDAttributeGroupSearch(objectType, body)
 
 
 
 Searches for attribute groups.    The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    id - String  display_name - Localized&lt;String&gt;  description - Localized&lt;String&gt;  position - Double  internal - Boolean     The output of the query can also be sorted. These are the list of sortable attributes:    id - String  display_name - Localized&lt;String&gt;  description - Localized&lt;String&gt;  position - Double  internal - Boolean  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let objectType = "objectType_example"; // String | 
-
-apiInstance.postSystemObjectDefinitionsByIDAttributeGroupSearch(bodyobjectType).then((data) => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | 
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postSystemObjectDefinitionsByIDAttributeGroupSearch(objectType, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -675,10 +707,12 @@ apiInstance.postSystemObjectDefinitionsByIDAttributeGroupSearch(bodyobjectType).
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **objectType** | **String**|  | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -690,36 +724,37 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSystemObjectDefinitionsByIDAttributeDefinitionsByID"></a>
-# **putSystemObjectDefinitionsByIDAttributeDefinitionsByID**
-> ObjectAttributeDefinition putSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectTypeid, opts)
+
+## putSystemObjectDefinitionsByIDAttributeDefinitionsByID
+
+> ObjectAttributeDefinition putSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, body, opts)
 
 
 
 Creates a attribute definition using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.ObjectAttributeDefinition(); // ObjectAttributeDefinition | 
-let objectType = "objectType_example"; // String | The metadata object that contains these definitions
-let id = "id_example"; // String | The id of the attribute definition to create.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The metadata object that contains these definitions
+var id = "id_example"; // String | The id of the attribute definition to create.
+var body = new DataApi.ObjectAttributeDefinition(); // ObjectAttributeDefinition | 
+var opts = {
   'xDwValidateExisting': true // Boolean | 
 };
-apiInstance.putSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectTypeid, opts).then((data) => {
+apiInstance.putSystemObjectDefinitionsByIDAttributeDefinitionsByID(objectType, id, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -727,11 +762,13 @@ apiInstance.putSystemObjectDefinitionsByIDAttributeDefinitionsByID(bodyobjectTyp
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ObjectAttributeDefinition**](ObjectAttributeDefinition.md)|  | 
  **objectType** | **String**| The metadata object that contains these definitions | 
  **id** | **String**| The id of the attribute definition to create. | 
+ **body** | [**ObjectAttributeDefinition**](ObjectAttributeDefinition.md)|  | 
  **xDwValidateExisting** | **Boolean**|  | [optional] 
 
 ### Return type
@@ -744,36 +781,37 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSystemObjectDefinitionsByIDAttributeGroupsByID"></a>
-# **putSystemObjectDefinitionsByIDAttributeGroupsByID**
-> ObjectAttributeGroup putSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid, opts)
+
+## putSystemObjectDefinitionsByIDAttributeGroupsByID
+
+> ObjectAttributeGroup putSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, body, opts)
 
 
 
 Creates a attribute group using the information provided. If a attribute group with the same unique identifier, it will be deleted and a new one will be created unless the header x-dw-validate-existing&#x3D;true is passed in with the request.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let body = new DataApi.ObjectAttributeGroup(); // ObjectAttributeGroup | 
-let objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
-let id = "id_example"; // String | The id of the attribute group to create.
-let opts = { 
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | the object type id that contains this attribute gorup
+var id = "id_example"; // String | The id of the attribute group to create.
+var body = new DataApi.ObjectAttributeGroup(); // ObjectAttributeGroup | 
+var opts = {
   'xDwValidateExisting': true // Boolean | 
 };
-apiInstance.putSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid, opts).then((data) => {
+apiInstance.putSystemObjectDefinitionsByIDAttributeGroupsByID(objectType, id, body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -781,11 +819,13 @@ apiInstance.putSystemObjectDefinitionsByIDAttributeGroupsByID(bodyobjectTypeid, 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ObjectAttributeGroup**](ObjectAttributeGroup.md)|  | 
  **objectType** | **String**| the object type id that contains this attribute gorup | 
  **id** | **String**| The id of the attribute group to create. | 
+ **body** | [**ObjectAttributeGroup**](ObjectAttributeGroup.md)|  | 
  **xDwValidateExisting** | **Boolean**|  | [optional] 
 
 ### Return type
@@ -798,11 +838,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID"></a>
-# **putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID**
+
+## putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID
+
 > putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId)
 
 
@@ -810,28 +851,29 @@ Name | Type | Description  | Notes
 Assign an attribute definition to an attribute group.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.SystemObjectDefinitionsApi();
-let objectType = "objectType_example"; // String | The ID of the system object that contains the attribute definition and attribute group.
-let groupId = "groupId_example"; // String | The ID of the attribute group.
-let defId = "defId_example"; // String | The ID of the attribute definition.
-
-apiInstance.putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId).then(() => {
+var apiInstance = new DataApi.SystemObjectDefinitionsApi();
+var objectType = "objectType_example"; // String | The ID of the system object that contains the attribute definition and attribute group.
+var groupId = "groupId_example"; // String | The ID of the attribute group.
+var defId = "defId_example"; // String | The ID of the attribute definition.
+apiInstance.putSystemObjectDefinitionsByIDAttributeGroupsByIDAttributeDefinitionsByID(objectType, groupId, defId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -849,6 +891,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

@@ -1,6 +1,7 @@
 # DataApi.AbTestSegmentStats
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addsToBaskets** | **Number** |  | [optional] 
@@ -35,3 +36,5 @@ Name | Type | Description | Notes
 **unitsAddedToBaskets** | **Number** |  | [optional] 
 **visitors** | **Number** |  | [optional] 
 **visits** | **Number** |  | [optional] 
+
+

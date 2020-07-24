@@ -1,6 +1,7 @@
 # DataApi.RoleModulePermission
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **application** | **String** | The permission application (e.g. \&quot;bm\&quot;, \&quot;csc\&quot;). | 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **type** | **String** | The permission type (\&quot;module\&quot;). | 
 **value** | **String** | The non domain specific value for the module permission, e.g. ACCESS or READONLY. | [optional] 
 **values** | **{String: String}** | The map of value per domain for the module permission, e.g. ACCESS or READONLY per domain name. | [optional] 
+
+

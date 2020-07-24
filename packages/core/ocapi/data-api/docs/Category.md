@@ -1,6 +1,7 @@
 # DataApi.Category
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cAlternativeUrl** | [**MarkupText**](MarkupText.md) |  | [optional] 
@@ -15,11 +16,11 @@ Name | Type | Description | Notes
 **cSlotBannerImage** | [**MediaFile**](MediaFile.md) |  | [optional] 
 **catalogId** | **String** | The id of the catalog that contains it. | [optional] 
 **categories** | [**[Category]**](Category.md) | The array of sub categories for the category. | [optional] 
-**creationDate** | **Date** | Returns the value of attribute &#x27;creationDate&#x27;. | [optional] 
+**creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **description** | **{String: String}** | The localized description of the category. | [optional] 
 **id** | **String** | The id of the category. | [optional] 
 **image** | **String** | The name of the category image. The URL to the image is computed. | [optional] 
-**lastModified** | **Date** | Returns the value of attribute &#x27;lastModified&#x27;. | [optional] 
+**lastModified** | **Date** | Returns the value of attribute &#39;lastModified&#39;. | [optional] [readonly] 
 **link** | **String** | The URL to get the category. This is a computed attribute and cannot be modified. | [optional] 
 **name** | **{String: String}** | The localized name of the category. | [optional] 
 **online** | **Boolean** | The online status of the category determines if it is visible in the storefront. Defaults to false if not specified on create. | [optional] 
@@ -32,9 +33,15 @@ Name | Type | Description | Notes
 **sortingRules** | [**[SortingRule]**](SortingRule.md) |  | [optional] 
 **thumbnail** | **String** | The name of the category thumbnail. The URL to the thumbnail is computed. | [optional] 
 
-<a name="CHeaderMenuOrientationEnum"></a>
+
+
 ## Enum: CHeaderMenuOrientationEnum
 
+
 * `Horizontal` (value: `"Horizontal"`)
+
 * `Vertical` (value: `"Vertical"`)
+
+
+
 

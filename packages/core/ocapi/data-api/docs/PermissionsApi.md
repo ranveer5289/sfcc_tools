@@ -1,6 +1,6 @@
 # DataApi.PermissionsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,8 +13,10 @@ Method | HTTP request | Description
 [**getPermissionsCsc**](PermissionsApi.md#getPermissionsCsc) | **GET** /permissions/csc | 
 [**getPermissionsCscModule**](PermissionsApi.md#getPermissionsCscModule) | **GET** /permissions/csc/module | 
 
-<a name="getPermissions"></a>
-# **getPermissions**
+
+
+## getPermissions
+
 > ApplicationPermissions getPermissions(opts)
 
 
@@ -22,27 +24,29 @@ Method | HTTP request | Description
 Get application specific permissions per type.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-let opts = { 
-  'expand': ["expand_example"] // [String] | The permission expand. A comma separated list with the allowed values (bm, csc).
+var apiInstance = new DataApi.PermissionsApi();
+var opts = {
+  'expand': ["null"] // [String] | The permission expand. A comma separated list with the allowed values (bm, csc).
 };
-apiInstance.getPermissions(opts).then((data) => {
+apiInstance.getPermissions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,11 +62,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsBm"></a>
-# **getPermissionsBm**
+
+## getPermissionsBm
+
 > Bmpermissions getPermissionsBm(opts)
 
 
@@ -70,27 +75,29 @@ Name | Type | Description  | Notes
 Get Business Manager permissions per type.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-let opts = { 
-  'expand': ["expand_example"] // [String] | The permission expand. A comma separated list with the allowed values   (module, functional, webdav, locale).
+var apiInstance = new DataApi.PermissionsApi();
+var opts = {
+  'expand': ["null"] // [String] | The permission expand. A comma separated list with the allowed values   (module, functional, webdav, locale).
 };
-apiInstance.getPermissionsBm(opts).then((data) => {
+apiInstance.getPermissionsBm(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -106,11 +113,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsBmFunctional"></a>
-# **getPermissionsBmFunctional**
+
+## getPermissionsBmFunctional
+
 > FunctionalPermissions getPermissionsBmFunctional()
 
 
@@ -118,24 +126,25 @@ Name | Type | Description  | Notes
 Get functional permissions per scope.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-apiInstance.getPermissionsBmFunctional().then((data) => {
+var apiInstance = new DataApi.PermissionsApi();
+apiInstance.getPermissionsBmFunctional().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -148,11 +157,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsBmLocale"></a>
-# **getPermissionsBmLocale**
+
+## getPermissionsBmLocale
+
 > LocalePermissions getPermissionsBmLocale()
 
 
@@ -160,24 +170,25 @@ This endpoint does not need any parameter.
 Get locale permissions per scope.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-apiInstance.getPermissionsBmLocale().then((data) => {
+var apiInstance = new DataApi.PermissionsApi();
+apiInstance.getPermissionsBmLocale().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -190,11 +201,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsBmModule"></a>
-# **getPermissionsBmModule**
+
+## getPermissionsBmModule
+
 > ModulePermissions getPermissionsBmModule()
 
 
@@ -202,24 +214,25 @@ This endpoint does not need any parameter.
 Get Business Manager module permissions per scope.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-apiInstance.getPermissionsBmModule().then((data) => {
+var apiInstance = new DataApi.PermissionsApi();
+apiInstance.getPermissionsBmModule().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -232,11 +245,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsBmWebdav"></a>
-# **getPermissionsBmWebdav**
+
+## getPermissionsBmWebdav
+
 > WebdavPermissions getPermissionsBmWebdav()
 
 
@@ -244,24 +258,25 @@ This endpoint does not need any parameter.
 Get WebDAV permissions per scope.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-apiInstance.getPermissionsBmWebdav().then((data) => {
+var apiInstance = new DataApi.PermissionsApi();
+apiInstance.getPermissionsBmWebdav().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -274,11 +289,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsCsc"></a>
-# **getPermissionsCsc**
+
+## getPermissionsCsc
+
 > Cscpermissions getPermissionsCsc(opts)
 
 
@@ -286,27 +302,29 @@ This endpoint does not need any parameter.
 Get permissions per type.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-let opts = { 
-  'expand': ["expand_example"] // [String] | The permission expand. A comma separated list with the allowed values   (module, functional, webdav, locale).
+var apiInstance = new DataApi.PermissionsApi();
+var opts = {
+  'expand': ["null"] // [String] | The permission expand. A comma separated list with the allowed values   (module, functional, webdav, locale).
 };
-apiInstance.getPermissionsCsc(opts).then((data) => {
+apiInstance.getPermissionsCsc(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -322,11 +340,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getPermissionsCscModule"></a>
-# **getPermissionsCscModule**
+
+## getPermissionsCscModule
+
 > ModulePermissions getPermissionsCscModule()
 
 
@@ -334,24 +353,25 @@ Name | Type | Description  | Notes
 Get CSC module permissions per scope.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.PermissionsApi();
-apiInstance.getPermissionsCscModule().then((data) => {
+var apiInstance = new DataApi.PermissionsApi();
+apiInstance.getPermissionsCscModule().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -364,6 +384,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

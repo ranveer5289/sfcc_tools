@@ -1,6 +1,7 @@
 # DataApi.AbTestSegment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocation** | **Number** | Test Group percentage allocation | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **slotConfigs** | **[Object]** | Slot configurations which this segment has as experiences | [optional] 
 **sortingRules** | **[Object]** | Sorting rules which this segment has as experiences | [optional] 
 **stats** | [**AbTestSegmentStats**](AbTestSegmentStats.md) |  | [optional] 
+
+

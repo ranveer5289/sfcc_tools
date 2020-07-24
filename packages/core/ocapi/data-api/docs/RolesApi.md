@@ -1,6 +1,6 @@
 # DataApi.RolesApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,10 @@ Method | HTTP request | Description
 [**putRolesByIDPermissions**](RolesApi.md#putRolesByIDPermissions) | **PUT** /roles/{id}/permissions | 
 [**putRolesByIDUsersByID**](RolesApi.md#putRolesByIDUsersByID) | **PUT** /roles/{id}/users/{login} | 
 
-<a name="deleteRolesByID"></a>
-# **deleteRolesByID**
+
+
+## deleteRolesByID
+
 > deleteRolesByID(id)
 
 
@@ -24,26 +26,27 @@ Method | HTTP request | Description
 Action to delete an access role.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | The id of the access role to delete.
-
-apiInstance.deleteRolesByID(id).then(() => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | The id of the access role to delete.
+apiInstance.deleteRolesByID(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -59,11 +62,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteRolesByIDUsersByID"></a>
-# **deleteRolesByIDUsersByID**
+
+## deleteRolesByIDUsersByID
+
 > deleteRolesByIDUsersByID(id, login)
 
 
@@ -71,27 +75,28 @@ null (empty response body)
 Action to unassign a user to an access role
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | ID of the access role.
-let login = "login_example"; // String | Login of the user.
-
-apiInstance.deleteRolesByIDUsersByID(id, login).then(() => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | ID of the access role.
+var login = "login_example"; // String | Login of the user.
+apiInstance.deleteRolesByIDUsersByID(id, login).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,11 +113,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getRoles"></a>
-# **getRoles**
+
+## getRoles
+
 > Roles getRoles(opts)
 
 
@@ -120,30 +126,32 @@ null (empty response body)
 Action to get all the access roles with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let opts = { 
+var apiInstance = new DataApi.RolesApi();
+var opts = {
   'start': 56, // Number | Optional start index for retrieving the items from a given index (default 0).
   'count': 56, // Number | Optional count for retrieving only a subset of the items (default is 25).
   'select': "select_example", // String | The property selector.
-  'expand': ["expand_example"] // [String] | List of expansions.
+  'expand': ["null"] // [String] | List of expansions.
 };
-apiInstance.getRoles(opts).then((data) => {
+apiInstance.getRoles(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -162,11 +170,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getRolesByID"></a>
-# **getRolesByID**
+
+## getRolesByID
+
 > Role getRolesByID(id, opts)
 
 
@@ -174,28 +183,30 @@ Name | Type | Description  | Notes
 Action to get a single access role.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | The id of the requested access role.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | The id of the requested access role.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getRolesByID(id, opts).then((data) => {
+apiInstance.getRolesByID(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -212,11 +223,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getRolesByIDPermissions"></a>
-# **getRolesByIDPermissions**
+
+## getRolesByIDPermissions
+
 > RolePermissions getRolesByIDPermissions(id)
 
 
@@ -224,26 +236,27 @@ Name | Type | Description  | Notes
 Retrieves a list of permissions assigned to the given role.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | The id of the requested access role.
-
-apiInstance.getRolesByIDPermissions(id).then((data) => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | The id of the requested access role.
+apiInstance.getRolesByIDPermissions(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -259,11 +272,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getRolesByIDUsers"></a>
-# **getRolesByIDUsers**
+
+## getRolesByIDUsers
+
 > Users getRolesByIDUsers(id, opts)
 
 
@@ -271,30 +285,32 @@ Name | Type | Description  | Notes
 Action to get all the users assigned to the specified access role.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | ID of the access role.
-let opts = { 
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | ID of the access role.
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getRolesByIDUsers(id, opts).then((data) => {
+apiInstance.getRolesByIDUsers(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -313,33 +329,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postRolesByIDUserSearch"></a>
-# **postRolesByIDUserSearch**
-> UserSearchResult postRolesByIDUserSearch(bodyid)
+
+## postRolesByIDUserSearch
+
+> UserSearchResult postRolesByIDUserSearch(id, body)
 
 
 
 Searches for users of the specified access role.  The query attribute specifies a complex query that can be used to narrow down the search. These are the list  of searchable attributes:    login - String  email - String  first_name - String  last_name - String  external_id - String  last_login_date - Date  is_locked - Boolean  is_disabled - Boolean     The output of the query can also be sorted. These are the list of sortable attributes:    login - String  email - String  first_name - String  last_name - String  external_id - String  last_login_date - Date  
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let body = new DataApi.SearchRequest(); // SearchRequest | 
-let id = "id_example"; // String | 
-
-apiInstance.postRolesByIDUserSearch(bodyid).then((data) => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | 
+var body = new DataApi.SearchRequest(); // SearchRequest | 
+apiInstance.postRolesByIDUserSearch(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -347,10 +363,12 @@ apiInstance.postRolesByIDUserSearch(bodyid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchRequest**](SearchRequest.md)|  | 
  **id** | **String**|  | 
+ **body** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 
@@ -362,33 +380,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putRolesByID"></a>
-# **putRolesByID**
-> Role putRolesByID(bodyid)
+
+## putRolesByID
+
+> Role putRolesByID(id, body)
 
 
 
 Action to create an access role.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let body = new DataApi.Role(); // Role | 
-let id = "id_example"; // String | The id of the access role to create.
-
-apiInstance.putRolesByID(bodyid).then((data) => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | The id of the access role to create.
+var body = new DataApi.Role(); // Role | 
+apiInstance.putRolesByID(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -396,10 +414,12 @@ apiInstance.putRolesByID(bodyid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Role**](Role.md)|  | 
  **id** | **String**| The id of the access role to create. | 
+ **body** | [**Role**](Role.md)|  | 
 
 ### Return type
 
@@ -411,33 +431,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="putRolesByIDPermissions"></a>
-# **putRolesByIDPermissions**
-> RolePermissions putRolesByIDPermissions(bodyid)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## putRolesByIDPermissions
 
-Assigns permissions to the given role. This will replace the current permission assignments. For the &#x27;Administrator&#x27;  role only adjustments for custom module permissions will be processed but other given permissions will be ignored.
+> RolePermissions putRolesByIDPermissions(id, body)
+
+
+
+Assigns permissions to the given role. This will replace the current permission assignments. For the &#39;Administrator&#39;  role only adjustments for custom module permissions will be processed but other given permissions will be ignored.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let body = new DataApi.RolePermissions(); // RolePermissions | 
-let id = "id_example"; // String | The id of the access role for which the permissions will be set.
-
-apiInstance.putRolesByIDPermissions(bodyid).then((data) => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | The id of the access role for which the permissions will be set.
+var body = new DataApi.RolePermissions(); // RolePermissions | 
+apiInstance.putRolesByIDPermissions(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -445,10 +465,12 @@ apiInstance.putRolesByIDPermissions(bodyid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RolePermissions**](RolePermissions.md)|  | 
  **id** | **String**| The id of the access role for which the permissions will be set. | 
+ **body** | [**RolePermissions**](RolePermissions.md)|  | 
 
 ### Return type
 
@@ -460,11 +482,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putRolesByIDUsersByID"></a>
-# **putRolesByIDUsersByID**
+
+## putRolesByIDUsersByID
+
 > User putRolesByIDUsersByID(id, login)
 
 
@@ -472,27 +495,28 @@ Name | Type | Description  | Notes
 Action to assign a user to an access role
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.RolesApi();
-let id = "id_example"; // String | ID of the access role.
-let login = "login_example"; // String | Login of the user.
-
-apiInstance.putRolesByIDUsersByID(id, login).then((data) => {
+var apiInstance = new DataApi.RolesApi();
+var id = "id_example"; // String | ID of the access role.
+var login = "login_example"; // String | Login of the user.
+apiInstance.putRolesByIDUsersByID(id, login).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -509,6 +533,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

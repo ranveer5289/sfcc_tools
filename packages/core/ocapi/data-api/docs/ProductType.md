@@ -1,6 +1,7 @@
 # DataApi.ProductType
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bundle** | **Boolean** | A flag indicating whether the product is a bundle. | [optional] 
@@ -14,3 +15,5 @@ Name | Type | Description | Notes
 **set** | **Boolean** | A flag indicating whether the product is a set. | [optional] 
 **variant** | **Boolean** | A flag indicating whether the product is a variant. | [optional] 
 **variationGroup** | **Boolean** | A flag indicating whether the product is a variation group. | [optional] 
+
+

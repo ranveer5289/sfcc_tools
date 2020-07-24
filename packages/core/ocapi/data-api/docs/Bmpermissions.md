@@ -1,6 +1,7 @@
 # DataApi.Bmpermissions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **functional** | [**FunctionalPermissions**](FunctionalPermissions.md) |  | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **types** | **[String]** |  | [optional] 
 **webdav** | [**WebdavPermissions**](WebdavPermissions.md) |  | [optional] 
 **webdavLink** | **String** |  | [optional] 
+
+

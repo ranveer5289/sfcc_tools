@@ -1,6 +1,6 @@
 # DataApi.InventoryListsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,10 @@ Method | HTTP request | Description
 [**putInventoryListsByID**](InventoryListsApi.md#putInventoryListsByID) | **PUT** /inventory_lists/{id} | 
 [**putInventoryListsByIDProductInventoryRecordsByID**](InventoryListsApi.md#putInventoryListsByIDProductInventoryRecordsByID) | **PUT** /inventory_lists/{inventory_list_id}/product_inventory_records/{product_id} | 
 
-<a name="deleteInventoryListsByID"></a>
-# **deleteInventoryListsByID**
+
+
+## deleteInventoryListsByID
+
 > deleteInventoryListsByID(id)
 
 
@@ -24,26 +26,27 @@ Method | HTTP request | Description
 Deletes the inventory list by ID
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let id = "id_example"; // String | One inventory list id to remove
-
-apiInstance.deleteInventoryListsByID(id).then(() => {
+var apiInstance = new DataApi.InventoryListsApi();
+var id = "id_example"; // String | One inventory list id to remove
+apiInstance.deleteInventoryListsByID(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -59,11 +62,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteInventoryListsByIDProductInventoryRecordsByID"></a>
-# **deleteInventoryListsByIDProductInventoryRecordsByID**
+
+## deleteInventoryListsByIDProductInventoryRecordsByID
+
 > deleteInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId)
 
 
@@ -71,27 +75,28 @@ null (empty response body)
 Deletes a product inventory record by ID.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let inventoryListId = "inventoryListId_example"; // String | The inventory list ID
-let productId = "productId_example"; // String | The product ID
-
-apiInstance.deleteInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId).then(() => {
+var apiInstance = new DataApi.InventoryListsApi();
+var inventoryListId = "inventoryListId_example"; // String | The inventory list ID
+var productId = "productId_example"; // String | The product ID
+apiInstance.deleteInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,11 +113,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getInventoryLists"></a>
-# **getInventoryLists**
+
+## getInventoryLists
+
 > InventoryLists getInventoryLists(opts)
 
 
@@ -120,29 +126,31 @@ null (empty response body)
 Action to get all the inventory lists with no filtering.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let opts = { 
+var apiInstance = new DataApi.InventoryListsApi();
+var opts = {
   'start': 56, // Number | Optional start index for retrieving the items from a given index (default 0).
   'count': 56, // Number | Optional count for retrieving only a subset of the items (default is 25).
   'select': "select_example" // String | The property selector.
 };
-apiInstance.getInventoryLists(opts).then((data) => {
+apiInstance.getInventoryLists(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -160,11 +168,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getInventoryListsByID"></a>
-# **getInventoryListsByID**
+
+## getInventoryListsByID
+
 > InventoryList getInventoryListsByID(id)
 
 
@@ -172,26 +181,27 @@ Name | Type | Description  | Notes
 Action to get inventory list information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let id = "id_example"; // String | The id of the requested inventory list.
-
-apiInstance.getInventoryListsByID(id).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var id = "id_example"; // String | The id of the requested inventory list.
+apiInstance.getInventoryListsByID(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -207,11 +217,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getInventoryListsByIDProductInventoryRecords"></a>
-# **getInventoryListsByIDProductInventoryRecords**
+
+## getInventoryListsByIDProductInventoryRecords
+
 > ProductInventoryRecords getInventoryListsByIDProductInventoryRecords(inventoryListId, opts)
 
 
@@ -219,30 +230,32 @@ Name | Type | Description  | Notes
 Gets all product inventory records for an inventory list.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let inventoryListId = "inventoryListId_example"; // String | The inventory list ID
-let opts = { 
+var apiInstance = new DataApi.InventoryListsApi();
+var inventoryListId = "inventoryListId_example"; // String | The inventory list ID
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'select': "select_example" // String | 
 };
-apiInstance.getInventoryListsByIDProductInventoryRecords(inventoryListId, opts).then((data) => {
+apiInstance.getInventoryListsByIDProductInventoryRecords(inventoryListId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -261,11 +274,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getInventoryListsByIDProductInventoryRecordsByID"></a>
-# **getInventoryListsByIDProductInventoryRecordsByID**
+
+## getInventoryListsByIDProductInventoryRecordsByID
+
 > ProductInventoryRecord getInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId)
 
 
@@ -273,27 +287,28 @@ Name | Type | Description  | Notes
 Gets a product inventory record.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let inventoryListId = "inventoryListId_example"; // String | The inventory list ID
-let productId = "productId_example"; // String | The product ID
-
-apiInstance.getInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var inventoryListId = "inventoryListId_example"; // String | The inventory list ID
+var productId = "productId_example"; // String | The product ID
+apiInstance.getInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -310,33 +325,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchInventoryListsByID"></a>
-# **patchInventoryListsByID**
-> InventoryList patchInventoryListsByID(bodyid)
+
+## patchInventoryListsByID
+
+> InventoryList patchInventoryListsByID(id, body)
 
 
 
 Updates the inventory list with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let body = new DataApi.InventoryList(); // InventoryList | 
-let id = "id_example"; // String | The id of the requested inventory list.
-
-apiInstance.patchInventoryListsByID(bodyid).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var id = "id_example"; // String | The id of the requested inventory list.
+var body = new DataApi.InventoryList(); // InventoryList | 
+apiInstance.patchInventoryListsByID(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -344,10 +359,12 @@ apiInstance.patchInventoryListsByID(bodyid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InventoryList**](InventoryList.md)|  | 
  **id** | **String**| The id of the requested inventory list. | 
+ **body** | [**InventoryList**](InventoryList.md)|  | 
 
 ### Return type
 
@@ -359,34 +376,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchInventoryListsByIDProductInventoryRecordsByID"></a>
-# **patchInventoryListsByIDProductInventoryRecordsByID**
-> ProductInventoryRecord patchInventoryListsByIDProductInventoryRecordsByID(bodyinventoryListIdproductId)
+
+## patchInventoryListsByIDProductInventoryRecordsByID
+
+> ProductInventoryRecord patchInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId, body)
 
 
 
 Updates the product inventory record with the specified information.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let body = new DataApi.ProductInventoryRecord(); // ProductInventoryRecord | 
-let inventoryListId = "inventoryListId_example"; // String | The inventory list ID
-let productId = "productId_example"; // String | The product ID
-
-apiInstance.patchInventoryListsByIDProductInventoryRecordsByID(bodyinventoryListIdproductId).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var inventoryListId = "inventoryListId_example"; // String | The inventory list ID
+var productId = "productId_example"; // String | The product ID
+var body = new DataApi.ProductInventoryRecord(); // ProductInventoryRecord | 
+apiInstance.patchInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -394,11 +411,13 @@ apiInstance.patchInventoryListsByIDProductInventoryRecordsByID(bodyinventoryList
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductInventoryRecord**](ProductInventoryRecord.md)|  | 
  **inventoryListId** | **String**| The inventory list ID | 
  **productId** | **String**| The product ID | 
+ **body** | [**ProductInventoryRecord**](ProductInventoryRecord.md)|  | 
 
 ### Return type
 
@@ -410,33 +429,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putInventoryListsByID"></a>
-# **putInventoryListsByID**
-> InventoryList putInventoryListsByID(bodyid)
+
+## putInventoryListsByID
+
+> InventoryList putInventoryListsByID(id, body)
 
 
 
 Creates an inventory list using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let body = new DataApi.InventoryList(); // InventoryList | 
-let id = "id_example"; // String | The id of the inventory list to create.
-
-apiInstance.putInventoryListsByID(bodyid).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var id = "id_example"; // String | The id of the inventory list to create.
+var body = new DataApi.InventoryList(); // InventoryList | 
+apiInstance.putInventoryListsByID(id, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -444,10 +463,12 @@ apiInstance.putInventoryListsByID(bodyid).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InventoryList**](InventoryList.md)|  | 
  **id** | **String**| The id of the inventory list to create. | 
+ **body** | [**InventoryList**](InventoryList.md)|  | 
 
 ### Return type
 
@@ -459,34 +480,34 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putInventoryListsByIDProductInventoryRecordsByID"></a>
-# **putInventoryListsByIDProductInventoryRecordsByID**
-> ProductInventoryRecord putInventoryListsByIDProductInventoryRecordsByID(bodyinventoryListIdproductId)
+
+## putInventoryListsByIDProductInventoryRecordsByID
+
+> ProductInventoryRecord putInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId, body)
 
 
 
 Creates a product inventory record using the information provided.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.InventoryListsApi();
-let body = new DataApi.ProductInventoryRecord(); // ProductInventoryRecord | 
-let inventoryListId = "inventoryListId_example"; // String | The inventory list ID
-let productId = "productId_example"; // String | The product ID
-
-apiInstance.putInventoryListsByIDProductInventoryRecordsByID(bodyinventoryListIdproductId).then((data) => {
+var apiInstance = new DataApi.InventoryListsApi();
+var inventoryListId = "inventoryListId_example"; // String | The inventory list ID
+var productId = "productId_example"; // String | The product ID
+var body = new DataApi.ProductInventoryRecord(); // ProductInventoryRecord | 
+apiInstance.putInventoryListsByIDProductInventoryRecordsByID(inventoryListId, productId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -494,11 +515,13 @@ apiInstance.putInventoryListsByIDProductInventoryRecordsByID(bodyinventoryListId
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProductInventoryRecord**](ProductInventoryRecord.md)|  | 
  **inventoryListId** | **String**| The inventory list ID | 
  **productId** | **String**| The product ID | 
+ **body** | [**ProductInventoryRecord**](ProductInventoryRecord.md)|  | 
 
 ### Return type
 
@@ -510,6 +533,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 

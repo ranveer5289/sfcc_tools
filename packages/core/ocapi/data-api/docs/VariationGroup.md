@@ -1,6 +1,7 @@
 # DataApi.VariationGroup
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | **String** | The URL addressing the product. | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **pricePerUnit** | **Number** | The sales price per unit of the variation group. | [optional] 
 **productId** | **String** | The id (SKU) of the variation group. | [optional] 
 **variationValues** | **{String: String}** | The actual variation attribute id - value pairs. | [optional] 
+
+

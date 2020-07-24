@@ -1,6 +1,7 @@
 # DataApi.PromotionCampaignAssignment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaign** | [**Campaign**](Campaign.md) |  | [optional] 
@@ -15,3 +16,5 @@ Name | Type | Description | Notes
 **rank** | **Number** | The rank of promotion campaign assignment | [optional] 
 **schedule** | [**Schedule**](Schedule.md) |  | [optional] 
 **sourceCodeGroups** | **[String]** | The sorted array of assigned source code groups. | [optional] 
+
+

@@ -1,6 +1,7 @@
 # DataApi.ObjectAttributeDefinition
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **defaultValue** | [**ObjectAttributeValueDefinition**](ObjectAttributeValueDefinition.md) |  | [optional] 
@@ -20,14 +21,14 @@ Name | Type | Description | Notes
 **minLength** | **Number** | The minimum length of the field for this attribute. | [optional] 
 **minValue** | **Number** | The minimum possible value for this attribute. | [optional] 
 **multiValueType** | **Boolean** | True if the attribute can have multiple values.  Attributes of the following types are multi-value capable:    set_of_int  set_of_number  set_of_string    Additionally, attributes of the following types can be multi-value  enabled:    enum_of_int  enum_of_string   | [optional] 
-**orderRequired** | **Boolean** | Flag indicating if this attribute is required for order of the attribute model&#x27;s product. The set of these can be used  in order line items. | [optional] 
+**orderRequired** | **Boolean** | Flag indicating if this attribute is required for order of the attribute model&#39;s product. The set of these can be used  in order line items. | [optional] 
 **queryable** | **Boolean** | Returns true if the attribute definition is explicitly marked queryable. If no explicit queryable is found  and the attribute value type belongs to a queryable type, true is returned too. In all other cases false is returned.  Value is computed and read-only. | [optional] 
 **readOnly** | **Boolean** | Flag indicating if this attribute is read-only. It is read only. | [optional] 
 **regularExpression** | **String** | A regular expression that defines the legal values for this attribute. | [optional] 
 **requiresEncoding** | **Boolean** | Flag indicating if this attribute can be encoded using the encoding&#x3D;\&quot;off\&quot; flag in ISML templates. It is read only. | [optional] 
 **scale** | **Number** | The minimum number of fraction digits for a value of this attribute. | [optional] 
 **searchable** | **Boolean** | Flag indicating if this attribute is searchable. | [optional] 
-**setValueType** | **Boolean** | Flag indicating if this attribute is of type &#x27;Set of&#x27;. It is read only. | [optional] 
+**setValueType** | **Boolean** | Flag indicating if this attribute is of type &#39;Set of&#39;. It is read only. | [optional] 
 **siteSpecific** | **Boolean** | Flag indicating if this attribute is site-specific. | [optional] 
 **system** | **Boolean** | Flag indicating if this attribute is a system attribute. | [optional] 
 **unit** | **{String: String}** | The unit of measure for this attribute. | [optional] 
@@ -35,26 +36,49 @@ Name | Type | Description | Notes
 **valueType** | **String** | The type of this attribute. | [optional] 
 **visible** | **Boolean** | Flag indicating if this attribute is visible. | [optional] 
 
-<a name="ValueTypeEnum"></a>
+
+
 ## Enum: ValueTypeEnum
 
+
 * `string` (value: `"string"`)
+
 * `int` (value: `"int"`)
+
 * `double` (value: `"double"`)
+
 * `text` (value: `"text"`)
+
 * `html` (value: `"html"`)
+
 * `date` (value: `"date"`)
+
 * `image` (value: `"image"`)
+
 * `boolean` (value: `"boolean"`)
+
 * `money` (value: `"money"`)
+
 * `quantity` (value: `"quantity"`)
+
 * `datetime` (value: `"datetime"`)
+
 * `email` (value: `"email"`)
+
 * `password` (value: `"password"`)
+
 * `set_of_string` (value: `"set_of_string"`)
+
 * `set_of_int` (value: `"set_of_int"`)
+
 * `set_of_double` (value: `"set_of_double"`)
+
 * `enum_of_string` (value: `"enum_of_string"`)
+
 * `enum_of_int` (value: `"enum_of_int"`)
+
 * `unknown` (value: `"unknown"`)
+
+
+
 

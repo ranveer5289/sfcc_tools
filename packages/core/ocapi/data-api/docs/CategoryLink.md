@@ -1,6 +1,7 @@
 # DataApi.CategoryLink
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lastModified** | **Date** | The date the link was last modified | [optional] 
@@ -16,12 +17,21 @@ Name | Type | Description | Notes
 **targetCategoryName** | **{String: String}** | The name of the target category | [optional] 
 **type** | **String** | The link type | [optional] 
 
-<a name="TypeEnum"></a>
+
+
 ## Enum: TypeEnum
 
+
 * `other` (value: `"other"`)
+
 * `accessories` (value: `"accessories"`)
+
 * `cross_selling` (value: `"cross_selling"`)
+
 * `up_selling` (value: `"up_selling"`)
+
 * `spare_parts` (value: `"spare_parts"`)
+
+
+
 

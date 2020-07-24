@@ -1,6 +1,7 @@
 # DataApi.AlertDescriptor
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applicationContextPath** | **String** | The application context path. | [optional] 
@@ -10,12 +11,21 @@ Name | Type | Description | Notes
 **link** | **String** | URL for this resource. | [optional] 
 **messageId** | **String** | The message ID. | [optional] 
 
-<a name="DefaultPriorityEnum"></a>
+
+
 ## Enum: DefaultPriorityEnum
 
+
 * `not_allowed` (value: `"not_allowed"`)
+
 * `hidden` (value: `"hidden"`)
+
 * `informational` (value: `"informational"`)
+
 * `warning` (value: `"warning"`)
+
 * `action_required` (value: `"action_required"`)
+
+
+
 

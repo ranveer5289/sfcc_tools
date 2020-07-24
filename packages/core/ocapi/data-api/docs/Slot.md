@@ -1,6 +1,7 @@
 # DataApi.Slot
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contextType** | **String** | A slot context | [optional] 
@@ -10,10 +11,17 @@ Name | Type | Description | Notes
 **slotConfigurations** | [**[SlotConfiguration]**](SlotConfiguration.md) | A list of slotconfigurations this slot has | [optional] 
 **slotId** | **String** | The id for the slot | 
 
-<a name="ContextTypeEnum"></a>
+
+
 ## Enum: ContextTypeEnum
 
+
 * `global` (value: `"global"`)
+
 * `category` (value: `"category"`)
+
 * `folder` (value: `"folder"`)
+
+
+
 

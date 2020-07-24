@@ -1,6 +1,7 @@
 # DataApi.Role
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** | The role description. | [optional] 
@@ -10,3 +11,5 @@ Name | Type | Description | Notes
 **userCount** | **Number** | Number of users assigned to the role. | [optional] 
 **userManager** | **Boolean** | Flag whether this role is allowed to manage users or other access roles. | [optional] 
 **users** | [**[User]**](User.md) | The users assigned to the access role. Available through expands. | [optional] 
+
+

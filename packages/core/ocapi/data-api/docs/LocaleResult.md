@@ -1,6 +1,7 @@
 # DataApi.LocaleResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Number** | The number of returned documents. | [optional] 
@@ -13,3 +14,5 @@ Name | Type | Description | Notes
 **select** | **String** | The string describing the set of fields to return in the result. | [optional] 
 **start** | **Number** | The zero-based index of the first search hit to include in the result. | [optional] 
 **total** | **Number** | The total number of documents. | [optional] 
+
+

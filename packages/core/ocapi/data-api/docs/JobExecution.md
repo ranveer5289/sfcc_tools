@@ -1,14 +1,15 @@
 # DataApi.JobExecution
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | **String** | When the execution was started by a client, this represents the client&#x27;s id. | [optional] 
+**clientId** | **String** | When the execution was started by a client, this represents the client&#39;s id. | [optional] 
 **duration** | **Number** | Time in milliseconds, the job needed to be finished. | [optional] 
 **effectiveDuration** | **Number** | Time in milliseconds, the job has done work. Paused times are evicted. | [optional] 
 **endTime** | **Date** | Timestamp, when execution was finished. | [optional] 
 **executionScopes** | **[String]** | Sorted set of all execution scopes, used by individual steps. | [optional] 
-**executionStatus** | **String** | Current execution status. If the execution is running &#x27;running&#x27; is returned. If the execution is pending  &#x27;pending&#x27; is returned. If the execution is finished &#x27;finished&#x27; is returned. | [optional] 
+**executionStatus** | **String** | Current execution status. If the execution is running &#39;running&#39; is returned. If the execution is pending  &#39;pending&#39; is returned. If the execution is finished &#39;finished&#39; is returned. | [optional] 
 **exitStatus** | [**Status**](Status.md) |  | [optional] 
 **id** | **String** | ID of the execution object. | [optional] 
 **isLogFileExisting** | **Boolean** | True if the log file exists, otherwise false. | [optional] 
@@ -19,23 +20,38 @@ Name | Type | Description | Notes
 **modificationTime** | **Date** | Timestamp of the last modification time for the execution. | [optional] 
 **parameters** | [**[JobExecutionParameter]**](JobExecutionParameter.md) | List of all job execution parameters. | [optional] 
 **startTime** | **Date** | Timestamp, when execution was started. | [optional] 
-**status** | **String** | Current status. If the execution is running &#x27;running&#x27; is returned. If the execution is pending &#x27;pending&#x27; is  returned. If the execution is finished the exit status code of the execution is returned. | [optional] 
+**status** | **String** | Current status. If the execution is running &#39;running&#39; is returned. If the execution is pending &#39;pending&#39; is  returned. If the execution is finished the exit status code of the execution is returned. | [optional] 
 **statusMetadata** | [**StatusMetadata**](StatusMetadata.md) |  | [optional] 
 **stepExecutions** | [**[JobStepExecution]**](JobStepExecution.md) | List of all steps, called for job execution. | [optional] 
-**userLogin** | **String** | When the execution was started by a registered user, this represents the user&#x27;s login. | [optional] 
+**userLogin** | **String** | When the execution was started by a registered user, this represents the user&#39;s login. | [optional] 
 
-<a name="ExecutionStatusEnum"></a>
+
+
 ## Enum: ExecutionStatusEnum
 
+
 * `pending` (value: `"pending"`)
+
 * `running` (value: `"running"`)
+
 * `pausing` (value: `"pausing"`)
+
 * `paused` (value: `"paused"`)
+
 * `resuming` (value: `"resuming"`)
+
 * `resumed` (value: `"resumed"`)
+
 * `restarting` (value: `"restarting"`)
+
 * `restarted` (value: `"restarted"`)
+
 * `aborting` (value: `"aborting"`)
+
 * `aborted` (value: `"aborted"`)
+
 * `finished` (value: `"finished"`)
+
+
+
 

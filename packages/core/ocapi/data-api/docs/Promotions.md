@@ -1,6 +1,7 @@
 # DataApi.Promotions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Number** |  | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **select** | **String** |  | [optional] 
 **start** | **Number** |  | [optional] 
 **total** | **Number** |  | [optional] 
+
+

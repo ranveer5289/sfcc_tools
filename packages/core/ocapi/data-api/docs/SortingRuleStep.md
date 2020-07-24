@@ -1,6 +1,7 @@
 # DataApi.SortingRuleStep
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributeId** | **String** | the id for sorting attribute. | [optional] 
@@ -10,9 +11,15 @@ Name | Type | Description | Notes
 **textRelevanceIncluded** | **Boolean** | The text relevance included. | [optional] 
 **typeId** | **String** | the sorting type for sorting attribute. | [optional] 
 
-<a name="DirectionEnum"></a>
+
+
 ## Enum: DirectionEnum
 
+
 * `asc` (value: `"asc"`)
+
 * `desc` (value: `"desc"`)
+
+
+
 

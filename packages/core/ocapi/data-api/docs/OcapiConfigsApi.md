@@ -1,6 +1,6 @@
 # DataApi.OcapiConfigsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/data/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/data/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,10 @@ Method | HTTP request | Description
 [**postOcapiConfigsByID**](OcapiConfigsApi.md#postOcapiConfigsByID) | **POST** /ocapi_configs/{clientId} | 
 [**putOcapiConfigsByID**](OcapiConfigsApi.md#putOcapiConfigsByID) | **PUT** /ocapi_configs/{clientId} | 
 
-<a name="deleteOcapiConfigsByID"></a>
-# **deleteOcapiConfigsByID**
+
+
+## deleteOcapiConfigsByID
+
 > deleteOcapiConfigsByID(clientId)
 
 
@@ -18,26 +20,27 @@ Method | HTTP request | Description
 Delete a client.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.OcapiConfigsApi();
-let clientId = "clientId_example"; // String | Id of the client to be deleted.
-
-apiInstance.deleteOcapiConfigsByID(clientId).then(() => {
+var apiInstance = new DataApi.OcapiConfigsApi();
+var clientId = "clientId_example"; // String | Id of the client to be deleted.
+apiInstance.deleteOcapiConfigsByID(clientId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -53,11 +56,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getOcapiConfigsByID"></a>
-# **getOcapiConfigsByID**
+
+## getOcapiConfigsByID
+
 > OcapiConfigsApiResponse getOcapiConfigsByID(clientId)
 
 
@@ -65,26 +69,27 @@ null (empty response body)
 Get all allowed resources for the client.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.OcapiConfigsApi();
-let clientId = "clientId_example"; // String | client ID
-
-apiInstance.getOcapiConfigsByID(clientId).then((data) => {
+var apiInstance = new DataApi.OcapiConfigsApi();
+var clientId = "clientId_example"; // String | client ID
+apiInstance.getOcapiConfigsByID(clientId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,33 +105,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postOcapiConfigsByID"></a>
-# **postOcapiConfigsByID**
-> OcapiConfigsApiResponse postOcapiConfigsByID(bodyclientId)
+
+## postOcapiConfigsByID
+
+> OcapiConfigsApiResponse postOcapiConfigsByID(clientId, body)
 
 
 
 Add a client to existing OCAPI configurations. Return errors when client already exists.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.OcapiConfigsApi();
-let body = new DataApi.OcapiConfigsApiRequest(); // OcapiConfigsApiRequest | 
-let clientId = "clientId_example"; // String | client ID
-
-apiInstance.postOcapiConfigsByID(bodyclientId).then((data) => {
+var apiInstance = new DataApi.OcapiConfigsApi();
+var clientId = "clientId_example"; // String | client ID
+var body = new DataApi.OcapiConfigsApiRequest(); // OcapiConfigsApiRequest | 
+apiInstance.postOcapiConfigsByID(clientId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -134,10 +139,12 @@ apiInstance.postOcapiConfigsByID(bodyclientId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OcapiConfigsApiRequest**](OcapiConfigsApiRequest.md)|  | 
  **clientId** | **String**| client ID | 
+ **body** | [**OcapiConfigsApiRequest**](OcapiConfigsApiRequest.md)|  | 
 
 ### Return type
 
@@ -149,33 +156,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="putOcapiConfigsByID"></a>
-# **putOcapiConfigsByID**
-> OcapiConfigsApiResponse putOcapiConfigsByID(bodyclientId)
+
+## putOcapiConfigsByID
+
+> OcapiConfigsApiResponse putOcapiConfigsByID(clientId, body)
 
 
 
 Add a client to existing OCAPI configurations. Overwrite config if the client already exists.
 
 ### Example
-```javascript
-import DataApi from 'data_api';
-let defaultClient = DataApi.ApiClient.instance;
 
+```javascript
+var DataApi = require('data_api');
+var defaultClient = DataApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new DataApi.OcapiConfigsApi();
-let body = new DataApi.OcapiConfigsApiRequest(); // OcapiConfigsApiRequest | 
-let clientId = "clientId_example"; // String | client ID
-
-apiInstance.putOcapiConfigsByID(bodyclientId).then((data) => {
+var apiInstance = new DataApi.OcapiConfigsApi();
+var clientId = "clientId_example"; // String | client ID
+var body = new DataApi.OcapiConfigsApiRequest(); // OcapiConfigsApiRequest | 
+apiInstance.putOcapiConfigsByID(clientId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -183,10 +190,12 @@ apiInstance.putOcapiConfigsByID(bodyclientId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OcapiConfigsApiRequest**](OcapiConfigsApiRequest.md)|  | 
  **clientId** | **String**| client ID | 
+ **body** | [**OcapiConfigsApiRequest**](OcapiConfigsApiRequest.md)|  | 
 
 ### Return type
 
@@ -198,6 +207,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
