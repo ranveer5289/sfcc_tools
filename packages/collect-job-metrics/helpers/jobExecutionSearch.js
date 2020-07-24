@@ -1,5 +1,4 @@
 /* eslint-disable import/no-dynamic-require */
-const path = require('path');
 const ocapiDataApi = require('@sfcc_tools/data_api');
 const config = require('@sfcc_tools/config');
 const chalk = require('chalk');

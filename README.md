@@ -5,6 +5,7 @@ Command line utility scripts and tools for Salesforce Commerce Cloud(SFCC)
 npm init --scope=sfcc_tools --yes
 
 lerna add @sfcc_tools/data_api --scope=@sfcc_tools/ecdn-waf-logs
+lerna add @sfcc_tools/shop_api --scope=@sfcc_tools/generate-order-report
 lerna add axios --scope=@sfcc_tools/ecdn-waf-logs
 
 lerna add line-by-line --scope=@sfcc_tools/elasticsearch
