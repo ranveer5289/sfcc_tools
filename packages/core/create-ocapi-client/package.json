@@ -1,5 +1,5 @@
 {
-  "name": "create-ocapi-client",
+  "name": "@sfcc_tools/create-ocapi-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
