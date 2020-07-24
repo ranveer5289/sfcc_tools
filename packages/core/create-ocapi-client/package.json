@@ -1,0 +1,20 @@
+{
+  "name": "create-ocapi-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-shop-api-client": "openapi-generator generate -c conf.json -i swagger-shopapi.json -g javascript -o ../ocapi/shop-api/",
+    "generate-data-api-client": "openapi-generator generate -c conf.json -i swagger-dataapi.json -g javascript -o ../ocapi/data-api/",
+    "fix": "node fix.js",
+    "install-shop-api-client-deps": "cd ../ocapi/shop-api/ && npm install",
+    "install-data-api-client-deps": "cd ../ocapi/data-api/ && npm install",
+    "generate" : "npm run generate-shop-api-client && npm run generate-data-api-client && npm run fix && npm run install-shop-api-client-deps && npm run install-data-api-client-deps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.15-4.3.1"
+  }
+}
