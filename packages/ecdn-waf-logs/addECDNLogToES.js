@@ -1,14 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const elasticsearch = require('@sfcc_tools/elasticsearch');
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
+const config = require('@sfcc_tools/config');
 
 const ecdnConfig = config.get('packages.ecdn-waf-logs');
-
 const ES = elasticsearch.ES;
-
 const helper = require('./helper/util');
 
 const client = new ES({

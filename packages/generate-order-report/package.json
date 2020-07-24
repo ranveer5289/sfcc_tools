@@ -14,6 +14,7 @@
     "@sfcc_tools/config": "^1.0.0",
     "@sfcc_tools/eslint-config-core": "^1.0.0",
     "@sfcc_tools/ocapi": "^1.0.0",
+    "@sfcc_tools/shop_api": "^1.0.0",
     "chalk": "^4.1.0",
     "config": "^3.3.1",
     "csv-write-stream": "^2.0.0",

@@ -3,58 +3,14 @@ const path = require('path');
 const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
-const pLimit = require('p-limit');
-
+const config = require('@sfcc_tools/config');
 const ocapi = require('@sfcc_tools/ocapi');
 
 const TASKID = 'orderreport';
-const limit = pLimit(10);
-
-let allOrders = [];
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
-
 const ocapiConfig = config.get('packages.ocapi');
 
 const oauth = ocapi.oauth;
-const orderSearch = ocapi.ordersearch;
-
-async function getPromises(token) {
-    const apiResponse = await orderSearch.search(token);
-    const orderSearchResponse = apiResponse && apiResponse.data;
-    if (!orderSearchResponse || !orderSearchResponse.hits) {
-        return allOrders;
-    }
-
-    console.log(chalk.green('Fetching all orders..........'));
-    allOrders = allOrders.concat(orderSearchResponse.hits);
-
-    const totalHits = orderSearchResponse.total;
-    const asyncFunctions = [];
-    console.log(chalk.green(`Total orders ${totalHits}`));
-    const counter = Math.ceil(totalHits / 50);
-    for (let i = 1; i < counter; i += 1) {
-        const start = i * 50;
-        asyncFunctions.push(limit(function () {
-            return orderSearch.search(token, start);
-        }));
-    }
-
-    return asyncFunctions;
-}
-
-async function execute(promises) {
-    const results = await Promise.all(promises);
-    if (!results) {
-        console.log('No orders found');
-        return allOrders;
-    }
-    results.forEach(function (result) {
-        allOrders = allOrders.concat(result.data.hits);
-    });
-    return allOrders;
-}
+const orderSearch = require('./helpers/ordersearch');
 
 function getOrderAttributes(obj) {
     const ignoreAttributes = ['product_items', 'payment_instruments', 'shipments', 'shipping_items', 'coupon_items', 'order_price_adjustments'];
@@ -148,12 +104,8 @@ function getProductPromotions(productItems) {
 }
 
 function getProductCount(productItems) {
-    const items = productItems.filter(function (item) {
-        // eslint-disable-next-line no-underscore-dangle
-        return item._type === 'product_item';
-    });
     return {
-        productsOrdered: items.length
+        productsOrdered: productItems.length
     };
 }
 async function writeOrderReport() {
@@ -164,8 +116,7 @@ async function writeOrderReport() {
         }
 
         console.log(chalk.green('Going to retrieve orders from SFCC'));
-        const promises = await getPromises(token);
-        const orders = await execute(promises);
+        const orders = await orderSearch.search(token);
         if (orders && orders.length > 0) {
             console.log(chalk.green(`Total orders found ${orders.length}`));
 
