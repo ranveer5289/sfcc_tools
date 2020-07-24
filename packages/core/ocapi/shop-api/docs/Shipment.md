@@ -1,6 +1,7 @@
 # ShopApi.Shipment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adjustedMerchandizeTotalTax** | **Number** | The products tax after discounts applying in purchase currency. Adjusted merchandize prices represent the sum of  product prices before services such as shipping have been added, but after adjustment from promotions have been  added.   Note that order level adjustments are considered if Discount Taxation preference is set to  \&quot;Tax Products and Shipping Only Based on Adjusted Price\&quot;. | [optional] 
@@ -24,9 +25,15 @@ Name | Type | Description | Notes
 **taxTotal** | **Number** | The total tax amount of the shipment.   Note that order level adjustments are considered if Discount Taxation preference is set to  \&quot;Tax Products and Shipping Only Based on Adjusted Price\&quot;. | [optional] 
 **trackingNumber** | **String** | The tracking number of the shipment. | [optional] 
 
-<a name="ShippingStatusEnum"></a>
+
+
 ## Enum: ShippingStatusEnum
 
+
 * `not_shipped` (value: `"not_shipped"`)
+
 * `shipped` (value: `"shipped"`)
+
+
+
 

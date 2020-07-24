@@ -1,14 +1,16 @@
 # ShopApi.FoldersApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getFoldersByID**](FoldersApi.md#getFoldersByID) | **GET** /folders/{id} | 
 [**getFoldersByIDs**](FoldersApi.md#getFoldersByIDs) | **GET** /folders/({ids}) | 
 
-<a name="getFoldersByID"></a>
-# **getFoldersByID**
+
+
+## getFoldersByID
+
 > ContentFolder getFoldersByID(id, opts)
 
 
@@ -16,35 +18,37 @@ Method | HTTP request | Description
 To access a content folder, you construct a URL using the template shown below. This template requires you to  specify a content folder id and a subfolder level. In response, the server returns a corresponding content  folder document. Only content folder, which are marked as online are returned.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.FoldersApi();
-let id = "id_example"; // String | The id of the requested content folder.
-let opts = { 
+var apiInstance = new ShopApi.FoldersApi();
+var id = "id_example"; // String | The id of the requested content folder.
+var opts = {
   'levels': 56, // Number | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getFoldersByID(id, opts).then((data) => {
+apiInstance.getFoldersByID(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,45 +66,48 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getFoldersByIDs"></a>
-# **getFoldersByIDs**
+
+## getFoldersByIDs
+
 > ContentFolderResult getFoldersByIDs(ids, opts)
 
 
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.FoldersApi();
-let ids = ["ids_example"]; // [String] | 
-let opts = { 
+var apiInstance = new ShopApi.FoldersApi();
+var ids = ["null"]; // [String] | 
+var opts = {
   'levels': 56, // Number | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getFoldersByIDs(ids, opts).then((data) => {
+apiInstance.getFoldersByIDs(ids, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -118,6 +125,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

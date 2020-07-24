@@ -1,9 +1,10 @@
 # ShopApi.PaymentCard
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardType** | **String** | The payment card type (for example, &#x27;Visa&#x27;). | [optional] 
+**cardType** | **String** | The payment card type (for example, &#39;Visa&#39;). | [optional] 
 **creditCardExpired** | **Boolean** | A flag indicating if the credit card is expired. | [optional] 
 **creditCardToken** | **String** | A credit card token. If a credit card is tokenized, the token can be used to look up the credit card data at the  token store. | [optional] 
 **expirationMonth** | **Number** | The month when the payment card expires. | [optional] 
@@ -14,3 +15,5 @@ Name | Type | Description | Notes
 **numberLastDigits** | **String** | The last digits of credit card number. | [optional] 
 **validFromMonth** | **Number** | The payment card valid from month. | [optional] 
 **validFromYear** | **Number** | The payment card valid from year. | [optional] 
+
+

@@ -1,6 +1,7 @@
 # ShopApi.OptionItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adjustedTax** | **Number** | The tax of the product item after adjustments applying. | [optional] 
@@ -30,3 +31,5 @@ Name | Type | Description | Notes
 **taxBasis** | **Number** | The price used to calculate the tax for this product item. | [optional] 
 **taxClassId** | **String** | The tax class ID for the product item or null  if no tax class ID is associated with the product item. | [optional] 
 **taxRate** | **Number** | The tax rate, which is the decimal tax rate to be applied  to the product represented by this item. | [optional] 
+
+

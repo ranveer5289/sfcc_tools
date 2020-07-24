@@ -1,6 +1,7 @@
 # ShopApi.PaymentCardSpec
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cardType** | **String** | The type of the payment card. | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **numberLengths** | **[String]** | The sorted list of number lengths (individual lengths as well as  length ranges). | [optional] 
 **numberPrefixes** | **[String]** | The sorted list of number prefixes (individual prefixes as well  as prefix ranges). | [optional] 
 **securityCodeLength** | **Number** | The length of the security code for this card. | [optional] 
+
+

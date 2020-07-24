@@ -1,6 +1,7 @@
 # ShopApi.Suggestion
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brands** | **[String]** | The sorted list of suggested brands. This list can be empty. | [optional] 
@@ -10,3 +11,5 @@ Name | Type | Description | Notes
 **products** | [**[SuggestedProduct]**](SuggestedProduct.md) | The sorted list of suggested products. This list can be empty. | [optional] 
 **suggestedPhrases** | [**[SuggestedPhrase]**](SuggestedPhrase.md) | A list of suggested phrases. This list can be empty. | [optional] 
 **suggestedTerms** | [**[SuggestedTerms]**](SuggestedTerms.md) | A list of suggested terms. This list can be empty. | [optional] 
+
+

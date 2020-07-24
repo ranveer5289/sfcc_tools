@@ -1,6 +1,7 @@
 # ShopApi.OrderPaymentInstrument
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** | The payment transaction amount. | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **paymentCard** | [**PaymentCard**](PaymentCard.md) |  | [optional] 
 **paymentInstrumentId** | **String** | The payment instrument ID. | [optional] 
 **paymentMethodId** | **String** | The payment method id. Optional if a customer payment instrument id is specified. | [optional] 
+
+

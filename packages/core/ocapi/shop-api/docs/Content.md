@@ -1,6 +1,7 @@
 # ShopApi.Content
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cYear** | **String** |  | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **pageDescription** | **String** | The localized content asset page description. | [optional] 
 **pageKeywords** | **String** | The localized content asset page description. | [optional] 
 **pageTitle** | **String** | The localized content asset page title. | [optional] 
+
+

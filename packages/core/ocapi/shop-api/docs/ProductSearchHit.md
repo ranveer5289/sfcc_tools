@@ -1,6 +1,7 @@
 # ShopApi.ProductSearchHit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency** | **String** | The ISO 4217 mnemonic code of the currency. | [optional] 
@@ -19,3 +20,5 @@ Name | Type | Description | Notes
 **representedProduct** | [**ProductRef**](ProductRef.md) |  | [optional] 
 **representedProducts** | [**[ProductRef]**](ProductRef.md) | All the represented products. | [optional] 
 **variationAttributes** | [**[VariationAttribute]**](VariationAttribute.md) | The array of represented variation attributes (for the master product only). This array can be empty. | [optional] 
+
+

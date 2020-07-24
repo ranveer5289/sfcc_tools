@@ -1,13 +1,15 @@
 # ShopApi.ContentSearchApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getContentSearch**](ContentSearchApi.md#getContentSearch) | **GET** /content_search | 
 
-<a name="getContentSearch"></a>
-# **getContentSearch**
+
+
+## getContentSearch
+
 > ContentSearchResult getContentSearch(opts)
 
 
@@ -15,32 +17,32 @@ Method | HTTP request | Description
 Provides keyword and refinement search functionality for content assets. The search result contains only content  that is online and assigned to a folder.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ContentSearchApi();
-let opts = { 
+var apiInstance = new ShopApi.ContentSearchApi();
+var opts = {
   'q': "q_example", // String | The query phrase to search for.
-  'refine': ["refine_example"], // [String] | Parameter that represents a refinement attribute/value(s) pair. Refinement attribute id and                      value(s) are separated by '='. Multiple values are supported by a sub-set of refinement attributes and                      can be provided by separating them using a pipe (URL                      encoded = \"|\"). Value ranges can be specified like this: refine=foo=(100..500) Multiple refine                      parameters can be provided by adding an underscore in combination with an integer counter right behind                      the parameter name and a counter range 1..9. I.e. refine_1=c_refinementType=type1|type2|type3. The                      following system refinement attribute ids are supported:                                            fdid: Allows to refine per single content folder id. Multiple folder ids are not supported.                      
-  'sort': ["sort_example"], // [String] | Parameter that represents a sorting attribute/value(s) pair. Sorting attribute id and value are                      separated by '='. The value describes the sort direction. Possible values are 'asc' and 'desc', for                      ascending or descending sort direction. I.e. sort=c_myAttribute=desc. Precondition: You have to select                      your sorting attributes in Business Manager > YourSite > Search Indexes > Content Index > Sorting                      Attributes.
+  'refine': ["null"], // [String] | Parameter that represents a refinement attribute/value(s) pair. Refinement attribute id and                      value(s) are separated by '='. Multiple values are supported by a sub-set of refinement attributes and                      can be provided by separating them using a pipe (URL                      encoded = \"|\"). Value ranges can be specified like this: refine=foo=(100..500) Multiple refine                      parameters can be provided by adding an underscore in combination with an integer counter right behind                      the parameter name and a counter range 1..9. I.e. refine_1=c_refinementType=type1|type2|type3. The                      following system refinement attribute ids are supported:                                            fdid: Allows to refine per single content folder id. Multiple folder ids are not supported.                      
+  'sort': ["null"], // [String] | Parameter that represents a sorting attribute/value(s) pair. Sorting attribute id and value are                      separated by '='. The value describes the sort direction. Possible values are 'asc' and 'desc', for                      ascending or descending sort direction. I.e. sort=c_myAttribute=desc. Precondition: You have to select                      your sorting attributes in Business Manager > YourSite > Search Indexes > Content Index > Sorting                      Attributes.
   'start': 56, // Number | The result set index to return the first instance for. Default value is 0.
   'count': 56, // Number | The maximum number of instances per request. Default value is 25.
   'locale': "locale_example" // String | The locale context.
 };
-apiInstance.getContentSearch(opts).then((data) => {
+apiInstance.getContentSearch(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -48,11 +50,13 @@ apiInstance.getContentSearch(opts).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **q** | **String**| The query phrase to search for. | [optional] 
- **refine** | [**[String]**](String.md)| Parameter that represents a refinement attribute/value(s) pair. Refinement attribute id and                      value(s) are separated by &#x27;&#x3D;&#x27;. Multiple values are supported by a sub-set of refinement attributes and                      can be provided by separating them using a pipe (URL                      encoded &#x3D; \&quot;|\&quot;). Value ranges can be specified like this: refine&#x3D;foo&#x3D;(100..500) Multiple refine                      parameters can be provided by adding an underscore in combination with an integer counter right behind                      the parameter name and a counter range 1..9. I.e. refine_1&#x3D;c_refinementType&#x3D;type1|type2|type3. The                      following system refinement attribute ids are supported:                                            fdid: Allows to refine per single content folder id. Multiple folder ids are not supported.                       | [optional] 
- **sort** | [**[String]**](String.md)| Parameter that represents a sorting attribute/value(s) pair. Sorting attribute id and value are                      separated by &#x27;&#x3D;&#x27;. The value describes the sort direction. Possible values are &#x27;asc&#x27; and &#x27;desc&#x27;, for                      ascending or descending sort direction. I.e. sort&#x3D;c_myAttribute&#x3D;desc. Precondition: You have to select                      your sorting attributes in Business Manager &gt; YourSite &gt; Search Indexes &gt; Content Index &gt; Sorting                      Attributes. | [optional] 
+ **refine** | [**[String]**](String.md)| Parameter that represents a refinement attribute/value(s) pair. Refinement attribute id and                      value(s) are separated by &#39;&#x3D;&#39;. Multiple values are supported by a sub-set of refinement attributes and                      can be provided by separating them using a pipe (URL                      encoded &#x3D; \&quot;|\&quot;). Value ranges can be specified like this: refine&#x3D;foo&#x3D;(100..500) Multiple refine                      parameters can be provided by adding an underscore in combination with an integer counter right behind                      the parameter name and a counter range 1..9. I.e. refine_1&#x3D;c_refinementType&#x3D;type1|type2|type3. The                      following system refinement attribute ids are supported:                                            fdid: Allows to refine per single content folder id. Multiple folder ids are not supported.                       | [optional] 
+ **sort** | [**[String]**](String.md)| Parameter that represents a sorting attribute/value(s) pair. Sorting attribute id and value are                      separated by &#39;&#x3D;&#39;. The value describes the sort direction. Possible values are &#39;asc&#39; and &#39;desc&#39;, for                      ascending or descending sort direction. I.e. sort&#x3D;c_myAttribute&#x3D;desc. Precondition: You have to select                      your sorting attributes in Business Manager &gt; YourSite &gt; Search Indexes &gt; Content Index &gt; Sorting                      Attributes. | [optional] 
  **start** | **Number**| The result set index to return the first instance for. Default value is 0. | [optional] 
  **count** | **Number**| The maximum number of instances per request. Default value is 25. | [optional] 
  **locale** | **String**| The locale context. | [optional] 
@@ -67,6 +71,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

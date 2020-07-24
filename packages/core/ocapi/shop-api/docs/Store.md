@@ -1,6 +1,7 @@
 # ShopApi.Store
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** | The first address of the store. | [optional] 
@@ -28,10 +29,17 @@ Name | Type | Description | Notes
 **storeHours** | **String** | The store opening hours. | [optional] 
 **storeLocatorEnabled** | **Boolean** | Whether this store should show up in store locator results. | [optional] 
 
-<a name="CountryCodeEnum"></a>
+
+
 ## Enum: CountryCodeEnum
 
+
 * `US` (value: `"US"`)
+
 * `CA` (value: `"CA"`)
+
 * `DE` (value: `"DE"`)
+
+
+
 

@@ -1,6 +1,7 @@
 # ShopApi.Recommendation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **calloutMsg** | **String** | The localized callout message of the recommendation. | [optional] 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **recommendedItemId** | **String** | The recommended item id of the recommendation. | [optional] 
 **recommendedItemLink** | **String** | The recommended item link of the recommendation. | [optional] 
 **shortDescription** | **String** | The localized short description of the recommendation. | [optional] 
+
+

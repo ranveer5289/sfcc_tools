@@ -1,6 +1,6 @@
 # ShopApi.CustomersApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,8 +42,10 @@ Method | HTTP request | Description
 [**postCustomersPasswordReset**](CustomersApi.md#postCustomersPasswordReset) | **POST** /customers/password_reset | 
 [**putCustomersByIDPassword**](CustomersApi.md#putCustomersByIDPassword) | **PUT** /customers/{customer_id}/password | 
 
-<a name="deleteCustomersAuth"></a>
-# **deleteCustomersAuth**
+
+
+## deleteCustomersAuth
+
 > deleteCustomersAuth(opts)
 
 
@@ -51,33 +53,35 @@ Method | HTTP request | Description
 Invalidates the JWT provided in the header.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.CustomersApi();
-let opts = { 
+var apiInstance = new ShopApi.CustomersApi();
+var opts = {
   'authorization': "authorization_example" // String | the JWT
 };
-apiInstance.deleteCustomersAuth(opts).then(() => {
+apiInstance.deleteCustomersAuth(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -93,49 +97,50 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteCustomersByIDAddressesByID"></a>
-# **deleteCustomersByIDAddressesByID**
+
+## deleteCustomersByIDAddressesByID
+
 > deleteCustomersByIDAddressesByID(customerId, addressName)
 
 
 
-Deletes a customer&#x27;s address by address name.
+Deletes a customer&#39;s address by address name.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to delete the address for
-let addressName = "addressName_example"; // String | the name of the address to delete
-
-apiInstance.deleteCustomersByIDAddressesByID(customerId, addressName).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to delete the address for
+var addressName = "addressName_example"; // String | the name of the address to delete
+apiInstance.deleteCustomersByIDAddressesByID(customerId, addressName).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -152,49 +157,50 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteCustomersByIDPaymentInstrumentsByID"></a>
-# **deleteCustomersByIDPaymentInstrumentsByID**
+
+## deleteCustomersByIDPaymentInstrumentsByID
+
 > deleteCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId)
 
 
 
-Deletes a customer&#x27;s payment instrument.
+Deletes a customer&#39;s payment instrument.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to delete the payment instrument for
-let paymentInstrumentId = "paymentInstrumentId_example"; // String | the id of the payment instrument to be deleted
-
-apiInstance.deleteCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to delete the payment instrument for
+var paymentInstrumentId = "paymentInstrumentId_example"; // String | the id of the payment instrument to be deleted
+apiInstance.deleteCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -211,11 +217,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteCustomersByIDProductListsByID"></a>
-# **deleteCustomersByIDProductListsByID**
+
+## deleteCustomersByIDProductListsByID
+
 > deleteCustomersByIDProductListsByID(customerId, listId)
 
 
@@ -223,37 +230,37 @@ null (empty response body)
 Deletes a customer product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The customer id.
-let listId = "listId_example"; // String | The product list id.
-
-apiInstance.deleteCustomersByIDProductListsByID(customerId, listId).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id.
+var listId = "listId_example"; // String | The product list id.
+apiInstance.deleteCustomersByIDProductListsByID(customerId, listId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -270,11 +277,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="deleteCustomersByIDProductListsByIDItemsByID"></a>
-# **deleteCustomersByIDProductListsByIDItemsByID**
+
+## deleteCustomersByIDProductListsByIDItemsByID
+
 > deleteCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId)
 
 
@@ -282,38 +290,38 @@ null (empty response body)
 Removes an item from a customer product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The id of the owner of the product list
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to delete.
-
-apiInstance.deleteCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the owner of the product list
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to delete.
+apiInstance.deleteCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -331,11 +339,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getCustomersByID"></a>
-# **getCustomersByID**
+
+## getCustomersByID
+
 > Customer getCustomersByID(customerId, opts)
 
 
@@ -343,38 +352,39 @@ null (empty response body)
 Gets a customer.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The customer id
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getCustomersByID(customerId, opts).then((data) => {
+apiInstance.getCustomersByID(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -391,11 +401,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDAddresses"></a>
-# **getCustomersByIDAddresses**
+
+## getCustomersByIDAddresses
+
 > CustomerAddressResult getCustomersByIDAddresses(customerId, opts)
 
 
@@ -403,39 +414,40 @@ Name | Type | Description  | Notes
 Returns a sorted pageable list of all customer addresses in the address book. The default page size is 10  customer addresses. The addresses are sorted so that the preferred address is always sorted first. The remaining  addresses are sorted alphabetically by ID.    When the customer cannot be found CustomerNotFoundException  is thrown in a case of an agent but an empty result list is returned in a case of JWT.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The customer uuid
-let opts = { 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer uuid
+var opts = {
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getCustomersByIDAddresses(customerId, opts).then((data) => {
+apiInstance.getCustomersByIDAddresses(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -453,49 +465,50 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDAddressesByID"></a>
-# **getCustomersByIDAddressesByID**
+
+## getCustomersByIDAddressesByID
+
 > CustomerAddress getCustomersByIDAddressesByID(customerId, addressName)
 
 
 
-Retrieves a customer&#x27;s address by address name.
+Retrieves a customer&#39;s address by address name.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to retrieve the address for
-let addressName = "addressName_example"; // String | the name of the address to retrieve
-
-apiInstance.getCustomersByIDAddressesByID(customerId, addressName).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to retrieve the address for
+var addressName = "addressName_example"; // String | the name of the address to retrieve
+apiInstance.getCustomersByIDAddressesByID(customerId, addressName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -512,11 +525,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDBaskets"></a>
-# **getCustomersByIDBaskets**
+
+## getCustomersByIDBaskets
+
 > BasketsResult getCustomersByIDBaskets(customerId)
 
 
@@ -524,36 +538,36 @@ Name | Type | Description  | Notes
 Gets the baskets of a customer.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to retrieve the baskets for
-
-apiInstance.getCustomersByIDBaskets(customerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to retrieve the baskets for
+apiInstance.getCustomersByIDBaskets(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -569,39 +583,39 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDOrders"></a>
-# **getCustomersByIDOrders**
+
+## getCustomersByIDOrders
+
 > CustomerOrderResult getCustomersByIDOrders(customerId, opts)
 
 
 
-Returns a pageable list of all customer&#x27;s orders. The default page size is 10.
+Returns a pageable list of all customer&#39;s orders. The default page size is 10.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the customer uuid
-let opts = { 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the customer uuid
+var opts = {
   'start': 56, // Number | 
   'count': 56, // Number | 
   'crossSites': true, // Boolean | 
@@ -609,15 +623,17 @@ let opts = {
   'until': "until_example", // String | 
   'status': "status_example" // String | 
 };
-apiInstance.getCustomersByIDOrders(customerId, opts).then((data) => {
+apiInstance.getCustomersByIDOrders(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -639,11 +655,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDPaymentInstruments"></a>
-# **getCustomersByIDPaymentInstruments**
+
+## getCustomersByIDPaymentInstruments
+
 > CustomerPaymentInstrumentResult getCustomersByIDPaymentInstruments(customerId, opts)
 
 
@@ -651,38 +668,39 @@ Name | Type | Description  | Notes
 Gets customer payment instruments for an customer.  Can be limited to a specific payment  method by providing query parameter payment_method_id.    When the customer cannot be found CustomerNotFoundException  is thrown in a case of an agent but an empty result list is returned in a case of JWT.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to retrieve the payment instruments for
-let opts = { 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to retrieve the payment instruments for
+var opts = {
   'paymentMethodId': "paymentMethodId_example" // String | 
 };
-apiInstance.getCustomersByIDPaymentInstruments(customerId, opts).then((data) => {
+apiInstance.getCustomersByIDPaymentInstruments(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -699,49 +717,50 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDPaymentInstrumentsByID"></a>
-# **getCustomersByIDPaymentInstrumentsByID**
+
+## getCustomersByIDPaymentInstrumentsByID
+
 > CustomerPaymentInstrument getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId)
 
 
 
-Retrieves a customer&#x27;s payment instrument by its id.
+Retrieves a customer&#39;s payment instrument by its id.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer to retrieve the payment instrument for
-let paymentInstrumentId = "paymentInstrumentId_example"; // String | the id of the payment instrument to be retrievedCustomer
-
-apiInstance.getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to retrieve the payment instrument for
+var paymentInstrumentId = "paymentInstrumentId_example"; // String | the id of the payment instrument to be retrievedCustomer
+apiInstance.getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -758,11 +777,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductLists"></a>
-# **getCustomersByIDProductLists**
+
+## getCustomersByIDProductLists
+
 > CustomerProductListResult getCustomersByIDProductLists(customerId, opts)
 
 
@@ -770,38 +790,39 @@ Name | Type | Description  | Notes
 Returns all customer product lists.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The customer id.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getCustomersByIDProductLists(customerId, opts).then((data) => {
+apiInstance.getCustomersByIDProductLists(customerId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -818,11 +839,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductListsByID"></a>
-# **getCustomersByIDProductListsByID**
+
+## getCustomersByIDProductListsByID
+
 > CustomerProductList getCustomersByIDProductListsByID(customerId, listId, opts)
 
 
@@ -830,39 +852,40 @@ Name | Type | Description  | Notes
 Returns a customer product list of the given customer.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The customer id.
-let listId = "listId_example"; // String | The product list id.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id.
+var listId = "listId_example"; // String | The product list id.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getCustomersByIDProductListsByID(customerId, listId, opts).then((data) => {
+apiInstance.getCustomersByIDProductListsByID(customerId, listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -880,53 +903,55 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductListsByIDItems"></a>
-# **getCustomersByIDProductListsByIDItems**
+
+## getCustomersByIDProductListsByIDItems
+
 > CustomerProductListItemResult getCustomersByIDProductListsByIDItems(customerId, listId, opts)
 
 
 
-Returns a pageable list of all items of a customer&#x27;s product list. The default page size is 10.
+Returns a pageable list of all items of a customer&#39;s product list. The default page size is 10.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
-let listId = "listId_example"; // String | The id of the product list.
-let opts = { 
-  'expand': ["expand_example"], // [String] | 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
+var listId = "listId_example"; // String | The id of the product list.
+var opts = {
+  'expand': ["null"], // [String] | 
   'start': 56, // Number | 
   'count': 56 // Number | 
 };
-apiInstance.getCustomersByIDProductListsByIDItems(customerId, listId, opts).then((data) => {
+apiInstance.getCustomersByIDProductListsByIDItems(customerId, listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -946,11 +971,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductListsByIDItemsByID"></a>
-# **getCustomersByIDProductListsByIDItemsByID**
+
+## getCustomersByIDProductListsByIDItemsByID
+
 > CustomerProductListItem getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts)
 
 
@@ -958,40 +984,41 @@ Name | Type | Description  | Notes
 Returns an item of a customer product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to retrieve.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to retrieve.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts).then((data) => {
+apiInstance.getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1010,50 +1037,51 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductListsByIDItemsByIDPurchases"></a>
-# **getCustomersByIDProductListsByIDItemsByIDPurchases**
+
+## getCustomersByIDProductListsByIDItemsByIDPurchases
+
 > CustomerProductListItemPurchaseResult getCustomersByIDProductListsByIDItemsByIDPurchases(customerId, listId, itemId)
 
 
 
-Returns a list of all purchases of an item from a customer&#x27;s product list.
+Returns a list of all purchases of an item from a customer&#39;s product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The id of the customer to retrieve the product list item purchases for.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to retrieve from.
-
-apiInstance.getCustomersByIDProductListsByIDItemsByIDPurchases(customerId, listId, itemId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer to retrieve the product list item purchases for.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to retrieve from.
+apiInstance.getCustomersByIDProductListsByIDItemsByIDPurchases(customerId, listId, itemId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1071,51 +1099,52 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getCustomersByIDProductListsByIDItemsByIDPurchasesByID"></a>
-# **getCustomersByIDProductListsByIDItemsByIDPurchasesByID**
+
+## getCustomersByIDProductListsByIDItemsByIDPurchasesByID
+
 > CustomerProductListItemPurchase getCustomersByIDProductListsByIDItemsByIDPurchasesByID(customerId, listId, itemId, purchaseId)
 
 
 
-Returns a purchase of an item from a customer&#x27;s product list.
+Returns a purchase of an item from a customer&#39;s product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to retrieve.
-let purchaseId = "purchaseId_example"; // String | The id of the product list item purchase to retrieve.
-
-apiInstance.getCustomersByIDProductListsByIDItemsByIDPurchasesByID(customerId, listId, itemId, purchaseId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer to retrieve the product list items for.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to retrieve.
+var purchaseId = "purchaseId_example"; // String | The id of the product list item purchase to retrieve.
+apiInstance.getCustomersByIDProductListsByIDItemsByIDPurchasesByID(customerId, listId, itemId, purchaseId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1134,43 +1163,42 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchCustomersByID"></a>
-# **patchCustomersByID**
-> Customer patchCustomersByID(bodycustomerId)
+
+## patchCustomersByID
+
+> Customer patchCustomersByID(customerId, body)
 
 
 
 Updates a customer.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.Customer(); // Customer | 
-let customerId = "customerId_example"; // String | the customer id
-
-apiInstance.patchCustomersByID(bodycustomerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the customer id
+var body = new ShopApi.Customer(); // Customer | 
+apiInstance.patchCustomersByID(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1178,10 +1206,12 @@ apiInstance.patchCustomersByID(bodycustomerId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Customer**](Customer.md)|  | 
  **customerId** | **String**| the customer id | 
+ **body** | [**Customer**](Customer.md)|  | 
 
 ### Return type
 
@@ -1193,44 +1223,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="patchCustomersByIDAddressesByID"></a>
-# **patchCustomersByIDAddressesByID**
-> CustomerAddress patchCustomersByIDAddressesByID(bodycustomerIdaddressName)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## patchCustomersByIDAddressesByID
 
-Updates a customer&#x27;s address by address name.
+> CustomerAddress patchCustomersByIDAddressesByID(customerId, addressName, body)
+
+
+
+Updates a customer&#39;s address by address name.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerAddress(); // CustomerAddress | 
-let customerId = "customerId_example"; // String | the id of the customer to update the address for
-let addressName = "addressName_example"; // String | the name of the address to update
-
-apiInstance.patchCustomersByIDAddressesByID(bodycustomerIdaddressName).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to update the address for
+var addressName = "addressName_example"; // String | the name of the address to update
+var body = new ShopApi.CustomerAddress(); // CustomerAddress | 
+apiInstance.patchCustomersByIDAddressesByID(customerId, addressName, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1238,11 +1267,13 @@ apiInstance.patchCustomersByIDAddressesByID(bodycustomerIdaddressName).then((dat
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
  **customerId** | **String**| the id of the customer to update the address for | 
  **addressName** | **String**| the name of the address to update | 
+ **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
 
 ### Return type
 
@@ -1254,44 +1285,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="patchCustomersByIDProductListsByID"></a>
-# **patchCustomersByIDProductListsByID**
-> CustomerProductList patchCustomersByIDProductListsByID(bodycustomerIdlistId)
+
+## patchCustomersByIDProductListsByID
+
+> CustomerProductList patchCustomersByIDProductListsByID(customerId, listId, body)
 
 
 
 Changes a product list. Changeable properties are the name, description and if the list is public.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductList(); // CustomerProductList | 
-let customerId = "customerId_example"; // String | The customer id.
-let listId = "listId_example"; // String | The product list id.
-
-apiInstance.patchCustomersByIDProductListsByID(bodycustomerIdlistId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id.
+var listId = "listId_example"; // String | The product list id.
+var body = new ShopApi.CustomerProductList(); // CustomerProductList | 
+apiInstance.patchCustomersByIDProductListsByID(customerId, listId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1299,11 +1329,13 @@ apiInstance.patchCustomersByIDProductListsByID(bodycustomerIdlistId).then((data)
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductList**](CustomerProductList.md)|  | 
  **customerId** | **String**| The customer id. | 
  **listId** | **String**| The product list id. | 
+ **body** | [**CustomerProductList**](CustomerProductList.md)|  | 
 
 ### Return type
 
@@ -1315,45 +1347,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="patchCustomersByIDProductListsByIDItemsByID"></a>
-# **patchCustomersByIDProductListsByIDItemsByID**
-> CustomerProductListItem patchCustomersByIDProductListsByIDItemsByID(bodycustomerIdlistIditemId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## patchCustomersByIDProductListsByIDItemsByID
 
-Updates an item of a customer&#x27;s product list.  Considered values from the request body are:    priority: This is the priority of the customer&#x27;s product list item.  public: This is the flag whether the customer&#x27;s product list item is public.  quantity: used for product item type only. This is the quantity of  the customer&#x27;s product list item.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property  must correspond to a custom attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItem.  The value of this property must be valid for the type of custom attribute defined for ProductListItem.  
+> CustomerProductListItem patchCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, body)
+
+
+
+Updates an item of a customer&#39;s product list.  Considered values from the request body are:    priority: This is the priority of the customer&#39;s product list item.  public: This is the flag whether the customer&#39;s product list item is public.  quantity: used for product item type only. This is the quantity of  the customer&#39;s product list item.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property  must correspond to a custom attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItem.  The value of this property must be valid for the type of custom attribute defined for ProductListItem.  
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductListItem(); // CustomerProductListItem | 
-let customerId = "customerId_example"; // String | The id of the owner of the product list.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to update.
-
-apiInstance.patchCustomersByIDProductListsByIDItemsByID(bodycustomerIdlistIditemId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the owner of the product list.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to update.
+var body = new ShopApi.CustomerProductListItem(); // CustomerProductListItem | 
+apiInstance.patchCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1361,12 +1392,14 @@ apiInstance.patchCustomersByIDProductListsByIDItemsByID(bodycustomerIdlistIditem
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductListItem**](CustomerProductListItem.md)|  | 
  **customerId** | **String**| The id of the owner of the product list. | 
  **listId** | **String**| The id of the product list. | 
  **itemId** | **String**| The id of the product list item to update. | 
+ **body** | [**CustomerProductListItem**](CustomerProductListItem.md)|  | 
 
 ### Return type
 
@@ -1378,46 +1411,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="patchCustomersByIDProductListsByIDItemsByIDPurchasesByID"></a>
-# **patchCustomersByIDProductListsByIDItemsByIDPurchasesByID**
-> CustomerProductListItemPurchase patchCustomersByIDProductListsByIDItemsByIDPurchasesByID(bodycustomerIdlistIditemIdpurchaseId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## patchCustomersByIDProductListsByIDItemsByIDPurchasesByID
 
-Updates a purchase of an item from a customer&#x27;s product list.  Considered values from the request body are:    custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property  must correspond to a custom attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItemPurchase.  The value of this property must be valid for the type of custom attribute defined for ProductListItemPurchase.  
+> CustomerProductListItemPurchase patchCustomersByIDProductListsByIDItemsByIDPurchasesByID(customerId, listId, itemId, purchaseId, body)
+
+
+
+Updates a purchase of an item from a customer&#39;s product list.  Considered values from the request body are:    custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property  must correspond to a custom attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItemPurchase.  The value of this property must be valid for the type of custom attribute defined for ProductListItemPurchase.  
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductListItemPurchase(); // CustomerProductListItemPurchase | 
-let customerId = "customerId_example"; // String | The id of the customer to retrieve the product list item purchases for.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item to retrieve.
-let purchaseId = "purchaseId_example"; // String | The id of the product list item purchase to retrieve.
-
-apiInstance.patchCustomersByIDProductListsByIDItemsByIDPurchasesByID(bodycustomerIdlistIditemIdpurchaseId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer to retrieve the product list item purchases for.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item to retrieve.
+var purchaseId = "purchaseId_example"; // String | The id of the product list item purchase to retrieve.
+var body = new ShopApi.CustomerProductListItemPurchase(); // CustomerProductListItemPurchase | 
+apiInstance.patchCustomersByIDProductListsByIDItemsByIDPurchasesByID(customerId, listId, itemId, purchaseId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1425,13 +1457,15 @@ apiInstance.patchCustomersByIDProductListsByIDItemsByIDPurchasesByID(bodycustome
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductListItemPurchase**](CustomerProductListItemPurchase.md)|  | 
  **customerId** | **String**| The id of the customer to retrieve the product list item purchases for. | 
  **listId** | **String**| The id of the product list. | 
  **itemId** | **String**| The id of the product list item to retrieve. | 
  **purchaseId** | **String**| The id of the product list item purchase to retrieve. | 
+ **body** | [**CustomerProductListItemPurchase**](CustomerProductListItemPurchase.md)|  | 
 
 ### Return type
 
@@ -1443,11 +1477,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomers"></a>
-# **postCustomers**
+
+## postCustomers
+
 > Customer postCustomers(body)
 
 
@@ -1455,36 +1490,36 @@ Name | Type | Description  | Notes
 Registers a customer.  The mandatory data are the credentials and profile last name and email.  When using OAuth the password in the request must not be set, otherwise an InvalidPasswordException will be thrown.  When using JWT the password is required.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerRegistration(); // CustomerRegistration | 
-
-apiInstance.postCustomers(body).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.CustomerRegistration(); // CustomerRegistration | 
+apiInstance.postCustomers(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1500,42 +1535,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersAuth"></a>
-# **postCustomersAuth**
+
+## postCustomersAuth
+
 > Customer postCustomersAuth(body, opts)
 
 
 
-Obtains a new JWT (JSON Web Token) for a guest or registered  customer. Tokens are returned as a HTTP Authorization:Bearer response  header entry. These kinds of request are supported, as specified by the  type:    Type guest - creates a new guest (non-authenticated) customer  and returns a token for the customer.  Type credentials - authenticates credentials passed in the  HTTP Authorization:Basic request header, returning a token for a  successfully authenticated customer, otherwise it throws an  AuthenticationFailedException.  Type session - authenticates the customer (anonymous or registered)  based on the dwsid and dwsecuretoken cookies. It returns a token for a  successfully authenticated customer, otherwise it throws an  AuthenticationFailedException.  Type refresh - examines the token passed in the HTTP  Authorization:Bearer request header and when valid returns a new token  with an updated expiry time.     For a request of type credentials:    Updates profile attributes for the customer (for example,  \&quot;last-visited\&quot;).  Handles the maximum number of failed login attempts.    For a request of type session:    The session and corresponding dwsecuretoken must be active and valid. An expired session can&#x27;t be  used. The dwsecuretoken cookie must have been used for at least one  previous HTTPS request with the same dwsid cookie.  Does not touch profile attributes for the registered customer (for example,  \&quot;last-visited\&quot;), since this is not a real login.  Returns different tokens for multiple requests with the same session id. Means, there should be  only one call per session.      About JWT The token contains 3 sections:    the header section (specifies token type and algorithm used)  the payload section (contains customer information, client id,  issue and expiration time)  finally the signature section records the token signature.    A token is created and returned to the client whenever a registered  customer logs in (type \&quot;credentials\&quot;) or a guest customer requests it (type  \&quot;guest\&quot;). The token is returned in the response header as   Authorization: Bearer --token--    The client has to include the token in the request header as   Authorization: Bearer --token--   in any follow up request. The server declines any follow up requests  without a token or which cannot be verified based on the token signature  or expiration time. A token nearing its expiration time should be  exchanged for a new one (type \&quot;refresh\&quot;).    See \&quot;API Usage &gt; JWT\&quot; for more details on using JWT as an authentication  mechanism.
+Obtains a new JWT (JSON Web Token) for a guest or registered  customer. Tokens are returned as a HTTP Authorization:Bearer response  header entry. These kinds of request are supported, as specified by the  type:    Type guest - creates a new guest (non-authenticated) customer  and returns a token for the customer.  Type credentials - authenticates credentials passed in the  HTTP Authorization:Basic request header, returning a token for a  successfully authenticated customer, otherwise it throws an  AuthenticationFailedException.  Type session - authenticates the customer (anonymous or registered)  based on the dwsid and dwsecuretoken cookies. It returns a token for a  successfully authenticated customer, otherwise it throws an  AuthenticationFailedException.  Type refresh - examines the token passed in the HTTP  Authorization:Bearer request header and when valid returns a new token  with an updated expiry time.     For a request of type credentials:    Updates profile attributes for the customer (for example,  \&quot;last-visited\&quot;).  Handles the maximum number of failed login attempts.    For a request of type session:    The session and corresponding dwsecuretoken must be active and valid. An expired session can&#39;t be  used. The dwsecuretoken cookie must have been used for at least one  previous HTTPS request with the same dwsid cookie.  Does not touch profile attributes for the registered customer (for example,  \&quot;last-visited\&quot;), since this is not a real login.  Returns different tokens for multiple requests with the same session id. Means, there should be  only one call per session.      About JWT The token contains 3 sections:    the header section (specifies token type and algorithm used)  the payload section (contains customer information, client id,  issue and expiration time)  finally the signature section records the token signature.    A token is created and returned to the client whenever a registered  customer logs in (type \&quot;credentials\&quot;) or a guest customer requests it (type  \&quot;guest\&quot;). The token is returned in the response header as   Authorization: Bearer --token--    The client has to include the token in the request header as   Authorization: Bearer --token--   in any follow up request. The server declines any follow up requests  without a token or which cannot be verified based on the token signature  or expiration time. A token nearing its expiration time should be  exchanged for a new one (type \&quot;refresh\&quot;).    See \&quot;API Usage &gt; JWT\&quot; for more details on using JWT as an authentication  mechanism.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.AuthRequest(); // AuthRequest | 
-let opts = { 
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.AuthRequest(); // AuthRequest | 
+var opts = {
   'authorization': "authorization_example" // String |              Authorization:Basic for type credentials             Authorization:Bearer for type refresh             
 };
-apiInstance.postCustomersAuth(body, opts).then((data) => {
+apiInstance.postCustomersAuth(body, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1552,11 +1590,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersAuthTrustedsystem"></a>
-# **postCustomersAuthTrustedsystem**
+
+## postCustomersAuthTrustedsystem
+
 > Customer postCustomersAuthTrustedsystem(body)
 
 
@@ -1564,26 +1603,27 @@ Name | Type | Description  | Notes
 Obtain the JWTs for registered customers whose credentials are stored using a third party system.              Accepts login_id and client_id      Returns a customer object in the response body, and the JWT generated against the client_id in the response header.      
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.TrustedSystemAuthRequest(); // TrustedSystemAuthRequest | 
-
-apiInstance.postCustomersAuthTrustedsystem(body).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.TrustedSystemAuthRequest(); // TrustedSystemAuthRequest | 
+apiInstance.postCustomersAuthTrustedsystem(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1599,43 +1639,42 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersByIDAddresses"></a>
-# **postCustomersByIDAddresses**
-> CustomerAddress postCustomersByIDAddresses(bodycustomerId)
+
+## postCustomersByIDAddresses
+
+> CustomerAddress postCustomersByIDAddresses(customerId, body)
 
 
 
 Creates a new address with the given name for the given customer.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerAddress(); // CustomerAddress | 
-let customerId = "customerId_example"; // String | the id of the customer to create the address for
-
-apiInstance.postCustomersByIDAddresses(bodycustomerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer to create the address for
+var body = new ShopApi.CustomerAddress(); // CustomerAddress | 
+apiInstance.postCustomersByIDAddresses(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1643,10 +1682,12 @@ apiInstance.postCustomersByIDAddresses(bodycustomerId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
  **customerId** | **String**| the id of the customer to create the address for | 
+ **body** | [**CustomerAddress**](CustomerAddress.md)|  | 
 
 ### Return type
 
@@ -1658,11 +1699,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersByIDAuth"></a>
-# **postCustomersByIDAuth**
+
+## postCustomersByIDAuth
+
 > Customer postCustomersByIDAuth(customerId)
 
 
@@ -1670,30 +1712,31 @@ Name | Type | Description  | Notes
   Obtains a new agent on behalf token for a registered customer. Token is returned as a HTTP Authorization:Bearer  response header entry.      A token is created and returned to the client whenever an agent with Create_Order_On_Behalf_Of  permission calls the resource for a registered customer.      The token is returned in the response header as Authorization: Bearer --token--.      The client has to include the token in the request header as Authorization: Bearer --token--    in any follow up request, the agent will do on behalf of the customer.    About the order on behalf token      The token contains 3 sections:      the header section (specifies token type and algorithm used)  the payload section (contains customer information, client id, issue and expiration time)  finally the signature section records the token signature.      A token nearing its expiration time should be exchanged for a new one by calling this resource once more.  
 
 ### Example
+
 ```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | specifies the customer to act on behalf of
-
-apiInstance.postCustomersByIDAuth(customerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | specifies the customer to act on behalf of
+apiInstance.postCustomersByIDAuth(customerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1709,11 +1752,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersByIDPasswordReset"></a>
-# **postCustomersByIDPasswordReset**
+
+## postCustomersByIDPasswordReset
+
 > postCustomersByIDPasswordReset(customerId)
 
 
@@ -1721,36 +1765,36 @@ Name | Type | Description  | Notes
 Starts a password reset process. A password reset token is generated and passed together with the customer  resolved by the id provided as path parameter to a afterPOST hook. The hook  dw.ocapi.shop.customer.password_reset.afterPOST can utilize the provided reset token, for example to send a reset email.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let customerId = "customerId_example"; // String | the id of the customer
-
-apiInstance.postCustomersByIDPasswordReset(customerId).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer
+apiInstance.postCustomersByIDPasswordReset(customerId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1766,43 +1810,42 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="postCustomersByIDPaymentInstruments"></a>
-# **postCustomersByIDPaymentInstruments**
-> CustomerPaymentInstrument postCustomersByIDPaymentInstruments(bodycustomerId)
+
+## postCustomersByIDPaymentInstruments
+
+> CustomerPaymentInstrument postCustomersByIDPaymentInstruments(customerId, body)
 
 
 
 Adds a payment instrument to a customer information.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerPaymentInstrumentRequest(); // CustomerPaymentInstrumentRequest | 
-let customerId = "customerId_example"; // String | the id of the customer
-
-apiInstance.postCustomersByIDPaymentInstruments(bodycustomerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the id of the customer
+var body = new ShopApi.CustomerPaymentInstrumentRequest(); // CustomerPaymentInstrumentRequest | 
+apiInstance.postCustomersByIDPaymentInstruments(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1810,10 +1853,12 @@ apiInstance.postCustomersByIDPaymentInstruments(bodycustomerId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerPaymentInstrumentRequest**](CustomerPaymentInstrumentRequest.md)|  | 
  **customerId** | **String**| the id of the customer | 
+ **body** | [**CustomerPaymentInstrumentRequest**](CustomerPaymentInstrumentRequest.md)|  | 
 
 ### Return type
 
@@ -1825,43 +1870,42 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersByIDProductLists"></a>
-# **postCustomersByIDProductLists**
-> CustomerProductList postCustomersByIDProductLists(bodycustomerId)
+
+## postCustomersByIDProductLists
+
+> CustomerProductList postCustomersByIDProductLists(customerId, body)
 
 
 
 Creates a customer product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductList(); // CustomerProductList | 
-let customerId = "customerId_example"; // String | The customer id.
-
-apiInstance.postCustomersByIDProductLists(bodycustomerId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The customer id.
+var body = new ShopApi.CustomerProductList(); // CustomerProductList | 
+apiInstance.postCustomersByIDProductLists(customerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1869,10 +1913,12 @@ apiInstance.postCustomersByIDProductLists(bodycustomerId).then((data) => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductList**](CustomerProductList.md)|  | 
  **customerId** | **String**| The customer id. | 
+ **body** | [**CustomerProductList**](CustomerProductList.md)|  | 
 
 ### Return type
 
@@ -1884,44 +1930,43 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="postCustomersByIDProductListsByIDItems"></a>
-# **postCustomersByIDProductListsByIDItems**
-> CustomerProductListItem postCustomersByIDProductListsByIDItems(bodycustomerIdlistId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## postCustomersByIDProductListsByIDItems
 
-Adds an item to the customer&#x27;s product list. Considered values from the request body are:    type: a valid type, mandatory. This is the type of the item to be added to the customer&#x27;s product  list.  priority: This is the priority of the item to be added to the customer&#x27;s product list.  public: This is the flag whether the item to be added to the customer&#x27;s product list is public.  product_id: a valid product id, used for product item type only. This is the id (sku)  of the product related to the item to be added to the customer&#x27;s product list. It is mandatory for  product item type and it must be a valid product id, otherwise  ProductListProductIdMissingException or ProductListProductNotFoundException  will be thrown.  quantity: used for product item type only. This is the quantity of the item to be  added to the customer&#x27;s product list.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom  attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItem. The value of this property must be valid for the  type of custom attribute defined for ProductListItem.  
+> CustomerProductListItem postCustomersByIDProductListsByIDItems(customerId, listId, body)
+
+
+
+Adds an item to the customer&#39;s product list. Considered values from the request body are:    type: a valid type, mandatory. This is the type of the item to be added to the customer&#39;s product  list.  priority: This is the priority of the item to be added to the customer&#39;s product list.  public: This is the flag whether the item to be added to the customer&#39;s product list is public.  product_id: a valid product id, used for product item type only. This is the id (sku)  of the product related to the item to be added to the customer&#39;s product list. It is mandatory for  product item type and it must be a valid product id, otherwise  ProductListProductIdMissingException or ProductListProductNotFoundException  will be thrown.  quantity: used for product item type only. This is the quantity of the item to be  added to the customer&#39;s product list.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom  attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItem. The value of this property must be valid for the  type of custom attribute defined for ProductListItem.  
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductListItem(); // CustomerProductListItem | 
-let customerId = "customerId_example"; // String | The id of the customer - owner of the product list.
-let listId = "listId_example"; // String | The id of the product list
-
-apiInstance.postCustomersByIDProductListsByIDItems(bodycustomerIdlistId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer - owner of the product list.
+var listId = "listId_example"; // String | The id of the product list
+var body = new ShopApi.CustomerProductListItem(); // CustomerProductListItem | 
+apiInstance.postCustomersByIDProductListsByIDItems(customerId, listId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1929,11 +1974,13 @@ apiInstance.postCustomersByIDProductListsByIDItems(bodycustomerIdlistId).then((d
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductListItem**](CustomerProductListItem.md)|  | 
  **customerId** | **String**| The id of the customer - owner of the product list. | 
  **listId** | **String**| The id of the product list | 
+ **body** | [**CustomerProductListItem**](CustomerProductListItem.md)|  | 
 
 ### Return type
 
@@ -1945,45 +1992,44 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
-
-<a name="postCustomersByIDProductListsByIDItemsByIDPurchases"></a>
-# **postCustomersByIDProductListsByIDItemsByIDPurchases**
-> CustomerProductListItemPurchase postCustomersByIDProductListsByIDItemsByIDPurchases(bodycustomerIdlistIditemId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
 
+## postCustomersByIDProductListsByIDItemsByIDPurchases
 
-Adds a purchase to an item in the customer&#x27;s product list. Considered values from the request body are:    purchaser_name: name of the purchaser, mandatory. This is the full name of the purchaser of this product  list item.  quantity: amount purchased, mandatory. This is the quantity of the items purchased from  the product list.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom  attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItemPurchase. The value of this property must be valid for the  type of custom attribute defined for ProductListItemPurchase.  
+> CustomerProductListItemPurchase postCustomersByIDProductListsByIDItemsByIDPurchases(customerId, listId, itemId, body)
+
+
+
+Adds a purchase to an item in the customer&#39;s product list. Considered values from the request body are:    purchaser_name: name of the purchaser, mandatory. This is the full name of the purchaser of this product  list item.  quantity: amount purchased, mandatory. This is the quantity of the items purchased from  the product list.  custom properties in the form c_&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom  attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItemPurchase. The value of this property must be valid for the  type of custom attribute defined for ProductListItemPurchase.  
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.CustomerProductListItemPurchase(); // CustomerProductListItemPurchase | 
-let customerId = "customerId_example"; // String | The id of the customer - owner of the product list.
-let listId = "listId_example"; // String | The id of the product list.
-let itemId = "itemId_example"; // String | The id of the product list item where to add the purchase.
-
-apiInstance.postCustomersByIDProductListsByIDItemsByIDPurchases(bodycustomerIdlistIditemId).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | The id of the customer - owner of the product list.
+var listId = "listId_example"; // String | The id of the product list.
+var itemId = "itemId_example"; // String | The id of the product list item where to add the purchase.
+var body = new ShopApi.CustomerProductListItemPurchase(); // CustomerProductListItemPurchase | 
+apiInstance.postCustomersByIDProductListsByIDItemsByIDPurchases(customerId, listId, itemId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1991,12 +2037,14 @@ apiInstance.postCustomersByIDProductListsByIDItemsByIDPurchases(bodycustomerIdli
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerProductListItemPurchase**](CustomerProductListItemPurchase.md)|  | 
  **customerId** | **String**| The id of the customer - owner of the product list. | 
  **listId** | **String**| The id of the product list. | 
  **itemId** | **String**| The id of the product list item where to add the purchase. | 
+ **body** | [**CustomerProductListItemPurchase**](CustomerProductListItemPurchase.md)|  | 
 
 ### Return type
 
@@ -2008,44 +2056,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersPasswordActionsCreateResetToken"></a>
-# **postCustomersPasswordActionsCreateResetToken**
+
+## postCustomersPasswordActionsCreateResetToken
+
 > ResetPasswordTokenResult postCustomersPasswordActionsCreateResetToken(body)
 
 
 
-Returns a reset password token for the passed in customer&#x27;s login that will be used   with the customers/reset_password endpoint to change the customer&#x27;s password.    This differs from the customers/password_reset endpoint as it does not require or allow before or after hook processing.
+Returns a reset password token for the passed in customer&#39;s login that will be used   with the customers/reset_password endpoint to change the customer&#39;s password.    This differs from the customers/password_reset endpoint as it does not require or allow before or after hook processing.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.ResetPasswordTokenRequest(); // ResetPasswordTokenRequest | 
-
-apiInstance.postCustomersPasswordActionsCreateResetToken(body).then((data) => {
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.ResetPasswordTokenRequest(); // ResetPasswordTokenRequest | 
+apiInstance.postCustomersPasswordActionsCreateResetToken(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2061,44 +2110,45 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="postCustomersPasswordActionsReset"></a>
-# **postCustomersPasswordActionsReset**
+
+## postCustomersPasswordActionsReset
+
 > postCustomersPasswordActionsReset(body)
 
 
 
-Changes the customer&#x27;s password to the new password value in the call using the reset   password token that was returned from the customers/reset_password_token endpoint.    This differs from the customers/password_reset endpoint as it does not require or allow before or after hook processing.
+Changes the customer&#39;s password to the new password value in the call using the reset   password token that was returned from the customers/reset_password_token endpoint.    This differs from the customers/password_reset endpoint as it does not require or allow before or after hook processing.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.ResetPasswordRequest(); // ResetPasswordRequest | 
-
-apiInstance.postCustomersPasswordActionsReset(body).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.ResetPasswordRequest(); // ResetPasswordRequest | 
+apiInstance.postCustomersPasswordActionsReset(body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2114,11 +2164,12 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
-<a name="postCustomersPasswordReset"></a>
-# **postCustomersPasswordReset**
+
+## postCustomersPasswordReset
+
 > postCustomersPasswordReset(body)
 
 
@@ -2126,28 +2177,29 @@ null (empty response body)
 First the beforePOST hook is called. After that the validation of the   customer information provided in the the password reset document is performed.   Then a password reset token is generated and together with the resolved   customer is passed to a afterPOST hook. The customer resolution is based   on the password reset request type. Both hooks are performed in a single  transaction.  Currently the resolution can be done by email or login. In case of  an email the password reset hook is only executed if one and only one  customer has been identified for that email. In the case that more than  one customers have been identified for the provided email the resource  does nothing.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.PasswordReset(); // PasswordReset | 
-
-apiInstance.postCustomersPasswordReset(body).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var body = new ShopApi.PasswordReset(); // PasswordReset | 
+apiInstance.postCustomersPasswordReset(body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -2163,39 +2215,39 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
-
-<a name="putCustomersByIDPassword"></a>
-# **putCustomersByIDPassword**
-> putCustomersByIDPassword(bodycustomerId)
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 
 
+## putCustomersByIDPassword
 
-Updates the customer&#x27;s password.
+> putCustomersByIDPassword(customerId, body)
+
+
+
+Updates the customer&#39;s password.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.CustomersApi();
-let body = new ShopApi.PasswordChangeRequest(); // PasswordChangeRequest | 
-let customerId = "customerId_example"; // String | the customer id
-
-apiInstance.putCustomersByIDPassword(bodycustomerId).then(() => {
+var apiInstance = new ShopApi.CustomersApi();
+var customerId = "customerId_example"; // String | the customer id
+var body = new ShopApi.PasswordChangeRequest(); // PasswordChangeRequest | 
+apiInstance.putCustomersByIDPassword(customerId, body).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -2203,10 +2255,12 @@ apiInstance.putCustomersByIDPassword(bodycustomerId).then(() => {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PasswordChangeRequest**](PasswordChangeRequest.md)|  | 
  **customerId** | **String**| the customer id | 
+ **body** | [**PasswordChangeRequest**](PasswordChangeRequest.md)|  | 
 
 ### Return type
 
@@ -2218,6 +2272,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/xml, application/xml
- - **Accept**: Not defined
+- **Content-Type**: application/json, text/xml, application/xml
+- **Accept**: Not defined
 

@@ -1,6 +1,7 @@
 # ShopApi.Basket
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **adjustedMerchandizeTotalTax** | **Number** | The products tax after discounts applying in purchase currency.   Adjusted merchandize prices represent the sum of product prices before  services such as shipping have been added, but after adjustment from  promotions have been added. | [optional] 
@@ -10,14 +11,14 @@ Name | Type | Description | Notes
 **billingAddress** | [**OrderAddress**](OrderAddress.md) |  | [optional] 
 **bonusDiscountLineItems** | [**[BonusDiscountLineItem]**](BonusDiscountLineItem.md) | The bonus discount line items of the line item container. | [optional] 
 **cSessionAddressBook** | **String** |  | [optional] 
-**channelType** | **String** | The sales channel for the order.    This is a read-only attribute that can&#x27;t be modified by an OCAPI call. For OCAPI, the sales channel is determined  based on the client ID and token used for the OCAPI call. Usually, a customer-based authentication sets the  channel to Storefront, and an agent-based authentication sets it to CallCenter. Using applications that use other  client IDs for OCAPI calls, like Customer Service Center, will set different channel types. To modify the channel  type in OCAPI, use a hook. *   | [optional] 
+**channelType** | **String** | The sales channel for the order.    This is a read-only attribute that can&#39;t be modified by an OCAPI call. For OCAPI, the sales channel is determined  based on the client ID and token used for the OCAPI call. Usually, a customer-based authentication sets the  channel to Storefront, and an agent-based authentication sets it to CallCenter. Using applications that use other  client IDs for OCAPI calls, like Customer Service Center, will set different channel types. To modify the channel  type in OCAPI, use a hook. *   | [optional] [readonly] 
 **couponItems** | [**[CouponItem]**](CouponItem.md) | The sorted array of coupon items. This array can be empty. | [optional] 
-**creationDate** | **Date** | Returns the value of attribute &#x27;creationDate&#x27;. | [optional] 
+**creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **currency** | **String** | The ISO 4217 mnemonic code of the currency. | [optional] 
 **customerInfo** | [**CustomerInfo**](CustomerInfo.md) |  | [optional] 
 **giftCertificateItems** | [**[GiftCertificateItem]**](GiftCertificateItem.md) | The sorted array of gift certificate line items. This array can be empty. | [optional] 
 **inventoryReservationExpiry** | **Date** |  | [optional] 
-**lastModified** | **Date** | Returns the value of attribute &#x27;lastModified&#x27;. | [optional] 
+**lastModified** | **Date** | Returns the value of attribute &#39;lastModified&#39;. | [optional] [readonly] 
 **merchandizeTotalTax** | **Number** | The products total tax in purchase currency.   Merchandize total prices represent the sum of product prices before  services such as shipping or adjustment from promotions have  been added. | [optional] 
 **notes** | [**SimpleLink**](SimpleLink.md) |  | [optional] 
 **orderPriceAdjustments** | [**[PriceAdjustment]**](PriceAdjustment.md) | The array of order level price adjustments. This array can be empty. | [optional] 
@@ -34,26 +35,46 @@ Name | Type | Description | Notes
 **taxTotal** | **Number** | The total tax amount of the order. This property is part of basket checkout information only. | [optional] 
 **taxation** | **String** | The taxation the line item container is based on. | [optional] 
 
-<a name="ChannelTypeEnum"></a>
+
+
 ## Enum: ChannelTypeEnum
 
+
 * `storefront` (value: `"storefront"`)
+
 * `callcenter` (value: `"callcenter"`)
+
 * `marketplace` (value: `"marketplace"`)
+
 * `dss` (value: `"dss"`)
+
 * `store` (value: `"store"`)
+
 * `pinterest` (value: `"pinterest"`)
+
 * `twitter` (value: `"twitter"`)
+
 * `facebookads` (value: `"facebookads"`)
+
 * `subscriptions` (value: `"subscriptions"`)
+
 * `onlinereservation` (value: `"onlinereservation"`)
+
 * `customerservicecenter` (value: `"customerservicecenter"`)
+
 * `instagramcommerce` (value: `"instagramcommerce"`)
 
 
-<a name="TaxationEnum"></a>
+
+
+
 ## Enum: TaxationEnum
 
+
 * `gross` (value: `"gross"`)
+
 * `net` (value: `"net"`)
+
+
+
 

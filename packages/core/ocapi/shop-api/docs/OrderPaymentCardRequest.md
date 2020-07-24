@@ -1,6 +1,7 @@
 # ShopApi.OrderPaymentCardRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cardType** | **String** |  | [optional] 
@@ -13,3 +14,5 @@ Name | Type | Description | Notes
 **securityCode** | **String** | The security code for the payment card. | [optional] 
 **validFromMonth** | **Number** |  | [optional] 
 **validFromYear** | **Number** |  | [optional] 
+
+

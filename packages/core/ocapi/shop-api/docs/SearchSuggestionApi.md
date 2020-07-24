@@ -1,13 +1,15 @@
 # ShopApi.SearchSuggestionApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getSearchSuggestion**](SearchSuggestionApi.md#getSearchSuggestion) | **GET** /search_suggestion | 
 
-<a name="getSearchSuggestion"></a>
-# **getSearchSuggestion**
+
+
+## getSearchSuggestion
+
 > SuggestionResult getSearchSuggestion(q, opts)
 
 
@@ -15,36 +17,38 @@ Method | HTTP request | Description
 Provides keyword search functionality for products, categories, content, brands and custom suggestions.  Returns suggested products, suggested categories, suggested content, suggested brands and custom suggestions  for the given search phrase.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.SearchSuggestionApi();
-let q = "q_example"; // String | The query phrase to search for.
-let opts = { 
+var apiInstance = new ShopApi.SearchSuggestionApi();
+var q = "q_example"; // String | The query phrase to search for.
+var opts = {
   'count': 56, // Number | The maximum number of suggestions per request. Default value is 5. This affects all types of suggestions (category, product, content, brand, custom suggestions).
   'currency': "currency_example", // String | The currency mnemonic specified for price. This parameter is effective only for product suggestions.
   'locale': "locale_example" // String | 
 };
-apiInstance.getSearchSuggestion(q, opts).then((data) => {
+apiInstance.getSearchSuggestion(q, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,6 +67,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

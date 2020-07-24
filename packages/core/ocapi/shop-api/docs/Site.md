@@ -1,6 +1,7 @@
 # ShopApi.Site
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allowedCurrencies** | **[String]** | The list of allowed currencies. | [optional] 
@@ -21,9 +22,15 @@ Name | Type | Description | Notes
 **timezone** | **String** | The time zone of the site (for example, USA/Eastern). | [optional] 
 **timezoneOffset** | **Number** | The time zone offset from UTC for the current time in milliseconds (for example, -14400000). | [optional] 
 
-<a name="StatusEnum"></a>
+
+
 ## Enum: StatusEnum
 
+
 * `online` (value: `"online"`)
+
 * `offline` (value: `"offline"`)
+
+
+
 

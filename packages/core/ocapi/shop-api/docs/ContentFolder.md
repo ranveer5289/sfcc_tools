@@ -1,6 +1,7 @@
 # ShopApi.ContentFolder
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cCustomCSSFile** | **String** | Use this attribute to apply custom styles for this category. | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **pageKeywords** | **String** | The localized content folder page description. | [optional] 
 **pageTitle** | **String** | The localized content folder page title. | [optional] 
 **parentFolderId** | **String** | The id of the parent content folder. | [optional] 
+
+

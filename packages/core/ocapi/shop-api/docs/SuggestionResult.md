@@ -1,6 +1,7 @@
 # ShopApi.SuggestionResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **brandSuggestions** | [**Suggestion**](Suggestion.md) |  | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **customSuggestions** | [**Suggestion**](Suggestion.md) |  | [optional] 
 **productSuggestions** | [**Suggestion**](Suggestion.md) |  | [optional] 
 **query** | **String** | The query phrase to search for. | [optional] 
+
+

@@ -10,6 +10,8 @@ lerna add axios --scope=@sfcc_tools/image-checker
 lerna add line-by-line --scope=@sfcc_tools/elasticsearch
 
 lerna run lint
+
+╰─❯ java -jar openapi-generator-cli.jar generate -c conf.json -i swagger-shopapi.json -g javascript -o output_dire
 ```
 
 

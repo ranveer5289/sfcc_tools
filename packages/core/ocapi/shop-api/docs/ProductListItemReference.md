@@ -1,6 +1,7 @@
 # ShopApi.ProductListItemReference
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The id of the product list item. | 
@@ -12,9 +13,15 @@ Name | Type | Description | Notes
 **quantity** | **Number** |  | [optional] 
 **type** | **String** |  | [optional] 
 
-<a name="TypeEnum"></a>
+
+
 ## Enum: TypeEnum
 
+
 * `product` (value: `"product"`)
+
 * `gift_certificate` (value: `"gift_certificate"`)
+
+
+
 

@@ -1,13 +1,15 @@
 # ShopApi.CustomObjectsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCustomObjectsByIDByID**](CustomObjectsApi.md#getCustomObjectsByIDByID) | **GET** /custom_objects/{object_type}/{key} | 
 
-<a name="getCustomObjectsByIDByID"></a>
-# **getCustomObjectsByIDByID**
+
+
+## getCustomObjectsByIDByID
+
 > CustomObject getCustomObjectsByIDByID(objectType, key)
 
 
@@ -15,33 +17,34 @@ Method | HTTP request | Description
 Reads a custom object with a given object type ID and a value for the  key attribute of the object which represents its unique identifier.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.CustomObjectsApi();
-let objectType = "objectType_example"; // String | the ID of the object type
-let key = "key_example"; // String | the key attribute value of the custom object
-
-apiInstance.getCustomObjectsByIDByID(objectType, key).then((data) => {
+var apiInstance = new ShopApi.CustomObjectsApi();
+var objectType = "objectType_example"; // String | the ID of the object type
+var key = "key_example"; // String | the key attribute value of the custom object
+apiInstance.getCustomObjectsByIDByID(objectType, key).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,6 +61,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

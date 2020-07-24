@@ -1,6 +1,6 @@
 # ShopApi.ProductListsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,8 +9,10 @@ Method | HTTP request | Description
 [**getProductListsByIDItems**](ProductListsApi.md#getProductListsByIDItems) | **GET** /product_lists/{list_id}/items | 
 [**getProductListsByIDItemsByID**](ProductListsApi.md#getProductListsByIDItemsByID) | **GET** /product_lists/{list_id}/items/{item_id} | 
 
-<a name="getProductLists"></a>
-# **getProductLists**
+
+
+## getProductLists
+
 > PublicProductListResult getProductLists(opts)
 
 
@@ -18,35 +20,37 @@ Method | HTTP request | Description
 Retrieves all public product lists as defined by the given search term (email, first name, last name).
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductListsApi();
-let opts = { 
+var apiInstance = new ShopApi.ProductListsApi();
+var opts = {
   'email': "email_example", // String | The email address of the customer, the product lists belong to.
   'firstname': "firstname_example", // String | The first name of the customer, the product lists belong to.
   'lastname': "lastname_example" // String | The last name of the customer, the product lists belong to.
 };
-apiInstance.getProductLists(opts).then((data) => {
+apiInstance.getProductLists(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,11 +68,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductListsByID"></a>
-# **getProductListsByID**
+
+## getProductListsByID
+
 > PublicProductList getProductListsByID(listId, opts)
 
 
@@ -76,34 +81,36 @@ Name | Type | Description  | Notes
 Retrieves a public product list by id.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductListsApi();
-let listId = "listId_example"; // String | The id of the list.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.ProductListsApi();
+var listId = "listId_example"; // String | The id of the list.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getProductListsByID(listId, opts).then((data) => {
+apiInstance.getProductListsByID(listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,11 +127,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductListsByIDItems"></a>
-# **getProductListsByIDItems**
+
+## getProductListsByIDItems
+
 > PublicProductListItemResult getProductListsByIDItems(listId, opts)
 
 
@@ -132,34 +140,36 @@ Name | Type | Description  | Notes
 Retrieves the items of a public product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductListsApi();
-let listId = "listId_example"; // String | The id of the list.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.ProductListsApi();
+var listId = "listId_example"; // String | The id of the list.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getProductListsByIDItems(listId, opts).then((data) => {
+apiInstance.getProductListsByIDItems(listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -176,11 +186,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductListsByIDItemsByID"></a>
-# **getProductListsByIDItemsByID**
+
+## getProductListsByIDItemsByID
+
 > PublicProductListItem getProductListsByIDItemsByID(listId, itemId, opts)
 
 
@@ -188,35 +199,37 @@ Name | Type | Description  | Notes
 Retrieves an item from a public product list.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductListsApi();
-let listId = "listId_example"; // String | The id of the list.
-let itemId = "itemId_example"; // String | The id of the item.
-let opts = { 
-  'expand': ["expand_example"] // [String] | 
+var apiInstance = new ShopApi.ProductListsApi();
+var listId = "listId_example"; // String | The id of the list.
+var itemId = "itemId_example"; // String | The id of the item.
+var opts = {
+  'expand': ["null"] // [String] | 
 };
-apiInstance.getProductListsByIDItemsByID(listId, itemId, opts).then((data) => {
+apiInstance.getProductListsByIDItemsByID(listId, itemId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -234,6 +247,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

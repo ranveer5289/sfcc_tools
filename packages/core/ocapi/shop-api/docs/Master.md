@@ -1,6 +1,7 @@
 # ShopApi.Master
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | **String** |  | 
@@ -11,3 +12,5 @@ Name | Type | Description | Notes
 **pricePerUnit** | **Number** |  | [optional] 
 **pricePerUnitMax** | **Number** |  | [optional] 
 **prices** | **{String: Number}** |  | [optional] 
+
+

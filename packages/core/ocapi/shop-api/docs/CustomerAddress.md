@@ -1,6 +1,7 @@
 # ShopApi.CustomerAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** | The first address. | [optional] 
@@ -9,11 +10,11 @@ Name | Type | Description | Notes
 **city** | **String** | The city. | [optional] 
 **companyName** | **String** | The company name. | [optional] 
 **countryCode** | **String** | The two-letter ISO 3166-1 (Alpha-2) country code. | [optional] 
-**creationDate** | **Date** | Returns the value of attribute &#x27;creationDate&#x27;. | [optional] 
+**creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **firstName** | **String** | The first name. | [optional] 
 **fullName** | **String** | The full name. | [optional] 
 **jobTitle** | **String** | The job title. | [optional] 
-**lastModified** | **Date** | Returns the value of attribute &#x27;lastModified&#x27;. | [optional] 
+**lastModified** | **Date** | Returns the value of attribute &#39;lastModified&#39;. | [optional] [readonly] 
 **lastName** | **String** | The last name. | [optional] 
 **phone** | **String** | The phone number. | [optional] 
 **postBox** | **String** | The post box. | [optional] 
@@ -26,13 +27,23 @@ Name | Type | Description | Notes
 **suite** | **String** | The suite. | [optional] 
 **title** | **String** | The title. | [optional] 
 
-<a name="CountryCodeEnum"></a>
+
+
 ## Enum: CountryCodeEnum
 
+
 * `US` (value: `"US"`)
+
 * `FR` (value: `"FR"`)
+
 * `IT` (value: `"IT"`)
+
 * `JP` (value: `"JP"`)
+
 * `CN` (value: `"CN"`)
+
 * `GB` (value: `"GB"`)
+
+
+
 

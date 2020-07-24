@@ -1,6 +1,7 @@
 # ShopApi.ProductDetailsLink
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | **String** | The target of the link. | [optional] 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **productId** | **String** | The id of the product. | 
 **productName** | **String** | The name of the product. | [optional] 
 **title** | **String** | The link title. | [optional] 
+
+

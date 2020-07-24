@@ -1,9 +1,10 @@
 # ShopApi.Category
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cAlternativeUrl** | **String** | Renders an alternative URL in main navigation. Uses Salesforce Commerce Cloud content url notation. For example: $url(&#x27;Account-Show&#x27;)$ or normal URL http://xchange.demandware.com | [optional] 
+**cAlternativeUrl** | **String** | Renders an alternative URL in main navigation. Uses Salesforce Commerce Cloud content url notation. For example: $url(&#39;Account-Show&#39;)$ or normal URL http://xchange.demandware.com | [optional] 
 **cCatBannerID** | **String** | Used to define the content asset used to populate a grid page banner for a category. This value is applied to all sub-category navigation (cascading) if no specific catBannerID has been defined for  a sub-category. | [optional] 
 **cCustomCSSFile** | **String** | Use this attribute to apply custom styles for this category. | [optional] 
 **cEnableCompare** | **Boolean** | Used to define if/when the Compare feature is to be visualized in the storefront based on navigation. If enableCompare &#x3D; FALSE, no Compare checkboxes will be displayed in the grid view. If enableCompare &#x3D; TRUE, the category (and its children) will support the Compare feature. | [optional] 
@@ -24,9 +25,15 @@ Name | Type | Description | Notes
 **parentCategoryId** | **String** | The id of the parent category. | [optional] 
 **thumbnail** | **String** | The URL to the category thumbnail. | [optional] 
 
-<a name="CHeaderMenuOrientationEnum"></a>
+
+
 ## Enum: CHeaderMenuOrientationEnum
 
+
 * `Horizontal` (value: `"Horizontal"`)
+
 * `Vertical` (value: `"Vertical"`)
+
+
+
 

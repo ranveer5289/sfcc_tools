@@ -1,6 +1,7 @@
 # ShopApi.CustomerProductListItemResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **Number** |  | [optional] 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **previous** | **String** | The URL of the previous result page. | [optional] 
 **start** | **Number** | The zero-based index of the first search hit to include in the result. | [optional] 
 **total** | **Number** |  | [optional] 
+
+

@@ -1,6 +1,7 @@
 # ShopApi.GiftCertificate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** | The gift certificate original amount. | [optional] 
@@ -15,11 +16,19 @@ Name | Type | Description | Notes
 **senderName** | **String** | The sender name. | [optional] 
 **status** | **String** | The gift certificate status. | [optional] 
 
-<a name="StatusEnum"></a>
+
+
 ## Enum: StatusEnum
 
+
 * `pending` (value: `"pending"`)
+
 * `issued` (value: `"issued"`)
+
 * `partially_redeemed` (value: `"partially_redeemed"`)
+
 * `redeemed` (value: `"redeemed"`)
+
+
+
 

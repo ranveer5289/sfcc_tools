@@ -1,6 +1,6 @@
 # ShopApi.ProductsApi
 
-All URIs are relative to *//demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,8 +18,10 @@ Method | HTTP request | Description
 [**getProductsByIDVariations**](ProductsApi.md#getProductsByIDVariations) | **GET** /products/{id}/variations | 
 [**getProductsByIDs**](ProductsApi.md#getProductsByIDs) | **GET** /products/({ids}) | 
 
-<a name="getProductsByID"></a>
-# **getProductsByID**
+
+
+## getProductsByID
+
 > Product getProductsByID(id, opts)
 
 
@@ -27,38 +29,40 @@ Method | HTTP request | Description
 To access single products resource, you construct a URL using the template shown below. This template requires  you to specify an Id (typically a SKU) for a product. In response, the server returns a corresponding Product  document, provided the product is online and assigned to site catalog. The document contains variation attributes  (including values) and the variant matrix; this data is provided for both the master and for the variant.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The id of the requested product.
-let opts = { 
-  'expand': ["expand_example"], // [String] | 
-  'inventoryIds': ["inventoryIds_example"], // [String] | 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The id of the requested product.
+var opts = {
+  'expand': ["null"], // [String] | 
+  'inventoryIds': ["null"], // [String] | 
   'currency': "currency_example", // String | 
   'locale': "locale_example", // String | 
   'allImages': true // Boolean | 
 };
-apiInstance.getProductsByID(id, opts).then((data) => {
+apiInstance.getProductsByID(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -79,11 +83,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDAvailability"></a>
-# **getProductsByIDAvailability**
+
+## getProductsByIDAvailability
+
 > Product getProductsByIDAvailability(id, opts)
 
 
@@ -91,35 +96,37 @@ Name | Type | Description  | Notes
 Access product availability information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
-  'inventoryIds': ["inventoryIds_example"], // [String] | 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
+  'inventoryIds': ["null"], // [String] | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDAvailability(id, opts).then((data) => {
+apiInstance.getProductsByIDAvailability(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -137,11 +144,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDBundledProducts"></a>
-# **getProductsByIDBundledProducts**
+
+## getProductsByIDBundledProducts
+
 > Product getProductsByIDBundledProducts(id, opts)
 
 
@@ -149,34 +157,36 @@ Name | Type | Description  | Notes
 Access bundled product information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDBundledProducts(id, opts).then((data) => {
+apiInstance.getProductsByIDBundledProducts(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -193,11 +203,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDImages"></a>
-# **getProductsByIDImages**
+
+## getProductsByIDImages
+
 > Product getProductsByIDImages(id, opts)
 
 
@@ -205,37 +216,39 @@ Name | Type | Description  | Notes
 Access product image information of products that are online and assigned to site catalog. Filter the result by  view type and variation values.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
-  'viewType': ["viewType_example"], // [String] | 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
+  'viewType': ["null"], // [String] | 
   'allImages': true, // Boolean | 
   'variationAttribute': "variationAttribute_example", // String | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDImages(id, opts).then((data) => {
+apiInstance.getProductsByIDImages(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -255,11 +268,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDLinks"></a>
-# **getProductsByIDLinks**
+
+## getProductsByIDLinks
+
 > Product getProductsByIDLinks(id, opts)
 
 
@@ -267,36 +281,38 @@ Name | Type | Description  | Notes
 Access product link information of products that are online and assigned to site catalog. Filter the result by  link type and link direction.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'type': "type_example", // String | 
   'direction': "direction_example", // String | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDLinks(id, opts).then((data) => {
+apiInstance.getProductsByIDLinks(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -315,11 +331,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDOptions"></a>
-# **getProductsByIDOptions**
+
+## getProductsByIDOptions
+
 > Product getProductsByIDOptions(id, opts)
 
 
@@ -327,34 +344,36 @@ Name | Type | Description  | Notes
 Access product option information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDOptions(id, opts).then((data) => {
+apiInstance.getProductsByIDOptions(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -371,11 +390,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDPrices"></a>
-# **getProductsByIDPrices**
+
+## getProductsByIDPrices
+
 > Product getProductsByIDPrices(id, opts)
 
 
@@ -383,34 +403,36 @@ Name | Type | Description  | Notes
 Access product price information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDPrices(id, opts).then((data) => {
+apiInstance.getProductsByIDPrices(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -427,11 +449,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDPromotions"></a>
-# **getProductsByIDPromotions**
+
+## getProductsByIDPromotions
+
 > Product getProductsByIDPromotions(id, opts)
 
 
@@ -439,35 +462,37 @@ Name | Type | Description  | Notes
 Access product promotion information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'currency': "currency_example", // String | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDPromotions(id, opts).then((data) => {
+apiInstance.getProductsByIDPromotions(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -485,11 +510,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDRecommendations"></a>
-# **getProductsByIDRecommendations**
+
+## getProductsByIDRecommendations
+
 > Product getProductsByIDRecommendations(id, opts)
 
 
@@ -497,35 +523,37 @@ Name | Type | Description  | Notes
 Access product recommendation information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'recommendationType': 56, // Number | 
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDRecommendations(id, opts).then((data) => {
+apiInstance.getProductsByIDRecommendations(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -543,11 +571,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDSetProducts"></a>
-# **getProductsByIDSetProducts**
+
+## getProductsByIDSetProducts
+
 > Product getProductsByIDSetProducts(id, opts)
 
 
@@ -555,34 +584,36 @@ Name | Type | Description  | Notes
 Access product set information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDSetProducts(id, opts).then((data) => {
+apiInstance.getProductsByIDSetProducts(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -599,11 +630,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDShippingMethods"></a>
-# **getProductsByIDShippingMethods**
+
+## getProductsByIDShippingMethods
+
 > ShippingMethodResult getProductsByIDShippingMethods(id)
 
 
@@ -611,36 +643,36 @@ Name | Type | Description  | Notes
 Retrieves the applicable shipping methods for a certain product.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
-
 // Configure OAuth2 access token for authorization: oauth2_application
-let oauth2_application = defaultClient.authentications['oauth2_application'];
+var oauth2_application = defaultClient.authentications['oauth2_application'];
 oauth2_application.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | the requested product id
-
-apiInstance.getProductsByIDShippingMethods(id).then((data) => {
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | the requested product id
+apiInstance.getProductsByIDShippingMethods(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -656,11 +688,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDVariations"></a>
-# **getProductsByIDVariations**
+
+## getProductsByIDVariations
+
 > Product getProductsByIDVariations(id, opts)
 
 
@@ -668,34 +701,36 @@ Name | Type | Description  | Notes
 Access product variation information of products that are online and assigned to site catalog.
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let id = "id_example"; // String | The requested product id.
-let opts = { 
+var apiInstance = new ShopApi.ProductsApi();
+var id = "id_example"; // String | The requested product id.
+var opts = {
   'locale': "locale_example" // String | 
 };
-apiInstance.getProductsByIDVariations(id, opts).then((data) => {
+apiInstance.getProductsByIDVariations(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -712,48 +747,51 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 
-<a name="getProductsByIDs"></a>
-# **getProductsByIDs**
+
+## getProductsByIDs
+
 > ProductResult getProductsByIDs(ids, opts)
 
 
 
 ### Example
-```javascript
-import ShopApi from 'shop_api';
-let defaultClient = ShopApi.ApiClient.instance;
 
+```javascript
+var ShopApi = require('shop_api');
+var defaultClient = ShopApi.ApiClient.instance;
 // Configure API key authorization: client_id
-let client_id = defaultClient.authentications['client_id'];
+var client_id = defaultClient.authentications['client_id'];
 client_id.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //client_id.apiKeyPrefix = 'Token';
 // Configure HTTP basic authorization: customers_auth
-let customers_auth = defaultClient.authentications['customers_auth'];
+var customers_auth = defaultClient.authentications['customers_auth'];
 customers_auth.username = 'YOUR USERNAME';
 customers_auth.password = 'YOUR PASSWORD';
 
-let apiInstance = new ShopApi.ProductsApi();
-let ids = ["ids_example"]; // [String] | 
-let opts = { 
-  'expand': ["expand_example"], // [String] | 
-  'inventoryIds': ["inventoryIds_example"], // [String] | 
+var apiInstance = new ShopApi.ProductsApi();
+var ids = ["null"]; // [String] | 
+var opts = {
+  'expand': ["null"], // [String] | 
+  'inventoryIds': ["null"], // [String] | 
   'currency': "currency_example", // String | 
   'locale': "locale_example", // String | 
   'allImages': true // Boolean | 
 };
-apiInstance.getProductsByIDs(ids, opts).then((data) => {
+apiInstance.getProductsByIDs(ids, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -774,6 +812,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/xml, application/xml
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/xml, application/xml
 

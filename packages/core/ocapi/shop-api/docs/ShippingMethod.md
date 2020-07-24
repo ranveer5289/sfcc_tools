@@ -1,6 +1,7 @@
 # ShopApi.ShippingMethod
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cStorePickupEnabled** | **Boolean** |  | 
@@ -10,3 +11,5 @@ Name | Type | Description | Notes
 **name** | **String** | The localized name of the shipping method. | [optional] 
 **price** | **Number** | The shipping cost total, including shipment level costs and  product level fix and surcharge costs. | [optional] 
 **shippingPromotions** | [**[ShippingPromotion]**](ShippingPromotion.md) | The array of active customer shipping promotions for this shipping  method. This array can be empty. | [optional] 
+
+

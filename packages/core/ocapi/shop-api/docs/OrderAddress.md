@@ -1,6 +1,7 @@
 # ShopApi.OrderAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** | The first address. | [optional] 
@@ -23,13 +24,23 @@ Name | Type | Description | Notes
 **suite** | **String** | The suite. | [optional] 
 **title** | **String** | The title. | [optional] 
 
-<a name="CountryCodeEnum"></a>
+
+
 ## Enum: CountryCodeEnum
 
+
 * `US` (value: `"US"`)
+
 * `FR` (value: `"FR"`)
+
 * `IT` (value: `"IT"`)
+
 * `JP` (value: `"JP"`)
+
 * `CN` (value: `"CN"`)
+
 * `GB` (value: `"GB"`)
+
+
+
 

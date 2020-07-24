@@ -1,6 +1,7 @@
 # ShopApi.Variant
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | **String** | The URL addressing the product. | 
@@ -9,3 +10,5 @@ Name | Type | Description | Notes
 **pricePerUnit** | **Number** | The sales price of the variant. | [optional] 
 **productId** | **String** | The id (SKU) of the variant. | 
 **variationValues** | **{String: String}** | The actual variation attribute id - value pairs. | [optional] 
+
+
