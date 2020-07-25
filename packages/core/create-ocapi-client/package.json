@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "generate-shop-api-client": "openapi-generator generate -c conf.json -i swagger-shopapi.json -g javascript -o ../ocapi/shop-api/",
     "generate-data-api-client": "openapi-generator generate -c conf.json -i swagger-dataapi.json -g javascript -o ../ocapi/data-api/",
