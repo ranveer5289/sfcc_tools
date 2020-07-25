@@ -1,8 +1,5 @@
 const elasticsearch = require('@sfcc_tools/elasticsearch');
-const path = require('path');
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
+const config = require('@sfcc_tools/config');
 
 const esConfig = config.get('packages.sfcc-catalog-to-elasticsearch');
 

@@ -4,12 +4,11 @@ const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
 const config = require('@sfcc_tools/config');
-const ocapi = require('@sfcc_tools/ocapi');
+const ocapiAuthApi = require('@sfcc_tools/auth-api');
 
 const TASKID = 'orderreport';
 const ocapiConfig = config.get('packages.ocapi');
 
-const oauth = ocapi.oauth;
 const orderSearch = require('./helpers/ordersearch');
 
 function getOrderAttributes(obj) {
@@ -110,7 +109,7 @@ function getProductCount(productItems) {
 }
 async function writeOrderReport() {
     try {
-        const token = await oauth.getClientCredentialGrant();
+        const token = await ocapiAuthApi.oauth.getClientCredentialGrant();
         if (!token) {
             process.exit(1);
         }

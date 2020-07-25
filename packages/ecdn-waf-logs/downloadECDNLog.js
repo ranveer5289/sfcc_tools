@@ -3,9 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
 const fsExtra = require('fs-extra');
-const ocapi = require('@sfcc_tools/ocapi');
+const ocapiAuthApi = require('@sfcc_tools/auth-api');
 
-const oauth = ocapi.oauth;
 const ecdn = require('./helper/ecdn');
 
 // const TASKID = 'downloadECDNLog';
@@ -19,7 +18,7 @@ function getLogFetchRequestIds(filePath) {
 }
 
 async function download() {
-    const token = await oauth.getClientCredentialGrant();
+    const token = await ocapiAuthApi.oauth.getClientCredentialGrant();
     if (!token) {
         console.log(chalk.red('Error getting oauth token from SFCC'));
         process.exit(1);

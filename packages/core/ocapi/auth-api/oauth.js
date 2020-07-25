@@ -1,10 +1,7 @@
 /* eslint-disable import/no-dynamic-require */
 const axios = require('axios');
-const path = require('path');
 const chalk = require('chalk');
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), '..', '..', 'config');
-const config = require('config');
+const config = require('@sfcc_tools/config');
 
 const ocapiConfig = config.get('packages.ocapi');
 

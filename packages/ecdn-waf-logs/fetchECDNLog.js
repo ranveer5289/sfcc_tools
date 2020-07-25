@@ -2,11 +2,10 @@
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const ocapi = require('@sfcc_tools/ocapi');
 const config = require('@sfcc_tools/config');
+const ocapiAuthApi = require('@sfcc_tools/auth-api');
 
 const ecdnConfig = config.get('packages.ecdn-waf-logs');
-const oauth = ocapi.oauth;
 const ecdn = require('./helper/ecdn');
 
 // const TASKID = 'fetchECDNLog';
@@ -34,7 +33,7 @@ function getTimeSlots() {
 }
 
 async function fetch() {
-    const token = await oauth.getClientCredentialGrant();
+    const token = await ocapiAuthApi.oauth.getClientCredentialGrant();
     if (!token) {
         console.log(chalk.red('Error getting oauth token from SFCC'));
         process.exit(1);

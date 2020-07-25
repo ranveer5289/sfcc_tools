@@ -11,7 +11,7 @@ function fixPackageJSON(apiName) {
 
     // modify below vars for lerna to work properly
     jsonObj.version = '1.0.0';
-    if (jsonObj.name.indexOf('@sfcc_tools/') === -1) {
+    if (jsonObj.name.indexOf('@sfcc_tools') === -1) {
         jsonObj.name = '@sfcc_tools/' + jsonObj.name;
     }
     jsonObj.private = true;

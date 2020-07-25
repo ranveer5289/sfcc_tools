@@ -1,9 +1,9 @@
 {
-  "name": "@sfcc_tools/ocapi",
+  "name": "@sfcc_tools/auth-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private": true,
+  "private": "true",
   "scripts": {
     "lint": "eslint ."
   },
@@ -14,11 +14,7 @@
     "@sfcc_tools/config": "^1.0.0",
     "@sfcc_tools/eslint-config-core": "^1.0.0",
     "axios": "^0.19.2",
-    "chalk": "^4.1.0",
-    "config": "^3.3.1",
-    "fs-extra": "^9.0.1",
-    "jsdoc": "^3.6.4",
-    "yargs": "^15.4.1"
+    "chalk": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "7.2.0",

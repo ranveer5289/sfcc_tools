@@ -3,15 +3,14 @@ const path = require('path');
 const CSVStream = require('csv-write-stream');
 const fs = require('fs');
 const chalk = require('chalk');
-const ocapi = require('@sfcc_tools/ocapi');
+const ocapiAuthApi = require('@sfcc_tools/auth-api');
 
 const TASKID = 'jobmetrics';
 
-const oauth = ocapi.oauth;
 const jobExecutionSearch = require('./helpers/jobExecutionSearch');
 
 async function getJobMetrics() {
-    const token = await oauth.getClientCredentialGrant();
+    const token = await ocapiAuthApi.oauth.getClientCredentialGrant();
     if (!token) {
         console.log(chalk.red('OAuth Token not received from server'));
         process.exit(1);
