@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cPriceBookID** | **String** | Member Pricebook ID assigned to the Customer Group | [optional] 
+**cPriceBookIds** | **[String]** |  | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **description** | **String** | The description for the customer group.  This property is read-only for system groups. | [optional] 
 **id** | **String** | The user specific identifier for the customer group, which must be unique across the organization.  Property  is read-only. | [optional] [readonly] 

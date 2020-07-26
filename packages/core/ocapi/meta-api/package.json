@@ -1,0 +1,28 @@
+{
+  "name": "@sfcc_tools/meta-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sfcc_tools/auth-api": "^1.0.0",
+    "@sfcc_tools/config": "^1.0.0",
+    "@sfcc_tools/eslint-config-core": "^1.0.0",
+    "axios": "^0.19.2",
+    "chalk": "^4.1.0",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.0"
+  }
+}

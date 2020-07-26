@@ -1,6 +1,6 @@
 # ShopApi.ContentSearchApi
 
-All URIs are relative to *http://demo-ocapi.demandware.net/s/-/dw/shop/20.8*
+All URIs are relative to *http://dev14-global-iic.demandware.net/s/-/dw/shop/20.4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

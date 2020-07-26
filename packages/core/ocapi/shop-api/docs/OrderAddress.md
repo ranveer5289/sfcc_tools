@@ -6,6 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** | The first address. | [optional] 
 **address2** | **String** | The second address. | [optional] 
+**cAddressAddition** | **String** |  | [optional] 
+**cAlternativeAddress2** | **String** | Because of the fact that address2 exists, this custom attribute created | [optional] 
+**cHouseNr** | **String** |  | [optional] 
+**cHouseNrAddition** | **String** |  | [optional] 
+**cMemberNr** | **String** |  | [optional] 
+**cStreetName** | **String** |  | [optional] 
+**cTown** | **String** |  | [optional] 
 **city** | **String** | The city. | [optional] 
 **companyName** | **String** | The company name. | [optional] 
 **countryCode** | **String** | The two-letter ISO 3166-1 (Alpha-2) country code. | [optional] 
@@ -29,17 +36,65 @@ Name | Type | Description | Notes
 ## Enum: CountryCodeEnum
 
 
+* `SK` (value: `"SK"`)
+
+* `DK` (value: `"DK"`)
+
+* `ES` (value: `"ES"`)
+
+* `NL` (value: `"NL"`)
+
 * `US` (value: `"US"`)
 
-* `FR` (value: `"FR"`)
+* `GR` (value: `"GR"`)
+
+* `CY` (value: `"CY"`)
+
+* `BG` (value: `"BG"`)
+
+* `RO` (value: `"RO"`)
+
+* `CZ` (value: `"CZ"`)
+
+* `AT` (value: `"AT"`)
+
+* `HU` (value: `"HU"`)
+
+* `TR` (value: `"TR"`)
+
+* `UK` (value: `"UK"`)
+
+* `SE` (value: `"SE"`)
+
+* `SI` (value: `"SI"`)
+
+* `PT` (value: `"PT"`)
+
+* `PL` (value: `"PL"`)
+
+* `MT` (value: `"MT"`)
+
+* `LT` (value: `"LT"`)
+
+* `LV` (value: `"LV"`)
 
 * `IT` (value: `"IT"`)
 
-* `JP` (value: `"JP"`)
+* `IE` (value: `"IE"`)
 
-* `CN` (value: `"CN"`)
+* `DE` (value: `"DE"`)
 
-* `GB` (value: `"GB"`)
+* `FR` (value: `"FR"`)
+
+* `FI` (value: `"FI"`)
+
+* `EE` (value: `"EE"`)
+
+* `BE` (value: `"BE"`)
+
+* `HR` (value: `"HR"`)
+
+* `NO` (value: `"NO"`)
 
 
 

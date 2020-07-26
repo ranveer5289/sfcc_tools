@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archived** | **Boolean** | Determines whether or not this promotion is archived. This attribute is allowed to be updated when using the Open  Commerce API to update multiple promotions at once. | [optional] 
 **assignmentInformation** | [**PromotionAssignmentInformation**](PromotionAssignmentInformation.md) |  | [optional] 
+**cDontApplyLoyalty** | **Boolean** |  | [optional] 
 **calloutMsg** | [**{String: MarkupText}**](MarkupText.md) | The localized callout message of the promotion. | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **currencyCode** | **String** | The ISO 4217 mnemonic code of the currency this promotion is restricted to. If not populated, then there is no  currency restriction on the promotion. | [optional] 

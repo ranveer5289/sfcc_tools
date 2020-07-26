@@ -11,8 +11,6 @@ Name | Type | Description | Notes
 **orderable** | **Boolean** | A flag indicating whether the product is orderable. | [optional] 
 **price** | **Number** | The sales price of the product. In case of complex products like master or set this is the minimum price of  related child products. | [optional] 
 **priceMax** | **Number** | The maximum sales of related child products in case of complex products like master or set. | [optional] 
-**pricePerUnit** | **Number** | The sales price per unit of the product. In case of complex products like master or set this is the minimum price  per unit of related child products. | [optional] 
-**pricePerUnitMax** | **Number** | The maximum sales price per unit of related child products in case of complex products like master or set. | [optional] 
 **prices** | **{String: Number}** | The prices map with price book ids and their values. | [optional] 
 **productId** | **String** | The id (SKU) of the product. | [optional] 
 **productName** | **String** | The localized name of the product. | [optional] 

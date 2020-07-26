@@ -4,7 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cCanonicalUrl** | **{String: String}** |  | [optional] 
 **cCustomCSSFile** | [**MediaFile**](MediaFile.md) |  | [optional] 
+**cExtraFlyoutNavbarUrl** | **String** |  | [optional] 
+**cPageBackgroundColor** | **{String: String}** |  | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **description** | **{String: String}** | The localized content folder description. | [optional] 
 **id** | **String** | The id of the content folder. | [optional] 
@@ -20,5 +23,16 @@ Name | Type | Description | Notes
 **parentLink** | **String** | The URL to the parent content folder. | [optional] 
 **subFoldersLink** | **String** | The URL to list the content sub-folders. | [optional] 
 **template** | **String** | The rendering template. | [optional] 
+
+
+
+## Enum: {String: String}
+
+
+* `white` (value: `"white"`)
+
+* `black` (value: `"black"`)
+
+
 
 

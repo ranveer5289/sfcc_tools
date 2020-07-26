@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cDontApplyLoyalty** | **Boolean** |  | [optional] 
 **calloutMsg** | **String** | The localized call-out message of the promotion. | [optional] 
 **currency** | **String** | The currency that a promotion can be applied to. A null value means that the promotion applies to all allowed  currencies. | [optional] 
 **details** | **String** | The localized detailed description of the promotion. | [optional] 

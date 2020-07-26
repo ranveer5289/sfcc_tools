@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **orderable** | **Boolean** | A flag indicating whether the variant is orderable. | [optional] 
 **price** | **Number** | The sales price of the variant. | [optional] 
 **priceCurrency** | **String** | Currency code for the price of the product. | [optional] 
-**pricePerUnit** | **Number** | The sales price of the variant. | [optional] 
 **productId** | **String** | The id (SKU) of the variant. | 
 **searchable** | **{String: Boolean}** |  | [optional] 
 **variationAttributes** | [**[VariationAttribute]**](VariationAttribute.md) | variation attributes | [optional] 

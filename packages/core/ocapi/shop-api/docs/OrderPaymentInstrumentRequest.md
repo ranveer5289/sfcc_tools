@@ -6,6 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** | The payment transaction amount. | [optional] 
 **bankRoutingNumber** | **String** | The bank routing number. | [optional] 
+**cAdyenEventCode** | **String** |  | [optional] 
+**cAdyenPaymentMethod** | **String** |  | [optional] 
+**cAdyenPspReference** | **String** |  | [optional] 
+**cAdyenValue** | **Number** |  | [optional] 
+**cCurrency** | **String** |  | [optional] 
+**cGiftCertificatePin** | **String** |  | [optional] 
 **createCustomerPaymentInstrument** | **Boolean** | A flag indicating whether a related customer payment instrument should be created. The CustomerPaymentInstrument  is only created when the OrderPaymentInstrument was authorized successfully. | [optional] 
 **customerPaymentInstrumentId** | **String** | The id of a customer payment instrument. | [optional] 
 **giftCertificateCode** | **String** | The gift certificate code. | [optional] 

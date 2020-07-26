@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **orderable** | **Boolean** |  | [optional] 
 **price** | **Number** |  | [optional] 
 **priceMax** | **Number** |  | [optional] 
-**pricePerUnit** | **Number** |  | [optional] 
-**pricePerUnitMax** | **Number** |  | [optional] 
 **prices** | **{String: Number}** |  | [optional] 
 
 
