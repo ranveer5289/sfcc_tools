@@ -68,101 +68,11 @@
       if (data.hasOwnProperty('c_TestAttribute')) {
         obj['c_TestAttribute'] = ApiClient.convertToType(data['c_TestAttribute'], ['String']);
       }
-      if (data.hasOwnProperty('c_applicablePostalCodes')) {
-        obj['c_applicablePostalCodes'] = ApiClient.convertToType(data['c_applicablePostalCodes'], ['String']);
-      }
-      if (data.hasOwnProperty('c_bannerImage1Desktop')) {
-        obj['c_bannerImage1Desktop'] = MediaFile.constructFromObject(data['c_bannerImage1Desktop']);
-      }
-      if (data.hasOwnProperty('c_bannerImage1Mobile')) {
-        obj['c_bannerImage1Mobile'] = MediaFile.constructFromObject(data['c_bannerImage1Mobile']);
-      }
-      if (data.hasOwnProperty('c_bannerImage2Desktop')) {
-        obj['c_bannerImage2Desktop'] = MediaFile.constructFromObject(data['c_bannerImage2Desktop']);
-      }
-      if (data.hasOwnProperty('c_bannerImage2Mobile')) {
-        obj['c_bannerImage2Mobile'] = MediaFile.constructFromObject(data['c_bannerImage2Mobile']);
-      }
-      if (data.hasOwnProperty('c_bannerImage3Desktop')) {
-        obj['c_bannerImage3Desktop'] = MediaFile.constructFromObject(data['c_bannerImage3Desktop']);
-      }
-      if (data.hasOwnProperty('c_bannerImage3Mobile')) {
-        obj['c_bannerImage3Mobile'] = MediaFile.constructFromObject(data['c_bannerImage3Mobile']);
-      }
-      if (data.hasOwnProperty('c_bannerImage4Desktop')) {
-        obj['c_bannerImage4Desktop'] = MediaFile.constructFromObject(data['c_bannerImage4Desktop']);
-      }
-      if (data.hasOwnProperty('c_bannerImage4Mobile')) {
-        obj['c_bannerImage4Mobile'] = MediaFile.constructFromObject(data['c_bannerImage4Mobile']);
-      }
       if (data.hasOwnProperty('c_countryCodeValue')) {
         obj['c_countryCodeValue'] = ApiClient.convertToType(data['c_countryCodeValue'], 'String');
       }
-      if (data.hasOwnProperty('c_detailLink')) {
-        obj['c_detailLink'] = ApiClient.convertToType(data['c_detailLink'], 'String');
-      }
-      if (data.hasOwnProperty('c_enableReserveStock')) {
-        obj['c_enableReserveStock'] = ApiClient.convertToType(data['c_enableReserveStock'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_followUsDescription')) {
-        obj['c_followUsDescription'] = ApiClient.convertToType(data['c_followUsDescription'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNr')) {
-        obj['c_houseNr'] = ApiClient.convertToType(data['c_houseNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNrAddition')) {
-        obj['c_houseNrAddition'] = ApiClient.convertToType(data['c_houseNrAddition'], 'String');
-      }
       if (data.hasOwnProperty('c_inventoryListId')) {
         obj['c_inventoryListId'] = ApiClient.convertToType(data['c_inventoryListId'], 'String');
-      }
-      if (data.hasOwnProperty('c_longAboutStore')) {
-        obj['c_longAboutStore'] = ApiClient.convertToType(data['c_longAboutStore'], {'String': 'String'});
-      }
-      if (data.hasOwnProperty('c_nearestStoreImage')) {
-        obj['c_nearestStoreImage'] = MediaFile.constructFromObject(data['c_nearestStoreImage']);
-      }
-      if (data.hasOwnProperty('c_pickupInStore')) {
-        obj['c_pickupInStore'] = ApiClient.convertToType(data['c_pickupInStore'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_serviceObjectIds')) {
-        obj['c_serviceObjectIds'] = ApiClient.convertToType(data['c_serviceObjectIds'], {'String': ['String']});
-      }
-      if (data.hasOwnProperty('c_shortAboutStore')) {
-        obj['c_shortAboutStore'] = ApiClient.convertToType(data['c_shortAboutStore'], {'String': 'String'});
-      }
-      if (data.hasOwnProperty('c_showStoreStock')) {
-        obj['c_showStoreStock'] = ApiClient.convertToType(data['c_showStoreStock'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_socialEmailUrl')) {
-        obj['c_socialEmailUrl'] = ApiClient.convertToType(data['c_socialEmailUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_socialFacebookUrl')) {
-        obj['c_socialFacebookUrl'] = ApiClient.convertToType(data['c_socialFacebookUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_socialInstagramUrl')) {
-        obj['c_socialInstagramUrl'] = ApiClient.convertToType(data['c_socialInstagramUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_socialTwitterUrl')) {
-        obj['c_socialTwitterUrl'] = ApiClient.convertToType(data['c_socialTwitterUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_storefrontImage')) {
-        obj['c_storefrontImage'] = MediaFile.constructFromObject(data['c_storefrontImage']);
-      }
-      if (data.hasOwnProperty('c_tags')) {
-        obj['c_tags'] = ApiClient.convertToType(data['c_tags'], 'String');
-      }
-      if (data.hasOwnProperty('c_teamAbout')) {
-        obj['c_teamAbout'] = ApiClient.convertToType(data['c_teamAbout'], {'String': 'String'});
-      }
-      if (data.hasOwnProperty('c_teamImageDesktop')) {
-        obj['c_teamImageDesktop'] = MediaFile.constructFromObject(data['c_teamImageDesktop']);
-      }
-      if (data.hasOwnProperty('c_teamImageMobile')) {
-        obj['c_teamImageMobile'] = MediaFile.constructFromObject(data['c_teamImageMobile']);
-      }
-      if (data.hasOwnProperty('c_website')) {
-        obj['c_website'] = ApiClient.convertToType(data['c_website'], 'String');
       }
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
@@ -243,137 +153,15 @@
    */
   exports.prototype['c_TestAttribute'] = undefined;
   /**
-   * Postal Codes which are applicable and possibly in the nearest region for this store
-   * @member {Array.<String>} c_applicablePostalCodes
-   */
-  exports.prototype['c_applicablePostalCodes'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage1Desktop
-   */
-  exports.prototype['c_bannerImage1Desktop'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage1Mobile
-   */
-  exports.prototype['c_bannerImage1Mobile'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage2Desktop
-   */
-  exports.prototype['c_bannerImage2Desktop'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage2Mobile
-   */
-  exports.prototype['c_bannerImage2Mobile'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage3Desktop
-   */
-  exports.prototype['c_bannerImage3Desktop'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage3Mobile
-   */
-  exports.prototype['c_bannerImage3Mobile'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage4Desktop
-   */
-  exports.prototype['c_bannerImage4Desktop'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_bannerImage4Mobile
-   */
-  exports.prototype['c_bannerImage4Mobile'] = undefined;
-  /**
    * Country Code Value - for the form values
    * @member {String} c_countryCodeValue
    */
   exports.prototype['c_countryCodeValue'] = undefined;
   /**
-   * @member {String} c_detailLink
-   */
-  exports.prototype['c_detailLink'] = undefined;
-  /**
-   * @member {Boolean} c_enableReserveStock
-   */
-  exports.prototype['c_enableReserveStock'] = undefined;
-  /**
-   * @member {String} c_followUsDescription
-   */
-  exports.prototype['c_followUsDescription'] = undefined;
-  /**
-   * @member {String} c_houseNr
-   */
-  exports.prototype['c_houseNr'] = undefined;
-  /**
-   * @member {String} c_houseNrAddition
-   */
-  exports.prototype['c_houseNrAddition'] = undefined;
-  /**
    * Store Inventory List ID
    * @member {String} c_inventoryListId
    */
   exports.prototype['c_inventoryListId'] = undefined;
-  /**
-   * @member {Object.<String, String>} c_longAboutStore
-   */
-  exports.prototype['c_longAboutStore'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_nearestStoreImage
-   */
-  exports.prototype['c_nearestStoreImage'] = undefined;
-  /**
-   * @member {Boolean} c_pickupInStore
-   */
-  exports.prototype['c_pickupInStore'] = undefined;
-  /**
-   * @member {Object.<String, Array.<String>>} c_serviceObjectIds
-   */
-  exports.prototype['c_serviceObjectIds'] = undefined;
-  /**
-   * @member {Object.<String, String>} c_shortAboutStore
-   */
-  exports.prototype['c_shortAboutStore'] = undefined;
-  /**
-   * @member {Boolean} c_showStoreStock
-   */
-  exports.prototype['c_showStoreStock'] = undefined;
-  /**
-   * @member {String} c_socialEmailUrl
-   */
-  exports.prototype['c_socialEmailUrl'] = undefined;
-  /**
-   * @member {String} c_socialFacebookUrl
-   */
-  exports.prototype['c_socialFacebookUrl'] = undefined;
-  /**
-   * @member {String} c_socialInstagramUrl
-   */
-  exports.prototype['c_socialInstagramUrl'] = undefined;
-  /**
-   * @member {String} c_socialTwitterUrl
-   */
-  exports.prototype['c_socialTwitterUrl'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_storefrontImage
-   */
-  exports.prototype['c_storefrontImage'] = undefined;
-  /**
-   * @member {String} c_tags
-   */
-  exports.prototype['c_tags'] = undefined;
-  /**
-   * @member {Object.<String, String>} c_teamAbout
-   */
-  exports.prototype['c_teamAbout'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_teamImageDesktop
-   */
-  exports.prototype['c_teamImageDesktop'] = undefined;
-  /**
-   * @member {module:model/MediaFile} c_teamImageMobile
-   */
-  exports.prototype['c_teamImageMobile'] = undefined;
-  /**
-   * Store Website
-   * @member {String} c_website
-   */
-  exports.prototype['c_website'] = undefined;
   /**
    * Returns the city.
    * @member {String} city
@@ -482,80 +270,20 @@
    */
   exports.CountryCodeEnum = {
     /**
-     * value: "DK"
-     * @const
-     */
-    "DK": "DK",
-    /**
-     * value: "ES"
-     * @const
-     */
-    "ES": "ES",
-    /**
-     * value: "NL"
-     * @const
-     */
-    "NL": "NL",
-    /**
      * value: "US"
      * @const
      */
     "US": "US",
     /**
-     * value: "GR"
+     * value: "CA"
      * @const
      */
-    "GR": "GR",
+    "CA": "CA",
     /**
-     * value: "CY"
+     * value: "DE"
      * @const
      */
-    "CY": "CY",
-    /**
-     * value: "BG"
-     * @const
-     */
-    "BG": "BG",
-    /**
-     * value: "RO"
-     * @const
-     */
-    "RO": "RO",
-    /**
-     * value: "CZ"
-     * @const
-     */
-    "CZ": "CZ",
-    /**
-     * value: "AT"
-     * @const
-     */
-    "AT": "AT",
-    /**
-     * value: "HU"
-     * @const
-     */
-    "HU": "HU",
-    /**
-     * value: "SK"
-     * @const
-     */
-    "SK": "SK",
-    /**
-     * value: "TR"
-     * @const
-     */
-    "TR": "TR",
-    /**
-     * value: "NO"
-     * @const
-     */
-    "NO": "NO",
-    /**
-     * value: "CH"
-     * @const
-     */
-    "CH": "CH"  };
+    "DE": "DE"  };
 
 
   return exports;

@@ -68,24 +68,6 @@
       if (data.hasOwnProperty('bank_routing_number')) {
         obj['bank_routing_number'] = ApiClient.convertToType(data['bank_routing_number'], 'String');
       }
-      if (data.hasOwnProperty('c_Adyen_eventCode')) {
-        obj['c_Adyen_eventCode'] = ApiClient.convertToType(data['c_Adyen_eventCode'], 'String');
-      }
-      if (data.hasOwnProperty('c_Adyen_paymentMethod')) {
-        obj['c_Adyen_paymentMethod'] = ApiClient.convertToType(data['c_Adyen_paymentMethod'], 'String');
-      }
-      if (data.hasOwnProperty('c_Adyen_pspReference')) {
-        obj['c_Adyen_pspReference'] = ApiClient.convertToType(data['c_Adyen_pspReference'], 'String');
-      }
-      if (data.hasOwnProperty('c_Adyen_value')) {
-        obj['c_Adyen_value'] = ApiClient.convertToType(data['c_Adyen_value'], 'Number');
-      }
-      if (data.hasOwnProperty('c_currency')) {
-        obj['c_currency'] = ApiClient.convertToType(data['c_currency'], 'String');
-      }
-      if (data.hasOwnProperty('c_giftCertificatePin')) {
-        obj['c_giftCertificatePin'] = ApiClient.convertToType(data['c_giftCertificatePin'], 'String');
-      }
       if (data.hasOwnProperty('masked_gift_certificate_code')) {
         obj['masked_gift_certificate_code'] = ApiClient.convertToType(data['masked_gift_certificate_code'], 'String');
       }
@@ -119,30 +101,6 @@
    * @member {String} bank_routing_number
    */
   exports.prototype['bank_routing_number'] = undefined;
-  /**
-   * @member {String} c_Adyen_eventCode
-   */
-  exports.prototype['c_Adyen_eventCode'] = undefined;
-  /**
-   * @member {String} c_Adyen_paymentMethod
-   */
-  exports.prototype['c_Adyen_paymentMethod'] = undefined;
-  /**
-   * @member {String} c_Adyen_pspReference
-   */
-  exports.prototype['c_Adyen_pspReference'] = undefined;
-  /**
-   * @member {Number} c_Adyen_value
-   */
-  exports.prototype['c_Adyen_value'] = undefined;
-  /**
-   * @member {String} c_currency
-   */
-  exports.prototype['c_currency'] = undefined;
-  /**
-   * @member {String} c_giftCertificatePin
-   */
-  exports.prototype['c_giftCertificatePin'] = undefined;
   /**
    * The masked gift certificate code.
    * @member {String} masked_gift_certificate_code

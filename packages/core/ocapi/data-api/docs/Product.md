@@ -8,34 +8,13 @@ Name | Type | Description | Notes
 **ats** | **Number** | The ATS(Available To Sell) inventory value of the product. This is a calculated value. | [optional] 
 **brand** | **String** | The brand of the product. | [optional] 
 **bundledProducts** | [**[Product]**](Product.md) | The array of bundled products which the product includes. | [optional] 
-**cEUSize** | **String** |  | [optional] 
-**cIsNew** | **{String: Boolean}** | New Arrivals for sorting | [optional] 
-**cOnSale** | **{String: Boolean}** |  | [optional] 
-**cProductCluster** | **{String: Number}** | Group sub-categories of products within a category for sorting. | [optional] 
-**cProductTypeGroup** | **{String: Number}** |  | [optional] 
-**cUKSize** | **String** |  | [optional] 
-**cUSSize** | **String** |  | [optional] 
 **cAvailableForInStorePickup** | **Boolean** | Signals if there are inventory lists for brick-and-mortar stores associated with this product. | [optional] 
-**cAvataxClassID** | **String** |  | [optional] 
-**cBackOrder** | **{String: Boolean}** |  | [optional] 
-**cBackgroundColor** | **String** |  | [optional] 
-**cBadgeCallout** | **{String: String}** |  | [optional] 
 **cBatteryLife** | **String** |  | [optional] 
 **cBatteryType** | **String** |  | [optional] 
-**cBindingType** | **{String: [String]}** | Binding type of the skis | [optional] 
-**cBindingsIncluded** | **Boolean** | True if a ski has bindings included in the package | [optional] 
-**cBootType** | **{String: [String]}** | Boot type of the bindings | [optional] 
+**cBootType** | **[String]** | Type of Boot for search refinement. | [optional] 
 **cBottomType** | **[String]** | Bottom type for search refinement | [optional] 
-**cBraFinderImpact** | **[String]** | The value contained is used on size level to determine which impact attribute(s) belong to a sports bra | [optional] 
-**cCollection** | **{String: String}** |  | [optional] 
 **cColor** | **String** | Product color used for variation attribute | [optional] 
-**cCommercialColor** | **{String: String}** |  | [optional] 
-**cConfiguratorGroupingID** | **{String: [String]}** |  | [optional] 
-**cConfiguratorSports** | **{String: [String]}** |  | [optional] 
-**cConfiguratorStyle** | **{String: [String]}** |  | [optional] 
-**cConfiguratorSubStyle** | **{String: [String]}** |  | [optional] 
 **cConsoleWarranty** | **String** |  | [optional] 
-**cContentAssetIds** | **[String]** |  | [optional] 
 **cCustomCSSFile** | [**MediaFile**](MediaFile.md) |  | [optional] 
 **cDigitalCameraFeatures** | **[String]** |  | [optional] 
 **cDigitalCameraPixels** | **String** |  | [optional] 
@@ -45,147 +24,46 @@ Name | Type | Description | Notes
 **cDimHeight** | **String** |  | [optional] 
 **cDimWeight** | **String** |  | [optional] 
 **cDimWidth** | **String** |  | [optional] 
-**cDiscountPercentage** | **{String: Number}** | The value of a discount as proportion of sale price to normal price (for example, a product that has a sale price of 90EUR and is normally 100EUR would have a discountPercentage of 10.00) | [optional] 
 **cDisplaySize** | **String** |  | [optional] 
-**cExpertReviewBackgroundImage** | [**{String: MediaFile}**](MediaFile.md) |  | [optional] 
-**cExpertReviewBadgeText** | **{String: String}** |  | [optional] 
-**cExpertReviewImage** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cExpertReviewName** | **{String: String}** |  | [optional] 
-**cExpertReviewQuote** | **{String: String}** |  | [optional] 
-**cExpertReviewText** | [**{String: MarkupText}**](MarkupText.md) |  | [optional] 
-**cExpertReviewTitle** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP1** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP2** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP3** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP4** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP5** | **{String: String}** |  | [optional] 
-**cExpertReviewUSP6** | **{String: String}** |  | [optional] 
-**cExpertReviewVideoId** | **String** |  | [optional] 
-**cFbpBlockColor** | **String** |  | [optional] 
-**cFbpIsEnabled** | **{String: Boolean}** |  | [optional] 
-**cFbpPlayerClub** | **{String: String}** |  | [optional] 
-**cFbpPlayerName** | **String** |  | [optional] 
-**cFbpPlayerNumberOfAssists** | **Number** |  | [optional] 
-**cFbpPlayerNumberOfGoals** | **Number** |  | [optional] 
-**cFbpPlayerNumberOfMatches** | **Number** |  | [optional] 
-**cFbpPlayerPortrait** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cFbpStatsBackgroundImage** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cFbpStatsNumberOfGoals** | **Number** |  | [optional] 
-**cFbpStatsNumberOfMatches** | **Number** |  | [optional] 
-**cFbpStatsNumberOfPlayers** | **Number** |  | [optional] 
-**cFeatures** | **{String: String}** |  | [optional] 
-**cFolderProduct** | **Boolean** |  | [optional] 
 **cGameGenre** | **[String]** |  | [optional] 
 **cGameRating** | **String** |  | [optional] 
 **cGameSystemType** | **String** |  | [optional] 
-**cGender** | **{String: [String]}** |  | [optional] 
-**cGiftcardStyle** | **String** |  | [optional] 
-**cGiftcardValue** | **String** |  | [optional] 
-**cGoodForApparel** | **[String]** |  | [optional] 
-**cGoodForConditions** | **[String]** |  | [optional] 
-**cGoodForFeel** | **[String]** | Used for good feel data on PDP pages. Currently, possible values are \&quot;Longer, Faster, 24/7\&quot; | [optional] 
-**cGoodForOutdoor** | **[String]** |  | [optional] 
-**cGoodForOutdoorFootwear** | **[String]** |  | [optional] 
-**cGoodForRunning** | **[String]** |  | [optional] 
-**cGoodForType** | **[String]** |  | [optional] 
-**cGoodForWintersports** | **[String]** |  | [optional] 
-**cGoogleProductCategoryID** | **String** | Category ID defined on master product which is send as google-category-id in shopping feed | [optional] 
 **cGpsFeatures** | **[String]** |  | [optional] 
 **cGpsType** | **[String]** |  | [optional] 
 **cGpsWarranty** | **String** |  | [optional] 
-**cHasSalePrice** | **{String: String}** |  | [optional] 
-**cHeavy** | **Boolean** |  | [optional] 
-**cIicCategory** | **{String: String}** | A further refinement of a product category, used for filtering and visual navigation | [optional] 
 **cImageAspectRatio** | **String** |  | [optional] 
-**cIsExpertPick** | **{String: Boolean}** |  | [optional] 
 **cIsNew** | **Boolean** |  | [optional] 
 **cIsNewtest** | **Boolean** | This indiciates if the product is a new arrival. | [optional] 
-**cIsOnlineOnly** | **{String: Boolean}** | Is the product only available online? | [optional] 
-**cIsOutlet** | **{String: Boolean}** |  | [optional] 
 **cIsSale** | **Boolean** | This is the help text. It is used for sorting rules. | [optional] 
 **cKidsAge** | **String** | Kids Age used for search refinements | [optional] 
 **cLength** | **String** | This attribute is used for mens and womens pants lengths. | [optional] 
 **cLensAperture** | **String** |  | [optional] 
-**cLocalSize** | **String** |  | [optional] 
-**cLocalSizeFormat** | **String** |  | [optional] 
-**cMaterial** | **{String: String}** |  | [optional] 
 **cMaterialTest** | **[String]** |  | [optional] 
 **cMediaFormat** | **[String]** | Media Format | [optional] 
 **cMemorySize** | **String** | Memory Size | [optional] 
 **cMemoryType** | **[String]** |  | [optional] 
-**cModel** | **String** | A model of a particular product, e.g. Air Force 1 (from Nike), Ultraboost (from Adidas) | [optional] 
 **cMusicStorage** | **String** |  | [optional] 
-**cNoOffLoyaltyPoints** | **Number** |  | [optional] 
 **cOpticalZoom** | **String** |  | [optional] 
 **cOuterwearType** | **String** | Type of Outerwear for search refinement | [optional] 
-**cPlayer** | **String** |  | [optional] 
 **cPortableAudioType** | **[String]** |  | [optional] 
-**cPrint** | **String** |  | [optional] 
-**cProductAtmosphericImage** | [**{String: MediaFile}**](MediaFile.md) |  | [optional] 
-**cProductCardBadgeBackgroundColor** | **String** | The field must be in hexadecimal number format colors (#000- black, #fff - white, #ec1d24 - red), If a non-hexadecimal number format for colors is given, the badge will not display. | [optional] 
-**cProductCardBadgeFontColor** | **String** | The field must be in hexadecimal number format colors (#000- black, #fff - white, #ec1d24 - red), If a non-hexadecimal number format for colors is given, the badge will not display. | [optional] 
-**cProductCardBadgeText** | **{String: String}** | If the field is empty, the badge will not display. | [optional] 
-**cProductGroup** | **String** |  | [optional] 
-**cProductSetPriceText** | **{String: String}** |  | [optional] 
-**cProductType** | **{String: String}** |  | [optional] 
-**cProductVideo** | **String** |  | [optional] 
-**cProductVideoThumbnail** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cProductVideoType** | **String** |  | [optional] 
-**cPronation** | **{String: String}** | An attribute used for shoes in order to describe the walking/running motion it promotes | [optional] 
 **cRefinementColor** | **String** |  | [optional] 
 **cResolution** | **String** |  | [optional] 
-**cRunningShoeCushioning** | **[String]** |  | [optional] 
-**cRunningShoeSupport** | **[String]** |  | [optional] 
-**cRunningShoeSurface** | **[String]** |  | [optional] 
 **cSandalType** | **String** | Type of Sandal for search refinement | [optional] 
 **cSheets** | **[String]** | test attribute | [optional] 
 **cShoeType** | **String** | Type of Shoe for search refinements | [optional] 
 **cSize** | **String** | This attribute is used for all footwear, apparel and accessory sizing for men, women and kids products. | [optional] 
-**cSizeGuide** | **{String: String}** |  | [optional] 
 **cSkinConcern** | **[String]** |  | [optional] 
-**cSpecifications** | **{String: String}** |  | [optional] 
-**cSpecificationsArchType** | **{String: String}** |  | [optional] 
-**cSpecificationsFit** | **{String: String}** |  | [optional] 
-**cSpecificationsHeight** | **{String: String}** |  | [optional] 
-**cSpecificationsLength** | **{String: String}** |  | [optional] 
-**cSpecificationsWeight** | **{String: String}** |  | [optional] 
-**cSports** | **{String: [String]}** |  | [optional] 
 **cStyleNumber** | **String** |  | [optional] 
-**cSubbrand** | **String** |  | [optional] 
-**cSurface** | **{String: String}** |  | [optional] 
 **cTabDescription** | [**MarkupText**](MarkupText.md) |  | [optional] 
 **cTabDetails** | [**MarkupText**](MarkupText.md) |  | [optional] 
-**cTaxClassId** | **{String: String}** |  | [optional] 
-**cTeam** | **{String: String}** |  | [optional] 
 **cTest** | [**MarkupText**](MarkupText.md) |  | [optional] 
-**cTestDate** | **Date** |  | [optional] 
 **cTopType** | **String** | Type of tops in clothing | [optional] 
-**cTurntoAverageRating** | **{String: String}** | Average TurnTo rating score for the product | [optional] 
-**cTurntoCommentCount** | **{String: Number}** | Number of comments for the product | [optional] 
-**cTurntoDisableCategoryCommentTeaser** | **Boolean** | Disables the number of buyer comments for this product on the category and search pages | [optional] 
-**cTurntoDisableCategoryReviewTeaser** | **Boolean** | Disables the number of reviews for this product on the category and search pages | [optional] 
-**cTurntoRelatedReviewCount** | **{String: Number}** | Number of related reviews for the product | [optional] 
-**cTurntoReviewCount** | **{String: Number}** | Number of reviews for the product | [optional] 
-**cTurntoUserGeneratedContent** | **{String: String}** | User Generated Content for the product, imported from the feed | [optional] 
 **cTvSignalFormat** | **String** |  | [optional] 
 **cTvSize** | **String** |  | [optional] 
 **cTvType** | **String** |  | [optional] 
 **cTvWarranty** | **String** |  | [optional] 
-**cUspBullet1** | **{String: String}** |  | [optional] 
-**cUspBullet2** | **{String: String}** |  | [optional] 
-**cUspBullet3** | **{String: String}** |  | [optional] 
-**cUspBullet4** | **{String: String}** |  | [optional] 
-**cUspBullet5** | **{String: String}** |  | [optional] 
-**cUspBullet6** | **{String: String}** |  | [optional] 
-**cUspImage1Desktop** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cUspImage1Mobile** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cUspImage2Desktop** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cUspImage2Mobile** | [**MediaFile**](MediaFile.md) |  | [optional] 
-**cUspText1** | **{String: String}** |  | [optional] 
-**cUspText2** | **{String: String}** |  | [optional] 
 **cVideoStorage** | **String** |  | [optional] 
 **cWaist** | **String** | Attribute used for apparel waist sizing. | [optional] 
-**cWashingInstructions** | **{String: String}** |  | [optional] 
 **cWidth** | **String** | This attribute is used for shoe widths for mens, womens and kids. | [optional] 
 **classificationCategory** | [**CatalogCategoryId**](CatalogCategoryId.md) |  | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
@@ -233,39 +111,22 @@ Name | Type | Description | Notes
 
 
 
-## Enum: {String: Number}
+## Enum: [CBootTypeEnum]
 
 
-* `1` (value: `1`)
+* `0010` (value: `"0010"`)
 
-* `2` (value: `2`)
+* `0020` (value: `"0020"`)
 
-* `3` (value: `3`)
+* `0030` (value: `"0030"`)
 
-* `4` (value: `4`)
+* `0040` (value: `"0040"`)
 
-* `5` (value: `5`)
+* `0050` (value: `"0050"`)
 
-* `6` (value: `6`)
+* `0060` (value: `"0060"`)
 
-* `7` (value: `7`)
-
-* `8` (value: `8`)
-
-* `9` (value: `9`)
-
-* `10` (value: `10`)
-
-
-
-
-
-## Enum: CBackgroundColorEnum
-
-
-* `white` (value: `"white"`)
-
-* `gray` (value: `"gray"`)
+* `0070` (value: `"0070"`)
 
 
 
@@ -352,30 +213,6 @@ Name | Type | Description | Notes
 * `0270` (value: `"0270"`)
 
 * `0280` (value: `"0280"`)
-
-
-
-
-
-## Enum: CFbpBlockColorEnum
-
-
-* `black` (value: `"black"`)
-
-* `blue` (value: `"blue"`)
-
-* `gray` (value: `"gray"`)
-
-* `red` (value: `"red"`)
-
-
-
-
-
-## Enum: {String: String}
-
-
-* `bayernmunchen` (value: `"bayernmunchen"`)
 
 
 
@@ -585,17 +422,6 @@ Name | Type | Description | Notes
 * `0020` (value: `"0020"`)
 
 * `0030` (value: `"0030"`)
-
-
-
-
-
-## Enum: CProductVideoTypeEnum
-
-
-* `youtube` (value: `"youtube"`)
-
-* `vimeo` (value: `"vimeo"`)
 
 
 

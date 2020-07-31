@@ -65,9 +65,6 @@
       if (data.hasOwnProperty('assignment_information')) {
         obj['assignment_information'] = PromotionAssignmentInformation.constructFromObject(data['assignment_information']);
       }
-      if (data.hasOwnProperty('c_dontApplyLoyalty')) {
-        obj['c_dontApplyLoyalty'] = ApiClient.convertToType(data['c_dontApplyLoyalty'], 'Boolean');
-      }
       if (data.hasOwnProperty('callout_msg')) {
         obj['callout_msg'] = ApiClient.convertToType(data['callout_msg'], {'String': MarkupText});
       }
@@ -117,10 +114,6 @@
    * @member {module:model/PromotionAssignmentInformation} assignment_information
    */
   exports.prototype['assignment_information'] = undefined;
-  /**
-   * @member {Boolean} c_dontApplyLoyalty
-   */
-  exports.prototype['c_dontApplyLoyalty'] = undefined;
   /**
    * The localized callout message of the promotion.
    * @member {Object.<String, module:model/MarkupText>} callout_msg

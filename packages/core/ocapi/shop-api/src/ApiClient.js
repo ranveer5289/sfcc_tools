@@ -46,9 +46,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://dev14-global-iic.demandware.net/s/-/dw/shop/20.4
+     * @default http://demo-ocapi.demandware.net/s/-/dw/shop/20.4
      */
-    this.basePath = 'http://dev14-global-iic.demandware.net/s/-/dw/shop/20.4'.replace(/\/+$/, '');
+    this.basePath = 'http://demo-ocapi.demandware.net/s/-/dw/shop/20.4'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -592,7 +592,7 @@
     exports.hostSettings = function() {
         return [
             {
-              'url': "//dev14-global-iic.demandware.net/s/-/dw/shop/20.4",
+              'url': "//demo-ocapi.demandware.net/s/-/dw/shop/20.4",
               'description': "No description provided",
             }
       ];

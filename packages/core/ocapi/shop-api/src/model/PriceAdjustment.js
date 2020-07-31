@@ -62,12 +62,6 @@
       if (data.hasOwnProperty('applied_discount')) {
         obj['applied_discount'] = Discount.constructFromObject(data['applied_discount']);
       }
-      if (data.hasOwnProperty('c_dontApplyLoyalty')) {
-        obj['c_dontApplyLoyalty'] = ApiClient.convertToType(data['c_dontApplyLoyalty'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_type')) {
-        obj['c_type'] = ApiClient.convertToType(data['c_type'], 'String');
-      }
       if (data.hasOwnProperty('coupon_code')) {
         obj['coupon_code'] = ApiClient.convertToType(data['coupon_code'], 'String');
       }
@@ -112,14 +106,6 @@
    * @member {module:model/Discount} applied_discount
    */
   exports.prototype['applied_discount'] = undefined;
-  /**
-   * @member {Boolean} c_dontApplyLoyalty
-   */
-  exports.prototype['c_dontApplyLoyalty'] = undefined;
-  /**
-   * @member {String} c_type
-   */
-  exports.prototype['c_type'] = undefined;
   /**
    * The coupon code that triggered the promotion, provided  the price adjustment was created as the result of a promotion  being triggered by a coupon.
    * @member {String} coupon_code

@@ -65,27 +65,6 @@
       if (data.hasOwnProperty('address2')) {
         obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
       }
-      if (data.hasOwnProperty('c_addressAddition')) {
-        obj['c_addressAddition'] = ApiClient.convertToType(data['c_addressAddition'], 'String');
-      }
-      if (data.hasOwnProperty('c_alternativeAddress2')) {
-        obj['c_alternativeAddress2'] = ApiClient.convertToType(data['c_alternativeAddress2'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNr')) {
-        obj['c_houseNr'] = ApiClient.convertToType(data['c_houseNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNrAddition')) {
-        obj['c_houseNrAddition'] = ApiClient.convertToType(data['c_houseNrAddition'], 'String');
-      }
-      if (data.hasOwnProperty('c_memberNr')) {
-        obj['c_memberNr'] = ApiClient.convertToType(data['c_memberNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_streetName')) {
-        obj['c_streetName'] = ApiClient.convertToType(data['c_streetName'], 'String');
-      }
-      if (data.hasOwnProperty('c_town')) {
-        obj['c_town'] = ApiClient.convertToType(data['c_town'], 'String');
-      }
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
       }
@@ -151,35 +130,6 @@
    * @member {String} address2
    */
   exports.prototype['address2'] = undefined;
-  /**
-   * @member {String} c_addressAddition
-   */
-  exports.prototype['c_addressAddition'] = undefined;
-  /**
-   * Because of the fact that address2 exists, this custom attribute created
-   * @member {String} c_alternativeAddress2
-   */
-  exports.prototype['c_alternativeAddress2'] = undefined;
-  /**
-   * @member {String} c_houseNr
-   */
-  exports.prototype['c_houseNr'] = undefined;
-  /**
-   * @member {String} c_houseNrAddition
-   */
-  exports.prototype['c_houseNrAddition'] = undefined;
-  /**
-   * @member {String} c_memberNr
-   */
-  exports.prototype['c_memberNr'] = undefined;
-  /**
-   * @member {String} c_streetName
-   */
-  exports.prototype['c_streetName'] = undefined;
-  /**
-   * @member {String} c_town
-   */
-  exports.prototype['c_town'] = undefined;
   /**
    * The city.
    * @member {String} city
@@ -274,155 +224,35 @@
    */
   exports.CountryCodeEnum = {
     /**
-     * value: "SK"
-     * @const
-     */
-    "SK": "SK",
-    /**
-     * value: "DK"
-     * @const
-     */
-    "DK": "DK",
-    /**
-     * value: "ES"
-     * @const
-     */
-    "ES": "ES",
-    /**
-     * value: "NL"
-     * @const
-     */
-    "NL": "NL",
-    /**
      * value: "US"
      * @const
      */
     "US": "US",
-    /**
-     * value: "GR"
-     * @const
-     */
-    "GR": "GR",
-    /**
-     * value: "CY"
-     * @const
-     */
-    "CY": "CY",
-    /**
-     * value: "BG"
-     * @const
-     */
-    "BG": "BG",
-    /**
-     * value: "RO"
-     * @const
-     */
-    "RO": "RO",
-    /**
-     * value: "CZ"
-     * @const
-     */
-    "CZ": "CZ",
-    /**
-     * value: "AT"
-     * @const
-     */
-    "AT": "AT",
-    /**
-     * value: "HU"
-     * @const
-     */
-    "HU": "HU",
-    /**
-     * value: "TR"
-     * @const
-     */
-    "TR": "TR",
-    /**
-     * value: "UK"
-     * @const
-     */
-    "UK": "UK",
-    /**
-     * value: "SE"
-     * @const
-     */
-    "SE": "SE",
-    /**
-     * value: "SI"
-     * @const
-     */
-    "SI": "SI",
-    /**
-     * value: "PT"
-     * @const
-     */
-    "PT": "PT",
-    /**
-     * value: "PL"
-     * @const
-     */
-    "PL": "PL",
-    /**
-     * value: "MT"
-     * @const
-     */
-    "MT": "MT",
-    /**
-     * value: "LT"
-     * @const
-     */
-    "LT": "LT",
-    /**
-     * value: "LV"
-     * @const
-     */
-    "LV": "LV",
-    /**
-     * value: "IT"
-     * @const
-     */
-    "IT": "IT",
-    /**
-     * value: "IE"
-     * @const
-     */
-    "IE": "IE",
-    /**
-     * value: "DE"
-     * @const
-     */
-    "DE": "DE",
     /**
      * value: "FR"
      * @const
      */
     "FR": "FR",
     /**
-     * value: "FI"
+     * value: "IT"
      * @const
      */
-    "FI": "FI",
+    "IT": "IT",
     /**
-     * value: "EE"
+     * value: "JP"
      * @const
      */
-    "EE": "EE",
+    "JP": "JP",
     /**
-     * value: "BE"
+     * value: "CN"
      * @const
      */
-    "BE": "BE",
+    "CN": "CN",
     /**
-     * value: "HR"
+     * value: "GB"
      * @const
      */
-    "HR": "HR",
-    /**
-     * value: "NO"
-     * @const
-     */
-    "NO": "NO"  };
+    "GB": "GB"  };
 
 
   return exports;

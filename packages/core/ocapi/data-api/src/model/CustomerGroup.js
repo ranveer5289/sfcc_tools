@@ -59,12 +59,6 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_priceBookID')) {
-        obj['c_priceBookID'] = ApiClient.convertToType(data['c_priceBookID'], 'String');
-      }
-      if (data.hasOwnProperty('c_priceBookIds')) {
-        obj['c_priceBookIds'] = ApiClient.convertToType(data['c_priceBookIds'], ['String']);
-      }
       if (data.hasOwnProperty('creation_date')) {
         obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
       }
@@ -96,15 +90,6 @@
     return obj;
   }
 
-  /**
-   * Member Pricebook ID assigned to the Customer Group
-   * @member {String} c_priceBookID
-   */
-  exports.prototype['c_priceBookID'] = undefined;
-  /**
-   * @member {Array.<String>} c_priceBookIds
-   */
-  exports.prototype['c_priceBookIds'] = undefined;
   /**
    * Returns the value of attribute 'creationDate'.
    * @member {Date} creation_date

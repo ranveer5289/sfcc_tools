@@ -77,26 +77,8 @@
       if (data.hasOwnProperty('bonus_discount_line_items')) {
         obj['bonus_discount_line_items'] = ApiClient.convertToType(data['bonus_discount_line_items'], [BonusDiscountLineItem]);
       }
-      if (data.hasOwnProperty('c_deliveryStoreID')) {
-        obj['c_deliveryStoreID'] = ApiClient.convertToType(data['c_deliveryStoreID'], 'String');
-      }
-      if (data.hasOwnProperty('c_deliveryStoreName')) {
-        obj['c_deliveryStoreName'] = ApiClient.convertToType(data['c_deliveryStoreName'], 'String');
-      }
-      if (data.hasOwnProperty('c_points')) {
-        obj['c_points'] = ApiClient.convertToType(data['c_points'], 'Number');
-      }
-      if (data.hasOwnProperty('c_servicePointID')) {
-        obj['c_servicePointID'] = ApiClient.convertToType(data['c_servicePointID'], 'String');
-      }
-      if (data.hasOwnProperty('c_servicePointStoreName')) {
-        obj['c_servicePointStoreName'] = ApiClient.convertToType(data['c_servicePointStoreName'], 'String');
-      }
       if (data.hasOwnProperty('c_sessionAddressBook')) {
         obj['c_sessionAddressBook'] = ApiClient.convertToType(data['c_sessionAddressBook'], 'String');
-      }
-      if (data.hasOwnProperty('c_tasCustomData')) {
-        obj['c_tasCustomData'] = ApiClient.convertToType(data['c_tasCustomData'], 'String');
       }
       if (data.hasOwnProperty('channel_type')) {
         obj['channel_type'] = ApiClient.convertToType(data['channel_type'], 'String');
@@ -201,34 +183,9 @@
    */
   exports.prototype['bonus_discount_line_items'] = undefined;
   /**
-   * @member {String} c_deliveryStoreID
-   */
-  exports.prototype['c_deliveryStoreID'] = undefined;
-  /**
-   * @member {String} c_deliveryStoreName
-   */
-  exports.prototype['c_deliveryStoreName'] = undefined;
-  /**
-   * @member {Number} c_points
-   */
-  exports.prototype['c_points'] = undefined;
-  /**
-   * @member {String} c_servicePointID
-   */
-  exports.prototype['c_servicePointID'] = undefined;
-  /**
-   * @member {String} c_servicePointStoreName
-   */
-  exports.prototype['c_servicePointStoreName'] = undefined;
-  /**
    * @member {String} c_sessionAddressBook
    */
   exports.prototype['c_sessionAddressBook'] = undefined;
-  /**
-   * Attribute used by TAS to send additional information needed by OIL
-   * @member {String} c_tasCustomData
-   */
-  exports.prototype['c_tasCustomData'] = undefined;
   /**
    * The sales channel for the order.    This is a read-only attribute that can't be modified by an OCAPI call. For OCAPI, the sales channel is determined  based on the client ID and token used for the OCAPI call. Usually, a customer-based authentication sets the  channel to Storefront, and an agent-based authentication sets it to CallCenter. Using applications that use other  client IDs for OCAPI calls, like Customer Service Center, will set different channel types. To modify the channel  type in OCAPI, use a hook. *  
    * @member {module:model/Basket.ChannelTypeEnum} channel_type

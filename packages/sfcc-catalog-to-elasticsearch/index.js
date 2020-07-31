@@ -20,8 +20,8 @@ async function parse() {
             await client.createIndex();
         }
 
-        // CSVParser.parseCSV(client, { filePath: './parser/vd-master-catalog.csv' });
-        XMLParser.parseXML(client, { filePath: './vd-all.xml' });
+        // CSVParser.parseCSV(client, { filePath: './parser/master-catalog.csv' });
+        XMLParser.parseXML(client, { filePath: './master-catalog.xml' });
     } catch (error) {
         console.log(error);
     }

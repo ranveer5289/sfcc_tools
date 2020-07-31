@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cDontApplyLoyalty** | **Boolean** |  | [optional] 
 **calloutMsg** | **String** | The localized call-out message of the promotion. | [optional] 
 **link** | **String** |  | [optional] 
 **name** | **String** | The localized name of the promotion. | [optional] 

@@ -5,10 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assignmentInformation** | [**SlotConfigurationAssignmentInformation**](SlotConfigurationAssignmentInformation.md) |  | [optional] 
-**cAttributeID** | **String** |  | [optional] 
-**cCategoryID** | **String** |  | [optional] 
-**cJustDroppedTitle** | **String** |  | [optional] 
-**cType** | **String** |  | [optional] 
 **calloutMsg** | [**{String: MarkupText}**](MarkupText.md) | The call out message. | [optional] 
 **configurationId** | **String** | The id of this configuration. | 
 **context** | **String** | The context of the slot. Ignored in input documents. | 
@@ -26,17 +22,6 @@ Name | Type | Description | Notes
 **slotId** | **String** | The ID of the slot. Ignored in input documents. | 
 **template** | **String** | The template. | [optional] 
 **uuid** | **String** | The uuid of the slot configuration. This property cannot be written  and is ignored in input documents. | [optional] [readonly] 
-
-
-
-## Enum: CTypeEnum
-
-
-* `list` (value: `"list"`)
-
-* `abc` (value: `"abc"`)
-
-
 
 
 

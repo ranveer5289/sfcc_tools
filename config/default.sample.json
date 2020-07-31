@@ -11,6 +11,7 @@
             "ocapi_client_secret": "",
             "ocapi_data_api_url": "https://abc.demandware.net/s/-/dw/data/v20_4/",
             "ocapi_shop_api_url": "https://abc.demandware.net/s/%s/dw/shop/v20_4/",
+            "ocapi_meta_api_url": "https://demo-ocapi.demandware.net/s/-/dw/meta/v99_9/rest/%s/20.4",
             "sfcc_site_id": "site_id"
         },
         "sfcc-catalog-to-elasticsearch" : {

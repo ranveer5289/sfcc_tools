@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocation** | [**ProductInventoryRecordAllocation**](ProductInventoryRecordAllocation.md) |  | [optional] 
 **ats** | **Number** | The quantity of items available to sell (ATS). This is calculated as the  allocation plus the preorderBackorderAllocation minus the turnover. | [optional] 
-**cShippingTime** | **String** |  | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **inStockDate** | **Date** | The date that the item is expected to be in stock. | [optional] 
 **inventoryListId** | **String** | The user supplied ID of the inventory list. | [optional] 

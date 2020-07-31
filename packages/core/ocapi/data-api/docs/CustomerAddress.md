@@ -7,15 +7,6 @@ Name | Type | Description | Notes
 **address1** | **String** | The customer&#39;s first address. | [optional] 
 **address2** | **String** | The customer&#39;s second address value. | [optional] 
 **addressId** | **String** | The customer address id. | 
-**cAddressAddition** | **String** |  | [optional] 
-**cAlternativeAddress2** | **String** | Because of the fact that address2 exists, this custom attribute created | [optional] 
-**cCountryCode** | **String** |  | 
-**cCustomerServiceAddressId** | **String** |  | [optional] 
-**cHouseNr** | **String** |  | [optional] 
-**cHouseNrAddition** | **String** |  | [optional] 
-**cMemberNr** | **String** |  | [optional] 
-**cStreetName** | **String** |  | [optional] 
-**cTown** | **String** |  | [optional] 
 **city** | **String** | The customer&#39;s city. | [optional] 
 **companyName** | **String** | The customer&#39;s company name. | [optional] 
 **countryCode** | **String** | The customer&#39;s two-character country code per ISO 3166-1 alpha-2. | 
@@ -38,69 +29,20 @@ Name | Type | Description | Notes
 
 
 
-## Enum: CCountryCodeEnum
-
-
-* `DK` (value: `"DK"`)
-
-* `ES` (value: `"ES"`)
-
-* `NL` (value: `"NL"`)
-
-* `US` (value: `"US"`)
-
-* `GR` (value: `"GR"`)
-
-* `CY` (value: `"CY"`)
-
-* `BG` (value: `"BG"`)
-
-* `RO` (value: `"RO"`)
-
-* `CZ` (value: `"CZ"`)
-
-* `AT` (value: `"AT"`)
-
-* `SK` (value: `"SK"`)
-
-* `HU` (value: `"HU"`)
-
-* `TR` (value: `"TR"`)
-
-
-
-
-
 ## Enum: CountryCodeEnum
 
 
-* `DK` (value: `"DK"`)
-
-* `ES` (value: `"ES"`)
-
-* `NL` (value: `"NL"`)
-
 * `US` (value: `"US"`)
 
-* `GR` (value: `"GR"`)
+* `FR` (value: `"FR"`)
 
-* `CY` (value: `"CY"`)
+* `IT` (value: `"IT"`)
 
-* `BG` (value: `"BG"`)
+* `JP` (value: `"JP"`)
 
-* `RO` (value: `"RO"`)
+* `CN` (value: `"CN"`)
 
-* `CZ` (value: `"CZ"`)
-
-* `AT` (value: `"AT"`)
-
-* `SK` (value: `"SK"`)
-
-* `HU` (value: `"HU"`)
-
-* `TR` (value: `"TR"`)
-
-* `NO` (value: `"NO"`)
+* `GB` (value: `"GB"`)
 
 
 

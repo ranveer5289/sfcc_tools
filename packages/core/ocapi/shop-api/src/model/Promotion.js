@@ -59,9 +59,6 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_dontApplyLoyalty')) {
-        obj['c_dontApplyLoyalty'] = ApiClient.convertToType(data['c_dontApplyLoyalty'], 'Boolean');
-      }
       if (data.hasOwnProperty('callout_msg')) {
         obj['callout_msg'] = ApiClient.convertToType(data['callout_msg'], 'String');
       }
@@ -93,10 +90,6 @@
     return obj;
   }
 
-  /**
-   * @member {Boolean} c_dontApplyLoyalty
-   */
-  exports.prototype['c_dontApplyLoyalty'] = undefined;
   /**
    * The localized call-out message of the promotion.
    * @member {String} callout_msg

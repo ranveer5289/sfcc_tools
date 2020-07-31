@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cDontApplyLoyalty** | **Boolean** |  | [optional] 
-**cType** | **String** |  | [optional] 
 **discount** | [**DiscountRequest**](DiscountRequest.md) |  | [optional] 
 **itemId** | **String** | The item to which the price adjustment should be added, depending on the specified level.  If the level is &#39;order&#39;, you need not specify an item id. If &#39;shipping&#39;, specify the uuid  of the shipping item. If &#39;product&#39;, specify the uuid of the product item. | [optional] 
 **itemText** | **String** | The text describing the item in more detail. | [optional] 

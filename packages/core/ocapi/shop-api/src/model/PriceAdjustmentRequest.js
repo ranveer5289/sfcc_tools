@@ -61,12 +61,6 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_dontApplyLoyalty')) {
-        obj['c_dontApplyLoyalty'] = ApiClient.convertToType(data['c_dontApplyLoyalty'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_type')) {
-        obj['c_type'] = ApiClient.convertToType(data['c_type'], 'String');
-      }
       if (data.hasOwnProperty('discount')) {
         obj['discount'] = DiscountRequest.constructFromObject(data['discount']);
       }
@@ -89,14 +83,6 @@
     return obj;
   }
 
-  /**
-   * @member {Boolean} c_dontApplyLoyalty
-   */
-  exports.prototype['c_dontApplyLoyalty'] = undefined;
-  /**
-   * @member {String} c_type
-   */
-  exports.prototype['c_type'] = undefined;
   /**
    * @member {module:model/DiscountRequest} discount
    */

@@ -61,17 +61,8 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_canonicalUrl')) {
-        obj['c_canonicalUrl'] = ApiClient.convertToType(data['c_canonicalUrl'], 'String');
-      }
       if (data.hasOwnProperty('c_customCSSFile')) {
         obj['c_customCSSFile'] = ApiClient.convertToType(data['c_customCSSFile'], 'String');
-      }
-      if (data.hasOwnProperty('c_extraFlyoutNavbarUrl')) {
-        obj['c_extraFlyoutNavbarUrl'] = ApiClient.convertToType(data['c_extraFlyoutNavbarUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_pageBackgroundColor')) {
-        obj['c_pageBackgroundColor'] = ApiClient.convertToType(data['c_pageBackgroundColor'], 'String');
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -102,22 +93,10 @@
   }
 
   /**
-   * @member {String} c_canonicalUrl
-   */
-  exports.prototype['c_canonicalUrl'] = undefined;
-  /**
    * Use this attribute to apply custom styles for this category.
    * @member {String} c_customCSSFile
    */
   exports.prototype['c_customCSSFile'] = undefined;
-  /**
-   * @member {String} c_extraFlyoutNavbarUrl
-   */
-  exports.prototype['c_extraFlyoutNavbarUrl'] = undefined;
-  /**
-   * @member {module:model/ContentFolder.CPageBackgroundColorEnum} c_pageBackgroundColor
-   */
-  exports.prototype['c_pageBackgroundColor'] = undefined;
   /**
    * The localized content folder description.
    * @member {String} description
@@ -159,23 +138,6 @@
    */
   exports.prototype['parent_folder_id'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>c_pageBackgroundColor</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.CPageBackgroundColorEnum = {
-    /**
-     * value: "white"
-     * @const
-     */
-    "white": "white",
-    /**
-     * value: "black"
-     * @const
-     */
-    "black": "black"  };
 
 
   return exports;

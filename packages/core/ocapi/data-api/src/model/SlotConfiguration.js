@@ -70,18 +70,6 @@
       if (data.hasOwnProperty('assignment_information')) {
         obj['assignment_information'] = SlotConfigurationAssignmentInformation.constructFromObject(data['assignment_information']);
       }
-      if (data.hasOwnProperty('c_attributeID')) {
-        obj['c_attributeID'] = ApiClient.convertToType(data['c_attributeID'], 'String');
-      }
-      if (data.hasOwnProperty('c_categoryID')) {
-        obj['c_categoryID'] = ApiClient.convertToType(data['c_categoryID'], 'String');
-      }
-      if (data.hasOwnProperty('c_justDroppedTitle')) {
-        obj['c_justDroppedTitle'] = ApiClient.convertToType(data['c_justDroppedTitle'], 'String');
-      }
-      if (data.hasOwnProperty('c_type')) {
-        obj['c_type'] = ApiClient.convertToType(data['c_type'], 'String');
-      }
       if (data.hasOwnProperty('callout_msg')) {
         obj['callout_msg'] = ApiClient.convertToType(data['callout_msg'], {'String': MarkupText});
       }
@@ -141,22 +129,6 @@
    * @member {module:model/SlotConfigurationAssignmentInformation} assignment_information
    */
   exports.prototype['assignment_information'] = undefined;
-  /**
-   * @member {String} c_attributeID
-   */
-  exports.prototype['c_attributeID'] = undefined;
-  /**
-   * @member {String} c_categoryID
-   */
-  exports.prototype['c_categoryID'] = undefined;
-  /**
-   * @member {String} c_justDroppedTitle
-   */
-  exports.prototype['c_justDroppedTitle'] = undefined;
-  /**
-   * @member {module:model/SlotConfiguration.CTypeEnum} c_type
-   */
-  exports.prototype['c_type'] = undefined;
   /**
    * The call out message.
    * @member {Object.<String, module:model/MarkupText>} callout_msg
@@ -241,23 +213,6 @@
    */
   exports.prototype['uuid'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>c_type</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.CTypeEnum = {
-    /**
-     * value: "list"
-     * @const
-     */
-    "list": "list",
-    /**
-     * value: "abc"
-     * @const
-     */
-    "abc": "abc"  };
 
   /**
    * Allowed values for the <code>context</code> property.

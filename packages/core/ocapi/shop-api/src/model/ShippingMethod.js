@@ -43,13 +43,13 @@
    * Document representing a shipping method.
    * @alias module:model/ShippingMethod
    * @class
-   * @param cFulfilmentCode {String} 
+   * @param cStorePickupEnabled {Boolean} 
    * @param id {String} The shipping method id.
    */
-  var exports = function(cFulfilmentCode, id) {
+  var exports = function(cStorePickupEnabled, id) {
     var _this = this;
 
-    _this['c_fulfilmentCode'] = cFulfilmentCode;
+    _this['c_storePickupEnabled'] = cStorePickupEnabled;
     _this['id'] = id;
   };
 
@@ -63,30 +63,6 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_deliveryTime')) {
-        obj['c_deliveryTime'] = ApiClient.convertToType(data['c_deliveryTime'], 'String');
-      }
-      if (data.hasOwnProperty('c_estimatedArrivalTime')) {
-        obj['c_estimatedArrivalTime'] = ApiClient.convertToType(data['c_estimatedArrivalTime'], 'String');
-      }
-      if (data.hasOwnProperty('c_excludeProductAttribute')) {
-        obj['c_excludeProductAttribute'] = ApiClient.convertToType(data['c_excludeProductAttribute'], 'String');
-      }
-      if (data.hasOwnProperty('c_excludeProductAttributeValue')) {
-        obj['c_excludeProductAttributeValue'] = ApiClient.convertToType(data['c_excludeProductAttributeValue'], 'String');
-      }
-      if (data.hasOwnProperty('c_excludedPaymentMethods')) {
-        obj['c_excludedPaymentMethods'] = ApiClient.convertToType(data['c_excludedPaymentMethods'], ['String']);
-      }
-      if (data.hasOwnProperty('c_fulfilmentCode')) {
-        obj['c_fulfilmentCode'] = ApiClient.convertToType(data['c_fulfilmentCode'], 'String');
-      }
-      if (data.hasOwnProperty('c_isBusinessShipping')) {
-        obj['c_isBusinessShipping'] = ApiClient.convertToType(data['c_isBusinessShipping'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_pickupPointType')) {
-        obj['c_pickupPointType'] = ApiClient.convertToType(data['c_pickupPointType'], 'String');
-      }
       if (data.hasOwnProperty('c_storePickupEnabled')) {
         obj['c_storePickupEnabled'] = ApiClient.convertToType(data['c_storePickupEnabled'], 'Boolean');
       }
@@ -112,39 +88,6 @@
     return obj;
   }
 
-  /**
-   * @member {String} c_deliveryTime
-   */
-  exports.prototype['c_deliveryTime'] = undefined;
-  /**
-   * Estimated days until delivery
-   * @member {String} c_estimatedArrivalTime
-   */
-  exports.prototype['c_estimatedArrivalTime'] = undefined;
-  /**
-   * @member {String} c_excludeProductAttribute
-   */
-  exports.prototype['c_excludeProductAttribute'] = undefined;
-  /**
-   * @member {String} c_excludeProductAttributeValue
-   */
-  exports.prototype['c_excludeProductAttributeValue'] = undefined;
-  /**
-   * @member {Array.<String>} c_excludedPaymentMethods
-   */
-  exports.prototype['c_excludedPaymentMethods'] = undefined;
-  /**
-   * @member {String} c_fulfilmentCode
-   */
-  exports.prototype['c_fulfilmentCode'] = undefined;
-  /**
-   * @member {Boolean} c_isBusinessShipping
-   */
-  exports.prototype['c_isBusinessShipping'] = undefined;
-  /**
-   * @member {module:model/ShippingMethod.CPickupPointTypeEnum} c_pickupPointType
-   */
-  exports.prototype['c_pickupPointType'] = undefined;
   /**
    * @member {Boolean} c_storePickupEnabled
    */
@@ -180,28 +123,6 @@
    */
   exports.prototype['shipping_promotions'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>c_pickupPointType</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.CPickupPointTypeEnum = {
-    /**
-     * value: "GLS"
-     * @const
-     */
-    "GLS": "GLS",
-    /**
-     * value: "Redyser"
-     * @const
-     */
-    "Redyser": "Redyser",
-    /**
-     * value: "PostNord"
-     * @const
-     */
-    "PostNord": "PostNord"  };
 
 
   return exports;

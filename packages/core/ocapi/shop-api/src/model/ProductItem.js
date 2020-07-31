@@ -76,29 +76,8 @@
       if (data.hasOwnProperty('bundled_product_items')) {
         obj['bundled_product_items'] = ApiClient.convertToType(data['bundled_product_items'], [ProductItem]);
       }
-      if (data.hasOwnProperty('c_EAN')) {
-        obj['c_EAN'] = ApiClient.convertToType(data['c_EAN'], 'String');
-      }
-      if (data.hasOwnProperty('c_OSP')) {
-        obj['c_OSP'] = ApiClient.convertToType(data['c_OSP'], 'Number');
-      }
-      if (data.hasOwnProperty('c_bonusProductLineItemUUID')) {
-        obj['c_bonusProductLineItemUUID'] = ApiClient.convertToType(data['c_bonusProductLineItemUUID'], 'String');
-      }
       if (data.hasOwnProperty('c_fromStoreId')) {
         obj['c_fromStoreId'] = ApiClient.convertToType(data['c_fromStoreId'], 'String');
-      }
-      if (data.hasOwnProperty('c_heavy')) {
-        obj['c_heavy'] = ApiClient.convertToType(data['c_heavy'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_loyaltyPointsNumber')) {
-        obj['c_loyaltyPointsNumber'] = ApiClient.convertToType(data['c_loyaltyPointsNumber'], 'Number');
-      }
-      if (data.hasOwnProperty('c_points')) {
-        obj['c_points'] = ApiClient.convertToType(data['c_points'], 'Number');
-      }
-      if (data.hasOwnProperty('c_preOrderUUID')) {
-        obj['c_preOrderUUID'] = ApiClient.convertToType(data['c_preOrderUUID'], 'String');
       }
       if (data.hasOwnProperty('gift')) {
         obj['gift'] = ApiClient.convertToType(data['gift'], 'Boolean');
@@ -190,40 +169,10 @@
    */
   exports.prototype['bundled_product_items'] = undefined;
   /**
-   * @member {String} c_EAN
-   */
-  exports.prototype['c_EAN'] = undefined;
-  /**
-   * @member {Number} c_OSP
-   */
-  exports.prototype['c_OSP'] = undefined;
-  /**
-   * This represents the UUID of the product line item that holds the qualifying product.
-   * @member {String} c_bonusProductLineItemUUID
-   */
-  exports.prototype['c_bonusProductLineItemUUID'] = undefined;
-  /**
    * Links the store to the product line item for grouping shipments in the checkout process.
    * @member {String} c_fromStoreId
    */
   exports.prototype['c_fromStoreId'] = undefined;
-  /**
-   * @member {Boolean} c_heavy
-   */
-  exports.prototype['c_heavy'] = undefined;
-  /**
-   * @member {Number} c_loyaltyPointsNumber
-   */
-  exports.prototype['c_loyaltyPointsNumber'] = undefined;
-  /**
-   * @member {Number} c_points
-   */
-  exports.prototype['c_points'] = undefined;
-  /**
-   * this custom attribute captures the original product line item uuid before it is part of an placed order
-   * @member {String} c_preOrderUUID
-   */
-  exports.prototype['c_preOrderUUID'] = undefined;
   /**
    * Returns true if the item is a gift.
    * @member {Boolean} gift

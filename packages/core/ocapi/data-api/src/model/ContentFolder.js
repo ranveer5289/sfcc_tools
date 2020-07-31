@@ -59,17 +59,8 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('c_canonicalUrl')) {
-        obj['c_canonicalUrl'] = ApiClient.convertToType(data['c_canonicalUrl'], {'String': 'String'});
-      }
       if (data.hasOwnProperty('c_customCSSFile')) {
         obj['c_customCSSFile'] = MediaFile.constructFromObject(data['c_customCSSFile']);
-      }
-      if (data.hasOwnProperty('c_extraFlyoutNavbarUrl')) {
-        obj['c_extraFlyoutNavbarUrl'] = ApiClient.convertToType(data['c_extraFlyoutNavbarUrl'], 'String');
-      }
-      if (data.hasOwnProperty('c_pageBackgroundColor')) {
-        obj['c_pageBackgroundColor'] = ApiClient.convertToType(data['c_pageBackgroundColor'], {'String': 'String'});
       }
       if (data.hasOwnProperty('creation_date')) {
         obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
@@ -121,21 +112,9 @@
   }
 
   /**
-   * @member {Object.<String, String>} c_canonicalUrl
-   */
-  exports.prototype['c_canonicalUrl'] = undefined;
-  /**
    * @member {module:model/MediaFile} c_customCSSFile
    */
   exports.prototype['c_customCSSFile'] = undefined;
-  /**
-   * @member {String} c_extraFlyoutNavbarUrl
-   */
-  exports.prototype['c_extraFlyoutNavbarUrl'] = undefined;
-  /**
-   * @member {Object.<String, module:model/ContentFolder.InnerEnum>} c_pageBackgroundColor
-   */
-  exports.prototype['c_pageBackgroundColor'] = undefined;
   /**
    * Returns the value of attribute 'creationDate'.
    * @member {Date} creation_date
@@ -212,23 +191,6 @@
    */
   exports.prototype['template'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>inner</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.InnerEnum = {
-    /**
-     * value: "white"
-     * @const
-     */
-    "white": "white",
-    /**
-     * value: "black"
-     * @const
-     */
-    "black": "black"  };
 
 
   return exports;

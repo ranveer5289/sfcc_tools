@@ -5,18 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **birthday** | **Date** | The customer&#39;s birthday. | [optional] 
-**cCreatedInSalesforce** | **Boolean** |  | [optional] 
-**cExternalPassword** | **String** |  | [optional] 
-**cExternalPasswordDate** | **Date** |  | [optional] 
-**cExternalPasswordSalesForceDate** | **Date** |  | [optional] 
 **cFamilyStatus** | **String** |  | [optional] 
-**cLastModifiedTime** | **Date** |  | [optional] 
-**cMemberNr** | **String** |  | [optional] 
-**cMemberNrIndex** | **String** |  | [optional] 
-**cMigratedUser** | **Boolean** |  | [optional] 
-**cReadyToExport** | **Boolean** | IN-5452: Indicates whether a profile has changed and the updated data is ready to be exported to a 3rd-party account management system. | [optional] 
-**cSalt** | **String** |  | [optional] 
-**cSynchedUserWithoutPassword** | **Boolean** |  | [optional] 
 **companyName** | **String** | The customer&#39;s company name. | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 
 **credentials** | [**Credentials**](Credentials.md) |  | [optional] 

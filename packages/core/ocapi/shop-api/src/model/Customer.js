@@ -68,41 +68,8 @@
       if (data.hasOwnProperty('birthday')) {
         obj['birthday'] = ApiClient.convertToType(data['birthday'], 'Date');
       }
-      if (data.hasOwnProperty('c_createdInSalesforce')) {
-        obj['c_createdInSalesforce'] = ApiClient.convertToType(data['c_createdInSalesforce'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_externalPassword')) {
-        obj['c_externalPassword'] = ApiClient.convertToType(data['c_externalPassword'], 'String');
-      }
-      if (data.hasOwnProperty('c_externalPasswordDate')) {
-        obj['c_externalPasswordDate'] = ApiClient.convertToType(data['c_externalPasswordDate'], 'Date');
-      }
-      if (data.hasOwnProperty('c_externalPasswordSalesForceDate')) {
-        obj['c_externalPasswordSalesForceDate'] = ApiClient.convertToType(data['c_externalPasswordSalesForceDate'], 'Date');
-      }
       if (data.hasOwnProperty('c_familyStatus')) {
         obj['c_familyStatus'] = ApiClient.convertToType(data['c_familyStatus'], 'String');
-      }
-      if (data.hasOwnProperty('c_lastModifiedTime')) {
-        obj['c_lastModifiedTime'] = ApiClient.convertToType(data['c_lastModifiedTime'], 'Date');
-      }
-      if (data.hasOwnProperty('c_memberNr')) {
-        obj['c_memberNr'] = ApiClient.convertToType(data['c_memberNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_memberNrIndex')) {
-        obj['c_memberNrIndex'] = ApiClient.convertToType(data['c_memberNrIndex'], 'String');
-      }
-      if (data.hasOwnProperty('c_migratedUser')) {
-        obj['c_migratedUser'] = ApiClient.convertToType(data['c_migratedUser'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_readyToExport')) {
-        obj['c_readyToExport'] = ApiClient.convertToType(data['c_readyToExport'], 'Boolean');
-      }
-      if (data.hasOwnProperty('c_salt')) {
-        obj['c_salt'] = ApiClient.convertToType(data['c_salt'], 'String');
-      }
-      if (data.hasOwnProperty('c_synchedUserWithoutPassword')) {
-        obj['c_synchedUserWithoutPassword'] = ApiClient.convertToType(data['c_synchedUserWithoutPassword'], 'Boolean');
       }
       if (data.hasOwnProperty('company_name')) {
         obj['company_name'] = ApiClient.convertToType(data['company_name'], 'String');
@@ -205,54 +172,9 @@
    */
   exports.prototype['birthday'] = undefined;
   /**
-   * @member {Boolean} c_createdInSalesforce
-   */
-  exports.prototype['c_createdInSalesforce'] = undefined;
-  /**
-   * @member {String} c_externalPassword
-   */
-  exports.prototype['c_externalPassword'] = undefined;
-  /**
-   * @member {Date} c_externalPasswordDate
-   */
-  exports.prototype['c_externalPasswordDate'] = undefined;
-  /**
-   * @member {Date} c_externalPasswordSalesForceDate
-   */
-  exports.prototype['c_externalPasswordSalesForceDate'] = undefined;
-  /**
    * @member {String} c_familyStatus
    */
   exports.prototype['c_familyStatus'] = undefined;
-  /**
-   * @member {Date} c_lastModifiedTime
-   */
-  exports.prototype['c_lastModifiedTime'] = undefined;
-  /**
-   * @member {String} c_memberNr
-   */
-  exports.prototype['c_memberNr'] = undefined;
-  /**
-   * @member {String} c_memberNrIndex
-   */
-  exports.prototype['c_memberNrIndex'] = undefined;
-  /**
-   * @member {Boolean} c_migratedUser
-   */
-  exports.prototype['c_migratedUser'] = undefined;
-  /**
-   * IN-5452: Indicates whether a profile has changed and the updated data is ready to be exported to a 3rd-party account management system.
-   * @member {Boolean} c_readyToExport
-   */
-  exports.prototype['c_readyToExport'] = undefined;
-  /**
-   * @member {String} c_salt
-   */
-  exports.prototype['c_salt'] = undefined;
-  /**
-   * @member {Boolean} c_synchedUserWithoutPassword
-   */
-  exports.prototype['c_synchedUserWithoutPassword'] = undefined;
   /**
    * The customer's company name.
    * @member {String} company_name

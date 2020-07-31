@@ -65,9 +65,6 @@
       if (data.hasOwnProperty('ats')) {
         obj['ats'] = ApiClient.convertToType(data['ats'], 'Number');
       }
-      if (data.hasOwnProperty('c_shippingTime')) {
-        obj['c_shippingTime'] = ApiClient.convertToType(data['c_shippingTime'], 'String');
-      }
       if (data.hasOwnProperty('creation_date')) {
         obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date');
       }
@@ -120,10 +117,6 @@
    * @member {Number} ats
    */
   exports.prototype['ats'] = undefined;
-  /**
-   * @member {String} c_shippingTime
-   */
-  exports.prototype['c_shippingTime'] = undefined;
   /**
    * Returns the value of attribute 'creationDate'.
    * @member {Date} creation_date

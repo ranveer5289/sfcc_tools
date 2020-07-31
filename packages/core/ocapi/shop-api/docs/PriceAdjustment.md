@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appliedDiscount** | [**Discount**](Discount.md) |  | [optional] 
-**cDontApplyLoyalty** | **Boolean** |  | [optional] 
-**cType** | **String** |  | [optional] 
 **couponCode** | **String** | The coupon code that triggered the promotion, provided  the price adjustment was created as the result of a promotion  being triggered by a coupon. | [optional] 
 **createdBy** | **String** | The user who created the price adjustment. | [optional] 
 **creationDate** | **Date** | Returns the value of attribute &#39;creationDate&#39;. | [optional] [readonly] 

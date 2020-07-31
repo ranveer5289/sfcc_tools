@@ -44,15 +44,13 @@
    * @alias module:model/CustomerAddress
    * @class
    * @param addressId {String} The customer address id.
-   * @param cCountryCode {module:model/CustomerAddress.CCountryCodeEnum} 
    * @param countryCode {module:model/CustomerAddress.CountryCodeEnum} The customer's two-character country code per ISO 3166-1 alpha-2.
    * @param lastName {String} The customer's last name.
    */
-  var exports = function(addressId, cCountryCode, countryCode, lastName) {
+  var exports = function(addressId, countryCode, lastName) {
     var _this = this;
 
     _this['address_id'] = addressId;
-    _this['c_country_code'] = cCountryCode;
     _this['country_code'] = countryCode;
     _this['last_name'] = lastName;
   };
@@ -75,33 +73,6 @@
       }
       if (data.hasOwnProperty('address_id')) {
         obj['address_id'] = ApiClient.convertToType(data['address_id'], 'String');
-      }
-      if (data.hasOwnProperty('c_addressAddition')) {
-        obj['c_addressAddition'] = ApiClient.convertToType(data['c_addressAddition'], 'String');
-      }
-      if (data.hasOwnProperty('c_alternativeAddress2')) {
-        obj['c_alternativeAddress2'] = ApiClient.convertToType(data['c_alternativeAddress2'], 'String');
-      }
-      if (data.hasOwnProperty('c_country_code')) {
-        obj['c_country_code'] = ApiClient.convertToType(data['c_country_code'], 'String');
-      }
-      if (data.hasOwnProperty('c_customerServiceAddressId')) {
-        obj['c_customerServiceAddressId'] = ApiClient.convertToType(data['c_customerServiceAddressId'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNr')) {
-        obj['c_houseNr'] = ApiClient.convertToType(data['c_houseNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_houseNrAddition')) {
-        obj['c_houseNrAddition'] = ApiClient.convertToType(data['c_houseNrAddition'], 'String');
-      }
-      if (data.hasOwnProperty('c_memberNr')) {
-        obj['c_memberNr'] = ApiClient.convertToType(data['c_memberNr'], 'String');
-      }
-      if (data.hasOwnProperty('c_streetName')) {
-        obj['c_streetName'] = ApiClient.convertToType(data['c_streetName'], 'String');
-      }
-      if (data.hasOwnProperty('c_town')) {
-        obj['c_town'] = ApiClient.convertToType(data['c_town'], 'String');
       }
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
@@ -179,43 +150,6 @@
    * @member {String} address_id
    */
   exports.prototype['address_id'] = undefined;
-  /**
-   * @member {String} c_addressAddition
-   */
-  exports.prototype['c_addressAddition'] = undefined;
-  /**
-   * Because of the fact that address2 exists, this custom attribute created
-   * @member {String} c_alternativeAddress2
-   */
-  exports.prototype['c_alternativeAddress2'] = undefined;
-  /**
-   * @member {module:model/CustomerAddress.CCountryCodeEnum} c_country_code
-   */
-  exports.prototype['c_country_code'] = undefined;
-  /**
-   * @member {String} c_customerServiceAddressId
-   */
-  exports.prototype['c_customerServiceAddressId'] = undefined;
-  /**
-   * @member {String} c_houseNr
-   */
-  exports.prototype['c_houseNr'] = undefined;
-  /**
-   * @member {String} c_houseNrAddition
-   */
-  exports.prototype['c_houseNrAddition'] = undefined;
-  /**
-   * @member {String} c_memberNr
-   */
-  exports.prototype['c_memberNr'] = undefined;
-  /**
-   * @member {String} c_streetName
-   */
-  exports.prototype['c_streetName'] = undefined;
-  /**
-   * @member {String} c_town
-   */
-  exports.prototype['c_town'] = undefined;
   /**
    * The customer's city.
    * @member {String} city
@@ -314,153 +248,41 @@
 
 
   /**
-   * Allowed values for the <code>c_country_code</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.CCountryCodeEnum = {
-    /**
-     * value: "DK"
-     * @const
-     */
-    "DK": "DK",
-    /**
-     * value: "ES"
-     * @const
-     */
-    "ES": "ES",
-    /**
-     * value: "NL"
-     * @const
-     */
-    "NL": "NL",
-    /**
-     * value: "US"
-     * @const
-     */
-    "US": "US",
-    /**
-     * value: "GR"
-     * @const
-     */
-    "GR": "GR",
-    /**
-     * value: "CY"
-     * @const
-     */
-    "CY": "CY",
-    /**
-     * value: "BG"
-     * @const
-     */
-    "BG": "BG",
-    /**
-     * value: "RO"
-     * @const
-     */
-    "RO": "RO",
-    /**
-     * value: "CZ"
-     * @const
-     */
-    "CZ": "CZ",
-    /**
-     * value: "AT"
-     * @const
-     */
-    "AT": "AT",
-    /**
-     * value: "SK"
-     * @const
-     */
-    "SK": "SK",
-    /**
-     * value: "HU"
-     * @const
-     */
-    "HU": "HU",
-    /**
-     * value: "TR"
-     * @const
-     */
-    "TR": "TR"  };
-
-  /**
    * Allowed values for the <code>country_code</code> property.
    * @enum {String}
    * @readonly
    */
   exports.CountryCodeEnum = {
     /**
-     * value: "DK"
-     * @const
-     */
-    "DK": "DK",
-    /**
-     * value: "ES"
-     * @const
-     */
-    "ES": "ES",
-    /**
-     * value: "NL"
-     * @const
-     */
-    "NL": "NL",
-    /**
      * value: "US"
      * @const
      */
     "US": "US",
     /**
-     * value: "GR"
+     * value: "FR"
      * @const
      */
-    "GR": "GR",
+    "FR": "FR",
     /**
-     * value: "CY"
+     * value: "IT"
      * @const
      */
-    "CY": "CY",
+    "IT": "IT",
     /**
-     * value: "BG"
+     * value: "JP"
      * @const
      */
-    "BG": "BG",
+    "JP": "JP",
     /**
-     * value: "RO"
+     * value: "CN"
      * @const
      */
-    "RO": "RO",
+    "CN": "CN",
     /**
-     * value: "CZ"
+     * value: "GB"
      * @const
      */
-    "CZ": "CZ",
-    /**
-     * value: "AT"
-     * @const
-     */
-    "AT": "AT",
-    /**
-     * value: "SK"
-     * @const
-     */
-    "SK": "SK",
-    /**
-     * value: "HU"
-     * @const
-     */
-    "HU": "HU",
-    /**
-     * value: "TR"
-     * @const
-     */
-    "TR": "TR",
-    /**
-     * value: "NO"
-     * @const
-     */
-    "NO": "NO"  };
+    "GB": "GB"  };
 
 
   return exports;
