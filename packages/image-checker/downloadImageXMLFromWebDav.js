@@ -32,7 +32,8 @@ async function listWebDavFiles() {
         const response = await axios({
             url: catalogUrl,
             method: 'PROPFIND',
-            data: '<propfind xmlns="DAV:"><prop><displayname/><getlastmodified/></prop></propfind>',
+            // eslint-disable-next-line max-len
+            // data: '<propfind xmlns="DAV:"><prop><displayname/><getlastmodified/></prop></propfind>',
             headers: { Depth: 'infinity' },
             auth: {
                 username: `${generalConfig.username}`,

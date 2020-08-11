@@ -67,6 +67,7 @@ async function writeExpiredPromotionsInCSV() {
     if (allPromotions && allPromotions.length > 0) {
         console.log(chalk.green(`Total promotions found ${allPromotions.length}`));
 
+        // @TODO: make this configurable
         const offset = 7;
         const date = new Date();
         const offsetDate = new Date(date.getTime() - (offset * 24 * 60 * 60 * 1000));
