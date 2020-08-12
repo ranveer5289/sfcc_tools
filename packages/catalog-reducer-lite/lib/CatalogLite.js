@@ -48,6 +48,7 @@ class CatalogLite {
     writeProducts() {
         const self = this;
         return new Promise(function (resolve, reject) {
+            self.writeCatalogHeader();
             let productsWritten = 0;
             const totalProducts = self.products.length;
             const catalogLiteTransform = xtreamer('product', {});
@@ -61,7 +62,6 @@ class CatalogLite {
                     const productId = xmlObj.product.$['product-id'];
 
                     if (self.products.indexOf(productId) !== -1) {
-                        // const xml = builder.buildObject(xmlObj);
                         self.writeStream.write(`${item.toString()}\n`);
                         productsWritten += 1;
                     }
@@ -69,8 +69,12 @@ class CatalogLite {
                 } else {
                     readStream.destroy();
                     catalogLiteTransform.destroy(); // stop the stream
-                    resolve();
                 }
+            });
+
+            catalogLiteTransform.on('close', function () {
+                self.writeCatalogFooter();
+                resolve(self.outPath);
             });
 
             catalogLiteTransform.on('error', function (error) {
@@ -81,7 +85,6 @@ class CatalogLite {
 
     writeCatalogFooter() {
         this.writeStream.write('</catalog>');
-        console.log(chalk.green(`reduced master catalog file written at ${this.outPath}`));
     }
 }
 

@@ -2,11 +2,13 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const util = require('./helpers/util');
 const CatalogLite = require('./lib/CatalogLite');
+const FakeInventory = require('./lib/FakeInventory');
 
-const MAX_MASTERS = 100;
+const MAX_MASTERS = 50;
+const DEFAULT_INVENTORY_LEVEL = 100;
 const argv = yargs
     .usage('Usage: $0 [options]')
-    .example('$0 --mastercatalog /path/to/catalog.xml -catalogid master_catalog --inventory true', 'reduce master catalog file')
+    .example('$0 --mastercatalog /path/to/catalog.xml --catalogid master_catalog --inventory true --inventoryid "inventory-list-id"', 'reduce master catalog file')
     .alias('c', 'mastercatalog')
     .nargs('c', 1)
     .normalize('c')
@@ -18,6 +20,8 @@ const argv = yargs
     .nargs('i', 1)
     .normalize('i')
     .describe('i', 'Generate inventory file or not')
+    .nargs('inventoryid', 1)
+    .describe('inventoryid', 'inventory list id')
     .demandOption(['c', 'cid'])
     .help('h')
     .alias('h', 'help')
@@ -30,12 +34,26 @@ async function run() {
         MAX_MASTERS: MAX_MASTERS
     });
 
-    console.log(chalk.green(`Total products ${mapping.products.length}`));
+    console.log(chalk.green(`Total products(masters, variants, variationgroups) ${mapping.products.length}`));
+    try {
+        const catalogLite = new CatalogLite(mapping.products, argv.c, argv.cid);
+        const catalogOutputPath = await catalogLite.writeProducts();
+        if (catalogOutputPath) {
+            console.log(chalk.green(`reduced master catalog file written at ${catalogOutputPath}`));
+        }
 
-    const catalogLite = new CatalogLite(mapping.products, argv.c, argv.cid);
-    catalogLite.writeCatalogHeader();
-    await catalogLite.writeProducts();
-    catalogLite.writeCatalogFooter();
+        if (argv.i) {
+            const fakeInventory = new FakeInventory(
+                mapping.masterMapping, argv.inventoryid, DEFAULT_INVENTORY_LEVEL
+            );
+            const inventoryOutPath = await fakeInventory.writeProducts();
+            if (inventoryOutPath) {
+                console.log(chalk.green(`fake inventory file written at ${inventoryOutPath}`));
+            }
+        }
+    } catch (error) {
+        console.log(chalk.red(error));
+    }
 }
 
 run();
