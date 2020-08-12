@@ -46,9 +46,9 @@ async function run() {
             const fakeInventory = new FakeInventory(
                 mapping.masterMapping, argv.inventoryid, DEFAULT_INVENTORY_LEVEL
             );
-            const inventoryOutPath = await fakeInventory.writeProducts();
-            if (inventoryOutPath) {
-                console.log(chalk.green(`fake inventory file written at ${inventoryOutPath}`));
+            const inventoryOutputPath = await fakeInventory.writeProducts();
+            if (inventoryOutputPath) {
+                console.log(chalk.green(`fake inventory file written at ${inventoryOutputPath}`));
             }
         }
     } catch (error) {

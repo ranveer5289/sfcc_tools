@@ -42,12 +42,14 @@ function getMasterCatalogMapping(params) {
                 } else {
                     readStream.destroy(); // stop the stream
                     xtreamerTransform.destroy();
-                    resolve({
-                        products: products,
-                        masterMapping: masterMapping
-                    });
                 }
             }
+        });
+        xtreamerTransform.on('close', function () {
+            resolve({
+                products: products,
+                masterMapping: masterMapping
+            });
         });
 
         xtreamerTransform.on('error', function (error) {
