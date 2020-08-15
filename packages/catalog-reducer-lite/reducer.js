@@ -6,6 +6,7 @@ const FakeInventory = require('./lib/FakeInventory');
 
 const MAX_MASTERS = 50;
 const DEFAULT_INVENTORY_LEVEL = 100;
+
 const argv = yargs
     .usage('Usage: $0 [options]')
     .example('$0 --mastercatalog /path/to/catalog.xml --catalogid master_catalog --inventory true --inventoryid "inventory-list-id"', 'reduce master catalog file')
@@ -28,13 +29,17 @@ const argv = yargs
     .wrap(null)
     .argv;
 
-async function run() {
+async function main() {
     const mapping = await util.getMasterCatalogMapping({
         catalogPath: argv.c,
         MAX_MASTERS: MAX_MASTERS
     });
 
-    console.log(chalk.green(`Total products(masters, variants, variationgroups) ${mapping.products.length}`));
+    console.log(chalk.green(`Total products ${mapping.statistics.totalProducts}`));
+    console.log(chalk.green(`Total masters ${mapping.statistics.masterCount}`));
+    console.log(chalk.green(`Total variants ${mapping.statistics.variantCount}`));
+    console.log(chalk.green(`Total variationGroups ${mapping.statistics.variationGroupCount}`));
+
     try {
         const catalogLite = new CatalogLite(mapping.products, argv.c, argv.cid);
         const catalogOutputPath = await catalogLite.writeProducts();
@@ -56,4 +61,4 @@ async function run() {
     }
 }
 
-run();
+main();
