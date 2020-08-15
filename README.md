@@ -26,6 +26,7 @@ Note: remove comments from `config/default.sample.json` file
 
 Package/Script | Description
 ----------------|----------------------------
+catalog-reducer-lite| CLI script to generate a reduced master catalog and a corresponding fake inventory file.
 collect-expired-promotions | CLI script to collect expired promotions of a site. Expired promotions are written to a csv file.
 collect-job-metrics | CLI scrip to collect job metrics (in CSV) like total run-time of job in hours, minutes & also calculates job load factor on an instance
 count-order-notes | Count notes present in order xml file.
