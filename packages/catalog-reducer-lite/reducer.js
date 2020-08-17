@@ -1,11 +1,15 @@
 const yargs = require('yargs');
 const chalk = require('chalk');
+const config = require('@sfcc_tools/config');
+
 const util = require('./helpers/util');
 const CatalogLite = require('./lib/CatalogLite');
 const FakeInventory = require('./lib/FakeInventory');
 
-const MAX_MASTERS = 50;
-const DEFAULT_INVENTORY_LEVEL = 100;
+const catalogLiteConfig = config.get('packages.catalog-reducer-lite');
+
+const MAX_MASTERS = catalogLiteConfig.catalog.max_masters;
+const DEFAULT_INVENTORY_LEVEL = catalogLiteConfig.inventory.default_stock_level;
 
 const argv = yargs
     .usage('Usage: $0 [options]')
@@ -14,16 +18,11 @@ const argv = yargs
     .nargs('c', 1)
     .normalize('c')
     .describe('c', 'Path to master catalog XML file')
-    .alias('cid', 'catalogid')
-    .nargs('cid', 1)
-    .describe('cid', 'master catalog id')
     .alias('i', 'inventory')
     .nargs('i', 1)
     .normalize('i')
     .describe('i', 'Generate inventory file or not')
-    .nargs('inventoryid', 1)
-    .describe('inventoryid', 'inventory list id')
-    .demandOption(['c', 'cid'])
+    .demandOption(['c'])
     .help('h')
     .alias('h', 'help')
     .wrap(null)
@@ -41,7 +40,7 @@ async function main() {
     console.log(chalk.green(`Total variationGroups ${mapping.statistics.variationGroupCount}`));
 
     try {
-        const catalogLite = new CatalogLite(mapping.products, argv.c, argv.cid);
+        const catalogLite = new CatalogLite(mapping.products, argv.c);
         const catalogOutputPath = await catalogLite.writeProducts();
         if (catalogOutputPath) {
             console.log(chalk.green(`reduced master catalog file written at ${catalogOutputPath}`));

@@ -35,6 +35,16 @@
             "webdav_catalog_images_path" : "https://%s/on/demandware.servlet/webdav/Sites/Catalogs/%s/default/images/productImages", // path where product images are stores (root path)
             "days_in_past" : 4 // used to get last modified images on server
         },
+        "catalog-reducer-lite" : {
+            "catalog" : {
+                "master_catalog_id" : "master-catalog",
+                "max_masters" : 50
+            },
+            "inventory" : {
+                "inventory_id" : "inventory-list-id",
+                "default_stock_level" : 100
+            }
+        },        
         "<some-other-package-id>" : {
             
         }

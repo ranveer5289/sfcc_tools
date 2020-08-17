@@ -2,16 +2,18 @@ const fs = require('fs');
 const xtreamer = require('xtreamer');
 const xml2js = require('xml2js');
 const path = require('path');
-const chalk = require('chalk');
+const config = require('@sfcc_tools/config');
 
 const parser = new xml2js.Parser();
-const builder = new xml2js.Builder({ headless: true });
+const builder = new xml2js.Builder();
+const catalogLiteConfig = config.get('packages.catalog-reducer-lite');
 
 class CatalogLite {
-    constructor(products, catalogPath, catalogId) {
+    constructor(products, catalogPath) {
         this.products = products;
         this.catalogPath = catalogPath;
-        this.catalogId = catalogId;
+        this.catalogId = catalogLiteConfig.catalog.master_catalog_id;
+        this.catalogObj = {};
 
         const parsedPath = path.parse(this.catalogPath);
 
@@ -19,36 +21,40 @@ class CatalogLite {
         this.writeStream = fs.createWriteStream(this.outPath);
     }
 
-    writeCatalogHeader() {
-        this.writeStream.write(`<?xml version="1.0" encoding="UTF-8"?>
-        <catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="${this.catalogId}">\n`);
-
-        const catalogHeader = {
-            header: {
-                'image-settings': {
-                    'internal-location': {
-                        $: {
-                            'base-path': '/'
-                        }
-                    },
-                    'view-types': {
-                        'view-type': 'hi-res'
-                    },
-                    // eslint-disable-next-line no-template-curly-in-string
-                    'alt-pattern': '${productname}',
-                    // eslint-disable-next-line no-template-curly-in-string
-                    'title-pattern': '${productname}'
+    buildCatalogHeader() {
+        this.catalogObj = {
+            catalog: {
+                $: {
+                    xmlns: 'http://www.demandware.com/xml/impex/catalog/2006-10-31',
+                    'catalog-id': this.catalogId
+                },
+                header: {
+                    'image-settings': {
+                        'internal-location': {
+                            $: {
+                                'base-path': '/'
+                            }
+                        },
+                        'view-types': {
+                            'view-type': 'hi-res'
+                        },
+                        // eslint-disable-next-line no-template-curly-in-string
+                        'alt-pattern': '${productname}',
+                        // eslint-disable-next-line no-template-curly-in-string
+                        'title-pattern': '${productname}'
+                    }
+                },
+                products: {
+                    product: []
                 }
             }
         };
-        const xml = builder.buildObject(catalogHeader);
-        this.writeStream.write(xml);
     }
 
     writeProducts() {
         const self = this;
         return new Promise(function (resolve, reject) {
-            self.writeCatalogHeader();
+            self.buildCatalogHeader();
             let productsWritten = 0;
             const totalProducts = self.products.length;
             const catalogLiteTransform = xtreamer('product', {});
@@ -60,9 +66,8 @@ class CatalogLite {
                     catalogLiteTransform.pause();
                     const xmlObj = await parser.parseStringPromise(item.toString());
                     const productId = xmlObj.product.$['product-id'];
-
                     if (self.products.indexOf(productId) !== -1) {
-                        self.writeStream.write(`${item.toString()}\n`);
+                        self.catalogObj.catalog.products.product.push(xmlObj.product);
                         productsWritten += 1;
                     }
                     catalogLiteTransform.resume();
@@ -73,7 +78,9 @@ class CatalogLite {
             });
 
             catalogLiteTransform.on('close', function () {
-                self.writeCatalogFooter();
+                const xml = builder.buildObject(self.catalogObj);
+                self.writeStream.write(xml);
+
                 resolve(self.outPath);
             });
 
@@ -81,10 +88,6 @@ class CatalogLite {
                 reject(error);
             });
         });
-    }
-
-    writeCatalogFooter() {
-        this.writeStream.write('</catalog>');
     }
 }
 

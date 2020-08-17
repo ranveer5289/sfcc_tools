@@ -1,63 +1,70 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
 const path = require('path');
-const chalk = require('chalk');
+const config = require('@sfcc_tools/config');
 
-const builder = new xml2js.Builder({ headless: true });
+const builder = new xml2js.Builder();
+const catalogLiteConfig = config.get('packages.catalog-reducer-lite');
 
 class FakeInventory {
-    constructor(productMapping, inventoryListId, defaultStockLevel) {
+    constructor(productMapping) {
         this.productMapping = productMapping;
-        this.inventoryListId = inventoryListId;
-        this.defaultStockLevel = defaultStockLevel;
+        this.inventoryListId = catalogLiteConfig.inventory.inventory_id;
+        this.defaultStockLevel = catalogLiteConfig.inventory.default_stock_level;
+        this.inventoryObj = {};
 
         this.outPath = path.join(__dirname, '..', `reduced-${this.inventoryListId}.xml`);
         this.writeStream = fs.createWriteStream(this.outPath);
     }
 
-    writeInventoryHeader() {
-        this.writeStream.write(`<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">
-        <inventory-list>
-            <header list-id="${this.inventoryListId}">
-                <default-instock>false</default-instock>
-                <description>Inventory List</description>
-                <use-bundle-inventory-only>false</use-bundle-inventory-only>
-                <on-order>false</on-order>
-            </header><records>\n`);
+    buildInventoryHeader() {
+        this.inventoryObj = {
+            inventory: {
+                $: {
+                    xmlns: 'http://www.demandware.com/xml/impex/inventory/2007-05-31'
+                },
+                'inventory-list': {
+                    header: {
+                        $: {
+                            'list-id': this.inventoryListId
+                        },
+                        'default-instock': false,
+                        'use-bundle-inventory-only': false,
+                        'on-order': false
+                    },
+                    records: {
+                        record: []
+                    }
+                }
+            }
+        };
     }
 
     writeProducts() {
         const self = this;
         return new Promise(function (resolve, reject) {
-            self.writeInventoryHeader();
+            self.buildInventoryHeader();
             Object.keys(self.productMapping).forEach(function (productId) {
                 self.productMapping[productId].variants.forEach(function (variant) {
-                    const obj = {
-                        record: {
-                            $: {
-                                'product-id': variant
-                            },
-                            ats: self.defaultStockLevel
-                        }
+                    const record = {
+                        $: {
+                            'product-id': variant
+                        },
+                        allocation: self.defaultStockLevel
                     };
-                    const xml = builder.buildObject(obj);
-                    self.writeStream.write(xml);
+                    self.inventoryObj.inventory['inventory-list'].records.record.push(record);
                 });
             });
-            self.writeInventoryFooter();
 
-            self.writeStream.on('finish', function () {
+            const xml = builder.buildObject(self.inventoryObj);
+
+            fs.writeFile(self.outPath, xml, function (error) {
+                if (error) {
+                    reject(error);
+                }
                 resolve(self.outPath);
             });
-            self.writeStream.on('error', function (error) {
-                reject(error);
-            });
         });
-    }
-
-    writeInventoryFooter() {
-        this.writeStream.write('</records></inventory-list></inventory>');
-        this.writeStream.end();
     }
 }
 
