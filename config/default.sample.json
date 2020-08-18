@@ -43,6 +43,19 @@
             "inventory" : {
                 "inventory_id" : "inventory-list-id",
                 "default_stock_level" : 100
+            },
+            "pricebooks" : {
+                "list_pricebook" : {
+                    "id": "list-pricebook-id",
+                    "currency": "EUR",
+                    "default_price": 100
+                },
+                "sale_pricebook" : {
+                    "id": "sale-pricebook-id",
+                    "parentPriceBook": "list_pricebook", // parent pricebook reference
+                    "currency": "EUR",
+                    "default_price": 50
+                }
             }
         },        
         "<some-other-package-id>" : {
