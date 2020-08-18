@@ -46,7 +46,7 @@ async function main() {
         const catalogLite = new CatalogLite(mapping.products, argv.c);
         const catalogOutputPath = await catalogLite.writeProducts();
         if (catalogOutputPath) {
-            console.log(chalk.green(`reduced master catalog file written at ${catalogOutputPath}`));
+            console.log(chalk.green(`Reduced Master Catalog file written at ${catalogOutputPath}`));
         }
 
         if (argv.i) {
@@ -55,34 +55,34 @@ async function main() {
             );
             const inventoryOutputPath = await fakeInventory.writeProducts();
             if (inventoryOutputPath) {
-                console.log(chalk.green(`fake inventory file written at ${inventoryOutputPath}`));
+                console.log(chalk.green(`Fake Inventory file written at ${inventoryOutputPath}`));
             }
         }
 
         if (argv.p) {
-            const params = {
-                pricebookId: catalogLiteConfig.pricebook.list_pricebook_id,
-                currency: catalogLiteConfig.pricebook.currency,
-                defaultPrice: catalogLiteConfig.pricebook.default_price
-            };
+            const priceBooks = catalogLiteConfig.pricebooks;
+            const asyncFunctions = [];
 
-            const fakePricebook = new FakePricebook(mapping.masterMapping, params);
-            const pricebookOutputPath = await fakePricebook.writeProducts();
-            if (pricebookOutputPath) {
-                console.log(chalk.green(`fake pricebook file written at ${pricebookOutputPath}`));
+            // eslint-disable-next-line no-restricted-syntax
+            for (const key in priceBooks) {
+                if (Object.prototype.hasOwnProperty.call(priceBooks, key)) {
+                    const pricebook = priceBooks[key];
+                    const parentPriceBookObj = priceBooks[pricebook.parentPriceBook];
+                    const params = {
+                        pricebookId: pricebook.id,
+                        currency: pricebook.currency,
+                        defaultPrice: pricebook.default_price,
+                        parentPricebookId: parentPriceBookObj ? parentPriceBookObj.id : null
+                    };
+                    const fakePricebook = new FakePricebook(mapping.masterMapping, params);
+                    asyncFunctions.push(fakePricebook.writeProducts());
+                }
             }
 
-            const saleParams = {
-                pricebookId: catalogLiteConfig.pricebook.sale_pricebook_id,
-                parentPricebookId: catalogLiteConfig.pricebook.list_pricebook_id,
-                currency: catalogLiteConfig.pricebook.currency,
-                defaultPrice: catalogLiteConfig.pricebook.default_price
-            };
-            const fakeSalePricebook = new FakePricebook(mapping.masterMapping, saleParams);
-            const salePricebookOutputPath = await fakeSalePricebook.writeProducts();
-            if (salePricebookOutputPath) {
-                console.log(chalk.green(`fake pricebook file written at ${salePricebookOutputPath}`));
-            }
+            Promise.all(asyncFunctions).then(function (result) {
+                console.log(chalk.green('Fake Pricebook files written at: '));
+                console.log(result.join('\n'));
+            });
         }
     } catch (error) {
         console.log(chalk.red(error));
