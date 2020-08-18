@@ -44,9 +44,7 @@ class CatalogLite {
                         'title-pattern': '${productname}'
                     }
                 },
-                products: {
-                    product: []
-                }
+                product: []
             }
         };
     }
@@ -67,7 +65,7 @@ class CatalogLite {
                     const xmlObj = await parser.parseStringPromise(item.toString());
                     const productId = xmlObj.product.$['product-id'];
                     if (self.products.indexOf(productId) !== -1) {
-                        self.catalogObj.catalog.products.product.push(xmlObj.product);
+                        self.catalogObj.catalog.product.push(xmlObj.product);
                         productsWritten += 1;
                     }
                     catalogLiteTransform.resume();

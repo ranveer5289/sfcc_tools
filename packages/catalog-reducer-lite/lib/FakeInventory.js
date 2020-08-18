@@ -14,7 +14,6 @@ class FakeInventory {
         this.inventoryObj = {};
 
         this.outPath = path.join(__dirname, '..', `reduced-${this.inventoryListId}.xml`);
-        this.writeStream = fs.createWriteStream(this.outPath);
     }
 
     buildInventoryHeader() {
