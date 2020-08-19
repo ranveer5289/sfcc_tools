@@ -38,7 +38,8 @@
         "catalog-reducer-lite" : {
             "catalog" : {
                 "master_catalog_id" : "master-catalog",
-                "max_masters" : 50
+                "max_masters" : 50,
+                "minimum_variants_in_master" : 2 // only consider master products which have atleast 2 variants
             },
             "inventory" : {
                 "inventory_id" : "inventory-list-id",

@@ -43,7 +43,7 @@ async function listWebDavFiles() {
             responseEncoding: 'utf8'
         });
         if (response && response.data) {
-            const outputFilePath = path.join(__dirname, `${imageCheckerConfig.master_catalog_id}_${environment}_webdav_temp_1.xml`);
+            const outputFilePath = path.join(__dirname, `${imageCheckerConfig.master_catalog_id}_${environment}_webdav.xml`);
             console.log(chalk.green(`Successfully, received response from server. Now, streaming it to a file ${outputFilePath}`));
             const responseStream = response.data;
             responseStream.pipe(fs.createWriteStream(outputFilePath));

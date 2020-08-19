@@ -21,30 +21,35 @@ function getMasterCatalogMapping(params) {
             if (item.toString().indexOf('<variants>') !== -1) { // master product
                 if (count < params.MAX_MASTERS) {
                     xtreamerTransform.pause();
-                    masterCount += 1;
                     const xmlObj = await parser.parseStringPromise(item.toString());
-                    const masterId = xmlObj.product.$['product-id'];
-                    masterMapping[masterId] = {};
-                    products.push(masterId);
-
                     // eslint-disable-next-line max-len
                     const variants = xmlObj.product.variations[0].variants[0].variant.map(function (variant) {
                         return variant.$['product-id'];
                     });
-                    variantCount += variants.length;
-                    masterMapping[masterId].variants = variants;
-                    products.push(...variants);
 
-                    if (xmlObj.product.variations[0]['variation-groups']) {
-                        const variationGroups = xmlObj.product.variations[0]['variation-groups'][0]['variation-group'].map(function (vGroup) {
-                            return vGroup.$['product-id'];
-                        });
-                        variationGroupCount += variationGroups.length;
-                        masterMapping[masterId].variationGroups = variationGroups;
-                        products.push(...variationGroups);
+                    // only consider master products which have atleast below defined variant count.
+                    // This is needed to avoid collecting masters with
+                    // single variant(fixed-size) products
+                    if (variants.length > params.minimumVariants) {
+                        masterCount += 1;
+                        const masterId = xmlObj.product.$['product-id'];
+                        masterMapping[masterId] = {};
+                        products.push(masterId);
+                        variantCount += variants.length;
+                        masterMapping[masterId].variants = variants;
+                        products.push(...variants);
+
+                        if (xmlObj.product.variations[0]['variation-groups']) {
+                            const variationGroups = xmlObj.product.variations[0]['variation-groups'][0]['variation-group'].map(function (vGroup) {
+                                return vGroup.$['product-id'];
+                            });
+                            variationGroupCount += variationGroups.length;
+                            masterMapping[masterId].variationGroups = variationGroups;
+                            products.push(...variationGroups);
+                        }
+
+                        count += 1;
                     }
-
-                    count += 1;
                     xtreamerTransform.resume();
                 } else {
                     readStream.destroy(); // stop the stream
