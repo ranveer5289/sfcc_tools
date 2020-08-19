@@ -35,7 +35,7 @@ async function main() {
     const mapping = await util.getMasterCatalogMapping({
         catalogPath: argv.c,
         MAX_MASTERS: MAX_MASTERS,
-        minimumVariants: catalogLiteConfig.catalog.minimum_variants_in_master || 0
+        MINIMUM_VARIANTS: catalogLiteConfig.catalog.minimum_variants_in_master || 0
     });
 
     console.log(chalk.green(`Total products ${mapping.statistics.totalProducts}`));

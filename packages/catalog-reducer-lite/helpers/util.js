@@ -30,7 +30,7 @@ function getMasterCatalogMapping(params) {
                     // only consider master products which have atleast below defined variant count.
                     // This is needed to avoid collecting masters with
                     // single variant(fixed-size) products
-                    if (variants.length > params.minimumVariants) {
+                    if (variants.length > params.MINIMUM_VARIANTS) {
                         masterCount += 1;
                         const masterId = xmlObj.product.$['product-id'];
                         masterMapping[masterId] = {};
