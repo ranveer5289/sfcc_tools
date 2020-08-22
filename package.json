@@ -1,6 +1,11 @@
 {
   "name": "sfcc_tools",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist",
+    "clean": "lerna clean",
+    "lint": "lerna run lint --parallel"
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   }
