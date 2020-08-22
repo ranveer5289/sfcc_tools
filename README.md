@@ -7,8 +7,8 @@ This repo uses lerna for package management.
 
 ```js
 npm install (will install lerna)
-lerna bootstrap (install dependencies for all packages)
-lerna run lint (eslint)
+npm run bootstrap (install dependencies for all packages)
+npm run lint (eslint)
 lerna add <npm-package> (Install this package for all lerna-packages)
 lerna add <npm-package> --scope=@sfcc_tools/ecdn-waf-logs (Install this package only for ecdn-waf-logs package)
 
@@ -45,7 +45,7 @@ core/ocapi | Actual ocapi client with 4 packages (auth, shop, data & meta apis)
 
 1. Add detailed documentation for each package.
 2. Use cli arguments (yargs) for all packages.
-3. Add steps on how to create & setup a new package with lerna 
+3. Add steps on how to create & setup a new package with lerna
 
 ## Clean it up
 
