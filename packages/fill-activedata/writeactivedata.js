@@ -23,7 +23,7 @@ fs.createReadStream('products.csv')
         records.push(defaultValues);
     }).on('end', async function () {
         await csvWriter.writeRecords(records);
+        await insertLine('./output.csv').content('\nDemandware Product Active Data').at(1);
         console.log('...Done');
         console.log(count);
-        await insertLine('./output.csv').content('\nDemandware Product Active Data').at(1);
     });
