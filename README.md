@@ -10,7 +10,7 @@ npm install (will install lerna)
 npm run bootstrap (install dependencies for all packages)
 npm run lint (eslint)
 lerna add <npm-package> (Install this package for all lerna-packages)
-lerna add <npm-package> --scope=@sfcc_tools/ecdn-waf-logs (Install this package only for ecdn-waf-logs package)
+lerna add <npm-package> --scope=@sfcc_tools/ecdn-waf-logs --no-bootstrap (Install this package only for ecdn-waf-logs package)
 
 cd /path/to/package
 node <script.js>
@@ -35,6 +35,7 @@ generate-order-report | CLI script to generate a CSV report of the orders detail
 image-checker | CLI script to find orphaned images on an instance, find products without/incomplete images and find images modified in last X days.
 inventory-checker | CLI script to visualize(line chart) the inventory for a product in supplied XML files. Useful for debugging.
 sfcc-catalog-to-elasticsearch | CLI script to add SFCC master catalog (XML & CSV) data into Elasticsearch
+fill-activedata | CLI script to add sample active data to a list of products.
 core/config | Centralized way to manage configuration via node `config` package
 core/create-ocapi-client | Auto generate ocapi client from OCAPI swagger definitions file
 core/elasticsearch | Elasticsearch wrapper library (Needs some cleanup)
