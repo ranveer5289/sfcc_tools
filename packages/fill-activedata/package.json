@@ -14,7 +14,7 @@
     "@sfcc_tools/eslint-config-core": "^1.0.0",
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0",
-    "eslint": "7.2.0",
+    "eslint": "9.26.0",
     "insert-line": "^1.1.0"
   },
   "devDependencies": {
